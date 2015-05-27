@@ -1,42 +1,41 @@
-This method returns information about a team channel.
+This method returns information about a private group.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/channels.info` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/groups.info` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `read`) |
-| `channel` | `C1234567890` | Required | Channel to get info on |
+| `channel` | `C1234567890` | Required | Group to get info on |
 
 ## Response
 
-Returns a [channel object](/types/channel):
+Returns a [group object](/types/group):
 
 ```
 {
     "ok": true,
-    "channel": {
-        "id": "C024BE91L",
-        "name": "fun",
-
+    "group": {
+        "id": "G024BE91L",
+        "name": "secretplans",
+        "is_group": "true",
         "created": 1360782804,
         "creator": "U024BE7LH",
-
         "is_archived": false,
-        "is_general": false,
-        "is_member": true,
-
-        "members": […],
+        "members": [
+            "U024BE7LH"
+        ],
 
         "topic": { … },
         "purpose": { … },
 
         "last_read": "1401383885.000061",
-        "latest": { … },
+        "latest": { … }
         "unread_count": 0,
         "unread_count_display": 0
-    }
+
+    },
 }
 ```
 

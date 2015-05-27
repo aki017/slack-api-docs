@@ -1,5 +1,5 @@
 {
-  "desc": "This method returns a list of all users in the team. This includes deleted/deactivated users.",
+  "desc": "This method provides information about your team.",
   "args": {
     "token": {
       "required": true,
@@ -10,6 +10,7 @@
   "errors": {
     "not_authed": "No authentication token provided.",
     "invalid_auth": "Invalid authentication token.",
-    "account_inactive": "Authentication token is for a deleted user or team."
+    "account_inactive": "Authentication token is for a deleted user or team.",
+    "user_is_bot": "This method cannot be called by a bot user."
   }
 }

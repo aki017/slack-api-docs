@@ -1,14 +1,13 @@
-This method allows a user to remove another member from a private group.
+This method deletes a file from your team.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/groups.kick` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/files.delete` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `post`) |
-| `channel` | `G1234567890` | Required | Group to remove user from. |
-| `user` | `U1234567890` | Required | User to remove from group. |
+| `file` | `F1234567890` | Required | ID of file to delete. |
 
 ## Response
 
@@ -24,14 +23,11 @@ This table lists the expected errors that this method will return. However, othe
 
 | Error | Description |
 | --- | --- |
-| `channel_not_found` | Value passed for `channel` was invalid. |
-| `user_not_found` | Value passed for `user` was invalid. |
-| `cant_kick_self` | You can't remove yourself from a group |
-| `not_in_group` | User or caller were are not in the group |
-| `restricted_action` | A team preference prevents the authenticated user from kicking. |
+| `file_not_found` | The file does not exist, or is not visible to the calling user. |
+| `file_deleted` | The file has already been deleted. |
+| `cant_delete_file` | Authenticated user does not have permission to delete this file. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
 | `user_is_bot` | This method cannot be called by a bot user. |
-| `user_is_restricted` | This method cannot be called by a restricted user or single channel guest. |
 
