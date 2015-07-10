@@ -31,6 +31,7 @@ This table lists the expected errors that this method will return. However, othe
 | `message_not_found` | No message exists with the requested timestamp. |
 | `channel_not_found` | Value passed for `channel` was invalid. |
 | `cant_delete_message` | Authenticated user does not have permission to delete this message. |
+| `compliance_exports_prevent_deletion` | Compliance exports are on, messages can not be deleted |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
