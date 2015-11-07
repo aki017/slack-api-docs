@@ -5,6 +5,21 @@
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token (Requires scope: client)"
+    },
+    "simple_latest": {
+      "required": false,
+      "example": " ",
+      "desc": "Return timestamp only for latest message object of each channel (improves performance)."
+    },
+    "no_unreads": {
+      "required": false,
+      "example": " ",
+      "desc": "Skip unread counts for each channel (improves performance)."
+    },
+    "mpim_aware": {
+      "required": false,
+      "example": " ",
+      "desc": "Returns MPIMs to the client in the API response."
     }
   },
   "errors": {

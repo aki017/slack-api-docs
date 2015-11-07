@@ -1,4 +1,4 @@
-This method posts a message to a channel.
+This method posts a message to a public channel, private group, or IM channel.
 
 ## Arguments
 
@@ -7,7 +7,7 @@ This method has the URL `https://slack.com/api/chat.postMessage` and follows the
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `post`) |
-| `channel` | `C1234567890` | Required | Channel to send message to. Can be a public channel, private group or IM channel. Can be an encoded ID, or a name. |
+| `channel` | `C1234567890` | Required | Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name. See below for more details. |
 | `text` | `Hello world` | Required | Text of the message to send. See below for an explanation of formatting. |
 | `username` | `My Bot` | Optional | Name of bot. |
 | `as_user` | `true` | Optional | Pass true to post the message as the authed user, instead of as a bot |
@@ -29,6 +29,28 @@ By default links to media are unfurled, but links to text content are not. For m
 
 By default messages are posted as [bot\_messages](/events/message/bot_message). If `as_user` is true the message is instead posted as the authenticated user. Using the `as_user` argument requires the [client scope](/docs/oauth#auth_scopes). The `username`, `icon_url` and`icon_emoji` arguments are ignored if `as_user` is true.
 
+## Channels
+
+You must specify a public channel, private group, or an IM channel with the `channel` argument. Each one behaves slightly differently based on the authenticated user's permissions and additional arguments:
+
+#### Post to a public channel
+
+You can either pass the channel's name (`#general`) or encoded ID (`C024BE91L`), and the message will be posted to that channel. The channel's ID can be retrieved through the [channels.list](/methods/channels.list) API method.
+
+#### Post to a private group
+
+As long as the authenticated user is a member of the private group, you can either pass the group's name (`secret-group`) or encoded ID (`G012AC86C`), and the message will be posted to that group. The private group's ID can be retrieved through the [groups.list](/methods/groups.list) API method.
+
+#### Post to an IM channel
+
+Posting to an IM channel is a little more complex depending on the value of `as_user`.
+
+- If `as_user` is false:
+  - Pass a username (`@chris`) as the value of `channel` to post to that user's @slackbot channel _as the bot_.
+  - Pass the IM channel's ID (`D023BB3L2`) as the value of `channel` to post to that IM channel _as the bot_. The IM channel's ID can be retrieved through the [im.list](/methods/im.list) API method.
+- If `as_user` is true:
+  - Pass the IM channel's ID (`D023BB3L2`) as the value of `channel` to post to that IM channel _as the authenticated user_. The IM channel's ID can be retrieved through the [im.list](/methods/im.list) API method.
+
 ## Response
 
 ```
@@ -42,7 +64,7 @@ By default messages are posted as [bot\_messages](/events/message/bot_message). 
 }
 ```
 
-The response includes the TS and channel for the posted message. It also includes the complete message object, as it was parsed by our servers. This may differ from the provided arguments as our servers sanitize links, attachments and other properties.
+The response includes the timestamp (`ts`) and channel for the posted message. It also includes the complete message object, as it was parsed by our servers. This may differ from the provided arguments as our servers sanitize links, attachments and other properties.
 
 ## Errors
 

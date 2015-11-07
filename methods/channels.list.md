@@ -11,7 +11,7 @@ This method has the URL `https://slack.com/api/channels.list` and follows the [S
 
 ## Response
 
-Returns a list of [channel objects](/types/channel):
+Returns a list of limited [channel objects](/types/channel):
 
 ```
 {
@@ -40,6 +40,8 @@ Returns a list of [channel objects](/types/channel):
     ]
 }
 ```
+
+To get a full [channel object](/types/channel), call the [channels.info](/methods/channels.info) method.
 
 ## Errors
 

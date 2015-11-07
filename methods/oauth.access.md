@@ -1,5 +1,7 @@
 This method allows you to exchange a temporary OAuth `code` for an API access token. This is used as part of the [OAuth authentication flow](/docs/oauth).
 
+As discussed [in RFC 6749](https://tools.ietf.org/html/rfc6749#section-2.3.1) it is possible to supply the Client ID and Client Secret using the HTTP Basic authentication scheme. If HTTP Basic authentication is used you do not need to supply the`client_id` and `client_secret` parameters as part of the request.
+
 ## Arguments
 
 This method has the URL `https://slack.com/api/oauth.access` and follows the [Slack Web API calling conventions](/web#basics).

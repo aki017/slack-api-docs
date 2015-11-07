@@ -29,8 +29,8 @@ This table lists the expected errors that this method will return. However, othe
 | `not_in_channel` | Authenticated user is not in the channel. |
 | `is_archived` | Channel has been archived. |
 | `too_long` | Purpose was longer than 250 characters. |
+| `user_is_restricted` | This method cannot be called by a restricted user or single channel guest. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
-| `user_is_restricted` | This method cannot be called by a restricted user or single channel guest. |
 

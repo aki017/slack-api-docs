@@ -39,7 +39,7 @@ By default all newly-uploaded files are private and only visible to the owner. T
 Upload "dramacat.gif" and share it in channel, using `multipart/form-data`:
 
 ```
-curl -F file=@dramacat.gif -F channels=C024BE91L -F token=xxxx-xxxxxxxxx-xxxx https://slack.com/api/files.upload
+curl -F file=@dramacat.gif -F channels=C024BE91L,#general -F token=xxxx-xxxxxxxxx-xxxx https://slack.com/api/files.upload
 ```
 
 Create an editable file containing the text "Hello":
@@ -54,6 +54,8 @@ This table lists the expected errors that this method will return. However, othe
 
 | Error | Description |
 | --- | --- |
+| `posting_to_general_channel_denied` | An admin has restricted posting to the #general channel. |
+| `invalid_channel` | One or more channels supplied are invalid |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |

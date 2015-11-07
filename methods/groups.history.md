@@ -12,6 +12,7 @@ This method has the URL `https://slack.com/api/groups.history` and follows the [
 | `oldest` | `1234567890.123456` | Optional, default=0 | Start of time range of messages to include in results. |
 | `inclusive` | `1` | Optional, default=0 | Include messages with latest or oldest timestamp in results. |
 | `count` | `100` | Optional, default=100 | Number of messages to return, between 1 and 1000. |
+| `unreads` | `1` | Optional, default=0 | Include `unread_count_display` in the output? |
 
 ## Response
 

@@ -57,7 +57,7 @@ Different item types can be starred. Every item in the list has a `type` propert
 - **`im`** : the item will have a `channel` property containing the channel ID for this direct message.
 - **`group`** : the item will have a `group` property containing the channel ID for the private group.
 
-The paging information contains the `count` of files returned, the `total`number of items starred, the `page` of results returned in this response and the total number of `pages` available.
+The paging information contains the `count` of files returned, the `total`number of items starred, the `page` of results returned in this response and the total number of `pages` available. Please note that the max `count` value is `1000` and the max `page` value is `100`.
 
 ## Errors
 

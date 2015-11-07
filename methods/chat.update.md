@@ -10,6 +10,21 @@ This method has the URL `https://slack.com/api/chat.update` and follows the [Sla
 | `ts` | `1405894322.002768` | Required | Timestamp of the message to be updated. |
 | `channel` | `C1234567890` | Required | Channel containing the message to be updated. |
 | `text` | `Hello world` | Required | New text for the message, using the [default formatting rules](/docs/formatting). |
+| `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Optional | Structured message attachments. |
+| `parse` | `none` | Optional | Change how messages are treated. See below. |
+| `link_names` | `1` | Optional | Find and link channel names and usernames. |
+
+## Formatting
+
+The default value for parse will attempt to discover links in text but does not support URL markup. To update messages with URL markup, you must specify `parse=none`. For more information, refer to the [formatting spec](/docs/formatting).
+
+The optional `attachments` argument should contain a JSON-encoded array of attachments. If you do not include an attachments property, a message's previous attachments will remain visible. To remove a previous attachment, include an empty `attachments` array with your request. For more information, see the [attachments spec](/docs/attachments).
+
+## Valid message types
+
+Only messages posted by the authenticated user are able to be updated using this method. This includes regular chat messages, as well as messages containing the `me_message` subtype.
+
+Attempting to update other message types will return a `cant_update_message` error.
 
 ## Response
 

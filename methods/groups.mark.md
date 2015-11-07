@@ -29,6 +29,7 @@ This table lists the expected errors that this method will return. However, othe
 | Error | Description |
 | --- | --- |
 | `channel_not_found` | Value passed for `channel` was invalid. |
+| `invalid_timestamp` | Value passed for `timestamp` was invalid. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |

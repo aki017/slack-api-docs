@@ -1,5 +1,5 @@
 {
-  "desc": "This method posts a message to a channel.",
+  "desc": "This method posts a message to a public channel, private group, or IM channel.",
   "args": {
     "token": {
       "required": true,
@@ -9,7 +9,7 @@
     "channel": {
       "required": true,
       "example": "C1234567890",
-      "desc": "Channel to send message to. Can be a public channel, private group or IM channel. Can be an encoded ID, or a name."
+      "desc": "Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name. See below for more details."
     },
     "text": {
       "required": true,

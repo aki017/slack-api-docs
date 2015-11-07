@@ -5,6 +5,11 @@
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token (Requires scope: read)"
+    },
+    "presence": {
+      "required": false,
+      "example": "1",
+      "desc": "Whether to include presence data in the output"
     }
   },
   "errors": {

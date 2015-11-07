@@ -95,6 +95,8 @@ start: "\xEE\x80\x80"; # U+E000 (private-use)
 end : "\xEE\x80\x81"; # U+E001 (private-use)
 ```
 
+Please note that the max `count` value is `1000` and the max `page` value is `100`.
+
 ## Errors
 
 This table lists the expected errors that this method will return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
