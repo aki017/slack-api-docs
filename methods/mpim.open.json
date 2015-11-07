@@ -13,7 +13,7 @@
     }
   },
   "errors": {
-    "users_list_not_supplied": "Missing users in request",
+    "users_list_not_supplied": "Missing `users` in request",
     "not_enough_users": "Needs at least 2 users to open",
     "too_many_users": "Needs at most 8 users to open",
     "not_authed": "No authentication token provided.",

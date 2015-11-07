@@ -13,7 +13,7 @@
     }
   },
   "errors": {
-    "invalid_presence": "Value passed for presence was invalid.",
+    "invalid_presence": "Value passed for `presence` was invalid.",
     "not_authed": "No authentication token provided.",
     "invalid_auth": "Invalid authentication token.",
     "account_inactive": "Authentication token is for a deleted user or team."

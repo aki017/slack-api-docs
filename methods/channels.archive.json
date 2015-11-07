@@ -13,7 +13,7 @@
     }
   },
   "errors": {
-    "channel_not_found": "Value passed for channel was invalid.",
+    "channel_not_found": "Value passed for `channel` was invalid.",
     "already_archived": "Channel has already been archived.",
     "cant_archive_general": "You cannot archive the general channel",
     "last_ra_channel": "You cannot archive the last channel for a restricted account",

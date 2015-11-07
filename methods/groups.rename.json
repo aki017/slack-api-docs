@@ -18,7 +18,7 @@
     }
   },
   "errors": {
-    "channel_not_found": "Value passed for channel was invalid.",
+    "channel_not_found": "Value passed for `channel` was invalid.",
     "invalid_name": "New name is invalid",
     "name_taken": "New channel name is taken",
     "not_authed": "No authentication token provided.",

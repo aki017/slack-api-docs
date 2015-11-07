@@ -13,7 +13,7 @@
     }
   },
   "errors": {
-    "channel_not_found": "Value passed for channel was invalid.",
+    "channel_not_found": "Value passed for `channel` was invalid.",
     "is_archived": "Channel has been archived.",
     "cant_leave_general": "Authenticated user cannot leave the general channel",
     "not_authed": "No authentication token provided.",

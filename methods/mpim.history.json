@@ -38,9 +38,9 @@
     }
   },
   "errors": {
-    "channel_not_found": "Value passed for channel was invalid.",
-    "invalid_ts_latest": "Value passed for latest was invalid",
-    "invalid_ts_oldest": "Value passed for oldest was invalid",
+    "channel_not_found": "Value passed for `channel` was invalid.",
+    "invalid_ts_latest": "Value passed for `latest` was invalid",
+    "invalid_ts_oldest": "Value passed for `oldest` was invalid",
     "not_authed": "No authentication token provided.",
     "invalid_auth": "Invalid authentication token.",
     "account_inactive": "Authentication token is for a deleted user or team.",

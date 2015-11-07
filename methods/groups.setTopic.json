@@ -18,7 +18,7 @@
     }
   },
   "errors": {
-    "channel_not_found": "Value passed for channel was invalid.",
+    "channel_not_found": "Value passed for `channel` was invalid.",
     "is_archived": "Private group has been archived",
     "too_long": "Topic was longer than 250 characters.",
     "user_is_restricted": "This method cannot be called by a restricted user or single channel guest.",

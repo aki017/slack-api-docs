@@ -18,8 +18,8 @@
     }
   },
   "errors": {
-    "channel_not_found": "Value passed for channel was invalid.",
-    "user_not_found": "Value passed for user was invalid.",
+    "channel_not_found": "Value passed for `channel` was invalid.",
+    "user_not_found": "Value passed for `user` was invalid.",
     "cant_kick_self": "Authenticated user can't kick themselves from a channel.",
     "not_in_channel": "User was not in the channel.",
     "cant_kick_from_general": "User cannot be removed from #general.",
