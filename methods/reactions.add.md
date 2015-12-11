@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/reactions.add` and follows the [S
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `post`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `reactions:write`) |
 | `name` | `thumbsup` | Required | Reaction (emoji) name. |
 | `file` | `F1234567890` | Optional | File to add reaction to. |
 | `file_comment` | `Fc1234567890` | Optional | File comment to add reaction to. |

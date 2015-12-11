@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/emoji.list` and follows the [Slac
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `emoji:read`) |
 
 ## Response
 

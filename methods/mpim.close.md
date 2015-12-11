@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/mpim.close` and follows the [Slac
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `post`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `mpim:write`) |
 | `channel` | &nbsp; | Required | MPIM to close. |
 
 ## Response
@@ -37,5 +37,4 @@ This table lists the expected errors that this method will return. However, othe
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
-| `user_is_bot` | This method cannot be called by a bot user. |
 

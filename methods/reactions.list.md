@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/reactions.list` and follows the [
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `reactions:read`) |
 | `user` | `U1234567890` | Optional | Show reactions made by this user. Defaults to the authed user. |
 | `full` | &nbsp; | Optional | If true always return the complete reaction list. |
 | `count` | `100` | Optional, default=100 | Number of items to return per page. |

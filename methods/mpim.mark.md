@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/mpim.mark` and follows the [Slack
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `post`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `mpim:write`) |
 | `channel` | `G1234567890` | Required | multiparty direct message channel to set reading cursor in. |
 | `ts` | `1234567890.123456` | Required | Timestamp of the most recently seen message. |
 
@@ -33,5 +33,4 @@ This table lists the expected errors that this method will return. However, othe
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
-| `user_is_bot` | This method cannot be called by a bot user. |
 

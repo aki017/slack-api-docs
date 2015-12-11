@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/channels.setPurpose` and follows 
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `post`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `channels:write`) |
 | `channel` | `C1234567890` | Required | Channel to set the purpose of |
 | `purpose` | `My Purpose` | Required | The new purpose |
 

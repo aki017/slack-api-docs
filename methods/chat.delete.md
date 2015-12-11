@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/chat.delete` and follows the [Sla
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `post`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `chat:write:user`) |
 | `ts` | `1405894322.002768` | Required | Timestamp of the message to be deleted. |
 | `channel` | `C1234567890` | Required | Channel containing the message to be deleted. |
 

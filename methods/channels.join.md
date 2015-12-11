@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/channels.join` and follows the [S
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `post`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `channels:write`) |
 | `name` | &nbsp; | Required | Name of channel to join |
 
 ## Response

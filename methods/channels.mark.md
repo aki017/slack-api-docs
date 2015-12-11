@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/channels.mark` and follows the [S
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `post`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `channels:write`) |
 | `channel` | `C1234567890` | Required | Channel to set reading cursor in. |
 | `ts` | `1234567890.123456` | Required | Timestamp of the most recently seen message. |
 

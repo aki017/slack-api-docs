@@ -34,6 +34,9 @@ This method returns lots of data about the current state of a team, along with a
         "name": "Example Team",
         "email_domain": "",
         "domain": "example",
+        "icon": {
+            …
+        },
         "msg_edit_window_mins": -1,
         "over_storage_limit": false
         "prefs": {
@@ -56,7 +59,9 @@ The `url` property contains a WebSocket Message Server URL. Connecting to this U
 
 The `self` property contains details on the authenticated user.
 
-The `team` property contains details on the authenticated user's team. The`users` property contains a list of [user objects](/types/user), one for every member of the team.
+The `team` property contains details on the authenticated user's team. If a team has not yet set a custom icon, the value of `team.icon.image_default` will be `true`.
+
+The `users` property contains a list of [user objects](/types/user), one for every member of the team.
 
 The `channels` property is a list of [channel objects](/types/channel), one for every channel visible to the authenticated user. For regular or administrator accounts this list will include every team channel. The`is_member` property indicates if the user is a member of this channel. If true then the channel object will also include the topic, purpose, member list and read-state related information.
 

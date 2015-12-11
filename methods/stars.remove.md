@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/stars.remove` and follows the [Sl
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `post`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `stars:write`) |
 | `file` | `F1234567890` | Optional | File to remove star from. |
 | `file_comment` | `Fc1234567890` | Optional | File comment to remove star from. |
 | `channel` | `C1234567890` | Optional | Channel to remove star from, or channel where the message to remove star from was posted (used with `timestamp`). |
@@ -38,5 +38,4 @@ This table lists the expected errors that this method will return. However, othe
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
-| `user_is_bot` | This method cannot be called by a bot user. |
 

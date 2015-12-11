@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/groups.info` and follows the [Sla
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `groups:read`) |
 | `channel` | `C1234567890` | Required | Group to get info on |
 
 ## Response

@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/users.setPresence` and follows th
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `post`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `users:write`) |
 | `presence` | `away` | Required | Either `auto` or `away` |
 
 ## Response

@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/channels.invite` and follows the 
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `post`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `channels:write`) |
 | `channel` | `C1234567890` | Required | Channel to invite user to. |
 | `user` | `U1234567890` | Required | User to invite to channel. |
 

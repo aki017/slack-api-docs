@@ -4,12 +4,12 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token (Requires scope: post)"
+      "desc": "Authentication token (Requires scope: groups:write)"
     },
     "channel": {
       "required": true,
       "example": "G1234567890",
-      "desc": "Group to open."
+      "desc": "Group to close."
     }
   },
   "errors": {

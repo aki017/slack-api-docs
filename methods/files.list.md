@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/files.list` and follows the [Slac
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `files:read`) |
 | `user` | `U1234567890` | Optional | Filter files created by a single user. |
 | `ts_from` | `123456789` | Optional, default=0 | Filter files created after this timestamp (inclusive). |
 | `ts_to` | `123456789` | Optional, default=now | Filter files created before this timestamp (inclusive). |

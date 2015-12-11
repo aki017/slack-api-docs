@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/team.info` and follows the [Slack
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `team:read`) |
 
 ## Response
 
@@ -30,6 +30,10 @@ This method has the URL `https://slack.com/api/team.info` and follows the [Slack
      }
  }
 ```
+
+## Team Icon
+
+If a team has not yet set a custom icon, the value of `team.icon.image_default` will be `true`.
 
 ## Errors
 

@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/reactions.get` and follows the [S
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `reactions:read`) |
 | `file` | `F1234567890` | Optional | File to get reactions for. |
 | `file_comment` | `Fc1234567890` | Optional | File comment to get reactions for. |
 | `channel` | `C1234567890` | Optional | Channel where the message to get reactions for was posted. |

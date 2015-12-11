@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/pins.remove` and follows the [Sla
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `post`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `pins:write`) |
 | `channel` | `C1234567890` | Required | Channel where the item is pinned to. |
 | `file` | `F1234567890` | Optional | File to un-pin. |
 | `file_comment` | `Fc1234567890` | Optional | File comment to un-pin. |
@@ -38,5 +38,4 @@ This table lists the expected errors that this method will return. However, othe
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
-| `user_is_bot` | This method cannot be called by a bot user. |
 

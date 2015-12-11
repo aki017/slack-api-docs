@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/im.close` and follows the [Slack 
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `post`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `im:write`) |
 | `channel` | `D1234567890` | Required | Direct message channel to close. |
 
 ## Response

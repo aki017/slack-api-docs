@@ -4,7 +4,7 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token (Requires scope: post)"
+      "desc": "Authentication token (Requires scope: mpim:write)"
     },
     "users": {
       "required": true,
@@ -18,7 +18,6 @@
     "too_many_users": "Needs at most 8 users to open",
     "not_authed": "No authentication token provided.",
     "invalid_auth": "Invalid authentication token.",
-    "account_inactive": "Authentication token is for a deleted user or team.",
-    "user_is_bot": "This method cannot be called by a bot user."
+    "account_inactive": "Authentication token is for a deleted user or team."
   }
 }

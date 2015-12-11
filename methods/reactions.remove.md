@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/reactions.remove` and follows the
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `post`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `reactions:write`) |
 | `name` | `thumbsup` | Required | Reaction (emoji) name. |
 | `file` | `F1234567890` | Optional | File to remove reaction from. |
 | `file_comment` | `Fc1234567890` | Optional | File comment to remove reaction from. |

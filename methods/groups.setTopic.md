@@ -6,7 +6,7 @@ This method has the URL `https://slack.com/api/groups.setTopic` and follows the 
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `post`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `groups:write`) |
 | `channel` | `C1234567890` | Required | Private group to set the topic of |
 | `topic` | `My Topic` | Required | The new topic |
 
