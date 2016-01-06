@@ -1,5 +1,5 @@
 {
-  "desc": "This method takes an existing private group and performs the following steps:",
+  "desc": "This method takes an existing private channel and performs the following steps:",
   "args": {
     "token": {
       "required": true,
@@ -9,7 +9,7 @@
     "channel": {
       "required": true,
       "example": "G1234567890",
-      "desc": "Group to clone and archive."
+      "desc": "Private channel to clone and archive."
     }
   },
   "errors": {

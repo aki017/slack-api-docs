@@ -1,4 +1,4 @@
-This method returns information about a private group.
+This method returns information about a private channel.
 
 ## Arguments
 
@@ -7,7 +7,7 @@ This method has the URL `https://slack.com/api/groups.info` and follows the [Sla
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `groups:read`) |
-| `channel` | `C1234567890` | Required | Group to get info on |
+| `channel` | `C1234567890` | Required | Private channel to get info on |
 
 ## Response
 

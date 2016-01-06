@@ -1,4 +1,4 @@
-This method archives a private group.
+This method archives a private channel.
 
 ## Arguments
 
@@ -7,7 +7,7 @@ This method has the URL `https://slack.com/api/groups.archive` and follows the [
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `groups:write`) |
-| `channel` | `G1234567890` | Required | Private group to archive |
+| `channel` | `G1234567890` | Required | Private channel to archive |
 
 ## Response
 

@@ -43,7 +43,6 @@
     "invalid_ts_oldest": "Value passed for `oldest` was invalid",
     "not_authed": "No authentication token provided.",
     "invalid_auth": "Invalid authentication token.",
-    "account_inactive": "Authentication token is for a deleted user or team.",
-    "user_is_bot": "This method cannot be called by a bot user."
+    "account_inactive": "Authentication token is for a deleted user or team."
   }
 }

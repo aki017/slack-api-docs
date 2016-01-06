@@ -1,5 +1,5 @@
 {
-  "desc": "This method archives a private group.",
+  "desc": "This method archives a private channel.",
   "args": {
     "token": {
       "required": true,
@@ -9,7 +9,7 @@
     "channel": {
       "required": true,
       "example": "G1234567890",
-      "desc": "Private group to archive"
+      "desc": "Private channel to archive"
     }
   },
   "errors": {

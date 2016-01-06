@@ -1,4 +1,6 @@
-This method returns a list of all channels in the team. This includes channels the caller is in, channels they are not currently in, and archived channels. The number of (non-deactivated) members in each channel is also returned.
+This method returns a list of all channels in the team. This includes channels the caller is in, channels they are not currently in, and archived channels but does not include private channels. The number of (non-deactivated) members in each channel is also returned.
+
+To retrieve a list of private channels, use [`groups.list`](/methods/groups.list).
 
 ## Arguments
 

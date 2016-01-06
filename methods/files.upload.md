@@ -7,19 +7,19 @@ This method has the URL `https://slack.com/api/files.upload` and follows the [Sl
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `files:write:user`) |
-| `file` | `...` | Optional | File contents via `multipart/form-data`. |
+| `file` | `...` | Required | File contents via `multipart/form-data`. |
 | `content` | `...` | Optional | File contents via a POST var. |
 | `filetype` | `php` | Optional | Slack-internal file type identifier. |
-| `filename` | `foo.txt` | Optional | Filename of file. |
+| `filename` | `foo.txt` | Required | Filename of file. |
 | `title` | `My File` | Optional | Title of file. |
 | `initial_comment` | `Best!` | Optional | Initial comment to add to file. |
-| `channels` | `C1234567890` | Optional | Comma separated list of channels to share the file into. |
+| `channels` | `C1234567890` | Optional | Comma-separated list of channel names or IDs where the file will be shared. |
 
 The content of the file can either be posted using an `enctype` of `multipart/form-data` (with the file parameter named `file`), in the usual way that files are uploaded via the browser, or the content of the file can be sent as a POST var called `content`. The latter should be used for creating a "file" from a long message/paste and forces "editable" mode.
 
 In both cases, the type of data in the file will be intuited from the filename and the magic bytes in the file, for supported formats. Sending a `filetype` parameter will override this behavior (if a valid type is sent). Files uploaded via `multipart/form-data` will be stored either in hosted or editable mode, based on certain heuristics (determined type, file size).
 
-The file can also be shared directly into channels on upload, by specifying an optional argument `channels`. Channel IDs should be comma separated if there is more than one.
+The file can also be shared directly into channels on upload, by specifying an optional argument `channels`. If there's more than one channel name or ID in the `channels` string, they should be comma-separated.
 
 ## Response
 
@@ -59,5 +59,4 @@ This table lists the expected errors that this method will return. However, othe
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
-| `user_is_bot` | This method cannot be called by a bot user. |
 

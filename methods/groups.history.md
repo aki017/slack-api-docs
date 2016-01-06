@@ -1,4 +1,4 @@
-This method returns a portion of messages/events from the specified private group. To read the entire history for a group, call the method with no `latest` or`oldest` arguments, and then continue paging using the instructions below.
+This method returns a portion of messages/events from the specified private channel. To read the entire history for a private channel, call the method with no `latest` or`oldest` arguments, and then continue paging using the instructions below.
 
 ## Arguments
 
@@ -7,7 +7,7 @@ This method has the URL `https://slack.com/api/groups.history` and follows the [
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `groups:history`) |
-| `channel` | `G1234567890` | Required | Group to fetch history for. |
+| `channel` | `G1234567890` | Required | Private channel to fetch history for. |
 | `latest` | `1234567890.123456` | Optional, default=now | End of time range of messages to include in results. |
 | `oldest` | `1234567890.123456` | Optional, default=0 | Start of time range of messages to include in results. |
 | `inclusive` | `1` | Optional, default=0 | Include messages with latest or oldest timestamp in results. |

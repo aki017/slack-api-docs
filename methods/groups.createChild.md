@@ -1,13 +1,13 @@
-This method takes an existing private group and performs the following steps:
+This method takes an existing private channel and performs the following steps:
 
-- Renames the existing group (from "example" to "example-archived").
-- Archives the existing group.
-- Creates a new group with the name of the existing group.
-- Adds all members of the existing group to the new group.
+- Renames the existing private channel (from "example" to "example-archived").
+- Archives the existing private channel.
+- Creates a new private channel with the name of the existing private channel.
+- Adds all members of the existing private channel to the new private channel.
 
-This is useful when inviting a new member to an existing group while hiding all previous chat history from them. In this scenario you can call`groups.createChild` followed by `groups.invite`.
+This is useful when inviting a new member to an existing private channel while hiding all previous chat history from them. In this scenario you can call`groups.createChild` followed by `groups.invite`.
 
-The new group will have a special `parent_group` property pointing to the original archived group. This will only be returned for members of both groups, so will not be visible to any newly invited members.
+The new private channel will have a special `parent_group` property pointing to the original archived private channel. This will only be returned for members of both private channels, so will not be visible to any newly invited members.
 
 ## Arguments
 
@@ -16,7 +16,7 @@ This method has the URL `https://slack.com/api/groups.createChild` and follows t
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `groups:write`) |
-| `channel` | `G1234567890` | Required | Group to clone and archive. |
+| `channel` | `G1234567890` | Required | Private channel to clone and archive. |
 
 ## Response
 

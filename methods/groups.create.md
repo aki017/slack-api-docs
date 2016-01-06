@@ -1,4 +1,4 @@
-This method creates a private group.
+This method creates a private channel.
 
 ## Arguments
 
@@ -7,11 +7,11 @@ This method has the URL `https://slack.com/api/groups.create` and follows the [S
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `groups:write`) |
-| `name` | &nbsp; | Required | Name of group to create |
+| `name` | &nbsp; | Required | Name of private channel to create |
 
 ## Naming
 
-Private group names can only contain lowercase letters, numbers, hyphens, and underscores, and must be 21 characters or less. We will validate the submitted channel name and modify it to meet the above criteria. When calling this method, we recommend storing the group's `name` value that is returned in the response.
+Private channel names can only contain lowercase letters, numbers, hyphens, and underscores, and must be 21 characters or less. We will validate the submitted channel name and modify it to meet the above criteria. When calling this method, we recommend storing the private channel's `name` value that is returned in the response.
 
 ## Response
 

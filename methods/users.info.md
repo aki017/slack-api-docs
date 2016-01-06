@@ -42,6 +42,10 @@ Returns a [user object](/types/user):
 }
 ```
 
+## Profile
+
+The profile hash contains as much information as the user has supplied in the default profile fields: `first_name`, `last_name`, `real_name`, `email`, `skype`, and the `image_*` fields. Only the `image_*` fields are guaranteed to be included. Data that has not been supplied may not be present at all, may be null or may contain the empty string (""). Please note that custom profile fields are not yet available through the API.
+
 ## Errors
 
 This table lists the expected errors that this method will return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.

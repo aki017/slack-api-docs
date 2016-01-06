@@ -1,6 +1,6 @@
-This method is used to invite a user to a private group. The calling user must be a member of the group.
+This method is used to invite a user to a private channel. The calling user must be a member of the private channel.
 
-To invite a new member to a group without giving them access to the archives of the group call [the `groups.createChild` method](/methods/groups.createChild)before inviting.
+To invite a new member to a private channel without giving them access to the archives of the private channel, call the [`groups.createChild` method](/methods/groups.createChild)before inviting.
 
 ## Arguments
 
@@ -9,7 +9,7 @@ This method has the URL `https://slack.com/api/groups.invite` and follows the [S
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `groups:write`) |
-| `channel` | `G1234567890` | Required | Private group to invite user to. |
+| `channel` | `G1234567890` | Required | Private channel to invite user to. |
 | `user` | `U1234567890` | Required | User to invite. |
 
 ## Response
@@ -25,7 +25,7 @@ If successful, the API response includes a [group object](/types/group):
 }
 ```
 
-If the invited user is already in the group, the response will include an`already_in_group` property:
+If the invited user is already in the private channel, the response will include an`already_in_group` property:
 
 ```
 {

@@ -1,19 +1,22 @@
-This method unarchives a private channel.
+Ends the current user's snooze mode immediately.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/groups.unarchive` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/dnd.endSnooze` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `groups:write`) |
-| `channel` | `G1234567890` | Required | Private channel to unarchive |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `dnd:write`) |
 
 ## Response
 
 ```
 {
-    "ok": true
+    "ok": true,
+    "dnd_enabled": true,
+    "next_dnd_start_ts": 1450418400,
+    "next_dnd_end_ts": 1450454400,
+    "snooze_enabled": false
 }
 ```
 
@@ -23,11 +26,10 @@ This table lists the expected errors that this method will return. However, othe
 
 | Error | Description |
 | --- | --- |
-| `channel_not_found` | Value passed for `channel` was invalid. |
-| `not_archived` | Group is not archived. |
+| `snooze_not_active` | Snooze is not active for this user and cannot be ended |
+| `snooze_end_failed` | There was a problem setting the user's Do Not Disturb status |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
 | `user_is_bot` | This method cannot be called by a bot user. |
-| `user_is_restricted` | This method cannot be called by a restricted user or single channel guest. |
 

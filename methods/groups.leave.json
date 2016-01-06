@@ -1,5 +1,5 @@
 {
-  "desc": "This method is used to leave a private group.",
+  "desc": "This method is used to leave a private channel.",
   "args": {
     "token": {
       "required": true,
@@ -9,7 +9,7 @@
     "channel": {
       "required": true,
       "example": "G1234567890",
-      "desc": "Group to leave"
+      "desc": "Private channel to leave"
     }
   },
   "errors": {

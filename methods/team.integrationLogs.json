@@ -14,7 +14,7 @@
     "app_id": {
       "required": false,
       "example": " ",
-      "desc": "Filter logs to this API application. Defaults to all logs."
+      "desc": "Filter logs to this Slack app. Defaults to all logs."
     },
     "user": {
       "required": false,
@@ -28,7 +28,7 @@
     },
     "count": {
       "required": false,
-      "example": "100",
+      "example": "20",
       "desc": "Number of items to return per page."
     },
     "page": {

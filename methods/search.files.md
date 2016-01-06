@@ -11,7 +11,7 @@ This method has the URL `https://slack.com/api/search.files` and follows the [Sl
 | `sort` | `timestamp` | Optional, default=score | Return matches sorted by either `score` or `timestamp`. |
 | `sort_dir` | `asc` | Optional, default=desc | Change sort direction to ascending (`asc`) or descending (`desc`). |
 | `highlight` | `1` | Optional | Pass a value of `1` to enable query highlight markers (see below). |
-| `count` | `100` | Optional, default=100 | Number of items to return per page. |
+| `count` | `20` | Optional, default=20 | Number of items to return per page. |
 | `page` | `2` | Optional, default=1 | Page number of results to return. |
 
 ## Response

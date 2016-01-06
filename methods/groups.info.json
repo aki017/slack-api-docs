@@ -1,5 +1,5 @@
 {
-  "desc": "This method returns information about a private group.",
+  "desc": "This method returns information about a private channel.",
   "args": {
     "token": {
       "required": true,
@@ -9,7 +9,7 @@
     "channel": {
       "required": true,
       "example": "C1234567890",
-      "desc": "Group to get info on"
+      "desc": "Private channel to get info on"
     }
   },
   "errors": {

@@ -1,5 +1,5 @@
 {
-  "desc": "This method renames a private group.",
+  "desc": "This method renames a private channel.",
   "args": {
     "token": {
       "required": true,
@@ -9,12 +9,12 @@
     "channel": {
       "required": true,
       "example": "C1234567890",
-      "desc": "Group to rename"
+      "desc": "Private channel to rename"
     },
     "name": {
       "required": true,
       "example": " ",
-      "desc": "New name for group."
+      "desc": "New name for private channel."
     }
   },
   "errors": {

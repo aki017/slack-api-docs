@@ -19,7 +19,7 @@ This method has the URL `https://slack.com/api/files.list` and follows the [Slac
 - `zips` - Zip files
 - `pdfs` - PDF files
 You can pass multiple values in the types argument, like `types=posts,snippets`.The default value is `all`, which does not filter the list. |
-| `count` | `100` | Optional, default=100 | Number of items to return per page. |
+| `count` | `20` | Optional, default=100 | Number of items to return per page. |
 | `page` | `2` | Optional, default=1 | Page number of results to return. |
 
 ## Response

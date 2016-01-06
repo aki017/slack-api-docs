@@ -1,0 +1,21 @@
+{
+  "desc": "Provides information about a user's current Do Not Disturb settings.",
+  "args": {
+    "token": {
+      "required": true,
+      "example": "xxxx-xxxxxxxxx-xxxx",
+      "desc": "Authentication token (Requires scope: dnd:read)"
+    },
+    "user": {
+      "required": false,
+      "example": "U1234",
+      "desc": "User to fetch status for (defaults to current user)"
+    }
+  },
+  "errors": {
+    "not_authed": "No authentication token provided.",
+    "invalid_auth": "Invalid authentication token.",
+    "account_inactive": "Authentication token is for a deleted user or team.",
+    "user_is_bot": "This method cannot be called by a bot user."
+  }
+}

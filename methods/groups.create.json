@@ -1,5 +1,5 @@
 {
-  "desc": "This method creates a private group.",
+  "desc": "This method creates a private channel.",
   "args": {
     "token": {
       "required": true,
@@ -9,7 +9,7 @@
     "name": {
       "required": true,
       "example": " ",
-      "desc": "Name of group to create"
+      "desc": "Name of private channel to create"
     }
   },
   "errors": {

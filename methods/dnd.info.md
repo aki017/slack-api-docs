@@ -1,29 +1,25 @@
-This method closes a private channel.
+Provides information about a user's current Do Not Disturb settings.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/groups.close` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/dnd.info` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `groups:write`) |
-| `channel` | `G1234567890` | Required | Private channel to close. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `dnd:read`) |
+| `user` | `U1234` | Optional | User to fetch status for (defaults to current user) |
 
 ## Response
 
 ```
 {
-    "ok": true
-}
-```
-
-If the private channel was already closed the response will include `no_op` and`already_closed` properties:
-
-```
-{
     "ok": true,
-    "no_op": true,
-    "already_closed": true
+    "dnd_enabled": true,
+    "next_dnd_start_ts": 1450416600,
+    "next_dnd_end_ts": 1450452600,
+    "snooze_enabled": true,
+    "snooze_endtime": 1450416600,
+    "snooze_remaining": 1196
 }
 ```
 
@@ -33,8 +29,8 @@ This table lists the expected errors that this method will return. However, othe
 
 | Error | Description |
 | --- | --- |
-| `channel_not_found` | Value passed for `channel` was invalid. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
+| `user_is_bot` | This method cannot be called by a bot user. |
 

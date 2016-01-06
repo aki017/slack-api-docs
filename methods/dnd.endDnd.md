@@ -1,12 +1,12 @@
-This method lets the slack messaging server know that the authenticated user is currently active. [Consult the presence documentation](/docs/presence) for more details.
+Ends the user's currently scheduled Do Not Disturb session immediately.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/users.setActive` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/dnd.endDnd` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `users:write`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `dnd:write`) |
 
 ## Response
 
@@ -22,7 +22,9 @@ This table lists the expected errors that this method will return. However, othe
 
 | Error | Description |
 | --- | --- |
+| `unknown_error` | There was a mysterious problem ending the user's Do Not Disturb session |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
+| `user_is_bot` | This method cannot be called by a bot user. |
 

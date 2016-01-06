@@ -1,4 +1,4 @@
-This method is used to leave a private group.
+This method is used to leave a private channel.
 
 ## Arguments
 
@@ -7,7 +7,7 @@ This method has the URL `https://slack.com/api/groups.leave` and follows the [Sl
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `groups:write`) |
-| `channel` | `G1234567890` | Required | Group to leave |
+| `channel` | `G1234567890` | Required | Private channel to leave |
 
 ## Response
 

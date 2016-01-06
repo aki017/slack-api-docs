@@ -1,4 +1,4 @@
-This method opens a private group.
+This method opens a private channel.
 
 ## Arguments
 
@@ -7,7 +7,7 @@ This method has the URL `https://slack.com/api/groups.open` and follows the [Sla
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `groups:write`) |
-| `channel` | `G1234567890` | Required | Group to open. |
+| `channel` | `G1234567890` | Required | Private channel to open. |
 
 ## Response
 
@@ -17,7 +17,7 @@ This method has the URL `https://slack.com/api/groups.open` and follows the [Sla
 }
 ```
 
-If the group was already open the response will include `no_op` and`already_open` properties:
+If the private channel was already open the response will include `no_op` and`already_open` properties:
 
 ```
 {

@@ -1,4 +1,4 @@
-This method returns a list of groups in the team that the caller is in and archived groups that the caller was in. The list of (non-deactivated) members in each group is also returned.
+This method returns a list of private channels in the team that the caller is in and archived groups that the caller was in. The list of (non-deactivated) members in each private channel is also returned.
 
 ## Arguments
 
@@ -7,11 +7,11 @@ This method has the URL `https://slack.com/api/groups.list` and follows the [Sla
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `groups:read`) |
-| `exclude_archived` | `1` | Optional, default=0 | Don't return archived groups. |
+| `exclude_archived` | `1` | Optional, default=0 | Don't return archived private channels. |
 
 ## Response
 
-Returns a list of [group objects](/types/group):
+Returns a list of [group objects](/types/group) (also known as "private channel objects"):
 
 ```
 {
