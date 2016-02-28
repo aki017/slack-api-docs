@@ -8,8 +8,8 @@
     },
     "file": {
       "required": true,
-      "example": " ",
-      "desc": "File to fetch info for"
+      "example": "F2147483862",
+      "desc": "Specify a file by providing its ID."
     },
     "count": {
       "required": false,

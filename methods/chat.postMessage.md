@@ -9,15 +9,15 @@ This method has the URL `https://slack.com/api/chat.postMessage` and follows the
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `chat:write:bot` or `chat:write:user`) |
 | `channel` | `C1234567890` | Required | Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name. See below for more details. |
 | `text` | `Hello world` | Required | Text of the message to send. See below for an explanation of formatting. |
-| `username` | `My Bot` | Optional | Name of bot. |
-| `as_user` | `true` | Optional | Pass true to post the message as the authed user, instead of as a bot |
-| `parse` | `full` | Optional | Change how messages are treated. See below. |
+| `parse` | `full` | Optional | Change how messages are treated. Defaults to `none`. See below. |
 | `link_names` | `1` | Optional | Find and link channel names and usernames. |
 | `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Optional | Structured message attachments. |
 | `unfurl_links` | `true` | Optional | Pass true to enable unfurling of primarily text-based content. |
 | `unfurl_media` | `false` | Optional | Pass false to disable unfurling of media content. |
-| `icon_url` | `http://lorempixel.com/48/48` | Optional | URL to an image to use as the icon for this message |
-| `icon_emoji` | `:chart_with_upwards_trend:` | Optional | emoji to use as the icon for this message. Overrides `icon_url`. |
+| `username` | `My Bot` | Optional | Set your bot's user name. Must be used in conjunction with `as_user` set to false, otherwise ignored. See authorship below. |
+| `as_user` | `true` | Optional | Pass true to post the message as the authed user, instead of as a bot. Defaults to false. See authorship below. |
+| `icon_url` | `http://lorempixel.com/48/48` | Optional | URL to an image to use as the icon for this message. Must be used in conjunction with `as_user` set to false, otherwise ignored. See authorship below. |
+| `icon_emoji` | `:chart_with_upwards_trend:` | Optional | emoji to use as the icon for this message. Overrides `icon_url`. Must be used in conjunction with `as_user` set to false, otherwise ignored. See authorship below. |
 
 ## Formatting
 
@@ -27,11 +27,17 @@ The optional `attachments` argument should contain a JSON-encoded array of attac
 
 By default links to media are unfurled, but links to text content are not. For more information on the differences and how to control this, see the [the unfurling documentation](/docs/unfurling).
 
-By default messages are posted as [bot\_messages](/events/message/bot_message). If `as_user` is true the message is instead posted as the authenticated user. Using the `as_user` argument requires the [client scope](/docs/oauth#auth_scopes). The `username`, `icon_url` and`icon_emoji` arguments are ignored if `as_user` is true.
+## Authorship
+
+By default, the `as_user` parameter is set to false and messages are posted as [bot\_messages](/events/message/bot_message), with message authorship attributed to the default user name and icons associated with the [Custom Integration](/custom-integrations) or [Slack App](/slack-apps).
+
+With `as_user` set to false, you may also provide a `username` to explicitly specify the bot user's identity for this message, along with `icon_url` or `icon_emoji`.
+
+Set `as_user` to `true` and the authenticated user will appear as the author of the message, ignoring any values provided for `username`, `icon_url`, and `icon_emoji`. Posting as the authenticated user **requires** the`client` or `chat:write:user` [scopes](/docs/oauth#auth_scopes).
 
 ## Channels
 
-You must specify a public channel, private group, or an IM channel with the `channel` argument. Each one behaves slightly differently based on the authenticated user's permissions and additional arguments:
+You **must** specify a public channel, private group, or an IM channel with the `channel` argument. Each one behaves slightly differently based on the authenticated user's permissions and additional arguments:
 
 #### Post to a public channel
 
@@ -59,7 +65,7 @@ Posting to an IM channel is a little more complex depending on the value of `as_
     "ts": "1405895017.000506",
     "channel": "C024BE91L",
     "message": {
-        …
+        ...
     }
 }
 ```

@@ -1,31 +1,17 @@
-Add a comment to an existing file.
+This method disables public/external sharing for a file.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/files.comments.add` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/files.revokePublicURL` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `files:write:user`) |
-| `file` | `F1234567890` | Required | File to add a comment to. |
-| `comment` | `Everyone should take a moment to read this file.` | Required | Text of the comment to add. |
+| `file` | `F1234567890` | Required | File to revoke |
 
 ## Response
 
-If successful, the response will include a file comment object.
-
-```
-{
-    "ok": true,
-    "comment": {
-        "id": "Fc1234567890",
-        "created": 1356032811,
-        "timestamp": 1356032811,
-        "user": "U1234567890",
-        "comment": "Everyone should take a moment to read this file."
-    }
-}
-```
+The response contains a [file object](/types/file).
 
 ## Errors
 
@@ -33,12 +19,12 @@ This table lists the expected errors that this method will return. However, othe
 
 | Error | Description |
 | --- | --- |
-| `file_not_found` | The requested file could not be found. |
-| `file_deleted` | The requested file was previously deleted. |
-| `no_comment` | The `comment` field was empty. |
+| `file_not_found` | Value passed for `file` was invalid |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
+| `user_is_bot` | This method cannot be called by a bot user. |
+| `user_is_restricted` | This method cannot be called by a restricted user or single channel guest. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |

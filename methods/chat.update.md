@@ -1,4 +1,4 @@
-This method updates a message in a channel.
+This method updates a message in a channel. Though related to [`chat.postMessage`](/methods/chat.postMessage), some parameters of `chat.update` are handled differently.
 
 ## Arguments
 
@@ -11,12 +11,15 @@ This method has the URL `https://slack.com/api/chat.update` and follows the [Sla
 | `channel` | `C1234567890` | Required | Channel containing the message to be updated. |
 | `text` | `Hello world` | Required | New text for the message, using the [default formatting rules](/docs/formatting). |
 | `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Optional | Structured message attachments. |
-| `parse` | `none` | Optional | Change how messages are treated. See below. |
-| `link_names` | `1` | Optional | Find and link channel names and usernames. |
+| `parse` | `none` | Optional | Change how messages are treated. Defaults to `client`, unlike `chat.postMessage`. See below. |
+| `link_names` | `1` | Optional | Find and link channel names and usernames. Defaults to `none`. This parameter should be used in conjunction with `parse`. To set `link_names` to `1`, specify a `parse` mode of `full`. |
+| `as_user` | `true` | Optional | Pass true to update the message as the authed user. [Bot users](/bot-users) in this context are considered authed users. |
 
 ## Formatting
 
 The default value for parse will attempt to discover links in text but does not support URL markup. To update messages with URL markup, you must specify `parse=none`. For more information, refer to the [formatting spec](/docs/formatting).
+
+To use `link_names`, you'll need to explicitly set the `parse` parameter to `full`.
 
 The optional `attachments` argument should contain a JSON-encoded array of attachments. If you do not include an attachments property, a message's previous attachments will remain visible. To remove a previous attachment, include an empty `attachments` array with your request. For more information, see the [attachments spec](/docs/attachments).
 
@@ -38,6 +41,10 @@ Attempting to update other message types will return a `cant_update_message` err
 ```
 
 The response includes the `text`, `channel` and `timestamp` properties of the updated message so clients can keep their local copies of the message in sync.
+
+## Bot users
+
+To use `chat.update` with a [bot user](/bot-users) token, you'll need to _think of your bot user as a user_, and pass `as_user` set to `true` while editing a message created by that same bot user.
 
 ## Errors
 

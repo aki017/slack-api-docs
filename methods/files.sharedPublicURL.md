@@ -1,19 +1,17 @@
-This method returns information about a file in your team.
+This method enables public/external sharing for a file.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/files.info` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/files.sharedPublicURL` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `files:read`) |
-| `file` | `F2147483862` | Required | Specify a file by providing its ID. |
-| `count` | `20` | Optional, default=100 | Number of items to return per page. |
-| `page` | `2` | Optional, default=1 | Page number of results to return. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `files:write:user`) |
+| `file` | `F1234567890` | Required | File to share |
 
 ## Response
 
-The response contains a [file object](/types/file), and a list of comment objects followed by paging information.
+The response contains a [file object](/types/file), including the `permalink_public` url.
 
 ```
 {
@@ -49,6 +47,7 @@ The response contains a [file object](/types/file), and a list of comment object
         "thumb_360_h": 100,
 
         "permalink" : "https:\/\/tinyspeck.slack.com\/files\/cal\/F024BERPE\/1.png",
+        "permalink_public": "https:\/\/slack-files.com\/T024BE7LD-F024BERPE-8004f909b1",
         "edit_link" : "https:\/\/tinyspeck.slack.com\/files\/cal\/F024BERPE\/1.png/edit",
         "preview" : "&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;meta charset='utf-8'&gt;",
         "preview_highlight" : &lt;div class=\"sssh-code\"&gt;&lt;div class=\"sssh-line\"&gt;&lt;pre&gt;&lt;!DOCTYPE html...",
@@ -94,11 +93,12 @@ This table lists the expected errors that this method will return. However, othe
 | Error | Description |
 | --- | --- |
 | `file_not_found` | Value passed for `file` was invalid |
-| `file_deleted` | The requested file has been deleted |
+| `not_allowed` | Public sharing has been disabled for this team |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
 | `user_is_bot` | This method cannot be called by a bot user. |
+| `user_is_restricted` | This method cannot be called by a restricted user or single channel guest. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |
