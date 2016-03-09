@@ -27,6 +27,8 @@ The optional `attachments` argument should contain a JSON-encoded array of attac
 
 By default links to media are unfurled, but links to text content are not. For more information on the differences and how to control this, see the [the unfurling documentation](/docs/unfurling).
 
+Use the [**Message Builder**](/docs/formatting/builder) to preview your message formatting and attachments in real time! It's easy to translate your JSON examples to the parameters understood by `chat.postMessage`.
+
 ## Authorship
 
 By default, the `as_user` parameter is set to false and messages are posted as [bot\_messages](/events/message/bot_message), with message authorship attributed to the default user name and icons associated with the [Custom Integration](/custom-integrations) or [Slack App](/slack-apps).
