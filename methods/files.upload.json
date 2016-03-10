@@ -7,7 +7,7 @@
       "desc": "Authentication token (Requires scope: files:write:user)"
     },
     "file": {
-      "required": true,
+      "required": false,
       "example": "...",
       "desc": "File contents via multipart/form-data."
     },
