@@ -23,10 +23,6 @@ This table lists the expected errors that this method will return. However, othe
 | Error | Description |
 | --- | --- |
 | `unknown_error` | There was a mysterious problem ending the user's Do Not Disturb session |
-| `not_authed` | No authentication token provided. |
-| `invalid_auth` | Invalid authentication token. |
-| `account_inactive` | Authentication token is for a deleted user or team. |
-| `user_is_bot` | This method cannot be called by a bot user. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |

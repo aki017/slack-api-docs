@@ -38,9 +38,6 @@ This table lists the expected errors that this method will return. However, othe
 | `already_reacted` | The specified item already has the user/reaction combination. |
 | `too_many_emoji` | The limit for distinct reactions (i.e emoji) on the item has been reached. |
 | `too_many_reactions` | The limit for reactions a person may add to the item has been reached. |
-| `not_authed` | No authentication token provided. |
-| `invalid_auth` | Invalid authentication token. |
-| `account_inactive` | Authentication token is for a deleted user or team. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |

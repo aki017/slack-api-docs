@@ -29,10 +29,7 @@ This table lists the expected errors that this method will return. However, othe
 | `not_in_channel` | Authenticated user is not in the channel. |
 | `is_archived` | Channel has been archived. |
 | `too_long` | Topic was longer than 250 characters. |
-| `user_is_restricted` | This method cannot be called by a restricted user or single channel guest. |
-| `not_authed` | No authentication token provided. |
-| `invalid_auth` | Invalid authentication token. |
-| `account_inactive` | Authentication token is for a deleted user or team. |
+| `user_is_restricted` | Setting the topic is a restricted action. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |
