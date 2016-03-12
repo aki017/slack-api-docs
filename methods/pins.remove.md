@@ -35,6 +35,9 @@ This table lists the expected errors that this method will return. However, othe
 | `no_item_specified` | One of `file`, `file_comment`, or `timestamp` was not specified. |
 | `not_pinned` | The specified item is not pinned to the channel. |
 | `permission_denied` | The user does not have permission to remove pins from the channel. |
+| `not_authed` | No authentication token provided. |
+| `invalid_auth` | Invalid authentication token. |
+| `account_inactive` | Authentication token is for a deleted user or team. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |

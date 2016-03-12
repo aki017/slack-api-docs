@@ -36,6 +36,9 @@ This table lists the expected errors that this method will return. However, othe
 | `no_item_specified` | `file`, `file_comment`, or combination of `channel` and `timestamp` was not specified. |
 | `invalid_name` | Value passed for `name` was invalid. |
 | `no_reaction` | The specified item does not have the user/reaction combination. |
+| `not_authed` | No authentication token provided. |
+| `invalid_auth` | Invalid authentication token. |
+| `account_inactive` | Authentication token is for a deleted user or team. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |

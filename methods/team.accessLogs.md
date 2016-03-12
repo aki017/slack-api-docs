@@ -64,6 +64,10 @@ This table lists the expected errors that this method will return. However, othe
 | --- | --- |
 | `paid_only` | This is only available to paid teams. |
 | `over_pagination_limit` | It is not possible to request more than 1000 items per page or more than 100 pages. |
+| `not_authed` | No authentication token provided. |
+| `invalid_auth` | Invalid authentication token. |
+| `account_inactive` | Authentication token is for a deleted user or team. |
+| `user_is_bot` | This method cannot be called by a bot user. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |
