@@ -25,7 +25,7 @@ This method has the URL `https://slack.com/api/dnd.info` and follows the [Slack 
 
 ## Snooze properties
 
-The `snooze_enabled` property will only be visible if the user being queried is also the current user.
+All of the `snooze_*` properties will only be visible if the user being queried is also the current user.
 
 The `snooze_endtime` and `snooze_remaining` properties will only be returned if `snooze_enabled` is `true`.
 
