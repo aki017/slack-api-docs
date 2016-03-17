@@ -26,7 +26,7 @@ This table lists the expected errors that this method will return. However, othe
 | `channel_not_found` | Value passed for `channel` was invalid. |
 | `already_archived` | Channel has already been archived. |
 | `cant_archive_general` | You cannot archive the general channel |
-| `last_ra_channel` | You cannot archive the last channel for a restricted account |
+| `last_ra_channel` | You cannot archive the last channel for a multi-channel guest |
 | `restricted_action` | A team preference prevents the authenticated user from archiving. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
