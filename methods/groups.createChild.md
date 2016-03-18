@@ -11,7 +11,7 @@ The new private channel will have a special `parent_group` property pointing to 
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/groups.createChild` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

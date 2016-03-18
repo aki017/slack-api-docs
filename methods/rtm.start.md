@@ -2,7 +2,7 @@ This method starts a Real Time Messaging API session. Refer to the [RTM API docu
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/rtm.start` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

@@ -2,7 +2,7 @@ This method returns information about a team member.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/users.info` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

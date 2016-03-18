@@ -2,7 +2,7 @@ This method enables a user group which was previously disabled.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/usergroups.enable` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

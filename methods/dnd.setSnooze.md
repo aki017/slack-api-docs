@@ -2,7 +2,7 @@ Adjusts the snooze duration for a user's Do Not Disturb settings. If a snooze se
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/dnd.setSnooze` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

@@ -2,7 +2,7 @@ This method unarchives a channel. The calling user is added to the channel.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/channels.unarchive` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

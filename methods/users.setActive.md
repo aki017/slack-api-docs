@@ -2,7 +2,7 @@ This method lets the slack messaging server know that the authenticated user is 
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/users.setActive` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

@@ -4,7 +4,7 @@ To invite a new member to a private channel without giving them access to the ar
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/groups.invite` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

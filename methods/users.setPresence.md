@@ -2,7 +2,7 @@ This method lets you set the calling user's manual presence. [Consult the presen
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/users.setPresence` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

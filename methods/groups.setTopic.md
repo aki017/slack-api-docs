@@ -2,7 +2,7 @@ This method is used to change the topic of a private channel. The calling user m
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/groups.setTopic` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

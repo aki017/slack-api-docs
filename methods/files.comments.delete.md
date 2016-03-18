@@ -2,7 +2,7 @@ Delete an existing comment on a file. Only the original author of the comment or
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/files.comments.delete` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

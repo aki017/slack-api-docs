@@ -2,7 +2,7 @@ This method returns a list of all multiparty direct message channels that the us
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/mpim.list` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

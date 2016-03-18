@@ -2,7 +2,7 @@ This method returns a list of files within the team. It can be filtered and slic
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/files.list` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

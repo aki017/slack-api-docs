@@ -2,7 +2,7 @@ This method creates a private channel.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/groups.create` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

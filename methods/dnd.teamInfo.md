@@ -2,7 +2,7 @@ Provides information about the current Do Not Disturb settings for users of a Sl
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/dnd.teamInfo` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

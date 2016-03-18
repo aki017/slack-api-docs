@@ -2,7 +2,7 @@ This method returns a list of all items (file, file comment, channel message, gr
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/reactions.list` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

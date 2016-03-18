@@ -2,7 +2,7 @@ This method returns a list of private channels in the team that the caller is in
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/groups.list` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

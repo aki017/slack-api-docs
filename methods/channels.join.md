@@ -2,7 +2,7 @@ This method is used to join a channel. If the channel does not exist, it is crea
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/channels.join` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

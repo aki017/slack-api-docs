@@ -4,7 +4,7 @@ The only people who can rename a channel are team admins, or the person that ori
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/channels.rename` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

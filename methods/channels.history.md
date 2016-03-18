@@ -4,7 +4,7 @@ To read the entire history for a channel, call the method with no `latest` or`ol
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/channels.history` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

@@ -4,7 +4,7 @@ To retrieve a list of private channels, use [`groups.list`](/methods/groups.list
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/channels.list` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

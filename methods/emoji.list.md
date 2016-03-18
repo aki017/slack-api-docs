@@ -2,7 +2,7 @@ This method lists the custom emoji for a team.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/emoji.list` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
