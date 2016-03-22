@@ -9,7 +9,7 @@ This method has the URL `` and follows the [Slack Web API calling conventions](/
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `channels:read`) |
-| `exclude_archived` | `1` | Optional, default=0 | Don't return archived channels. |
+| `exclude_archived` | `1` | Optional | Don't return archived channels. |
 
 ## Response
 

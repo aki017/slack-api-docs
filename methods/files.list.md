@@ -9,7 +9,7 @@ This method has the URL `` and follows the [Slack Web API calling conventions](/
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `files:read`) |
 | `user` | `U1234567890` | Optional | Filter files created by a single user. |
 | `channel` | `C1234567890` | Optional | Filter files appearing in a specific channel, indicated by its ID. |
-| `ts_from` | `123456789` | Optional, default=0 | Filter files created after this timestamp (inclusive). |
+| `ts_from` | `123456789` | Optional | Filter files created after this timestamp (inclusive). |
 | `ts_to` | `123456789` | Optional, default=now | Filter files created before this timestamp (inclusive). |
 | `types` | `images` | Optional, default=all | Filter files by type:
 - `all` - All files

@@ -9,10 +9,10 @@ This method has the URL `` and follows the [Slack Web API calling conventions](/
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `im:history`) |
 | `channel` | `D1234567890` | Required | Direct message channel to fetch history for. |
 | `latest` | `1234567890.123456` | Optional, default=now | End of time range of messages to include in results. |
-| `oldest` | `1234567890.123456` | Optional, default=0 | Start of time range of messages to include in results. |
-| `inclusive` | `1` | Optional, default=0 | Include messages with latest or oldest timestamp in results. |
+| `oldest` | `1234567890.123456` | Optional | Start of time range of messages to include in results. |
+| `inclusive` | `1` | Optional | Include messages with latest or oldest timestamp in results. |
 | `count` | `100` | Optional, default=100 | Number of messages to return, between 1 and 1000. |
-| `unreads` | `1` | Optional, default=0 | Include `unread_count_display` in the output? |
+| `unreads` | `1` | Optional | Include `unread_count_display` in the output? |
 
 ## Response
 
