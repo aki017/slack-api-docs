@@ -2,7 +2,7 @@ This method returns information about a team member.
 
 ## Arguments
 
-This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/users.info` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
@@ -48,7 +48,7 @@ The profile hash contains as much information as the user has supplied in the de
 
 ## Errors
 
-This table lists the expected errors that this method will return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
+This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
 
 | Error | Description |
 | --- | --- |

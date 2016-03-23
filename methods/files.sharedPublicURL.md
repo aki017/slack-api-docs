@@ -2,7 +2,7 @@ This method enables public/external sharing for a file.
 
 ## Arguments
 
-This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/files.sharedPublicURL` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
@@ -88,7 +88,7 @@ The paging information contains the `count` of comments returned, the `total` nu
 
 ## Errors
 
-This table lists the expected errors that this method will return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
+This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
 
 | Error | Description |
 | --- | --- |

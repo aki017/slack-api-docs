@@ -2,7 +2,7 @@ This method starts a Real Time Messaging API session. Refer to the [RTM API docu
 
 ## Arguments
 
-This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/rtm.start` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
@@ -75,7 +75,7 @@ The `bots` property gives details of the integrations set up on this team.
 
 ## Errors
 
-This table lists the expected errors that this method will return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
+This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
 
 | Error | Description |
 | --- | --- |

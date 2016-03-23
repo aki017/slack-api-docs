@@ -2,17 +2,17 @@ This method returns a portion of messages/events from the specified multiparty d
 
 ## Arguments
 
-This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/mpim.history` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `mpim:history`) |
 | `channel` | &nbsp; | Required | Multiparty direct message to fetch history for. |
 | `latest` | `1234567890.123456` | Optional, default=now | End of time range of messages to include in results. |
-| `oldest` | `1234567890.123456` | Optional | Start of time range of messages to include in results. |
-| `inclusive` | `1` | Optional | Include messages with latest or oldest timestamp in results. |
+| `oldest` | `1234567890.123456` | Optional, default=0 | Start of time range of messages to include in results. |
+| `inclusive` | `1` | Optional, default=0 | Include messages with latest or oldest timestamp in results. |
 | `count` | `100` | Optional, default=100 | Number of messages to return, between 1 and 1000. |
-| `unreads` | `1` | Optional | Include `unread_count_display` in the output? |
+| `unreads` | `1` | Optional, default=0 | Include `unread_count_display` in the output? |
 
 ## Response
 
@@ -58,7 +58,7 @@ The `is_limited` boolean property is only included for free teams that have reac
 
 # Errors
 
-This table lists the expected errors that this method will return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
+This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
 
 | Error | Description |
 | --- | --- |

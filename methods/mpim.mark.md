@@ -2,7 +2,7 @@ This method moves the read cursor in a multiparty direct message channel.
 
 ## Arguments
 
-This method has the URL `` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/mpim.mark` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
@@ -24,7 +24,7 @@ Clients should try to avoid making this call too often. When needing to mark a r
 
 ## Errors
 
-This table lists the expected errors that this method will return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
+This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
 
 | Error | Description |
 | --- | --- |
