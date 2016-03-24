@@ -7,7 +7,7 @@
       "desc": "Authentication token (Requires scope: mpim:write)"
     },
     "channel": {
-      "required": true,
+      "required": false,
       "example": " ",
       "desc": "MPIM to close."
     }

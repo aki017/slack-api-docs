@@ -7,7 +7,7 @@
       "desc": "Authentication token (Requires scope: usergroups:read)"
     },
     "usergroup": {
-      "required": true,
+      "required": false,
       "example": "S0604QSJC",
       "desc": "The encoded ID of the user group to update."
     },

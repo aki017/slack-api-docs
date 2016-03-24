@@ -7,12 +7,12 @@
       "desc": "Authentication token (Requires scope: files:write:user)"
     },
     "file": {
-      "required": true,
+      "required": false,
       "example": "F1234567890",
       "desc": "File to add a comment to."
     },
     "comment": {
-      "required": true,
+      "required": false,
       "example": "Everyone should take a moment to read this file.",
       "desc": "Text of the comment to add."
     }

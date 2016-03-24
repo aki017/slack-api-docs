@@ -7,9 +7,9 @@ This method has the URL `https://slack.com/api/files.comments.edit` and follows 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `files:write:user`) |
-| `file` | `F1234567890` | Required | File containing the comment to edit. |
-| `id` | `Fc1234567890` | Required | The comment to edit. |
-| `comment` | `Everyone should take a moment to read this file, seriously.` | Required | Text of the comment to edit. |
+| `file` | `F1234567890` | Optional | File containing the comment to edit. |
+| `id` | `Fc1234567890` | Optional | The comment to edit. |
+| `comment` | `Everyone should take a moment to read this file, seriously.` | Optional | Text of the comment to edit. |
 
 ## Response
 

@@ -7,7 +7,7 @@
       "desc": "Authentication token (Requires scope: usergroups:write)"
     },
     "name": {
-      "required": true,
+      "required": false,
       "example": "My Test Team",
       "desc": "A name for the user group. Must be unique among user groups."
     },

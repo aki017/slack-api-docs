@@ -7,7 +7,7 @@
       "desc": "Authentication token (Requires scope: search:read)"
     },
     "query": {
-      "required": true,
+      "required": false,
       "example": "pickleface",
       "desc": "Search query. May contain booleans, etc."
     },

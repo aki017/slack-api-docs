@@ -7,8 +7,8 @@ This method has the URL `https://slack.com/api/groups.kick` and follows the [Sla
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `groups:write`) |
-| `channel` | `G1234567890` | Required | Private channel to remove user from. |
-| `user` | `U1234567890` | Required | User to remove from private channel. |
+| `channel` | `G1234567890` | Optional | Private channel to remove user from. |
+| `user` | `U1234567890` | Optional | User to remove from private channel. |
 
 ## Response
 

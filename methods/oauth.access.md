@@ -10,9 +10,9 @@ This method has the URL `https://slack.com/api/oauth.access` and follows the [Sl
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `client_id` | `4b39e9-752c4` | Required | Issued when you created your application. |
-| `client_secret` | `33fea0113f5b1` | Required | Issued when you created your application. |
-| `code` | `ccdaa72ad` | Required | The `code` param returned via the OAuth callback. |
+| `client_id` | `4b39e9-752c4` | Optional | Issued when you created your application. |
+| `client_secret` | `33fea0113f5b1` | Optional | Issued when you created your application. |
+| `code` | `ccdaa72ad` | Optional | The `code` param returned via the OAuth callback. |
 | `redirect_uri` | `http://example.com` | Optional | This must match the originally submitted URI (if one was sent). |
 
 ## Response

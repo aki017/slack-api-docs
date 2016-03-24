@@ -7,7 +7,7 @@
       "desc": "Authentication token (Requires scope: reactions:write)"
     },
     "name": {
-      "required": true,
+      "required": false,
       "example": "thumbsup",
       "desc": "Reaction (emoji) name."
     },

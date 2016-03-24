@@ -10,7 +10,7 @@ This method has the URL `https://slack.com/api/files.upload` and follows the [Sl
 | `file` | `...` | Optional | File contents via `multipart/form-data`. |
 | `content` | `...` | Optional | File contents via a POST var. |
 | `filetype` | `php` | Optional | Slack-internal file type identifier. |
-| `filename` | `foo.txt` | Required | Filename of file. |
+| `filename` | `foo.txt` | Optional | Filename of file. |
 | `title` | `My File` | Optional | Title of file. |
 | `initial_comment` | `Best!` | Optional | Initial comment to add to file. |
 | `channels` | `C1234567890` | Optional | Comma-separated list of channel names or IDs where the file will be shared. |

@@ -7,8 +7,8 @@ This method has the URL `https://slack.com/api/groups.mark` and follows the [Sla
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `groups:write`) |
-| `channel` | `G1234567890` | Required | Private channel to set reading cursor in. |
-| `ts` | `1234567890.123456` | Required | Timestamp of the most recently seen message. |
+| `channel` | `G1234567890` | Optional | Private channel to set reading cursor in. |
+| `ts` | `1234567890.123456` | Optional | Timestamp of the most recently seen message. |
 
 ## Response
 

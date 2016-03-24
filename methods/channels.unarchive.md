@@ -7,7 +7,7 @@ This method has the URL `https://slack.com/api/channels.unarchive` and follows t
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `channels:write`) |
-| `channel` | `C1234567890` | Required | Channel to unarchive |
+| `channel` | `C1234567890` | Optional | Channel to unarchive |
 
 ## Response
 

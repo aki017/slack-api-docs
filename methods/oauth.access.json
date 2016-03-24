@@ -2,17 +2,17 @@
   "desc": "This method allows you to exchange a temporary OAuth code for an API access token.\nThis is used as part of the OAuth authentication flow.",
   "args": {
     "client_id": {
-      "required": true,
+      "required": false,
       "example": "4b39e9-752c4",
       "desc": "Issued when you created your application."
     },
     "client_secret": {
-      "required": true,
+      "required": false,
       "example": "33fea0113f5b1",
       "desc": "Issued when you created your application."
     },
     "code": {
-      "required": true,
+      "required": false,
       "example": "ccdaa72ad",
       "desc": "The code param returned via the OAuth callback."
     },

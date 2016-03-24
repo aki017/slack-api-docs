@@ -7,7 +7,7 @@
       "desc": "Authentication token (Requires scope: dnd:write)"
     },
     "num_minutes": {
-      "required": true,
+      "required": false,
       "example": "60",
       "desc": "Number of minutes, from now, to snooze until."
     }

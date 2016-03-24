@@ -7,7 +7,7 @@ This method has the URL `https://slack.com/api/groups.close` and follows the [Sl
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `groups:write`) |
-| `channel` | `G1234567890` | Required | Private channel to close. |
+| `channel` | `G1234567890` | Optional | Private channel to close. |
 
 ## Response
 

@@ -7,7 +7,7 @@
       "desc": "Authentication token (Requires scope: users:write)"
     },
     "presence": {
-      "required": true,
+      "required": false,
       "example": "away",
       "desc": "Either auto or away"
     }

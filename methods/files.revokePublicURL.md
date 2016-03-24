@@ -7,7 +7,7 @@ This method has the URL `https://slack.com/api/files.revokePublicURL` and follow
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `files:write:user`) |
-| `file` | `F1234567890` | Required | File to revoke |
+| `file` | `F1234567890` | Optional | File to revoke |
 
 ## Response
 

@@ -9,8 +9,8 @@ This method has the URL `https://slack.com/api/channels.rename` and follows the 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `channels:write`) |
-| `channel` | `C1234567890` | Required | Channel to rename |
-| `name` | &nbsp; | Required | New name for channel. |
+| `channel` | `C1234567890` | Optional | Channel to rename |
+| `name` | &nbsp; | Optional | New name for channel. |
 
 ## Naming
 

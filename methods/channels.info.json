@@ -7,7 +7,7 @@
       "desc": "Authentication token (Requires scope: channels:read)"
     },
     "channel": {
-      "required": true,
+      "required": false,
       "example": "C1234567890",
       "desc": "Channel to get info on"
     }

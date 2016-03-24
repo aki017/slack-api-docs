@@ -7,7 +7,7 @@
       "desc": "Authentication token (Requires scope: groups:write)"
     },
     "channel": {
-      "required": true,
+      "required": false,
       "example": "G1234567890",
       "desc": "Private channel to archive"
     }

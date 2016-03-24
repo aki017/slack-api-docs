@@ -7,7 +7,7 @@
       "desc": "Authentication token (Requires scope: mpim:history)"
     },
     "channel": {
-      "required": true,
+      "required": false,
       "example": " ",
       "desc": "Multiparty direct message to fetch history for."
     },

@@ -7,7 +7,7 @@
       "desc": "Authentication token (Requires scope: groups:write)"
     },
     "name": {
-      "required": true,
+      "required": false,
       "example": " ",
       "desc": "Name of private channel to create"
     }

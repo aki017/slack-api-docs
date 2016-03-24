@@ -7,12 +7,12 @@
       "desc": "Authentication token (Requires scope: channels:write)"
     },
     "channel": {
-      "required": true,
+      "required": false,
       "example": "C1234567890",
       "desc": "Channel to rename"
     },
     "name": {
-      "required": true,
+      "required": false,
       "example": " ",
       "desc": "New name for channel."
     }
