@@ -26,7 +26,7 @@ This method has the URL `https://slack.com/api/oauth.access` and follows the [Sl
 
 You can use the returned token to call protected API methods on behalf of the user.
 
-# Errors
+## Errors
 
 This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
 

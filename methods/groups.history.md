@@ -18,30 +18,30 @@ This method has the URL `https://slack.com/api/groups.history` and follows the [
 
 ```
 {
-    "ok": true,
-    "latest": "1358547726.000003",
-    "messages": [
-        {
-            "type": "message",
-            "ts": "1358546515.000008",
-            "user": "U2147483896",
-            "text": "Hello"
-        },
-        {
-            "type": "message",
-            "ts": "1358546515.000007",
-            "user": "U2147483896",
-            "text": "World",
-            "is_starred": true,
-        },
-        {
-            "type": "something_else",
-            "ts": "1358546515.000007",
-            "wibblr": true
-        }
-    ],
-    "has_more": false
-}
+        "ok": true,
+        "latest": "1358547726.000003",
+        "messages": [
+            {
+                "type": "message",
+                "ts": "1358546515.000008",
+                "user": "U2147483896",
+                "text": "Hello"
+            },
+            {
+                "type": "message",
+                "ts": "1358546515.000007",
+                "user": "U2147483896",
+                "text": "World",
+                "is_starred": true,
+            },
+            {
+                "type": "something_else",
+                "ts": "1358546515.000007",
+                "wibblr": true
+            }
+        ],
+        "has_more": false
+    }
 ```
 
 The `messages` array up to 100 messages between `latest` and `oldest`. If there were more than 100 messages between those two points, then `has_more`will be true.
@@ -56,7 +56,7 @@ If a message has been starred by the calling user, the `is_starred` property wil
 
 The `is_limited` boolean property is only included for free teams that have reached the free message limit. If true, there are messages before the current result set, but they are beyond the message limit.
 
-# Errors
+## Errors
 
 This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
 

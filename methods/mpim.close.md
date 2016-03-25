@@ -7,7 +7,7 @@ This method has the URL `https://slack.com/api/mpim.close` and follows the [Slac
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `mpim:write`) |
-| `channel` | &nbsp; | Optional | MPIM to close. |
+| `channel` | `G1234567890` | Optional | MPIM to close. |
 
 ## Response
 
