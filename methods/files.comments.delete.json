@@ -7,12 +7,12 @@
       "desc": "Authentication token (Requires scope: files:write:user)"
     },
     "file": {
-      "required": false,
+      "required": true,
       "example": "F1234567890",
       "desc": "File to delete a comment from."
     },
     "id": {
-      "required": false,
+      "required": true,
       "example": "Fc1234567890",
       "desc": "The comment to delete."
     }

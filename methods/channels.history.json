@@ -7,7 +7,7 @@
       "desc": "Authentication token (Requires scope: channels:history)"
     },
     "channel": {
-      "required": false,
+      "required": true,
       "example": "C1234567890",
       "desc": "Channel to fetch history for."
     },

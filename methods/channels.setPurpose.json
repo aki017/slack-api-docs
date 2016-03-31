@@ -7,12 +7,12 @@
       "desc": "Authentication token (Requires scope: channels:write)"
     },
     "channel": {
-      "required": false,
+      "required": true,
       "example": "C1234567890",
       "desc": "Channel to set the purpose of"
     },
     "purpose": {
-      "required": false,
+      "required": true,
       "example": "My Purpose",
       "desc": "The new purpose"
     }

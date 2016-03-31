@@ -7,7 +7,7 @@ This method has the URL `https://slack.com/api/channels.leave` and follows the [
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `channels:write`) |
-| `channel` | `C1234567890` | Optional | Channel to leave |
+| `channel` | `C1234567890` | Required | Channel to leave |
 
 ## Response
 

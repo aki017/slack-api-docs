@@ -7,7 +7,7 @@ This method has the URL `https://slack.com/api/users.getPresence` and follows th
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `users:read`) |
-| `user` | `U1234567890` | Optional | User to get presence info on. Defaults to the authed user. |
+| `user` | `U1234567890` | Required | User to get presence info on. Defaults to the authed user. |
 
 ## Response
 

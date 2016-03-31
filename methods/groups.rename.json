@@ -7,12 +7,12 @@
       "desc": "Authentication token (Requires scope: groups:write)"
     },
     "channel": {
-      "required": false,
+      "required": true,
       "example": "C1234567890",
       "desc": "Private channel to rename"
     },
     "name": {
-      "required": false,
+      "required": true,
       "example": " ",
       "desc": "New name for private channel."
     }

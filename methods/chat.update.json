@@ -7,17 +7,17 @@
       "desc": "Authentication token (Requires scope: chat:write:user)"
     },
     "ts": {
-      "required": false,
+      "required": true,
       "example": "1405894322.002768",
       "desc": "Timestamp of the message to be updated."
     },
     "channel": {
-      "required": false,
+      "required": true,
       "example": "C1234567890",
       "desc": "Channel containing the message to be updated."
     },
     "text": {
-      "required": false,
+      "required": true,
       "example": "Hello world",
       "desc": "New text for the message, using the default formatting rules."
     },

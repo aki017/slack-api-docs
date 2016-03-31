@@ -7,9 +7,9 @@ This method has the URL `https://slack.com/api/chat.update` and follows the [Sla
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `chat:write:user`) |
-| `ts` | `1405894322.002768` | Optional | Timestamp of the message to be updated. |
-| `channel` | `C1234567890` | Optional | Channel containing the message to be updated. |
-| `text` | `Hello world` | Optional | New text for the message, using the [default formatting rules](/docs/formatting). |
+| `ts` | `1405894322.002768` | Required | Timestamp of the message to be updated. |
+| `channel` | `C1234567890` | Required | Channel containing the message to be updated. |
+| `text` | `Hello world` | Required | New text for the message, using the [default formatting rules](/docs/formatting). |
 | `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Optional | Structured message attachments. |
 | `parse` | `none` | Optional | Change how messages are treated. Defaults to `client`, unlike `chat.postMessage`. See below. |
 | `link_names` | `1` | Optional | Find and link channel names and usernames. Defaults to `none`. This parameter should be used in conjunction with `parse`. To set `link_names` to `1`, specify a `parse` mode of `full`. |

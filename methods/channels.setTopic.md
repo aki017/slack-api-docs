@@ -7,8 +7,8 @@ This method has the URL `https://slack.com/api/channels.setTopic` and follows th
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `channels:write`) |
-| `channel` | `C1234567890` | Optional | Channel to set the topic of |
-| `topic` | `My Topic` | Optional | The new topic |
+| `channel` | `C1234567890` | Required | Channel to set the topic of |
+| `topic` | `My Topic` | Required | The new topic |
 
 ## Response
 

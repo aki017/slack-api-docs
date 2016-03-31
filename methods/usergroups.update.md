@@ -7,7 +7,7 @@ This method has the URL `https://slack.com/api/usergroups.update` and follows th
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `usergroups:write`) |
-| `usergroup` | `S0604QSJC` | Optional | The encoded ID of the user group to update. |
+| `usergroup` | `S0604QSJC` | Required | The encoded ID of the user group to update. |
 | `name` | `My Test Team` | Optional | A name for the user group. Must be unique among user groups. |
 | `handle` | &nbsp; | Optional | A mention handle. Must be unique among channels, users and user groups. |
 | `description` | &nbsp; | Optional | A short description of the user group. |

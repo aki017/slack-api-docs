@@ -7,8 +7,8 @@ This method has the URL `https://slack.com/api/chat.postMessage` and follows the
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `chat:write:bot` or `chat:write:user`) |
-| `channel` | `C1234567890` | Optional | Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name. See below for more details. |
-| `text` | `Hello world` | Optional | Text of the message to send. See below for an explanation of formatting. |
+| `channel` | `C1234567890` | Required | Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name. See below for more details. |
+| `text` | `Hello world` | Required | Text of the message to send. See below for an explanation of formatting. |
 | `parse` | `full` | Optional | Change how messages are treated. Defaults to `none`. See below. |
 | `link_names` | `1` | Optional | Find and link channel names and usernames. |
 | `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Optional | Structured message attachments. |
@@ -36,6 +36,8 @@ By default, the `as_user` parameter is set to false and messages are posted as [
 With `as_user` set to false, you may also provide a `username` to explicitly specify the bot user's identity for this message, along with `icon_url` or `icon_emoji`.
 
 Set `as_user` to `true` and the authenticated user will appear as the author of the message, ignoring any values provided for `username`, `icon_url`, and `icon_emoji`. Posting as the authenticated user **requires** the`client` or `chat:write:user` [scopes](/docs/oauth#auth_scopes).
+
+If `as_user` is not provided at all, then the value is inferred, based on the scopes granted to the caller: If the caller _could_ post with `as_user` passed as `false`, then that is how the method behaves; otherwise, the method behaves as if `as_user` were passed as `true`.
 
 ## Channels
 

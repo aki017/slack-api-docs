@@ -7,7 +7,7 @@
       "desc": "Authentication token (Requires scope: usergroups:write)"
     },
     "usergroup": {
-      "required": false,
+      "required": true,
       "example": "S0604QSJC",
       "desc": "The encoded ID of the user group to disable."
     },

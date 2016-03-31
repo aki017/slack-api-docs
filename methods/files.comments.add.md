@@ -7,8 +7,8 @@ This method has the URL `https://slack.com/api/files.comments.add` and follows t
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `files:write:user`) |
-| `file` | `F1234567890` | Optional | File to add a comment to. |
-| `comment` | `Everyone should take a moment to read this file.` | Optional | Text of the comment to add. |
+| `file` | `F1234567890` | Required | File to add a comment to. |
+| `comment` | `Everyone should take a moment to read this file.` | Required | Text of the comment to add. |
 
 ## Response
 

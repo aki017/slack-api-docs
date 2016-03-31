@@ -7,12 +7,12 @@
       "desc": "Authentication token (Requires scope: usergroups:write)"
     },
     "usergroup": {
-      "required": false,
+      "required": true,
       "example": "S0604QSJC",
       "desc": "The encoded ID of the user group to update."
     },
     "users": {
-      "required": false,
+      "required": true,
       "example": "U060R4BJ4,U060RNRCZ",
       "desc": "A comma separated string of encoded user IDs that represent the entire list of users for the user group."
     },

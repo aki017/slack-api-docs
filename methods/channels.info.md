@@ -7,7 +7,7 @@ This method has the URL `https://slack.com/api/channels.info` and follows the [S
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `channels:read`) |
-| `channel` | `C1234567890` | Optional | Channel to get info on |
+| `channel` | `C1234567890` | Required | Channel to get info on |
 
 ## Response
 

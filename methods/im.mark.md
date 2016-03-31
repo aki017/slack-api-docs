@@ -7,8 +7,8 @@ This method has the URL `https://slack.com/api/im.mark` and follows the [Slack W
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `im:write`) |
-| `channel` | `D1234567890` | Optional | Direct message channel to set reading cursor in. |
-| `ts` | `1234567890.123456` | Optional | Timestamp of the most recently seen message. |
+| `channel` | `D1234567890` | Required | Direct message channel to set reading cursor in. |
+| `ts` | `1234567890.123456` | Required | Timestamp of the most recently seen message. |
 
 ## Response
 

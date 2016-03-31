@@ -7,7 +7,7 @@ This method has the URL `https://slack.com/api/usergroups.enable` and follows th
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `usergroups:write`) |
-| `usergroup` | `S0604QSJC` | Optional | The encoded ID of the user group to enable. |
+| `usergroup` | `S0604QSJC` | Required | The encoded ID of the user group to enable. |
 | `include_count` | `1` | Optional | Include the number of users in the user group. |
 
 ## Response

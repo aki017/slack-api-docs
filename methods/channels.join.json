@@ -7,7 +7,7 @@
       "desc": "Authentication token (Requires scope: channels:write)"
     },
     "name": {
-      "required": false,
+      "required": true,
       "example": " ",
       "desc": "Name of channel to join"
     }

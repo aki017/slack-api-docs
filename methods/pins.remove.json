@@ -7,7 +7,7 @@
       "desc": "Authentication token (Requires scope: pins:write)"
     },
     "channel": {
-      "required": false,
+      "required": true,
       "example": "C1234567890",
       "desc": "Channel where the item is pinned to."
     },

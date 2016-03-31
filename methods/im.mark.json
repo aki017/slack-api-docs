@@ -7,12 +7,12 @@
       "desc": "Authentication token (Requires scope: im:write)"
     },
     "channel": {
-      "required": false,
+      "required": true,
       "example": "D1234567890",
       "desc": "Direct message channel to set reading cursor in."
     },
     "ts": {
-      "required": false,
+      "required": true,
       "example": "1234567890.123456",
       "desc": "Timestamp of the most recently seen message."
     }

@@ -22,7 +22,7 @@
       "desc": "Slack-internal file type identifier."
     },
     "filename": {
-      "required": false,
+      "required": true,
       "example": "foo.txt",
       "desc": "Filename of file."
     },

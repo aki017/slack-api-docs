@@ -7,7 +7,7 @@
       "desc": "Authentication token (Requires scope: files:read)"
     },
     "file": {
-      "required": false,
+      "required": true,
       "example": "F2147483862",
       "desc": "Specify a file by providing its ID."
     },
