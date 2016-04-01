@@ -4,7 +4,7 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token (Requires scope: chat:write:user)"
+      "desc": "Authentication token (Requires scope: chat:write:bot or chat:write:user)"
     },
     "ts": {
       "required": true,
