@@ -19,7 +19,7 @@ This method has the URL `https://slack.com/api/oauth.access` and follows the [Sl
 
 ```
 {
-    "access_token": "xoxt-23984754863-2348975623103",
+    "access_token": "xoxp-23984754863-2348975623103",
     "scope": "read"
 }
 ```

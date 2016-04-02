@@ -19,7 +19,7 @@
     "filetype": {
       "required": false,
       "example": "php",
-      "desc": "Slack-internal file type identifier."
+      "desc": "A file type identifier."
     },
     "filename": {
       "required": true,

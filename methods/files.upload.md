@@ -9,7 +9,7 @@ This method has the URL `https://slack.com/api/files.upload` and follows the [Sl
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `files:write:user`) |
 | `file` | `...` | Optional | File contents via `multipart/form-data`. |
 | `content` | `...` | Optional | File contents via a POST var. |
-| `filetype` | `php` | Optional | Slack-internal file type identifier. |
+| `filetype` | `php` | Optional | A [file type](/types/file#file_types) identifier. |
 | `filename` | `foo.txt` | Required | Filename of file. |
 | `title` | `My File` | Optional | Title of file. |
 | `initial_comment` | `Best!` | Optional | Initial comment to add to file. |
@@ -24,6 +24,8 @@ Sending a valid `filetype` parameter will override this behavior. Possible `file
 Files uploaded via `multipart/form-data` will be stored either in hosted or editable mode, based on certain heuristics (determined type, file size).
 
 The file can also be shared directly into channels on upload, by specifying an optional argument `channels`. If there's more than one channel name or ID in the `channels` string, they should be comma-separated.
+
+There is a 1 megabyte file size limit for files uploaded as snippets.
 
 ## Response
 
