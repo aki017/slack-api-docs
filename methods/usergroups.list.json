@@ -1,5 +1,5 @@
 {
-  "desc": "This method returns a list of all user groups in the team. This can optionally include disabled user groups.",
+  "desc": "This method returns a list of all User Groups in the team. This can optionally include disabled User Groups.",
   "args": {
     "token": {
       "required": true,
@@ -9,17 +9,17 @@
     "include_disabled": {
       "required": false,
       "example": "1",
-      "desc": "Include disabled user groups."
+      "desc": "Include disabled User Groups."
     },
     "include_count": {
       "required": false,
       "example": "1",
-      "desc": "Include the number of users in each user group."
+      "desc": "Include the number of users in each User Group."
     },
     "include_users": {
       "required": false,
       "example": "1",
-      "desc": "Include the list of users for each user group."
+      "desc": "Include the list of users for each User Group."
     }
   },
   "errors": {

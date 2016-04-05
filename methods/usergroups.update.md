@@ -1,4 +1,4 @@
-This method updates the properties of an existing user group.
+This method updates the properties of an existing User Group.
 
 ## Arguments
 
@@ -7,12 +7,12 @@ This method has the URL `https://slack.com/api/usergroups.update` and follows th
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `usergroups:write`) |
-| `usergroup` | `S0604QSJC` | Required | The encoded ID of the user group to update. |
-| `name` | `My Test Team` | Optional | A name for the user group. Must be unique among user groups. |
-| `handle` | &nbsp; | Optional | A mention handle. Must be unique among channels, users and user groups. |
-| `description` | &nbsp; | Optional | A short description of the user group. |
-| `channels` | &nbsp; | Optional | A comma separated string of encoded channel IDs for which the user group uses as a default. |
-| `include_count` | `1` | Optional | Include the number of users in the user group. |
+| `usergroup` | `S0604QSJC` | Required | The encoded ID of the User Group to update. |
+| `name` | `My Test Team` | Optional | A name for the User Group. Must be unique among User Groups. |
+| `handle` | &nbsp; | Optional | A mention handle. Must be unique among channels, users and User Groups. |
+| `description` | &nbsp; | Optional | A short description of the User Group. |
+| `channels` | &nbsp; | Optional | A comma separated string of encoded channel IDs for which the User Group uses as a default. |
+| `include_count` | `1` | Optional | Include the number of users in the User Group. |
 
 ## Response
 

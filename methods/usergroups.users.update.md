@@ -1,4 +1,4 @@
-This method updates the list of users that belong to a user group. This method replaces all users in a user group with the list of users provided in the `users` parameter.
+This method updates the list of users that belong to a User Group. This method replaces all users in a User Group with the list of users provided in the `users` parameter.
 
 ## Arguments
 
@@ -7,9 +7,9 @@ This method has the URL `https://slack.com/api/usergroups.users.update` and foll
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `usergroups:write`) |
-| `usergroup` | `S0604QSJC` | Required | The encoded ID of the user group to update. |
-| `users` | `U060R4BJ4,U060RNRCZ` | Required | A comma separated string of encoded user IDs that represent the entire list of users for the user group. |
-| `include_count` | `1` | Optional | Include the number of users in the user group. |
+| `usergroup` | `S0604QSJC` | Required | The encoded ID of the User Group to update. |
+| `users` | `U060R4BJ4,U060RNRCZ` | Required | A comma separated string of encoded user IDs that represent the entire list of users for the User Group. |
+| `include_count` | `1` | Optional | Include the number of users in the User Group. |
 
 ## Response
 

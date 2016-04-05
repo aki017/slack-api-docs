@@ -1,4 +1,4 @@
-This method disables an existing user group.
+This method disables an existing User Group.
 
 ## Arguments
 
@@ -7,8 +7,8 @@ This method has the URL `https://slack.com/api/usergroups.disable` and follows t
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `usergroups:write`) |
-| `usergroup` | `S0604QSJC` | Required | The encoded ID of the user group to disable. |
-| `include_count` | `1` | Optional | Include the number of users in the user group. |
+| `usergroup` | `S0604QSJC` | Required | The encoded ID of the User Group to disable. |
+| `include_count` | `1` | Optional | Include the number of users in the User Group. |
 
 ## Response
 
@@ -43,7 +43,7 @@ This method has the URL `https://slack.com/api/usergroups.disable` and follows t
 }
 ```
 
-When a user group has been disabled it's `date_delete` parameter will be non-zero.
+When a User Group has been disabled it's `date_delete` parameter will be non-zero.
 
 ## Errors
 

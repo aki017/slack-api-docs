@@ -1,4 +1,4 @@
-This method enables a user group which was previously disabled.
+This method enables a User Group which was previously disabled.
 
 ## Arguments
 
@@ -7,8 +7,8 @@ This method has the URL `https://slack.com/api/usergroups.enable` and follows th
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `usergroups:write`) |
-| `usergroup` | `S0604QSJC` | Required | The encoded ID of the user group to enable. |
-| `include_count` | `1` | Optional | Include the number of users in the user group. |
+| `usergroup` | `S0604QSJC` | Required | The encoded ID of the User Group to enable. |
+| `include_count` | `1` | Optional | Include the number of users in the User Group. |
 
 ## Response
 
@@ -43,7 +43,7 @@ This method has the URL `https://slack.com/api/usergroups.enable` and follows th
 }
 ```
 
-When a user group is enabled, it's `date_delete` parameter will be `0` (zero).
+When a User Group is enabled, it's `date_delete` parameter will be `0` (zero).
 
 ## Errors
 

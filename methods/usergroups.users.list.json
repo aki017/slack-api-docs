@@ -1,5 +1,5 @@
 {
-  "desc": "This method returns a list of all users within a user group.",
+  "desc": "This method returns a list of all users within a User Group.",
   "args": {
     "token": {
       "required": true,
@@ -9,12 +9,12 @@
     "usergroup": {
       "required": true,
       "example": "S0604QSJC",
-      "desc": "The encoded ID of the user group to update."
+      "desc": "The encoded ID of the User Group to update."
     },
     "include_disabled": {
       "required": false,
       "example": "1",
-      "desc": "Allow results that involve disabled user groups."
+      "desc": "Allow results that involve disabled User Groups."
     }
   },
   "errors": {

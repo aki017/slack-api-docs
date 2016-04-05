@@ -41,7 +41,7 @@ The best way to realize your intended result is to be explicit with the `as_user
 
 If `as_user` is not provided at all, then the value is inferred, based on the scopes granted to the caller: If the caller _could_ post with `as_user` passed as `false`, then that is how the method behaves; otherwise, the method behaves as if `as_user` were passed as `true`.
 
-### When `at_user` is false
+### When `as_user` is false
 
 When the `as_user` parameter is set to `false`, messages are posted as " [`bot_messages`](/events/message/bot_message)", with message authorship attributed to the default user name and icons associated with the [Custom Integration](/custom-integrations) or [Slack App](/slack-apps).
 
@@ -60,7 +60,7 @@ Token types provide varying default identity values for `username`, `icon_url`, 
 - [Slack App bot user token](/bot-users#share_your_bot_user_as_a_slack_app)
   - inherits Slack App's icon, with generic "bot" username (see below)
 > **Note** : In the Slack App cases above, it would certainly make more sense for your application's name to be the default `username` associated with your app. This inconsistent behavior will be corrected. Of course, you can still name your bot "bot," if that is your bot's name.
-### When `at_user` is true
+### When `as_user` is true
 
 Set `as_user` to `true` and the authenticated user will appear as the author of the message, ignoring any values provided for `username`, `icon_url`, and `icon_emoji`. Posting as the authenticated user **requires** the`client` or the more preferred `chat:write:user` [scopes](/docs/oauth#auth_scopes).
 

@@ -1,4 +1,4 @@
-This method returns a list of all user groups in the team. This can optionally include disabled user groups.
+This method returns a list of all User Groups in the team. This can optionally include disabled User Groups.
 
 ## Arguments
 
@@ -7,9 +7,9 @@ This method has the URL `https://slack.com/api/usergroups.list` and follows the 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `usergroups:read`) |
-| `include_disabled` | `1` | Optional | Include disabled user groups. |
-| `include_count` | `1` | Optional | Include the number of users in each user group. |
-| `include_users` | `1` | Optional | Include the list of users for each user group. |
+| `include_disabled` | `1` | Optional | Include disabled User Groups. |
+| `include_count` | `1` | Optional | Include the number of users in each User Group. |
+| `include_users` | `1` | Optional | Include the list of users for each User Group. |
 
 ## Response
 

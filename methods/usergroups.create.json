@@ -1,5 +1,5 @@
 {
-  "desc": "This method is used to create a user group.",
+  "desc": "This method is used to create a User Group.",
   "args": {
     "token": {
       "required": true,
@@ -9,27 +9,27 @@
     "name": {
       "required": true,
       "example": "My Test Team",
-      "desc": "A name for the user group. Must be unique among user groups."
+      "desc": "A name for the User Group. Must be unique among User Groups."
     },
     "handle": {
       "required": false,
       "example": " ",
-      "desc": "A mention handle. Must be unique among channels, users and user groups."
+      "desc": "A mention handle. Must be unique among channels, users and User Groups."
     },
     "description": {
       "required": false,
       "example": " ",
-      "desc": "A short description of the user group."
+      "desc": "A short description of the User Group."
     },
     "channels": {
       "required": false,
       "example": " ",
-      "desc": "A comma separated string of encoded channel IDs for which the user group uses as a default."
+      "desc": "A comma separated string of encoded channel IDs for which the User Group uses as a default."
     },
     "include_count": {
       "required": false,
       "example": "1",
-      "desc": "Include the number of users in each user group."
+      "desc": "Include the number of users in each User Group."
     }
   },
   "errors": {

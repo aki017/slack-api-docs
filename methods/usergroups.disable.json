@@ -1,5 +1,5 @@
 {
-  "desc": "This method disables an existing user group.",
+  "desc": "This method disables an existing User Group.",
   "args": {
     "token": {
       "required": true,
@@ -9,12 +9,12 @@
     "usergroup": {
       "required": true,
       "example": "S0604QSJC",
-      "desc": "The encoded ID of the user group to disable."
+      "desc": "The encoded ID of the User Group to disable."
     },
     "include_count": {
       "required": false,
       "example": "1",
-      "desc": "Include the number of users in the user group."
+      "desc": "Include the number of users in the User Group."
     }
   },
   "errors": {

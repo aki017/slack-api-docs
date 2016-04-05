@@ -1,4 +1,4 @@
-This method is used to create a user group.
+This method is used to create a User Group.
 
 ## Arguments
 
@@ -7,11 +7,11 @@ This method has the URL `https://slack.com/api/usergroups.create` and follows th
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `usergroups:write`) |
-| `name` | `My Test Team` | Required | A name for the user group. Must be unique among user groups. |
-| `handle` | &nbsp; | Optional | A mention handle. Must be unique among channels, users and user groups. |
-| `description` | &nbsp; | Optional | A short description of the user group. |
-| `channels` | &nbsp; | Optional | A comma separated string of encoded channel IDs for which the user group uses as a default. |
-| `include_count` | `1` | Optional | Include the number of users in each user group. |
+| `name` | `My Test Team` | Required | A name for the User Group. Must be unique among User Groups. |
+| `handle` | &nbsp; | Optional | A mention handle. Must be unique among channels, users and User Groups. |
+| `description` | &nbsp; | Optional | A short description of the User Group. |
+| `channels` | &nbsp; | Optional | A comma separated string of encoded channel IDs for which the User Group uses as a default. |
+| `include_count` | `1` | Optional | Include the number of users in each User Group. |
 
 ## Response
 

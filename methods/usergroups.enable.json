@@ -1,5 +1,5 @@
 {
-  "desc": "This method enables a user group which was previously disabled.",
+  "desc": "This method enables a User Group which was previously disabled.",
   "args": {
     "token": {
       "required": true,
@@ -9,12 +9,12 @@
     "usergroup": {
       "required": true,
       "example": "S0604QSJC",
-      "desc": "The encoded ID of the user group to enable."
+      "desc": "The encoded ID of the User Group to enable."
     },
     "include_count": {
       "required": false,
       "example": "1",
-      "desc": "Include the number of users in the user group."
+      "desc": "Include the number of users in the User Group."
     }
   },
   "errors": {
