@@ -7,13 +7,15 @@ This method has the URL `https://slack.com/api/files.upload` and follows the [Sl
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `files:write:user`) |
-| `file` | `...` | Optional | File contents via `multipart/form-data`. |
-| `content` | `...` | Optional | File contents via a POST var. |
+| `file` | `...` | Optional | File contents via `multipart/form-data`. If omitting this parameter, you must submit `content`. |
+| `content` | `...` | Optional | File contents via a POST variable. If omitting this parameter, you must provide a `file`. |
 | `filetype` | `php` | Optional | A [file type](/types/file#file_types) identifier. |
 | `filename` | `foo.txt` | Required | Filename of file. |
 | `title` | `My File` | Optional | Title of file. |
 | `initial_comment` | `Best!` | Optional | Initial comment to add to file. |
 | `channels` | `C1234567890` | Optional | Comma-separated list of channel names or IDs where the file will be shared. |
+
+**You must provide either a `file` or `content` parameter.**
 
 The content of the file can either be posted using an `enctype` of `multipart/form-data` (with the file parameter named `file`), in the usual way that files are uploaded via the browser, or the content of the file can be sent as a POST var called `content`. The latter should be used for creating a "file" from a long message/paste and forces "editable" mode.
 
