@@ -1,27 +1,40 @@
-This method deletes a message from a channel.
+This method lists all reminders created by or for a given user.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/chat.delete` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/reminders.list` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `chat:write:bot` or `chat:write:user`) |
-| `ts` | `1405894322.002768` | Required | Timestamp of the message to be deleted. |
-| `channel` | `C1234567890` | Required | Channel containing the message to be deleted. |
-| `as_user` | &nbsp; | Optional | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `reminders:read`) |
 
 ## Response
+
+(Note: only non-recurring reminders will have `time` and `complete_ts` field.)
 
 ```
 {
     "ok": true,
-    "channel": "C024BE91L",
-    "ts": "1401383885.000061"
+    "reminders": [
+        {
+            "id": "Rm12345678",
+            "creator": "U18888888",
+            "user": "U18888888",
+            "text": "eat a banana",
+            "recurring": false,
+            "time": 1458678068,
+            "complete_ts": 0
+        },
+        {
+            "id": "Rm23456789",
+            "creator": "U18888888",
+            "user": "U18888888",
+            "text": "drink water",
+            "recurring": true
+        }
+    ]
 }
 ```
-
-The response includes the `channel` and `timestamp` properties of the deleted message.
 
 ## Errors
 
@@ -29,13 +42,10 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
-| `message_not_found` | No message exists with the requested timestamp. |
-| `channel_not_found` | Value passed for `channel` was invalid. |
-| `cant_delete_message` | Authenticated user does not have permission to delete this message. |
-| `compliance_exports_prevent_deletion` | Compliance exports are on, messages can not be deleted |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
+| `user_is_bot` | This method cannot be called by a bot user. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |
