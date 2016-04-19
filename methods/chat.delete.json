@@ -18,8 +18,8 @@
     },
     "as_user": {
       "required": false,
-      "example": " ",
-      "desc": ""
+      "example": "true",
+      "desc": "Pass true to delete the message as the authed user. Bot users in this context are considered authed users."
     }
   },
   "errors": {
