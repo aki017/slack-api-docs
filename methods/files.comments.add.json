@@ -8,13 +8,18 @@
     },
     "file": {
       "required": true,
-      "example": "F1234567890",
+      "example": "F1234467890",
       "desc": "File to add a comment to."
     },
     "comment": {
       "required": true,
       "example": "Everyone should take a moment to read this file.",
       "desc": "Text of the comment to add."
+    },
+    "channel": {
+      "required": false,
+      "example": "C1234467890",
+      "desc": "Channel id (encoded) of which location to associate with the new comment."
     }
   },
   "errors": {

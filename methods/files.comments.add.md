@@ -7,8 +7,9 @@ This method has the URL `https://slack.com/api/files.comments.add` and follows t
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `files:write:user`) |
-| `file` | `F1234567890` | Required | File to add a comment to. |
+| `file` | `F1234467890` | Required | File to add a comment to. |
 | `comment` | `Everyone should take a moment to read this file.` | Required | Text of the comment to add. |
+| `channel` | `C1234467890` | Optional | Channel id (encoded) of which location to associate with the new comment. |
 
 ## Response
 
@@ -22,7 +23,8 @@ If successful, the response will include a file comment object.
         "created": 1356032811,
         "timestamp": 1356032811,
         "user": "U1234567890",
-        "comment": "Everyone should take a moment to read this file."
+        "comment": "Everyone should take a moment to read this file.",
+        "channel": "C1234467890"
     }
 }
 ```
