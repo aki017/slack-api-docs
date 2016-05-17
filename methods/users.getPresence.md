@@ -16,7 +16,7 @@ When requesting information for a different user, this method just returns the c
 ```
 {
     "ok": true,
-    "presence": "active",
+    "presence": "active"
 }
 ```
 

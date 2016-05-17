@@ -8,7 +8,7 @@ This method has the URL `https://slack.com/api/chat.postMessage` and follows the
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `chat:write:bot` or `chat:write:user`) |
 | `channel` | `C1234567890` | Required | Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name. See below for more details. |
-| `text` | `Hello world` | Required | Text of the message to send. See below for an explanation of formatting. |
+| `text` | `Hello world` | Required | Text of the message to send. See below for an explanation of formatting. This field is usually required, unless you're providing only `attachments` instead. |
 | `parse` | `full` | Optional | Change how messages are treated. Defaults to `none`. See below. |
 | `link_names` | `1` | Optional | Find and link channel names and usernames. |
 | `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Optional | Structured message attachments. |
@@ -21,11 +21,15 @@ This method has the URL `https://slack.com/api/chat.postMessage` and follows the
 
 Please note that the default value of the `as_user` parameter varies depending on the kind of token you're using. It's best to be explicit with this value. Read more about Authorship to understand how its default value may vary.
 
+A message must have either `text` or `attachments` or both. The `text` parameter is required unless you provide `attachments`. You can use both parameters in conjunction with each other to create awesome messages.
+
 ## Formatting
 
 Messages are formatted as described in the [formatting spec](/docs/formatting). You can specify values for `parse` and `link_names` to change formatting behavior.
 
-The optional `attachments` argument should contain a JSON-encoded array of attachments. For more information, see the [attachments spec](/docs/attachments).
+The optional `attachments` argument should contain a JSON-encoded array of attachments.
+
+For more information, see the [attachments spec](/docs/attachments).
 
 By default links to media are unfurled, but links to text content are not. For more information on the differences and how to control this, see the [the unfurling documentation](/docs/unfurling).
 
