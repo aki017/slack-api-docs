@@ -13,13 +13,13 @@ This method has the URL `https://slack.com/api/files.list` and follows the [Slac
 | `ts_to` | `123456789` | Optional, default=now | Filter files created before this timestamp (inclusive). |
 | `types` | `images` | Optional, default=all | Filter files by type:
 - `all` - All files
-- `posts` - Posts
+- `spaces` - Posts
 - `snippets` - Snippets
 - `images` - Image files
 - `gdocs` - Google docs
 - `zips` - Zip files
 - `pdfs` - PDF files
-You can pass multiple values in the types argument, like `types=posts,snippets`.The default value is `all`, which does not filter the list. |
+You can pass multiple values in the types argument, like `types=spaces,snippets`.The default value is `all`, which does not filter the list. |
 | `count` | `20` | Optional, default=100 | Number of items to return per page. |
 | `page` | `2` | Optional, default=1 | Page number of results to return. |
 
