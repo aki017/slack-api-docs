@@ -1,5 +1,5 @@
 {
-  "desc": "This method posts a message to a public channel, private group, or IM channel.",
+  "desc": "This method posts a message to a public channel, private channel, or direct message/IM channel.",
   "args": {
     "token": {
       "required": true,

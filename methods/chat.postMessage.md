@@ -1,4 +1,4 @@
-This method posts a message to a public channel, private group, or IM channel.
+This method posts a message to a public channel, private channel, or direct message/IM channel.
 
 ## Arguments
 
@@ -83,7 +83,7 @@ Token types provide varying default identity values for `username`, `icon_url`, 
 
 ## Channels
 
-You **must** specify a public channel, private group, or an IM channel with the `channel` argument. Each one behaves slightly differently based on the authenticated user's permissions and additional arguments:
+You **must** specify a public channel, private channel, or an IM channel with the `channel` argument. Each one behaves slightly differently based on the authenticated user's permissions and additional arguments:
 
 #### Post to a public channel
 
@@ -102,6 +102,8 @@ Posting to an IM channel is a little more complex depending on the value of `as_
   - Pass the IM channel's ID (`D023BB3L2`) as the value of `channel` to post to that IM channel _as the bot_. The IM channel's ID can be retrieved through the [im.list](/methods/im.list) API method.
 - If `as_user` is true:
   - Pass the IM channel's ID (`D023BB3L2`) as the value of `channel` to post to that IM channel _as the authenticated user_. The IM channel's ID can be retrieved through the [im.list](/methods/im.list) API method.
+
+To send a direct message to the user _owning_ the token used in the request, provide the `channel` field with the a conversation/IM ID value found in a method like [`im.list`](/methods/im.list).
 
 ## Response
 
