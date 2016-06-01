@@ -1,15 +1,10 @@
 {
-  "desc": "This method lists the items starred by a user.",
+  "desc": "This method lists the items starred by the authed user.",
   "args": {
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token (Requires scope: stars:read)"
-    },
-    "user": {
-      "required": false,
-      "example": "U1234567890",
-      "desc": "Show stars by this user. Defaults to the authed user."
     },
     "count": {
       "required": false,
@@ -24,6 +19,7 @@
   },
   "errors": {
     "user_not_found": "Value passed for `user` was invalid",
+    "user_not_visible": "The requested user is not visible to the calling user",
     "not_authed": "No authentication token provided.",
     "invalid_auth": "Invalid authentication token.",
     "account_inactive": "Authentication token is for a deleted user or team.",
