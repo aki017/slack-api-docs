@@ -2,6 +2,8 @@ After your [Slack app](/slack-apps) is awarded an identity token through [Sign i
 
 The returned fields depend on any additional authorization scopes you've requested.
 
+This method may only be used by tokens with the `identity.basic` scope, as provided in the [Sign in with Slack](/docs/sign-in-with-slack) process.
+
 ## Arguments
 
 This method has the URL `https://slack.com/api/users.identity` and follows the [Slack Web API calling conventions](/web#basics).

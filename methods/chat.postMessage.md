@@ -35,6 +35,8 @@ By default links to media are unfurled, but links to text content are not. For m
 
 Use the [**Message Builder**](/docs/formatting/builder) to preview your message formatting and attachments in real time! It's easy to translate your JSON examples to the parameters understood by `chat.postMessage`.
 
+For best results, limit the number of characters put into the `text` field at a maximum of a few thousand characters.
+
 ## Authorship
 
 How message authorship is attributed varies by a few factors, with some behaviors varying depending on the kinds of tokens you're using to post a message.
