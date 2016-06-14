@@ -33,6 +33,30 @@ If the channel was already open the response will include `no_op` and`already_op
 }
 ```
 
+In either case, if the `return_im` argument was passed, the channel object will contain the full channel definition:
+
+```
+{
+    "ok": true,
+    "channel": {
+        "id":"D024BE91L",
+        "is_im":true,
+        "user":"U024BE7LH",
+        "created":1434412652,
+        "last_read":"1442525627.000002",
+        "latest":{
+            "type":"message",
+            "user":"U024BE7LH",
+            "text":"hello",
+            "ts":"1442525627.000002"
+        },
+        "unread_count":0,
+        "unread_count_display":0,
+        "is_open":true
+    }
+}
+```
+
 ## Errors
 
 This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
