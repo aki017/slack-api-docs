@@ -7,7 +7,7 @@ This method has the URL `https://slack.com/api/auth.revoke` and follows the [Sla
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Optional | Authentication token |
-| `test` | `1` | Optional | Setting this parameter to `1` triggers a _testing mode_ where the specified token will not actually be revoked. |
+| `test` | `true` | Optional | Setting this parameter to `1` triggers a _testing mode_ where the specified token will not actually be revoked. |
 
 ## Response
 
