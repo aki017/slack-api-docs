@@ -25,17 +25,19 @@ A message must have either `text` or `attachments` or both. The `text` parameter
 
 ## Formatting
 
-Messages are formatted as described in the [formatting spec](/docs/formatting). You can specify values for `parse` and `link_names` to change formatting behavior.
+Messages are formatted as described in the [formatting spec](/docs/message-formatting). You can specify values for `parse` and `link_names` to change formatting behavior.
 
 The optional `attachments` argument should contain a JSON-encoded array of attachments.
 
-For more information, see the [attachments spec](/docs/attachments).
+For more information, see the [attachments spec](/docs/message-attachments). If you're using a [Slack app](/slack-apps), you can also use this method to attach [message buttons](/docs/message-buttons).
 
-By default links to media are unfurled, but links to text content are not. For more information on the differences and how to control this, see the [the unfurling documentation](/docs/unfurling).
+By default links to media are unfurled, but links to text content are not. For more information on the differences and how to control this, see the [the unfurling documentation](/docs/message-attachments#unfurling).
 
-Use the [**Message Builder**](/docs/formatting/builder) to preview your message formatting and attachments in real time! It's easy to translate your JSON examples to the parameters understood by `chat.postMessage`.
+Use the [**Message Builder**](/docs/messages/builder) to preview your message formatting and attachments in real time! It's easy to translate your JSON examples to the parameters understood by `chat.postMessage`.
 
 For best results, limit the number of characters put into the `text` field at a maximum of a few thousand characters.
+
+Consider reviewing our [message guidelines](/docs/message-guidelines), especially if you're using attachments or message buttons.
 
 ## Authorship
 

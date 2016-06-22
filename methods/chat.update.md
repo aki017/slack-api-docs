@@ -25,26 +25,29 @@ The optional `attachments` argument should contain a JSON-encoded array of attac
 
 ## Valid message types
 
-Only messages posted by the authenticated user are able to be updated using this method. This includes regular chat messages, as well as messages containing the `me_message` subtype.
+Only messages posted by the authenticated user are able to be updated using this method. This includes regular chat messages, as well as messages containing the `me_message` subtype. [Bot users](/bot-users) may also update the messages they post.
 
 Attempting to update other message types will return a `cant_update_message` error.
 
 ## Response
 
-```
-{
-    "ok": true,
-    "channel": "C024BE91L",
-    "ts": "1401383885.000061",
-    "text": "Updated Text"
-}
-```
+`json
+    {
+        "ok": true,
+        "channel": "C024BE91L",
+        "ts": "1401383885.000061",
+        "text": "Updated Text"
+    }`
 
 The response includes the `text`, `channel` and `timestamp` properties of the updated message so clients can keep their local copies of the message in sync.
 
 ## Bot users
 
 To use `chat.update` with a [bot user](/bot-users) token, you'll need to _think of your bot user as a user_, and pass `as_user` set to `true` while editing a message created by that same bot user.
+
+### Interactive messages
+
+If you're posting [interactive messages](/docs/interactive-messages), you may use `chat.update` to continue updating ongoing state changes around a message. Provide the `ts` field the message you're updating and follow the bot user instructions above to update message text, remove or add attachments and actions.
 
 ## Errors
 
