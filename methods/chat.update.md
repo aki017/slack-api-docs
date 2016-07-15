@@ -45,9 +45,9 @@ The response includes the `text`, `channel` and `timestamp` properties of the up
 
 To use `chat.update` with a [bot user](/bot-users) token, you'll need to _think of your bot user as a user_, and pass `as_user` set to `true` while editing a message created by that same bot user.
 
-### Interactive messages
+### Interactive messages with buttons
 
-If you're posting [interactive messages](/docs/interactive-messages), you may use `chat.update` to continue updating ongoing state changes around a message. Provide the `ts` field the message you're updating and follow the bot user instructions above to update message text, remove or add attachments and actions.
+If you're posting [message with buttons](/docs/message-buttons), you may use `chat.update` to continue updating ongoing state changes around a message. Provide the `ts` field the message you're updating and follow the bot user instructions above to update message text, remove or add attachments and actions.
 
 ## Errors
 
@@ -60,6 +60,7 @@ This table lists the expected errors that this method could return. However, oth
 | `channel_not_found` | Value passed for `channel` was invalid. |
 | `edit_window_closed` | The message cannot be edited due to the team message edit settings |
 | `msg_too_long` | Message text is too long |
+| `too_many_attachments` | Too many attachments were provided with this message. A maximum of 100 attachments are allowed on a message. |
 | `no_text` | No message text provided |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |

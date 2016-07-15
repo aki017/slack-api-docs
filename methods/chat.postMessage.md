@@ -135,6 +135,7 @@ This table lists the expected errors that this method could return. However, oth
 | `is_archived` | Channel has been archived. |
 | `msg_too_long` | Message text is too long |
 | `no_text` | No message text provided |
+| `too_many_attachments` | Too many attachments were provided with this message. A maximum of 100 attachments are allowed on a message. |
 | `rate_limited` | Application has posted too many messages, [read the Rate Limit documentation](/docs/rate-limits) for more information |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
