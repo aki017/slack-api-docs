@@ -31,8 +31,7 @@ Attempting to update other message types will return a `cant_update_message` err
 
 ## Response
 
-`json
-    {
+`{
         "ok": true,
         "channel": "C024BE91L",
         "ts": "1401383885.000061",
