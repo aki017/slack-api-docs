@@ -1,55 +1,93 @@
-This method returns a list of all users in the team. This includes deleted/deactivated users.
+After your [Slack app](/slack-apps) is awarded an identity token through [Sign in with Slack](/docs/sign-in-with-slack), use this method to retrieve a user's identity.
+
+The returned fields depend on any additional authorization scopes you've requested.
+
+This method may only be used by tokens with the `identity.basic` scope, as provided in the [Sign in with Slack](/docs/sign-in-with-slack) process.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/users.list` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/users.identity` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `users:read`) |
-| `presence` | `1` | Optional | Whether to include presence data in the output |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `identity.basic`) |
 
 ## Response
 
-Returns a list of [user objects](/types/user), in no particular order:
+You will receive at a minimum the following information:
 
 ```
 {
     "ok": true,
-    "members": [
-        {
-            "id": "U023BECGF",
-            "name": "bobby",
-            "deleted": false,
-            "color": "9f69e7",
-            "profile": {
-                "first_name": "Bobby",
-                "last_name": "Tables",
-                "real_name": "Bobby Tables",
-                "email": "bobby@slack.com",
-                "skype": "my-skype-name",
-                "phone": "+1 (123) 456 7890",
-                "image_24": "https:\/\/...",
-                "image_32": "https:\/\/...",
-                "image_48": "https:\/\/...",
-                "image_72": "https:\/\/...",
-                "image_192": "https:\/\/..."
-            },
-            "is_admin": true,
-            "is_owner": true,
-            "has_2fa": false,
-            "has_files": true
-        },
-        ...
-    ]
+    "user": {
+        "name": "Sonny Whether",
+        "id": "U0G9QF9C6"
+    },
+    "team": {
+      "id": "T0G9PQBBK"
+    }
 }
 ```
 
-## Profile
+Notice that user IDs are not guaranteed to be globally unique across all Slack users. The combination of user ID and team ID, on the other hand, is guaranteed to be globally unique.
 
-The profile hash contains as much information as the user has supplied in the default profile fields: `first_name`, `last_name`, `real_name`, `email`, `skype`, and the `image_*` fields. Only the `image_*` fields are guaranteed to be included. Data that has not been supplied may not be present at all, may be null or may contain the empty string ("").
+See the [Sign in with Slack](/docs/sign-in-with-slack) docs for even more information on these responses.
 
-A user's custom profile fields may be discovered using [users.profile.get](/methods/users.profile.get).
+### Authorization scopes
+
+In addition, you can request access to additional profile fields by adding the following [authorization scopes](/docs/oauth-scopes) to your OAuth request:
+
+`identity.email` provides the team member's email address, if available:
+
+```
+{
+    "ok": true,
+    "user": {
+        "name": "Sonny Whether",
+        "id": "U0G9QF9C6",
+        "email": "bobby@example.com"
+    },
+    "team": {
+      "id": "T0G9PQBBK"
+    }
+}
+```
+
+`identity.avatar` yield the team member's avatar images. _Available sizes may vary in the future._
+
+```
+{
+    "ok": true,
+    "user": {
+        "name": "Sonny Whether",
+        "id": "U0G9QF9C6",
+        "image_24": "https://cdn.example.com/sonny_24.jpg",
+        "image_32": "https://cdn.example.com/sonny_32.jpg",
+        "image_48": "https://cdn.example.com/sonny_48.jpg",
+        "image_72": "https://cdn.example.com/sonny_72.jpg",
+        "image_192": "https://cdn.example.com/sonny_192.jpg"
+    },
+    "team": {
+        "id": "T0G9PQBBK"
+    }
+}
+```
+
+Use `identity.team` to retrieve the user's team name:
+
+```
+{
+    "ok": true,
+    "user": {
+        "name": "Sonny Whether",
+        "id": "U0G9QF9C6"
+    },
+    "team": {
+        "name": "Captain Fabian's Naval Supply",
+        "id": "T0G9PQBBK"
+    }
+}
+```
 
 ## Errors
 
@@ -60,6 +98,7 @@ This table lists the expected errors that this method could return. However, oth
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
+| `user_is_bot` | This method cannot be called by a bot user. |
 | `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of common decency. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |

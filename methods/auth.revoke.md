@@ -1,55 +1,24 @@
-This method returns a list of all users in the team. This includes deleted/deactivated users.
+This method revokes an access token. Use it when you no longer need a token. For example, with a [Sign In With Slack](/docs/sign-in-with-slack) app, call this to log a user out.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/users.list` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/auth.revoke` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `users:read`) |
-| `presence` | `1` | Optional | Whether to include presence data in the output |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Optional | Authentication token |
+| `test` | `true` | Optional | Setting this parameter to `1` triggers a _testing mode_ where the specified token will not actually be revoked. |
 
 ## Response
 
-Returns a list of [user objects](/types/user), in no particular order:
+The response indicates whether the token was actually revoked:
 
 ```
 {
     "ok": true,
-    "members": [
-        {
-            "id": "U023BECGF",
-            "name": "bobby",
-            "deleted": false,
-            "color": "9f69e7",
-            "profile": {
-                "first_name": "Bobby",
-                "last_name": "Tables",
-                "real_name": "Bobby Tables",
-                "email": "bobby@slack.com",
-                "skype": "my-skype-name",
-                "phone": "+1 (123) 456 7890",
-                "image_24": "https:\/\/...",
-                "image_32": "https:\/\/...",
-                "image_48": "https:\/\/...",
-                "image_72": "https:\/\/...",
-                "image_192": "https:\/\/..."
-            },
-            "is_admin": true,
-            "is_owner": true,
-            "has_2fa": false,
-            "has_files": true
-        },
-        ...
-    ]
+    "revoked": true
 }
 ```
-
-## Profile
-
-The profile hash contains as much information as the user has supplied in the default profile fields: `first_name`, `last_name`, `real_name`, `email`, `skype`, and the `image_*` fields. Only the `image_*` fields are guaranteed to be included. Data that has not been supplied may not be present at all, may be null or may contain the empty string ("").
-
-A user's custom profile fields may be discovered using [users.profile.get](/methods/users.profile.get).
 
 ## Errors
 

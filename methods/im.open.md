@@ -8,6 +8,7 @@ This method has the URL `https://slack.com/api/im.open` and follows the [Slack W
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `im:write`) |
 | `user` | `U1234567890` | Required | User to open a direct message channel with. |
+| `return_im` | &nbsp; | Optional | Boolean, indicates you want the full IM channel definition in the response. |
 
 ## Response
 
@@ -29,6 +30,30 @@ If the channel was already open the response will include `no_op` and`already_op
     "already_open": true,
     "channel": {
         "id": "D024BFF1M"
+    }
+}
+```
+
+In either case, if the `return_im` argument was passed, the channel object will contain the full channel definition:
+
+```
+{
+    "ok": true,
+    "channel": {
+        "id":"D024BE91L",
+        "is_im":true,
+        "user":"U024BE7LH",
+        "created":1434412652,
+        "last_read":"1442525627.000002",
+        "latest":{
+            "type":"message",
+            "user":"U024BE7LH",
+            "text":"hello",
+            "ts":"1442525627.000002"
+        },
+        "unread_count":0,
+        "unread_count_display":0,
+        "is_open":true
     }
 }
 ```

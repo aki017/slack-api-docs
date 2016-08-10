@@ -1,4 +1,4 @@
-This method posts a message to a public channel, private group, or IM channel.
+This method posts a message to a public channel, private channel, or direct message/IM channel.
 
 ## Arguments
 
@@ -8,7 +8,7 @@ This method has the URL `https://slack.com/api/chat.postMessage` and follows the
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `chat:write:bot` or `chat:write:user`) |
 | `channel` | `C1234567890` | Required | Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name. See below for more details. |
-| `text` | `Hello world` | Required | Text of the message to send. See below for an explanation of formatting. |
+| `text` | `Hello world` | Required | Text of the message to send. See below for an explanation of formatting. This field is usually required, unless you're providing only `attachments` instead. |
 | `parse` | `full` | Optional | Change how messages are treated. Defaults to `none`. See below. |
 | `link_names` | `1` | Optional | Find and link channel names and usernames. |
 | `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Optional | Structured message attachments. |
@@ -21,15 +21,23 @@ This method has the URL `https://slack.com/api/chat.postMessage` and follows the
 
 Please note that the default value of the `as_user` parameter varies depending on the kind of token you're using. It's best to be explicit with this value. Read more about Authorship to understand how its default value may vary.
 
+A message must have either `text` or `attachments` or both. The `text` parameter is required unless you provide `attachments`. You can use both parameters in conjunction with each other to create awesome messages.
+
 ## Formatting
 
-Messages are formatted as described in the [formatting spec](/docs/formatting). You can specify values for `parse` and `link_names` to change formatting behavior.
+Messages are formatted as described in the [formatting spec](/docs/message-formatting). You can specify values for `parse` and `link_names` to change formatting behavior.
 
-The optional `attachments` argument should contain a JSON-encoded array of attachments. For more information, see the [attachments spec](/docs/attachments).
+The optional `attachments` argument should contain a JSON-encoded array of attachments.
 
-By default links to media are unfurled, but links to text content are not. For more information on the differences and how to control this, see the [the unfurling documentation](/docs/unfurling).
+For more information, see the [attachments spec](/docs/message-attachments). If you're using a [Slack app](/slack-apps), you can also use this method to attach [message buttons](/docs/message-buttons).
 
-Use the [**Message Builder**](/docs/formatting/builder) to preview your message formatting and attachments in real time! It's easy to translate your JSON examples to the parameters understood by `chat.postMessage`.
+By default links to media are unfurled, but links to text content are not. For more information on the differences and how to control this, see the [the unfurling documentation](/docs/message-attachments#unfurling).
+
+Use the [**Message Builder**](/docs/messages/builder) to preview your message formatting and attachments in real time! It's easy to translate your JSON examples to the parameters understood by `chat.postMessage`.
+
+For best results, limit the number of characters put into the `text` field at a maximum of a few thousand characters.
+
+Consider reviewing our [message guidelines](/docs/message-guidelines), especially if you're using attachments or message buttons.
 
 ## Authorship
 
@@ -79,7 +87,7 @@ Token types provide varying default identity values for `username`, `icon_url`, 
 
 ## Channels
 
-You **must** specify a public channel, private group, or an IM channel with the `channel` argument. Each one behaves slightly differently based on the authenticated user's permissions and additional arguments:
+You **must** specify a public channel, private channel, or an IM channel with the `channel` argument. Each one behaves slightly differently based on the authenticated user's permissions and additional arguments:
 
 #### Post to a public channel
 
@@ -98,6 +106,8 @@ Posting to an IM channel is a little more complex depending on the value of `as_
   - Pass the IM channel's ID (`D023BB3L2`) as the value of `channel` to post to that IM channel _as the bot_. The IM channel's ID can be retrieved through the [im.list](/methods/im.list) API method.
 - If `as_user` is true:
   - Pass the IM channel's ID (`D023BB3L2`) as the value of `channel` to post to that IM channel _as the authenticated user_. The IM channel's ID can be retrieved through the [im.list](/methods/im.list) API method.
+
+To send a direct message to the user _owning_ the token used in the request, provide the `channel` field with the a conversation/IM ID value found in a method like [`im.list`](/methods/im.list).
 
 ## Response
 
@@ -125,6 +135,7 @@ This table lists the expected errors that this method could return. However, oth
 | `is_archived` | Channel has been archived. |
 | `msg_too_long` | Message text is too long |
 | `no_text` | No message text provided |
+| `too_many_attachments` | Too many attachments were provided with this message. A maximum of 100 attachments are allowed on a message. |
 | `rate_limited` | Application has posted too many messages, [read the Rate Limit documentation](/docs/rate-limits) for more information |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |

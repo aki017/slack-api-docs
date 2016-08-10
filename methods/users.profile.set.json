@@ -1,29 +1,40 @@
 {
-  "desc": "This method opens a direct message channel with another member of your Slack team.",
+  "desc": "This method is used to set the profile information for a user.",
   "args": {
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token (Requires scope: im:write)"
+      "desc": "Authentication token (Requires scope: users.profile:write)"
     },
     "user": {
-      "required": true,
-      "example": "U1234567890",
-      "desc": "User to open a direct message channel with."
-    },
-    "return_im": {
       "required": false,
-      "example": " ",
-      "desc": "Boolean, indicates you want the full IM channel definition in the response."
+      "example": "U1234567890",
+      "desc": "ID of user to change. This argument may only be specified by team admins."
+    },
+    "profile": {
+      "required": false,
+      "example": "{ first_name: \"John\", ... }",
+      "desc": "Collection of key:value pairs presented as a URL-encoded JSON hash."
+    },
+    "name": {
+      "required": false,
+      "example": "first_name",
+      "desc": "Name of a single key to set. Usable only if profile is not passed."
+    },
+    "value": {
+      "required": false,
+      "example": "John",
+      "desc": "Value to set a single key to. Usable only if profile is not passed."
     }
   },
   "errors": {
-    "user_not_found": "Value passed for `user` was invalid.",
-    "user_not_visible": "The calling user is restricted from seeing the requested user.",
-    "user_disabled": "The `user` has been disabled.",
+    "reserved_name": "First or last name are reserved.",
+    "invalid_profile": "Profile object passed in is not valid JSON (make sure it is URL encoded!).",
+    "profile_set_failed": "Failed to set user profile.",
     "not_authed": "No authentication token provided.",
     "invalid_auth": "Invalid authentication token.",
     "account_inactive": "Authentication token is for a deleted user or team.",
+    "user_is_bot": "This method cannot be called by a bot user.",
     "invalid_arg_name": "The method was passed an argument whose name falls outside the bounds of common decency. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call.",
     "invalid_array_arg": "The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API.",
     "invalid_charset": "The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`.",

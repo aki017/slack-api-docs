@@ -1,26 +1,29 @@
 {
-  "desc": "This method opens a direct message channel with another member of your Slack team.",
+  "desc": "This method sends a me message to a channel from the calling user.",
   "args": {
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token (Requires scope: im:write)"
+      "desc": "Authentication token (Requires scope: chat:write:user)"
     },
-    "user": {
+    "channel": {
       "required": true,
-      "example": "U1234567890",
-      "desc": "User to open a direct message channel with."
+      "example": "C1234567890",
+      "desc": "Channel to send message to. Can be a public channel, private group or IM channel. Can be an encoded ID, or a name."
     },
-    "return_im": {
-      "required": false,
-      "example": " ",
-      "desc": "Boolean, indicates you want the full IM channel definition in the response."
+    "text": {
+      "required": true,
+      "example": "Hello world",
+      "desc": "Text of the message to send."
     }
   },
   "errors": {
-    "user_not_found": "Value passed for `user` was invalid.",
-    "user_not_visible": "The calling user is restricted from seeing the requested user.",
-    "user_disabled": "The `user` has been disabled.",
+    "channel_not_found": "Value passed for `channel` was invalid.",
+    "not_in_channel": "Cannot post user messages to a channel they are not in.",
+    "is_archived": "Channel has been archived.",
+    "msg_too_long": "Message text is too long",
+    "no_text": "No message text provided",
+    "rate_limited": "Application has posted too many messages, [read the Rate Limit documentation](/docs/rate-limits) for more information",
     "not_authed": "No authentication token provided.",
     "invalid_auth": "Invalid authentication token.",
     "account_inactive": "Authentication token is for a deleted user or team.",

@@ -1,55 +1,36 @@
-This method returns a list of all users in the team. This includes deleted/deactivated users.
+This method lists billable information for each user on the team. Currently this consists solely of whether the user is subject to billing per [Slack's Fair Billing policy](https://get.slack.help/hc/en-us/articles/218915077).
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/users.list` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/team.billableInfo` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `users:read`) |
-| `presence` | `1` | Optional | Whether to include presence data in the output |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `admin`) |
+| `user` | `U1234567890` | Optional | A user to retrieve the billable information for. Defaults to all users. |
 
 ## Response
 
-Returns a list of [user objects](/types/user), in no particular order:
+The response contains a list of activity logs followed by pagination information.
 
 ```
 {
     "ok": true,
-    "members": [
-        {
-            "id": "U023BECGF",
-            "name": "bobby",
-            "deleted": false,
-            "color": "9f69e7",
-            "profile": {
-                "first_name": "Bobby",
-                "last_name": "Tables",
-                "real_name": "Bobby Tables",
-                "email": "bobby@slack.com",
-                "skype": "my-skype-name",
-                "phone": "+1 (123) 456 7890",
-                "image_24": "https:\/\/...",
-                "image_32": "https:\/\/...",
-                "image_48": "https:\/\/...",
-                "image_72": "https:\/\/...",
-                "image_192": "https:\/\/..."
-            },
-            "is_admin": true,
-            "is_owner": true,
-            "has_2fa": false,
-            "has_files": true
+    "billable_info": {
+        "U0632EWRW": {
+            "billing_active": false
         },
-        ...
-    ]
+        "U02UCPE1R": {
+            "billing_active": true
+        },
+        "U02UEBSD2": {
+            "billing_active": true
+        }
+    }
 }
 ```
 
-## Profile
-
-The profile hash contains as much information as the user has supplied in the default profile fields: `first_name`, `last_name`, `real_name`, `email`, `skype`, and the `image_*` fields. Only the `image_*` fields are guaranteed to be included. Data that has not been supplied may not be present at all, may be null or may contain the empty string ("").
-
-A user's custom profile fields may be discovered using [users.profile.get](/methods/users.profile.get).
+A `billing_active` status of true indicates that the user is eligible per billing per Slack's Fair Billing policy. The `billing_active` status is computed periodically and the values returned by this API reflect the most recently computed status and should not be interpreted as a real-time view of each user's `billing_active` status.
 
 ## Errors
 
@@ -57,9 +38,11 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
+| `user_not_found` | Unable to find the requested user. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
+| `user_is_bot` | This method cannot be called by a bot user. |
 | `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of common decency. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |

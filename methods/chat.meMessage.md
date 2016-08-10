@@ -1,55 +1,24 @@
-This method returns a list of all users in the team. This includes deleted/deactivated users.
+This method sends a me message to a channel from the calling user.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/users.list` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/chat.meMessage` and follows the [Slack Web API calling conventions](/web#basics).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `users:read`) |
-| `presence` | `1` | Optional | Whether to include presence data in the output |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `chat:write:user`) |
+| `channel` | `C1234567890` | Required | Channel to send message to. Can be a public channel, private group or IM channel. Can be an encoded ID, or a name. |
+| `text` | `Hello world` | Required | Text of the message to send. |
 
 ## Response
-
-Returns a list of [user objects](/types/user), in no particular order:
 
 ```
 {
     "ok": true,
-    "members": [
-        {
-            "id": "U023BECGF",
-            "name": "bobby",
-            "deleted": false,
-            "color": "9f69e7",
-            "profile": {
-                "first_name": "Bobby",
-                "last_name": "Tables",
-                "real_name": "Bobby Tables",
-                "email": "bobby@slack.com",
-                "skype": "my-skype-name",
-                "phone": "+1 (123) 456 7890",
-                "image_24": "https:\/\/...",
-                "image_32": "https:\/\/...",
-                "image_48": "https:\/\/...",
-                "image_72": "https:\/\/...",
-                "image_192": "https:\/\/..."
-            },
-            "is_admin": true,
-            "is_owner": true,
-            "has_2fa": false,
-            "has_files": true
-        },
-        ...
-    ]
+    "channel": "C024BE7LR",
+    "ts": "1417671948.000006"
 }
 ```
-
-## Profile
-
-The profile hash contains as much information as the user has supplied in the default profile fields: `first_name`, `last_name`, `real_name`, `email`, `skype`, and the `image_*` fields. Only the `image_*` fields are guaranteed to be included. Data that has not been supplied may not be present at all, may be null or may contain the empty string ("").
-
-A user's custom profile fields may be discovered using [users.profile.get](/methods/users.profile.get).
 
 ## Errors
 
@@ -57,6 +26,12 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
+| `channel_not_found` | Value passed for `channel` was invalid. |
+| `not_in_channel` | Cannot post user messages to a channel they are not in. |
+| `is_archived` | Channel has been archived. |
+| `msg_too_long` | Message text is too long |
+| `no_text` | No message text provided |
+| `rate_limited` | Application has posted too many messages, [read the Rate Limit documentation](/docs/rate-limits) for more information |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |

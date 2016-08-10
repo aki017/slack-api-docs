@@ -1,4 +1,4 @@
-This method lists the items starred by a user.
+This method lists the items starred by the authed user.
 
 ## Arguments
 
@@ -7,7 +7,6 @@ This method has the URL `https://slack.com/api/stars.list` and follows the [Slac
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `stars:read`) |
-| `user` | `U1234567890` | Optional | Show stars by this user. Defaults to the authed user. |
 | `count` | `20` | Optional, default=100 | Number of items to return per page. |
 | `page` | `2` | Optional, default=1 | Page number of results to return. |
 
@@ -66,6 +65,7 @@ This table lists the expected errors that this method could return. However, oth
 | Error | Description |
 | --- | --- |
 | `user_not_found` | Value passed for `user` was invalid |
+| `user_not_visible` | The requested user is not visible to the calling user |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |

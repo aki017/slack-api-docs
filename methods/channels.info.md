@@ -26,6 +26,7 @@ Returns a [channel object](/types/channel):
         "is_archived": false,
         "is_general": false,
         "is_member": true,
+        "is_starred": true,
 
         "members": […],
 
