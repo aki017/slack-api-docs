@@ -1,0 +1,46 @@
+{
+  "desc": "This method allows the user to set their profile image. The caller can pass image data via image.",
+  "args": {
+    "token": {
+      "required": true,
+      "example": "xxxx-xxxxxxxxx-xxxx",
+      "desc": "Authentication token (Requires scope: users.profile:write)"
+    },
+    "image": {
+      "required": true,
+      "example": "...",
+      "desc": "File contents via multipart/form-data."
+    },
+    "crop_x": {
+      "required": false,
+      "example": "10",
+      "desc": "X coordinate of top-left corner of crop box"
+    },
+    "crop_y": {
+      "required": false,
+      "example": "15",
+      "desc": "Y coordinate of top-left corner of crop box"
+    },
+    "crop_w": {
+      "required": false,
+      "example": "100",
+      "desc": "Width/height of crop box (always square)"
+    }
+  },
+  "errors": {
+    "bad_image": "The uploaded image could not be processed - try passing a JPEG, GIF or PNG",
+    "too_large": "The uploaded image had excessive dimensions",
+    "too_many_frames": "An animated GIF with too many frames was uploaded",
+    "not_authed": "No authentication token provided.",
+    "invalid_auth": "Invalid authentication token.",
+    "account_inactive": "Authentication token is for a deleted user or team.",
+    "user_is_bot": "This method cannot be called by a bot user.",
+    "invalid_arg_name": "The method was passed an argument whose name falls outside the bounds of common decency. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call.",
+    "invalid_array_arg": "The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API.",
+    "invalid_charset": "The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`.",
+    "invalid_form_data": "The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid.",
+    "invalid_post_type": "The method was called via a `POST` request, but the specified `Content-Type` was invalid. Valid types are: `application/json` `application/x-www-form-urlencoded` `multipart/form-data` `text/plain`.",
+    "missing_post_type": "The method was called via a `POST` request and included a data payload, but the request did not include a `Content-Type` header.",
+    "request_timeout": "The method was called via a `POST` request, but the `POST` data was either missing or truncated."
+  }
+}
