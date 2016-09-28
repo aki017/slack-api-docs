@@ -2,6 +2,8 @@ This method allows the user to set their profile image. The caller can pass imag
 
 Providing a "crop box" with `crop_x`, `crop_y`, and `crop_w` is optional. Otherwise, the whole image will be used. If cropping instructions are not specified and the source image is not _square_, the image will be letterboxed, just like your favorite old laserdiscs.
 
+Please limit your images to a maximum size of 1024 by 1024 pixels. 512x512 pixels is the minimum.
+
 To remove a profile image, use the companion method [`users.deletePhoto`](/methods/users.deletePhoto).
 
 ## Arguments

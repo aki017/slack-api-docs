@@ -19,10 +19,17 @@ Returns a list of [user objects](/types/user), in no particular order:
     "members": [
         {
             "id": "U023BECGF",
+            "team_id": "T021F9ZE2",
             "name": "bobby",
             "deleted": false,
+            "status": null,
             "color": "9f69e7",
+            "real_name": "Bobby Tables",
+            "tz": "America\/Los_Angeles",
+            "tz_label": "Pacific Daylight Time",
+            "tz_offset": -25200,
             "profile": {
+                "avatar_hash": "ge3b51ca72de",
                 "first_name": "Bobby",
                 "last_name": "Tables",
                 "real_name": "Bobby Tables",

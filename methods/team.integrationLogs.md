@@ -51,14 +51,14 @@ The response contains a list of activity logs followed by pagination information
             "change_type": "disabled",
             "reason": "user",
             "scope": "incoming-webhook"
-        },
-        "paging": {
+        }
+    ],
+    "paging": {
             "count": 3,
             "total": 3,
             "page": 1,
             "pages": 1
-        }
-    ]
+    }
 }
 ```
 
