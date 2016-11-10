@@ -10,7 +10,8 @@ This method has the URL `https://slack.com/api/users.identity` and follows the [
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `identity.basic`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `identity.basic` |
 
 ## Response
 

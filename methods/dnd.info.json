@@ -4,7 +4,7 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token (Requires scope: dnd:read)"
+      "desc": "Authentication token.\nRequires scope: dnd:read"
     },
     "user": {
       "required": false,

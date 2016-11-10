@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/users.info` and follows the [Slac
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `users:read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `users:read` |
 | `user` | `U1234567890` | Required | User to get info on |
 
 ## Response

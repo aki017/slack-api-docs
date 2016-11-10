@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/search.files` and follows the [Sl
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `search:read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `search:read` |
 | `query` | `pickleface` | Required | Search query. May contain booleans, etc. |
 | `sort` | `timestamp` | Optional, default=score | Return matches sorted by either `score` or `timestamp`. |
 | `sort_dir` | `asc` | Optional, default=desc | Change sort direction to ascending (`asc`) or descending (`desc`). |

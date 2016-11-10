@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/im.list` and follows the [Slack W
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `im:read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `im:read` |
 
 ## Response
 

@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/reminders.add` and follows the [S
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `reminders:write`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `reminders:write` |
 | `text` | `eat a banana` | Required | The content of the reminder |
 | `time` | `1602288000` | Required | When this reminder should happen: the Unix timestamp (up to five years from now), the number of seconds until the reminder (if within 24 hours), or a natural language description (Ex. "in 15 minutes," or "every Thursday") |
 | `user` | `U18888888` | Optional | The user who will receive the reminder. If no user is specified, the reminder will go to user who created it. |

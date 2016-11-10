@@ -4,7 +4,7 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token (Requires scope: client)"
+      "desc": "Authentication token.\nRequires scope: client"
     },
     "simple_latest": {
       "required": false,

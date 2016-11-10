@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/pins.add` and follows the [Slack 
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `pins:write`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `pins:write` |
 | `channel` | `C1234567890` | Required | Channel to pin the item in. |
 | `file` | `F1234567890` | Optional | File to pin. |
 | `file_comment` | `Fc1234567890` | Optional | File comment to pin. |

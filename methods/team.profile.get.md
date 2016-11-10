@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/team.profile.get` and follows the
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `users.profile:read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `users.profile:read` |
 | `visibility` | `all` | Optional | Filter by visibility. |
 
 The optional `visibility` argument allows the client to filter the profile fields based on visibility. The following values are supported:

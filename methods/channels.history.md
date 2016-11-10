@@ -8,7 +8,8 @@ This method has the URL `https://slack.com/api/channels.history` and follows the
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `channels:history`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `channels:history` |
 | `channel` | `C1234567890` | Required | Channel to fetch history for. |
 | `latest` | `1234567890.123456` | Optional, default=now | End of time range of messages to include in results. |
 | `oldest` | `1234567890.123456` | Optional, default=0 | Start of time range of messages to include in results. |

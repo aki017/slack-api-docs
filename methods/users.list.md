@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/users.list` and follows the [Slac
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `users:read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `users:read` |
 | `presence` | `1` | Optional | Whether to include presence data in the output |
 
 ## Response

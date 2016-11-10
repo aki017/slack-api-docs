@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/dnd.setSnooze` and follows the [S
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `dnd:write`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `dnd:write` |
 | `num_minutes` | `60` | Required | Number of minutes, from now, to snooze until. |
 
 ## Response

@@ -4,7 +4,7 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token (Requires scope: reminders:read)"
+      "desc": "Authentication token.\nRequires scope: reminders:read"
     },
     "reminder": {
       "required": true,

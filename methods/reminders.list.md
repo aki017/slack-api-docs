@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/reminders.list` and follows the [
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `reminders:read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `reminders:read` |
 
 ## Response
 

@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/im.open` and follows the [Slack W
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `im:write`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `im:write` |
 | `user` | `U1234567890` | Required | User to open a direct message channel with. |
 | `return_im` | &nbsp; | Optional | Boolean, indicates you want the full IM channel definition in the response. |
 

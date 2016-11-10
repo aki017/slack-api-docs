@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/dnd.info` and follows the [Slack 
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `dnd:read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `dnd:read` |
 | `user` | `U1234` | Optional | User to fetch status for (defaults to current user) |
 
 ## Response

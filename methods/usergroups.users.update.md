@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/usergroups.users.update` and foll
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `usergroups:write`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `usergroups:write` |
 | `usergroup` | `S0604QSJC` | Required | The encoded ID of the User Group to update. |
 | `users` | `U060R4BJ4,U060RNRCZ` | Required | A comma separated string of encoded user IDs that represent the entire list of users for the User Group. |
 | `include_count` | `1` | Optional | Include the number of users in the User Group. |

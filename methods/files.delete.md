@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/files.delete` and follows the [Sl
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `files:write:user`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `files:write:user` |
 | `file` | &nbsp; | Required | ID of file to delete. |
 
 ## Response

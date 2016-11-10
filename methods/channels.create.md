@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/channels.create` and follows the 
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `channels:write`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `channels:write` |
 | `name` | `mychannel` | Required | Name of channel to create |
 
 ## Naming

@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/chat.meMessage` and follows the [
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `chat:write:user`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `chat:write:user` |
 | `channel` | `C1234567890` | Required | Channel to send message to. Can be a public channel, private group or IM channel. Can be an encoded ID, or a name. |
 | `text` | `Hello world` | Required | Text of the message to send. |
 

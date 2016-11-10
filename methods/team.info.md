@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/team.info` and follows the [Slack
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `team:read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `team:read` |
 
 ## Response
 

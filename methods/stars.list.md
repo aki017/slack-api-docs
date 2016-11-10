@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/stars.list` and follows the [Slac
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `stars:read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `stars:read` |
 | `count` | `20` | Optional, default=100 | Number of items to return per page. |
 | `page` | `2` | Optional, default=1 | Page number of results to return. |
 

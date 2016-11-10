@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/dnd.endSnooze` and follows the [S
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `dnd:write`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `dnd:write` |
 
 ## Response
 

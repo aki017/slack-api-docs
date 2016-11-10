@@ -15,7 +15,8 @@ This method has the URL `https://slack.com/api/groups.createChild` and follows t
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `groups:write`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `groups:write` |
 | `channel` | `G1234567890` | Required | Private channel to clone and archive. |
 
 ## Response

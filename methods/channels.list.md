@@ -8,7 +8,8 @@ This method has the URL `https://slack.com/api/channels.list` and follows the [S
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `channels:read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `channels:read` |
 | `exclude_archived` | `1` | Optional, default=0 | Don't return archived channels. |
 
 ## Response

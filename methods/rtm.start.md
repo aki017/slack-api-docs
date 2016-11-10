@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/rtm.start` and follows the [Slack
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `client`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `client` |
 | `simple_latest` | &nbsp; | Optional | Return timestamp only for latest message object of each channel (improves performance). |
 | `no_unreads` | &nbsp; | Optional | Skip unread counts for each channel (improves performance). |
 | `mpim_aware` | &nbsp; | Optional | Returns MPIMs to the client in the API response. |

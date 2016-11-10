@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/usergroups.create` and follows th
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `usergroups:write`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `usergroups:write` |
 | `name` | `My Test Team` | Required | A name for the User Group. Must be unique among User Groups. |
 | `handle` | &nbsp; | Optional | A mention handle. Must be unique among channels, users and User Groups. |
 | `description` | &nbsp; | Optional | A short description of the User Group. |

@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/usergroups.disable` and follows t
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `usergroups:write`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `usergroups:write` |
 | `usergroup` | `S0604QSJC` | Required | The encoded ID of the User Group to disable. |
 | `include_count` | `1` | Optional | Include the number of users in the User Group. |
 

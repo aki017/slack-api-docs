@@ -4,7 +4,7 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token (Requires scope: reactions:write)"
+      "desc": "Authentication token.\nRequires scope: reactions:write"
     },
     "name": {
       "required": true,

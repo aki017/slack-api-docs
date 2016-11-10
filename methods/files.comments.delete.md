@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/files.comments.delete` and follow
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `files:write:user`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `files:write:user` |
 | `file` | `F1234567890` | Required | File to delete a comment from. |
 | `id` | `Fc1234567890` | Required | The comment to delete. |
 

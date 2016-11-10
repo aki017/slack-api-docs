@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/usergroups.users.list` and follow
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `usergroups:read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `usergroups:read` |
 | `usergroup` | `S0604QSJC` | Required | The encoded ID of the User Group to update. |
 | `include_disabled` | `1` | Optional | Allow results that involve disabled User Groups. |
 

@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/users.profile.get` and follows th
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `users.profile:read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `users.profile:read` |
 | `user` | `U1234567890` | Optional | User to retrieve profile info for |
 | `include_labels` | `1` | Optional, default=0 | Include labels for each ID in custom profile fields |
 

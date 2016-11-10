@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/files.upload` and follows the [Sl
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `files:write:user`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `files:write:user` |
 | `file` | `...` | Optional | File contents via `multipart/form-data`. If omitting this parameter, you must submit `content`. |
 | `content` | `...` | Optional | File contents via a POST variable. If omitting this parameter, you must provide a `file`. |
 | `filetype` | `php` | Optional | A [file type](/types/file#file_types) identifier. |

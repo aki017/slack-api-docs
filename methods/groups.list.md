@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/groups.list` and follows the [Sla
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `groups:read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `groups:read` |
 | `exclude_archived` | `1` | Optional, default=0 | Don't return archived private channels. |
 
 ## Response

@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/team.accessLogs` and follows the 
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `admin`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `admin` |
 | `count` | `20` | Optional, default=100 | Number of items to return per page. |
 | `page` | `2` | Optional, default=1 | Page number of results to return. |
 | `before` | `1457989166` | Optional, default=now | End of time range of logs to include in results (inclusive). |

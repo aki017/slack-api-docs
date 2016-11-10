@@ -10,7 +10,8 @@ This method has the URL `https://slack.com/api/bots.info` and follows the [Slack
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `users:read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `users:read` |
 | `bot` | `B12345678` | Optional | Bot user to get info on |
 
 ## Response

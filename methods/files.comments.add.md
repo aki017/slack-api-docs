@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/files.comments.add` and follows t
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `files:write:user`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `files:write:user` |
 | `file` | `F1234467890` | Required | File to add a comment to. |
 | `comment` | `Everyone should take a moment to read this file.` | Required | Text of the comment to add. |
 | `channel` | `C1234467890` | Optional | Channel id (encoded) of which location to associate with the new comment. |

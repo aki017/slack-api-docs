@@ -4,7 +4,7 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token (Requires scope: stars:read)"
+      "desc": "Authentication token.\nRequires scope: stars:read"
     },
     "count": {
       "required": false,

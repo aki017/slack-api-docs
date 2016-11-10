@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/chat.update` and follows the [Sla
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `chat:write:bot` or `chat:write:user`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `chat:write:bot` or `chat:write:user` |
 | `ts` | `1405894322.002768` | Required | Timestamp of the message to be updated. |
 | `channel` | `C1234567890` | Required | Channel containing the message to be updated. |
 | `text` | `Hello world` | Required | New text for the message, using the [default formatting rules](/docs/formatting). |

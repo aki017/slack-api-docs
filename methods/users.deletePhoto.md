@@ -8,7 +8,8 @@ This method has the URL `https://slack.com/api/users.deletePhoto` and follows th
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `users.profile:write`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `users.profile:write` |
 
 ## Response
 

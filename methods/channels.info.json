@@ -4,7 +4,7 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token (Requires scope: channels:read)"
+      "desc": "Authentication token.\nRequires scope: channels:read"
     },
     "channel": {
       "required": true,

@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/reminders.complete` and follows t
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `reminders:write`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `reminders:write` |
 | `reminder` | `Rm12345678` | Required | The ID of the reminder to be marked as complete |
 
 ## Response

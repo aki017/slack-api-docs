@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/dnd.teamInfo` and follows the [Sl
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token (Requires scope: `dnd:read`) |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `dnd:read` |
 | `users` | `U1234,U4567` | Optional | Comma-separated list of users to fetch Do Not Disturb status for |
 
 ## Response
