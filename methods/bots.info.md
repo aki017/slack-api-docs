@@ -2,7 +2,7 @@ This method returns information about a bot user.
 
 `bot_id` is returned from [bot\_message message events](/events/message/bot_message) and in the response of methods like [channels.history](/methods/channels.history).
 
-Use this method to look up the username and icons for those bot users.
+Use this method to look up the username and icons for those bot users. Use the `app_id` field to identify whether a bot belongs to your [Slack app](/slack-apps).
 
 ## Arguments
 
@@ -23,6 +23,7 @@ Returns a bot user:
     "ok": true,
     "bot": {
         "id": "B12345678",
+        "app_id": "A4H1JB4AZ",
         "deleted": false,
         "name": "My Bot",
         "icons": {
