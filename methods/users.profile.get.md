@@ -23,6 +23,8 @@ The `first_name`, `last_name`, `email` and `skype` keys are self-explanatory.
 
 The `image_` keys hold links to the different sizes we support for the user's profile image from 24x24 to 1024x1024 pixels. A link to the image in its original size is stored in `image_original`.
 
+Bot users may contain an `always_active` profile field, indicating whether the bot user is active in a way that overrides traditional presence rules. The [presence](/docs/presence#bot_presence) docs tell the whole story.
+
 For a description of the `fields` key, see the [users.profile.set](/methods/users.profile.set) method.
 
 ```
