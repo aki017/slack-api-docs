@@ -8,7 +8,7 @@
     },
     "name": {
       "required": true,
-      "example": " ",
+      "example": "C1234567890",
       "desc": "Name of channel to join"
     }
   },
