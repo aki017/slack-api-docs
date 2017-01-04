@@ -45,8 +45,7 @@ Returns a list of [user objects](/types/user), in no particular order:
             },
             "is_admin": true,
             "is_owner": true,
-            "has_2fa": false,
-            "has_files": true
+            "has_2fa": false
         },
         ...
     ]
@@ -55,7 +54,7 @@ Returns a list of [user objects](/types/user), in no particular order:
 
 ## Profile
 
-The profile hash contains as much information as the user has supplied in the default profile fields: `first_name`, `last_name`, `real_name`, `email`, `skype`, and the `image_*` fields. Only the `image_*` fields are guaranteed to be included. Data that has not been supplied may not be present at all, may be null or may contain the empty string ("").
+The profile hash contains as much information as the user has supplied in the default profile fields: `first_name`, `last_name`, `real_name`,`email`, `skype`, and the `image_*` fields. Only the `image_*` fields are guaranteed to be included. Data that has not been supplied may not be present at all, may be null or may contain the empty string ("").
 
 A user's custom profile fields may be discovered using [`users.profile.get`](/methods/users.profile.get).
 

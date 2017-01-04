@@ -8,7 +8,7 @@ This method has the URL `https://slack.com/api/groups.info` and follows the [Sla
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `groups:read` |
-| `channel` | `C1234567890` | Required | Private channel to get info on |
+| `channel` | `G1234567890` | Required | Private channel to get info on |
 
 ## Response
 

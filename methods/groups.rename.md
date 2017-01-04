@@ -8,7 +8,7 @@ This method has the URL `https://slack.com/api/groups.rename` and follows the [S
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `groups:write` |
-| `channel` | `C1234567890` | Required | Private channel to rename |
+| `channel` | `G1234567890` | Required | Private channel to rename |
 | `name` | &nbsp; | Required | New name for private channel. |
 
 ## Naming

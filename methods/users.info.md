@@ -37,8 +37,7 @@ Returns a [user object](/types/user):
         },
         "is_admin": true,
         "is_owner": true,
-        "has_2fa": true,
-        "has_files": true
+        "has_2fa": true
     }
 }
 ```

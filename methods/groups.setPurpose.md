@@ -8,7 +8,7 @@ This method has the URL `https://slack.com/api/groups.setPurpose` and follows th
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `groups:write` |
-| `channel` | `C1234567890` | Required | Private channel to set the purpose of |
+| `channel` | `G1234567890` | Required | Private channel to set the purpose of |
 | `purpose` | `My Purpose` | Required | The new purpose |
 
 ## Response
