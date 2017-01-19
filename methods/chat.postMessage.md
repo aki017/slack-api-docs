@@ -18,7 +18,9 @@ Requires scope: `chat:write:bot` or `chat:write:user` |
 | `username` | `My Bot` | Optional | Set your bot's user name. Must be used in conjunction with `as_user` set to false, otherwise ignored. See authorship below. |
 | `as_user` | `true` | Optional | Pass true to post the message as the authed user, instead of as a bot. Defaults to false. See authorship below. |
 | `icon_url` | `http://lorempixel.com/48/48` | Optional | URL to an image to use as the icon for this message. Must be used in conjunction with `as_user` set to false, otherwise ignored. See authorship below. |
-| `icon_emoji` | `:chart_with_upwards_trend:` | Optional | emoji to use as the icon for this message. Overrides `icon_url`. Must be used in conjunction with `as_user` set to false, otherwise ignored. See authorship below. |
+| `icon_emoji` | `:chart_with_upwards_trend:` | Optional | Emoji to use as the icon for this message. Overrides `icon_url`. Must be used in conjunction with `as_user` set to `false`, otherwise ignored. See authorship below. |
+| `thread_ts` | `1234567890.123456` | Optional | Provide another message's `ts` value to make this message a reply. Avoid using a reply's `ts` value; use its parent instead. |
+| `reply_broadcast` | `true` | Optional | Used in conjunction with `thread_ts` and indicates whether reply should be made visible to everyone in the channel or conversation. Defaults to `false`. |
 
 Please note that the default value of the `as_user` parameter varies depending on the kind of token you're using. It's best to be explicit with this value. Read more about Authorship to understand how its default value may vary.
 
@@ -85,6 +87,12 @@ Token types provide varying default identity values for `username`, `icon_url`, 
   - inherits icon and username of the token owner
 - [Slack App bot user token](/bot-users#share_your_bot_user_as_a_slack_app)
   - inherits Slack App's icon and app's bot username
+
+## Threads and replies
+
+Provide a `thread_ts` value for the posted message to act as a reply to a parent message. Sparingly set `reply_broadcast` to `true` if your reply is important enough for everyone in the channel to receive.
+
+See [message threading](/docs/message-threading) for a more in depth look at message threading.
 
 ## Channels
 

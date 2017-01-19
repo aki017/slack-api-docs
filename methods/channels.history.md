@@ -67,6 +67,18 @@ If a message has the same timestamp as `latest` or `oldest` it will not be inclu
 
 If there are more than 100 messages between the two timestamps then the messages returned are the ones closest to `latest`. In most cases an application will want the most recent messages and will page backward from there. If `oldest` is provided but not `latest` then the messages returned are those closest to `oldest`, allowing you to page forward through history if desired.
 
+## Retrieving a single message
+
+`channels.history` can also be used to pluck a single message from the archive.
+
+You'll need a message's `ts` value, uniquely identifying it within a channel. You'll also need that channel's ID.
+
+Provide another message's `ts` value _as_ the `latest` parameter. Specify `true` for the `inclusive` parameter and set the `count` to `1`. If it exists, you'll receive the queried message in return.
+
+```
+GET /api/channels.history?token=TOKEN_WITH_CHANNELS_HISTORY_SCOPE&channel=C2EB2QT8A&latest=1476909142.000007&inclusive=true&count=1
+```
+
 ## Message types
 
 Messages of type `"message"` are user-entered text messages sent to the channel, while other types are events that happened within the channel. All messages have both a `type` and a sortable `ts`, but the other fields depend on the `type`. For a list of all possible events, see the [channel messages](/events/message) documentation.
