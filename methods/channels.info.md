@@ -29,18 +29,20 @@ Returns a [channel object](/types/channel):
         "is_member": true,
         "is_starred": true,
 
-        "members": […],
+        "members": [...],
 
-        "topic": { … },
-        "purpose": { … },
+        "topic": { ... },
+        "purpose": { ... },
 
         "last_read": "1401383885.000061",
-        "latest": { … },
+        "latest": { ... },
         "unread_count": 0,
         "unread_count_display": 0
     }
 }
 ```
+
+An `is_org_shared` attribute may appear set to `true` when the channel is part of a shared channel between multiple teams of an [enterprise grid](/enterprise-grid). See the [enterprise grid shared channels documentation](/enterprise-grid#shared_channels) for more detail.
 
 ## Errors
 

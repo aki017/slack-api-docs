@@ -18,7 +18,7 @@ Requires scope: `team:read` |
          "id": "T12345",
          "name": "My Team",
          "domain": "example",
-         "email_domain": "",
+         "email_domain": "example.com",
          "icon": {
              "image_34": "https:\/\/...",
              "image_44": "https:\/\/...",
@@ -27,7 +27,9 @@ Requires scope: `team:read` |
              "image_102": "https:\/\/...",
              "image_132": "https:\/\/...",
              "image_default": true
-         }
+         },
+        "enterprise_id": "E1234A12AB",
+        "enterprise_name": "Umbrella Corporation"
      }
  }
 ```
@@ -35,6 +37,8 @@ Requires scope: `team:read` |
 ## Team Icon
 
 If a team has not yet set a custom icon, the value of `team.icon.image_default` will be `true`.
+
+If the team belongs to an [Enterprise Grid](/enterprise-grid), the `enterprise_id` and `enterprise_name` fields will indicate the owning enterprise organization.
 
 ## Errors
 

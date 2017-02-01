@@ -46,6 +46,8 @@ Returns a list of limited [channel objects](/types/channel):
 
 To get a full [channel object](/types/channel), call the [channels.info](/methods/channels.info) method.
 
+An `is_org_shared` attribute may appear set to `true` on channels that are shared channel between multiple teams of an [enterprise grid](/enterprise-grid). See the [enterprise grid shared channels documentation](/enterprise-grid#shared_channels) for more detail.
+
 ## Errors
 
 This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.

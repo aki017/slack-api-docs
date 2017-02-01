@@ -2,6 +2,8 @@ This method returns a portion of [message events](/events/message) from the spec
 
 To read the entire history for a channel, call the method with no `latest` or`oldest` arguments, and then continue paging using the instructions below.
 
+To retrieve a single message, specify its `ts` value as `latest`, set `inclusive` to `true`, and dial your `count` down to `1`.
+
 ## Arguments
 
 This method has the URL `https://slack.com/api/channels.history` and follows the [Slack Web API calling conventions](/web#basics).
