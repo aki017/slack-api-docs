@@ -42,7 +42,7 @@ Returns a [channel object](/types/channel):
 }
 ```
 
-An `is_org_shared` attribute may appear set to `true` when the channel is part of a shared channel between multiple teams of an [enterprise grid](/enterprise-grid). See the [enterprise grid shared channels documentation](/enterprise-grid#shared_channels) for more detail.
+An `is_org_shared` attribute may appear set to `true` when the channel is part of a shared channel between multiple teams of an [Enterprise Grid](/enterprise-grid). You'll also find the team's `enterprise_id`. See the [Enterprise Grid shared channels documentation](/enterprise-grid#shared_channels) for more detail.
 
 ## Errors
 
