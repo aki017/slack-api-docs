@@ -9,7 +9,7 @@ This method has the URL `https://slack.com/api/reactions.list` and follows the [
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `reactions:read` |
 | `user` | `U1234567890` | Optional | Show reactions made by this user. Defaults to the authed user. |
-| `full` | &nbsp; | Optional | If true always return the complete reaction list. |
+| `full` | `true` | Optional | If true always return the complete reaction list. |
 | `count` | `20` | Optional, default=100 | Number of items to return per page. |
 | `page` | `2` | Optional, default=1 | Page number of results to return. |
 
@@ -97,7 +97,7 @@ This table lists the expected errors that this method could return. However, oth
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |
-| `invalid_post_type` | The method was called via a `POST` request, but the specified `Content-Type` was invalid. Valid types are: `application/json` `application/x-www-form-urlencoded` `multipart/form-data` `text/plain`. |
+| `invalid_post_type` | The method was called via a `POST` request, but the specified `Content-Type` was invalid. Valid types are: `application/x-www-form-urlencoded` `multipart/form-data` `text/plain`. |
 | `missing_post_type` | The method was called via a `POST` request and included a data payload, but the request did not include a `Content-Type` header. |
 | `request_timeout` | The method was called via a `POST` request, but the `POST` data was either missing or truncated. |
 

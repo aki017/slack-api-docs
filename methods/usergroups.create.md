@@ -9,10 +9,10 @@ This method has the URL `https://slack.com/api/usergroups.create` and follows th
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `usergroups:write` |
 | `name` | `My Test Team` | Required | A name for the User Group. Must be unique among User Groups. |
-| `handle` | &nbsp; | Optional | A mention handle. Must be unique among channels, users and User Groups. |
+| `handle` | `marketing` | Optional | A mention handle. Must be unique among channels, users and User Groups. |
 | `description` | &nbsp; | Optional | A short description of the User Group. |
-| `channels` | &nbsp; | Optional | A comma separated string of encoded channel IDs for which the User Group uses as a default. |
-| `include_count` | `1` | Optional | Include the number of users in each User Group. |
+| `channels` | `C1234567890,C2345678901,C3456789012` | Optional | A comma separated string of encoded channel IDs for which the User Group uses as a default. |
+| `include_count` | `true` | Optional | Include the number of users in each User Group. |
 
 ## Response
 
@@ -64,7 +64,7 @@ This table lists the expected errors that this method could return. However, oth
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |
-| `invalid_post_type` | The method was called via a `POST` request, but the specified `Content-Type` was invalid. Valid types are: `application/json` `application/x-www-form-urlencoded` `multipart/form-data` `text/plain`. |
+| `invalid_post_type` | The method was called via a `POST` request, but the specified `Content-Type` was invalid. Valid types are: `application/x-www-form-urlencoded` `multipart/form-data` `text/plain`. |
 | `missing_post_type` | The method was called via a `POST` request and included a data payload, but the request did not include a `Content-Type` header. |
 | `request_timeout` | The method was called via a `POST` request, but the `POST` data was either missing or truncated. |
 

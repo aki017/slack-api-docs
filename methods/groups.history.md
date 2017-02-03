@@ -11,9 +11,9 @@ Requires scope: `groups:history` |
 | `channel` | `G1234567890` | Required | Private channel to fetch history for. |
 | `latest` | `1234567890.123456` | Optional, default=now | End of time range of messages to include in results. |
 | `oldest` | `1234567890.123456` | Optional, default=0 | Start of time range of messages to include in results. |
-| `inclusive` | `1` | Optional, default=0 | Include messages with latest or oldest timestamp in results. |
+| `inclusive` | `true` | Optional, default=0 | Include messages with latest or oldest timestamp in results. |
 | `count` | `100` | Optional, default=100 | Number of messages to return, between 1 and 1000. |
-| `unreads` | `1` | Optional, default=0 | Include `unread_count_display` in the output? |
+| `unreads` | `true` | Optional, default=0 | Include `unread_count_display` in the output? |
 
 ## Response
 
@@ -73,7 +73,7 @@ This table lists the expected errors that this method could return. However, oth
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |
-| `invalid_post_type` | The method was called via a `POST` request, but the specified `Content-Type` was invalid. Valid types are: `application/json` `application/x-www-form-urlencoded` `multipart/form-data` `text/plain`. |
+| `invalid_post_type` | The method was called via a `POST` request, but the specified `Content-Type` was invalid. Valid types are: `application/x-www-form-urlencoded` `multipart/form-data` `text/plain`. |
 | `missing_post_type` | The method was called via a `POST` request and included a data payload, but the request did not include a `Content-Type` header. |
 | `request_timeout` | The method was called via a `POST` request, but the `POST` data was either missing or truncated. |
 

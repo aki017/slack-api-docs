@@ -14,7 +14,7 @@ Requires scope: `files:write:user` |
 | `filename` | `foo.txt` | Required | Filename of file. |
 | `title` | `My File` | Optional | Title of file. |
 | `initial_comment` | `Best!` | Optional | Initial comment to add to file. |
-| `channels` | `C1234567890` | Optional | Comma-separated list of channel names or IDs where the file will be shared. |
+| `channels` | `C1234567890,C2345678901,C3456789012` | Optional | Comma-separated list of channel names or IDs where the file will be shared. |
 
 **You must provide either a `file` or `content` parameter.**
 
@@ -72,7 +72,7 @@ This table lists the expected errors that this method could return. However, oth
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |
-| `invalid_post_type` | The method was called via a `POST` request, but the specified `Content-Type` was invalid. Valid types are: `application/json` `application/x-www-form-urlencoded` `multipart/form-data` `text/plain`. |
+| `invalid_post_type` | The method was called via a `POST` request, but the specified `Content-Type` was invalid. Valid types are: `application/x-www-form-urlencoded` `multipart/form-data` `text/plain`. |
 | `missing_post_type` | The method was called via a `POST` request and included a data payload, but the request did not include a `Content-Type` header. |
 | `request_timeout` | The method was called via a `POST` request, but the `POST` data was either missing or truncated. |
 
