@@ -44,7 +44,7 @@ The `first_name` and `last_name` fields can be up to 35 characters each. The nam
 
 The `email` field must be a valid email address. It cannot have spaces, and it must have an `@` and a domain. It cannot be in use by another member of the same team. Changing a user's email address will send an email to both the old and new addresses, and also post a slackbot to the user informing them of the change. This field can only be changed for users on paid teams.
 
-The `skype` field can be up to 254 characters.
+After March 20, 2017 the `skype` field will always be an empty string and cannot be set otherwise. For more detail, please read [this changelog](/changelog/2017-02-minor-field-changes) entry.
 
 The recommended way to set the profile image fields is to call [`users.setPhoto`](/methods/users.setPhoto). To clear them, call [`users.deletePhoto`](/methods/users.deletePhoto).
 

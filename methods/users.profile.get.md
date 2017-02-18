@@ -19,7 +19,9 @@ The `include_labels` parameter is **heavily rate-limited**.
 
 The response contains a `profile` item with an array of key:value pairs.
 
-The `first_name`, `last_name`, `email` and `skype` keys are self-explanatory.
+The `first_name`, `last_name`, and `email` keys are self-explanatory.
+
+After March 20, 2017 the `skype` field will always be an empty string and cannot be set otherwise. For more detail, please read [this changelog](/changelog/2017-02-minor-field-changes) entry.
 
 The `image_` keys hold links to the different sizes we support for the user's profile image from 24x24 to 1024x1024 pixels. A link to the image in its original size is stored in `image_original`.
 
