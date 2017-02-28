@@ -9,6 +9,7 @@ This method has the URL `https://slack.com/api/groups.create` and follows the [S
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `groups:write` |
 | `name` | &nbsp; | Required | Name of private channel to create |
+| `validate` | `true` | Optional | Whether to return errors on invalid channel name instead of modifying it to meet the specified criteria. |
 
 ## Naming
 

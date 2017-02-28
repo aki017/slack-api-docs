@@ -9,6 +9,7 @@ This method has the URL `https://slack.com/api/channels.create` and follows the 
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `channels:write` |
 | `name` | `mychannel` | Required | Name of channel to create |
+| `validate` | `true` | Optional | Whether to return errors on invalid channel name instead of modifying it to meet the specified criteria. |
 
 ## Naming
 

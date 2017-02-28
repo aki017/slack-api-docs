@@ -12,6 +12,7 @@ This method has the URL `https://slack.com/api/channels.rename` and follows the 
 Requires scope: `channels:write` |
 | `channel` | `C1234567890` | Required | Channel to rename |
 | `name` | &nbsp; | Required | New name for channel. |
+| `validate` | `true` | Optional | Whether to return errors on invalid channel name instead of modifying it to meet the specified criteria. |
 
 ## Naming
 

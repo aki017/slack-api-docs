@@ -10,6 +10,7 @@ This method has the URL `https://slack.com/api/groups.rename` and follows the [S
 Requires scope: `groups:write` |
 | `channel` | `G1234567890` | Required | Private channel to rename |
 | `name` | &nbsp; | Required | New name for private channel. |
+| `validate` | `true` | Optional | Whether to return errors on invalid channel name instead of modifying it to meet the specified criteria. |
 
 ## Naming
 
