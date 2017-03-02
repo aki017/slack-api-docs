@@ -9,6 +9,7 @@ This method has the URL `https://slack.com/api/channels.join` and follows the [S
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `channels:write` |
 | `name` | `C1234567890` | Required | Name of channel to join |
+| `validate` | `true` | Optional | Whether to return errors on invalid channel name instead of modifying it to meet the specified criteria. |
 
 ## Response
 
@@ -72,6 +73,11 @@ This table lists the expected errors that this method could return. However, oth
 | `restricted_action` | A team preference prevents the authenticated user from creating channels. |
 | `no_channel` | Value passed for `name` was empty. |
 | `is_archived` | Channel has been archived. |
+| `invalid_name_required` | Value passed for `name` was empty. |
+| `invalid_name_single_punctuation` | Value passed for `name` was a single hyphen or underscore. |
+| `invalid_name_maxlength` | Value passed for `name` exceeded max length. |
+| `invalid_name_specials` | Value passed for `name` contained unallowed special characters or upper case characters. |
+| `invalid_name` | Value passed for `name` was invalid. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |

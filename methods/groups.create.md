@@ -60,6 +60,11 @@ This table lists the expected errors that this method could return. However, oth
 | `no_channel` | No group name was passed. |
 | `restricted_action` | A team preference prevents the authenticated user from creating groups. |
 | `name_taken` | A group cannot be created with the given name. |
+| `invalid_name_required` | Value passed for `name` was empty. |
+| `invalid_name_single_punctuation` | Value passed for `name` was a single hyphen or underscore. |
+| `invalid_name_maxlength` | Value passed for `name` exceeded max length. |
+| `invalid_name_specials` | Value passed for `name` contained unallowed special characters or upper case characters. |
+| `invalid_name` | Value passed for `name` was invalid. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
