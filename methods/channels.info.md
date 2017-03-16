@@ -1,5 +1,7 @@
 This method returns information about a team channel.
 
+To retrieve information on a private channel, use [`groups.info`](/methods/groups.info).
+
 ## Arguments
 
 This method has the URL `https://slack.com/api/channels.info` and follows the [Slack Web API calling conventions](/web#basics).
