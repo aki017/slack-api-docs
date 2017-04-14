@@ -1,4 +1,4 @@
-This method is used to set the profile information for a user.
+Use this method to set a user's profile information, including name, email, current status, and other attributes.
 
 ## Arguments
 
@@ -46,11 +46,35 @@ The `email` field must be a valid email address. It cannot have spaces, and it m
 
 After March 20, 2017 the `skype` field will always be an empty string and cannot be set otherwise. For more detail, please read [this changelog](/changelog/2017-02-minor-field-changes) entry.
 
-The recommended way to set the profile image fields is to call [`users.setPhoto`](/methods/users.setPhoto). To clear them, call [`users.deletePhoto`](/methods/users.deletePhoto).
+To set a user's profile image, use [`users.setPhoto`](/methods/users.setPhoto). To clear them, call [`users.deletePhoto`](/methods/users.deletePhoto).
 
 The `fields` key is an array of key:value pairs holding the values for the user's custom profile fields. The key is the ID of the definition for that field, which is per-team. This ID can also be used in the `name` field of this method. The `value` of a field is what should be displayed, unless the `alt` key is also present, in which case that is displayed instead. The `value` can be up to 256 characters for fields of type `text` and `link`. For fields of type `options_list`, the `value` must be one of the `possible_values` in the field definition. For fields of type `date`, the `value` must be a valid date. The `alt` field can be up to 256 characters for all field types. The `profile` argument must be used in order to set the `alt` field.
 
 Use [`team.profile.get`](/methods/team.profile.get) to retrieve the profile fields used by a team.
+
+### Updating a user's current status
+
+Provide **both** `status_text` and `status_emoji` profile fields when using this method to set a user's custom status.
+
+- `status_text` allows up to 100 characters, though we strongly encourage brevity.
+- `status_emoji` is a string referencing an emoji enabled for the Slack team, such as `:mountain_railway:`.
+
+For example, to set a custom status of `🚞 riding a train`, you'd need to build this JSON payload:
+
+```
+{
+    "status_text": "riding a train",
+    "status_emoji": ":mountain_railway:"
+}
+```
+
+Then encode it as the URL-encoded `profile` parameter:
+
+```
+%7B%22status_text%22%3A%22riding%20a%20train%22%2C%22status_emoji%22%3A%22%3Amountain_railway%3A%22%7D
+```
+
+To unset a user's custom status, provide empty strings to both attributes: `""`.
 
 ## Response
 
@@ -60,6 +84,9 @@ After making this call, the complete user's profile will be returned in the same
 {
     "ok": true,
     "profile": {
+        "avatar_hash": "ge3b51ca72ze",
+        "status_text": "riding a train",
+        "status_emoji": ":mountain_railway:",
         "first_name": "John",
         "last_name": "Smith",
         "email": "john@smith.com",

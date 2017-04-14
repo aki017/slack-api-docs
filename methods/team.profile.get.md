@@ -18,7 +18,7 @@ The optional `visibility` argument allows the client to filter the profile field
 
 ## Response
 
-The response contains a `profile` item with an array of key value pairs. Right now only the `fields` key is supported, and it contains a list of field definitions for this team. See the [set](/methods/team.profile.set) method for an explanation of the format.
+The response contains a `profile` item with an array of key value pairs. Right now only the `fields` key is supported, and it contains a list of field definitions for this team.
 
 Note that returned field definitions always have an `id`.
 

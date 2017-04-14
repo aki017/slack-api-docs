@@ -1,4 +1,4 @@
-This method is used to get the profile information for a user.
+Use this method to retrieve a user's profile information.
 
 ## Arguments
 
@@ -11,7 +11,7 @@ Requires scope: `users.profile:read` |
 | `user` | `U1234567890` | Optional | User to retrieve profile info for |
 | `include_labels` | `true` | Optional, default=false | Include labels for each ID in custom profile fields |
 
-If you call `users.profile.get` frequently on behalf of a team or user, we recommend caching labels retrieved from [`team.profile.get`](/methods/team.profile.get) or from when you **sparingly** use the `include_labels` parameter with `users.profile.get`.
+If you're frequently calling `users.profile.get` on behalf of a team or user, we recommend caching labels retrieved from [`team.profile.get`](/methods/team.profile.get). Please only use the `include_labels` parameter with `users.profile.get` **sparingly**.
 
 The `include_labels` parameter is **heavily rate-limited**.
 
@@ -19,9 +19,9 @@ The `include_labels` parameter is **heavily rate-limited**.
 
 The response contains a `profile` item with an array of key:value pairs.
 
-The `first_name`, `last_name`, and `email` keys are self-explanatory.
+We hope you find the `first_name`, `last_name`, `email` attributes self-explanatory.
 
-After March 20, 2017 the `skype` field will always be an empty string and cannot be set otherwise. For more detail, please read [this changelog](/changelog/2017-02-minor-field-changes) entry.
+The user's custom-set "current status" can be found in the `status_text` and `status_emoji` attributes. See [custom status](/docs/presence#custom_status) for more.
 
 The `image_` keys hold links to the different sizes we support for the user's profile image from 24x24 to 1024x1024 pixels. A link to the image in its original size is stored in `image_original`.
 
@@ -33,6 +33,8 @@ For a description of the `fields` key, see the [users.profile.set](/methods/user
 {
     "ok": true,
     "profile": {
+        "status_text": "riding a train",
+        "status_emoji": ":mountain_railway:",
         "first_name": "John",
         "last_name": "Smith",
         "email": "john@smith.com",

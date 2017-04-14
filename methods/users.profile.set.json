@@ -1,5 +1,5 @@
 {
-  "desc": "This method is used to set the profile information for a user.",
+  "desc": "Use this method to set a user's profile information, including name, email, current status, and other attributes.",
   "args": {
     "token": {
       "required": true,

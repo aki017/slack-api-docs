@@ -31,6 +31,7 @@ Returns a list of [user objects](/types/user), in no particular order:
             "tz_offset": -25200,
             "profile": {
                 "avatar_hash": "ge3b51ca72de",
+                "current_status": ":mountain_railway: riding a train",
                 "first_name": "Bobby",
                 "last_name": "Tables",
                 "real_name": "Bobby Tables",
