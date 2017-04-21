@@ -1,4 +1,12 @@
-This method starts a Real Time Messaging API session. Refer to the [RTM API documentation](/rtm) for full details on how to use the RTM API.
+This method begins a Real Time Messaging API session and reserves your application a specific URL with which to connect via websocket.
+
+It's user-centric and team-centric: your app connects _as_ a specific user or bot user on a specific team. Many apps will find the [Events API](/events-api)'s subscription model more scalable when working against multiple teams.
+
+This method also returns a smorgasbord of data about the team, its channels, and members. Some times more information than can be provided in a timely or helpful manner.
+
+Please use [`rtm.connect`](/methods/rtm.connect) instead, especially when connecting on behalf of an [Enterprise Grid](/enterprise-grid) customer.
+
+Consult the [RTM API documentation](/rtm) for full details on using the RTM API. You'll also find our [changelog entry](/changelgo/2017-04-start-using-rtm-connect-and-stop-using-rtm-start) useful.
 
 ## Arguments
 
@@ -11,6 +19,7 @@ Requires scope: `client` |
 | `simple_latest` | `true` | Optional | Return timestamp only for latest message object of each channel (improves performance). |
 | `no_unreads` | `true` | Optional | Skip unread counts for each channel (improves performance). |
 | `mpim_aware` | `true` | Optional | Returns MPIMs to the client in the API response. |
+| `no_latest` | `1` | Optional, default=0 | Exclude latest timestamps for channels, groups, mpims, and ims |
 
 ## Response
 
@@ -25,7 +34,7 @@ This method returns lots of data about the current state of a team, along with a
         "id": "U023BECGF",
         "name": "bobby",
         "prefs": {
-            …
+            ...
         },
         "created": 1402463766,
         "manual_presence": "active"
@@ -36,23 +45,23 @@ This method returns lots of data about the current state of a team, along with a
         "email_domain": "",
         "domain": "example",
         "icon": {
-            …
+            ...
         },
         "msg_edit_window_mins": -1,
         "over_storage_limit": false
         "prefs": {
-            …
+            ...
         },
         "plan": "std"
     },
-    "users": […],
+    "users": [...],
 
-    "channels": […],
-    "groups": […],
-    "mpims": […],
-    "ims": […],
+    "channels": [...],
+    "groups": [...],
+    "mpims": [...],
+    "ims": [...],
 
-    "bots": […],
+    "bots": [...],
 }
 ```
 
@@ -64,7 +73,7 @@ The `team` property contains details on the authenticated user's team. If a team
 
 The `users` property contains a list of [user objects](/types/user), one for every member of the team.
 
-The `channels` property is a list of [channel objects](/types/channel), one for every channel visible to the authenticated user. For regular or administrator accounts this list will include every team channel. The`is_member` property indicates if the user is a member of this channel. If true then the channel object will also include the topic, purpose, member list and read-state related information.
+The `channels` property is a list of [channel objects](/types/channel), one for every channel visible to the authenticated user. For regular or administrator accounts this list will include every team channel. The`is_member` property indicates if the user is a member of this channel. If true then the channel object will also include the topic, purpose, member list and read-state related information. The `latest` attribute is deprecated and will soon be removed from this method's response. See [this changelog entry](/changelog/2017-04-start-using-rtm-connect-and-stop-using-rtm-start).
 
 The `groups` property is a list of [group objects](/types/group), one for every group the authenticated user is in.
 

@@ -4,31 +4,10 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token.\nRequires scope: client"
-    },
-    "simple_latest": {
-      "required": false,
-      "example": "true",
-      "desc": "Return timestamp only for latest message object of each channel (improves performance)."
-    },
-    "no_unreads": {
-      "required": false,
-      "example": "true",
-      "desc": "Skip unread counts for each channel (improves performance)."
-    },
-    "mpim_aware": {
-      "required": false,
-      "example": "true",
-      "desc": "Returns MPIMs to the client in the API response."
-    },
-    "no_latest": {
-      "required": false,
-      "example": "1",
-      "desc": "Exclude latest timestamps for channels, groups, mpims, and ims"
+      "desc": "Authentication token.\nRequires token type: session or oauth or bot or app\nRequires scope: client"
     }
   },
   "errors": {
-    "migration_in_progress": "Team is being migrated between servers. See [the `team_migration_started` event documentation](/events/team_migration_started) for details.",
     "not_authed": "No authentication token provided.",
     "invalid_auth": "Invalid authentication token.",
     "account_inactive": "Authentication token is for a deleted user or team.",
