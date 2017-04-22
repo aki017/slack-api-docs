@@ -49,6 +49,7 @@ This table lists the expected errors that this method could return. However, oth
 | `cant_invite_self` | Authenticated user cannot invite themselves to a group. |
 | `is_archived` | Group has been archived. |
 | `cant_invite` | User cannot be invited to this group. |
+| `ura_max_channels` | URA is already in the maximum number of channels. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
