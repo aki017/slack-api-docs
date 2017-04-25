@@ -19,7 +19,9 @@ Requires scope: `client` |
 | `simple_latest` | `true` | Optional | Return timestamp only for latest message object of each channel (improves performance). |
 | `no_unreads` | `true` | Optional | Skip unread counts for each channel (improves performance). |
 | `mpim_aware` | `true` | Optional | Returns MPIMs to the client in the API response. |
-| `no_latest` | `1` | Optional, default=0 | Exclude latest timestamps for channels, groups, mpims, and ims |
+| `no_latest` | `1` | Optional, default=0 | Exclude latest timestamps for channels, groups, mpims, and ims. Automatically sets `no_unreads` to `1` |
+
+Note that setting `no_latest=1` will automatically set `no_unreads=1`.
 
 ## Response
 
@@ -99,6 +101,7 @@ This table lists the expected errors that this method could return. However, oth
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |
 | `invalid_post_type` | The method was called via a `POST` request, but the specified `Content-Type` was invalid. Valid types are: `application/x-www-form-urlencoded` `multipart/form-data` `text/plain`. |
 | `missing_post_type` | The method was called via a `POST` request and included a data payload, but the request did not include a `Content-Type` header. |
+| `team_added_to_org` | The team associated with your request is currently undergoing migration to an Enterprise Organization. Web API and other platform operations will be intermittently unavailable until the transition is complete. |
 | `request_timeout` | The method was called via a `POST` request, but the `POST` data was either missing or truncated. |
 
 ## Warnings

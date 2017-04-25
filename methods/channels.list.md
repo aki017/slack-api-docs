@@ -2,6 +2,8 @@ This method returns a list of all channels in the team. This includes channels t
 
 To retrieve a list of private channels, use [`groups.list`](/methods/groups.list).
 
+_Having trouble getting a HTTP 200 response from this method?_ Try excluding the `members` list from each channel object using the `exclude_members` parameter.
+
 ## Arguments
 
 This method has the URL `https://slack.com/api/channels.list` and follows the [Slack Web API calling conventions](/web#basics).
@@ -10,7 +12,8 @@ This method has the URL `https://slack.com/api/channels.list` and follows the [S
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `channels:read` |
-| `exclude_archived` | `true` | Optional, default=false | Don't return archived channels. |
+| `exclude_archived` | `true` | Optional, default=false | Exclude archived channels from the list |
+| `exclude_members` | `true` | Optional, default=false | Exclude the `members` collection from each `channel` |
 
 ## Response
 
@@ -44,7 +47,9 @@ Returns a list of limited [channel objects](/types/channel):
 }
 ```
 
-To get a full [channel object](/types/channel), call the [channels.info](/methods/channels.info) method.
+To get a full [channel object](/types/channel), call the [`channels.info`](/methods/channels.info) method.
+
+Use the `exclude_members` parameter to exclude the `members` collection from each listed channel. This improves performance, especially with larger teams. Use [`channels.info`](/methods/channels.info) to retrieve `members` on a channel-by-channel basis instead.
 
 An `is_org_shared` attribute may appear set to `true` on channels that are shared channel between multiple teams of an [enterprise grid](/enterprise-grid). See the [enterprise grid shared channels documentation](/enterprise-grid#shared_channels) for more detail.
 
@@ -63,6 +68,7 @@ This table lists the expected errors that this method could return. However, oth
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |
 | `invalid_post_type` | The method was called via a `POST` request, but the specified `Content-Type` was invalid. Valid types are: `application/x-www-form-urlencoded` `multipart/form-data` `text/plain`. |
 | `missing_post_type` | The method was called via a `POST` request and included a data payload, but the request did not include a `Content-Type` header. |
+| `team_added_to_org` | The team associated with your request is currently undergoing migration to an Enterprise Organization. Web API and other platform operations will be intermittently unavailable until the transition is complete. |
 | `request_timeout` | The method was called via a `POST` request, but the `POST` data was either missing or truncated. |
 
 ## Warnings
