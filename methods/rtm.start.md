@@ -6,7 +6,7 @@ This method also returns a smorgasbord of data about the team, its channels, and
 
 Please use [`rtm.connect`](/methods/rtm.connect) instead, especially when connecting on behalf of an [Enterprise Grid](/enterprise-grid) customer.
 
-Consult the [RTM API documentation](/rtm) for full details on using the RTM API. You'll also find our [changelog entry](/changelgo/2017-04-start-using-rtm-connect-and-stop-using-rtm-start) useful.
+Consult the [RTM API documentation](/rtm) for full details on using the RTM API. You'll also find our [changelog entry](/changelog/2017-04-start-using-rtm-connect-and-stop-using-rtm-start) useful.
 
 ## Arguments
 
