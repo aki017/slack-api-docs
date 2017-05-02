@@ -1,4 +1,4 @@
-This method returns a portion of [message events](/events/message) from the specified channel.
+This method returns a portion of [message events](/events/message) from the specified public channel.
 
 To read the entire history for a channel, call the method with no `latest` or`oldest` arguments, and then continue paging using the instructions below.
 
