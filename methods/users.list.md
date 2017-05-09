@@ -23,7 +23,6 @@ Returns a list of [user objects](/types/user), in no particular order:
             "team_id": "T021F9ZE2",
             "name": "bobby",
             "deleted": false,
-            "status": null,
             "color": "9f69e7",
             "real_name": "Bobby Tables",
             "tz": "America\/Los_Angeles",
