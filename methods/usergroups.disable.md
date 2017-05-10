@@ -2,7 +2,7 @@ This method disables an existing User Group.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/usergroups.disable` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/usergroups.disable` and follows the [Slack Web API calling conventions](/web#basics). <aside class="small">Present these parameters as part of an <code>application/x-www-form-urlencoded</code> querystring or POST body. <code>application/json</code> is not currently accepted.</aside>
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
@@ -44,7 +44,7 @@ Requires scope: `usergroups:write` |
 }
 ```
 
-When a User Group has been disabled it's `date_delete` parameter will be non-zero.
+When a User Group has been disabled its `date_delete` parameter will be non-zero.
 
 ## Errors
 

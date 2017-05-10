@@ -2,7 +2,7 @@ This method opens a direct message channel with another member of your Slack tea
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/im.open` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/im.open` and follows the [Slack Web API calling conventions](/web#basics). <aside class="small">Present these parameters as part of an <code>application/x-www-form-urlencoded</code> querystring or POST body. <code>application/json</code> is not currently accepted.</aside>
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |

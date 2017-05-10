@@ -6,7 +6,7 @@ _Having trouble getting a HTTP 200 response from this method?_ Try excluding the
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/channels.list` and follows the [Slack Web API calling conventions](/web#basics).
+This method has the URL `https://slack.com/api/channels.list` and follows the [Slack Web API calling conventions](/web#basics). <aside class="small">Present these parameters as part of an <code>application/x-www-form-urlencoded</code> querystring or POST body. <code>application/json</code> is not currently accepted.</aside>
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
