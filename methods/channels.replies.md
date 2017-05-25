@@ -37,10 +37,6 @@ The `channel` and `thread_ts` arguments are always required. `thread_ts` must be
             "ts": "1358546515.000007",
             "wibblr": true
         }
-    ],
-    "thread_info": [
-        "complete": true,
-        "count": 3,
     ]
 }
 ```
