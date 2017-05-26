@@ -13,7 +13,6 @@ This method has the URL `https://slack.com/api/rtm.connect` and follows the [Sla
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
-Requires token type: `session` or `oauth` or `bot` or `app`  
 Requires scope: `client` |
 
 ## Response

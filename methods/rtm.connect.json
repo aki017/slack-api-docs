@@ -4,7 +4,7 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token.\nRequires token type: session or oauth or bot or app\nRequires scope: client"
+      "desc": "Authentication token.\nRequires scope: client"
     }
   },
   "errors": {

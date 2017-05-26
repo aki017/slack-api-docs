@@ -8,7 +8,7 @@ This method has the URL `https://slack.com/api/channels.join` and follows the [S
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `channels:write` |
-| `name` | `C1234567890` | Required | Name of channel to join |
+| `name` | `#general` | Required | Name of channel to join |
 | `validate` | `true` | Optional | Whether to return errors on invalid channel name instead of modifying it to meet the specified criteria. |
 
 ## Response
