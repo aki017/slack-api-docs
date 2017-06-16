@@ -14,6 +14,8 @@ This method has the URL `https://slack.com/api/rtm.connect` and follows the [Sla
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `client` |
+| `presence_sub` | `true` | Optional, default=false | Only deliver presence events when requested by subscription. See [presence subscriptions](/docs/presence-and-status#subscriptions). |
+| `batch_presence_aware` | `1` | Optional, default=false | Group presence change notices as `presence_change_batch` events when possible. See [batching](/docs/presence-and-status#batching). |
 
 ## Response
 
