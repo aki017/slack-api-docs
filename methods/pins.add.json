@@ -37,6 +37,7 @@
     "already_pinned": "The specified item is already pinned to the channel.",
     "permission_denied": "The user does not have permission to add pins to the channel.",
     "file_not_shared": "File specified by `file` is not public nor shared to the channel.",
+    "not_pinnable": "This message type is not pinnable.",
     "not_authed": "No authentication token provided.",
     "invalid_auth": "Invalid authentication token.",
     "account_inactive": "Authentication token is for a deleted user or team.",

@@ -1,5 +1,7 @@
 This method pins an item (file, file comment, channel message, or group message) to a particular channel. The `channel` argument is required and one of `file`, `file_comment`, or `timestamp` must also be specified.
 
+Note that you cannot pin join/leave messages in channels and groups.
+
 ## Arguments
 
 This method has the URL `https://slack.com/api/pins.add` and follows the [Slack Web API calling conventions](/web#basics). <aside class="small">Present these parameters as part of an <code>application/x-www-form-urlencoded</code> querystring or POST body. <code>application/json</code> is not currently accepted.</aside>
@@ -38,6 +40,7 @@ This table lists the expected errors that this method could return. However, oth
 | `already_pinned` | The specified item is already pinned to the channel. |
 | `permission_denied` | The user does not have permission to add pins to the channel. |
 | `file_not_shared` | File specified by `file` is not public nor shared to the channel. |
+| `not_pinnable` | This message type is not pinnable. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
