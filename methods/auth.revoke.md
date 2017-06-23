@@ -6,7 +6,8 @@ This method has the URL `https://slack.com/api/auth.revoke` and follows the [Sla
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Optional | Authentication token. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
+Requires scope: `none` |
 | `test` | `true` | Optional | Setting this parameter to `1` triggers a _testing mode_ where the specified token will not actually be revoked. |
 
 ## Response
@@ -29,6 +30,7 @@ This table lists the expected errors that this method could return. However, oth
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
+| `user_is_bot` | This method cannot be called by a bot user. |
 | `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of common decency. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
