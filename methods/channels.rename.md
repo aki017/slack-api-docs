@@ -20,19 +20,32 @@ Channel names can only contain lowercase letters, numbers, hyphens, and undersco
 
 ## Response
 
+Returns a [channel object](/types/channel):
+
 ```
 {
     "ok": true,
     "channel": {
         "id": "C024BE91L",
-        "is_channel": true,
-        "name": "new_name",
-        "created": 1360782804
+        "name": "fun",
+
+        "created": 1360782804,
+        "creator": "U024BE7LH",
+
+        "is_archived": false,
+        "is_general": false,
+        "is_member": true,
+        "is_starred": true,
+
+        "topic": { ... },
+        "purpose": { ... },
+
+        "last_read": "1401383885.000061",
+        "unread_count": 0,
+        "unread_count_display": 0
     }
 }
 ```
-
-Returns the channel ID, name and date created (as a unix timestamp).
 
 ## Errors
 
