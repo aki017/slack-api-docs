@@ -6,15 +6,20 @@
       "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token.\nRequires scope: files:read"
     },
-    "user": {
-      "required": false,
-      "example": "U1234567890",
-      "desc": "Filter files created by a single user."
-    },
     "channel": {
       "required": false,
       "example": "C1234567890",
       "desc": "Filter files appearing in a specific channel, indicated by its ID."
+    },
+    "count": {
+      "required": false,
+      "example": "20",
+      "desc": "Number of items to return per page."
+    },
+    "page": {
+      "required": false,
+      "example": "2",
+      "desc": "Page number of results to return."
     },
     "ts_from": {
       "required": false,
@@ -31,15 +36,10 @@
       "example": "images",
       "desc": "Filter files by type:\n\n\nall - All files\nspaces - Posts\nsnippets - Snippets\nimages - Image files\ngdocs - Google docs\nzips - Zip files\npdfs - PDF files\n\n\nYou can pass multiple values in the types argument, like types=spaces,snippets.The default value is all, which does not filter the list."
     },
-    "count": {
+    "user": {
       "required": false,
-      "example": "20",
-      "desc": "Number of items to return per page."
-    },
-    "page": {
-      "required": false,
-      "example": "2",
-      "desc": "Page number of results to return."
+      "example": "W1234567890",
+      "desc": "Filter files created by a single user."
     }
   },
   "errors": {

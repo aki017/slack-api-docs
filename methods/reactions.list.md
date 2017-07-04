@@ -8,10 +8,10 @@ This method has the URL `https://slack.com/api/reactions.list` and follows the [
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `reactions:read` |
-| `user` | `U1234567890` | Optional | Show reactions made by this user. Defaults to the authed user. |
-| `full` | `true` | Optional | If true always return the complete reaction list. |
 | `count` | `20` | Optional, default=100 | Number of items to return per page. |
+| `full` | `true` | Optional | If true always return the complete reaction list. |
 | `page` | `2` | Optional, default=1 | Page number of results to return. |
+| `user` | `W1234567890` | Optional | Show reactions made by this user. Defaults to the authed user. |
 
 ## Response
 

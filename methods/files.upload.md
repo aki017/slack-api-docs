@@ -8,13 +8,13 @@ This method has the URL `https://slack.com/api/files.upload` and follows the [Sl
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `files:write:user` |
-| `file` | `...` | Optional | File contents via `multipart/form-data`. If omitting this parameter, you must submit `content`. |
-| `content` | `...` | Optional | File contents via a POST variable. If omitting this parameter, you must provide a `file`. |
-| `filetype` | `php` | Optional | A [file type](/types/file#file_types) identifier. |
-| `filename` | `foo.txt` | Optional | Filename of file. |
-| `title` | `My File` | Optional | Title of file. |
-| `initial_comment` | `Best!` | Optional | Initial comment to add to file. |
 | `channels` | `C1234567890,C2345678901,C3456789012` | Optional | Comma-separated list of channel names or IDs where the file will be shared. |
+| `content` | `...` | Optional | File contents via a POST variable. If omitting this parameter, you must provide a `file`. |
+| `file` | `...` | Optional | File contents via `multipart/form-data`. If omitting this parameter, you must submit `content`. |
+| `filename` | `foo.txt` | Optional | Filename of file. |
+| `filetype` | `php` | Optional | A [file type](/types/file#file_types) identifier. |
+| `initial_comment` | `Best!` | Optional | Initial comment to add to file. |
+| `title` | `My File` | Optional | Title of file. |
 
 **You must provide either a `file` or `content` parameter.**
 

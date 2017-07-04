@@ -13,10 +13,10 @@ This method has the URL `https://slack.com/api/channels.history` and follows the
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `channels:history` |
 | `channel` | `C1234567890` | Required | Channel to fetch history for. |
+| `count` | `100` | Optional, default=100 | Number of messages to return, between 1 and 1000. |
+| `inclusive` | `true` | Optional, default=0 | Include messages with latest or oldest timestamp in results. |
 | `latest` | `1234567890.123456` | Optional, default=now | End of time range of messages to include in results. |
 | `oldest` | `1234567890.123456` | Optional, default=0 | Start of time range of messages to include in results. |
-| `inclusive` | `true` | Optional, default=0 | Include messages with latest or oldest timestamp in results. |
-| `count` | `100` | Optional, default=100 | Number of messages to return, between 1 and 1000. |
 | `unreads` | `true` | Optional, default=0 | Include `unread_count_display` in the output? |
 
 ## Response

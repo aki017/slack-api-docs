@@ -6,15 +6,15 @@
       "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token.\nRequires scope: client"
     },
-    "presence_sub": {
-      "required": false,
-      "example": "true",
-      "desc": "Only deliver presence events when requested by subscription. See presence subscriptions."
-    },
     "batch_presence_aware": {
       "required": false,
       "example": "1",
       "desc": "Group presence change notices as presence_change_batch events when possible. See batching."
+    },
+    "presence_sub": {
+      "required": false,
+      "example": "true",
+      "desc": "Only deliver presence events when requested by subscription. See presence subscriptions."
     }
   },
   "errors": {

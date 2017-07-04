@@ -11,7 +11,7 @@ This method has the URL `https://slack.com/api/groups.invite` and follows the [S
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `groups:write` |
 | `channel` | `G1234567890` | Required | Private channel to invite user to. |
-| `user` | `U1234567890` | Required | User to invite. |
+| `user` | `W1234567890` | Required | User to invite. |
 
 ## Response
 

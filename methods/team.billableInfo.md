@@ -8,7 +8,7 @@ This method has the URL `https://slack.com/api/team.billableInfo` and follows th
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `admin` |
-| `user` | `U1234567890` | Optional | A user to retrieve the billable information for. Defaults to all users. |
+| `user` | `W1234567890` | Optional | A user to retrieve the billable information for. Defaults to all users. |
 
 ## Response
 

@@ -10,7 +10,7 @@ This method has the URL `https://slack.com/api/mpim.open` and follows the [Slack
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `mpim:write` |
-| `users` | `U1234567890,U2345678901,U3456789012` | Required | Comma separated lists of users. The ordering of the users is preserved whenever a MPIM group is returned. |
+| `users` | `W1234567890,U2345678901,U3456789012` | Required | Comma separated lists of users. The ordering of the users is preserved whenever a MPIM group is returned. |
 
 ## Response
 

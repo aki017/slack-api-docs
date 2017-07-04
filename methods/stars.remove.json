@@ -6,6 +6,11 @@
       "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token.\nRequires scope: stars:write"
     },
+    "channel": {
+      "required": false,
+      "example": "C1234567890",
+      "desc": "Channel to remove star from, or channel where the message to remove star from was posted (used with timestamp)."
+    },
     "file": {
       "required": false,
       "example": "F1234567890",
@@ -15,11 +20,6 @@
       "required": false,
       "example": "Fc1234567890",
       "desc": "File comment to remove star from."
-    },
-    "channel": {
-      "required": false,
-      "example": "C1234567890",
-      "desc": "Channel to remove star from, or channel where the message to remove star from was posted (used with timestamp)."
     },
     "timestamp": {
       "required": false,

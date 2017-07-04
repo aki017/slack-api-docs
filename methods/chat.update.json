@@ -6,11 +6,6 @@
       "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token.\nRequires scope: chat:write:bot or chat:write:user"
     },
-    "ts": {
-      "required": true,
-      "example": "1405894322.002768",
-      "desc": "Timestamp of the message to be updated."
-    },
     "channel": {
       "required": true,
       "example": "C1234567890",
@@ -21,25 +16,30 @@
       "example": "Hello world",
       "desc": "New text for the message, using the default formatting rules."
     },
+    "ts": {
+      "required": true,
+      "example": "1405894322.002768",
+      "desc": "Timestamp of the message to be updated."
+    },
+    "as_user": {
+      "required": false,
+      "example": "true",
+      "desc": "Pass true to update the message as the authed user. Bot users in this context are considered authed users."
+    },
     "attachments": {
       "required": false,
       "example": "[{\"pretext\": \"pre-hello\", \"text\": \"text-world\"}]",
       "desc": "Structured message attachments."
-    },
-    "parse": {
-      "required": false,
-      "example": "none",
-      "desc": "Change how messages are treated. Defaults to client, unlike chat.postMessage. See below."
     },
     "link_names": {
       "required": false,
       "example": "true",
       "desc": "Find and link channel names and usernames. Defaults to none. This parameter should be used in conjunction with parse. To set link_names to 1, specify a parse mode of full."
     },
-    "as_user": {
+    "parse": {
       "required": false,
-      "example": "true",
-      "desc": "Pass true to update the message as the authed user. Bot users in this context are considered authed users."
+      "example": "none",
+      "desc": "Change how messages are treated. Defaults to client, unlike chat.postMessage. See below."
     }
   },
   "errors": {

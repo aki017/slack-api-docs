@@ -9,7 +9,7 @@ This method has the URL `https://slack.com/api/channels.kick` and follows the [S
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `channels:write` |
 | `channel` | `C1234567890` | Required | Channel to remove user from. |
-| `user` | `U1234567890` | Required | User to remove from channel. |
+| `user` | `W1234567890` | Required | User to remove from channel. |
 
 ## Response
 

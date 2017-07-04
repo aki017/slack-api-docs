@@ -6,6 +6,11 @@
       "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token.\nRequires scope: admin"
     },
+    "before": {
+      "required": false,
+      "example": "1457989166",
+      "desc": "End of time range of logs to include in results (inclusive)."
+    },
     "count": {
       "required": false,
       "example": "20",
@@ -15,11 +20,6 @@
       "required": false,
       "example": "2",
       "desc": "Page number of results to return."
-    },
-    "before": {
-      "required": false,
-      "example": "1457989166",
-      "desc": "End of time range of logs to include in results (inclusive)."
     }
   },
   "errors": {

@@ -9,11 +9,11 @@ This method has the URL `https://slack.com/api/search.all` and follows the [Slac
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `search:read` |
 | `query` | `pickleface` | Required | Search query. May contains booleans, etc. |
+| `count` | `20` | Optional, default=20 | Number of items to return per page. |
+| `highlight` | `true` | Optional | Pass a value of `true` to enable query highlight markers (see below). |
+| `page` | `2` | Optional, default=1 | Page number of results to return. |
 | `sort` | `timestamp` | Optional, default=score | Return matches sorted by either `score` or `timestamp`. |
 | `sort_dir` | `asc` | Optional, default=desc | Change sort direction to ascending (`asc`) or descending (`desc`). |
-| `highlight` | `true` | Optional | Pass a value of `true` to enable query highlight markers (see below). |
-| `count` | `20` | Optional, default=20 | Number of items to return per page. |
-| `page` | `2` | Optional, default=1 | Page number of results to return. |
 
 ## Response
 

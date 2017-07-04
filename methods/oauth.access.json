@@ -1,6 +1,11 @@
 {
   "desc": "This method allows you to exchange a temporary OAuth code for an API access token.\nThis is used as part of the OAuth authentication flow.",
   "args": {
+    "token": {
+      "required": true,
+      "example": " ",
+      "desc": ""
+    },
     "client_id": {
       "required": true,
       "example": "4b39e9-752c4",

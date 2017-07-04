@@ -11,6 +11,11 @@
       "example": "thumbsup",
       "desc": "Reaction (emoji) name."
     },
+    "channel": {
+      "required": false,
+      "example": "C1234567890",
+      "desc": "Channel where the message to remove reaction from was posted."
+    },
     "file": {
       "required": false,
       "example": "F1234567890",
@@ -20,11 +25,6 @@
       "required": false,
       "example": "Fc1234567890",
       "desc": "File comment to remove reaction from."
-    },
-    "channel": {
-      "required": false,
-      "example": "C1234567890",
-      "desc": "Channel where the message to remove reaction from was posted."
     },
     "timestamp": {
       "required": false,

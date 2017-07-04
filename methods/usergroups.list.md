@@ -8,8 +8,8 @@ This method has the URL `https://slack.com/api/usergroups.list` and follows the 
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `usergroups:read` |
-| `include_disabled` | `true` | Optional | Include disabled User Groups. |
 | `include_count` | `true` | Optional | Include the number of users in each User Group. |
+| `include_disabled` | `true` | Optional | Include disabled User Groups. |
 | `include_users` | `true` | Optional | Include the list of users for each User Group. |
 
 ## Response

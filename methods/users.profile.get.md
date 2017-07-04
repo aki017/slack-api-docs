@@ -8,8 +8,8 @@ This method has the URL `https://slack.com/api/users.profile.get` and follows th
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `users.profile:read` |
-| `user` | `U1234567890` | Optional | User to retrieve profile info for |
 | `include_labels` | `true` | Optional, default=false | Include labels for each ID in custom profile fields |
+| `user` | `W1234567890` | Optional | User to retrieve profile info for |
 
 If you're frequently calling `users.profile.get` on behalf of a team or user, we recommend caching labels retrieved from [`team.profile.get`](/methods/team.profile.get). Please only use the `include_labels` parameter with `users.profile.get` **sparingly**.
 

@@ -8,11 +8,11 @@ This method has the URL `https://slack.com/api/reactions.get` and follows the [S
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `reactions:read` |
+| `channel` | `C1234567890` | Optional | Channel where the message to get reactions for was posted. |
 | `file` | `F1234567890` | Optional | File to get reactions for. |
 | `file_comment` | `Fc1234567890` | Optional | File comment to get reactions for. |
-| `channel` | `C1234567890` | Optional | Channel where the message to get reactions for was posted. |
-| `timestamp` | `1234567890.123456` | Optional | Timestamp of the message to get reactions for. |
 | `full` | `true` | Optional | If true always return the complete reaction list. |
+| `timestamp` | `1234567890.123456` | Optional | Timestamp of the message to get reactions for. |
 
 ## Response
 

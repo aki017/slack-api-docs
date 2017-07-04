@@ -6,20 +6,20 @@
       "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token.\nRequires scope: users.profile:write"
     },
-    "user": {
+    "name": {
       "required": false,
-      "example": "U1234567890",
-      "desc": "ID of user to change. This argument may only be specified by team admins on paid teams."
+      "example": "first_name",
+      "desc": "Name of a single key to set. Usable only if profile is not passed."
     },
     "profile": {
       "required": false,
       "example": "{ first_name: \"John\", ... }",
       "desc": "Collection of key:value pairs presented as a URL-encoded JSON hash."
     },
-    "name": {
+    "user": {
       "required": false,
-      "example": "first_name",
-      "desc": "Name of a single key to set. Usable only if profile is not passed."
+      "example": "W1234567890",
+      "desc": "ID of user to change. This argument may only be specified by team admins on paid teams."
     },
     "value": {
       "required": false,

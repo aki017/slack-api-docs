@@ -16,12 +16,12 @@ This method has the URL `https://slack.com/api/rtm.start` and follows the [Slack
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `client` |
-| `simple_latest` | `true` | Optional | Return timestamp only for latest message object of each channel (improves performance). |
-| `no_unreads` | `true` | Optional | Skip unread counts for each channel (improves performance). |
-| `mpim_aware` | `true` | Optional | Returns MPIMs to the client in the API response. |
-| `presence_sub` | `true` | Optional, default=false | Only deliver presence events when requested by subscription. See [presence subscriptions](/docs/presence-and-status#subscriptions). |
 | `batch_presence_aware` | `1` | Optional, default=false | Group presence change notices as `presence_change_batch` events when possible. See [batching](/docs/presence-and-status#batching). |
+| `mpim_aware` | `true` | Optional | Returns MPIMs to the client in the API response. |
 | `no_latest` | `1` | Optional, default=0 | Exclude latest timestamps for channels, groups, mpims, and ims. Automatically sets `no_unreads` to `1` |
+| `no_unreads` | `true` | Optional | Skip unread counts for each channel (improves performance). |
+| `presence_sub` | `true` | Optional, default=false | Only deliver presence events when requested by subscription. See [presence subscriptions](/docs/presence-and-status#subscriptions). |
+| `simple_latest` | `true` | Optional | Return timestamp only for latest message object of each channel (improves performance). |
 
 Note that setting `no_latest=1` will automatically set `no_unreads=1`.
 

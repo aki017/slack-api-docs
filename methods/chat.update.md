@@ -8,13 +8,13 @@ This method has the URL `https://slack.com/api/chat.update` and follows the [Sla
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `chat:write:bot` or `chat:write:user` |
-| `ts` | `1405894322.002768` | Required | Timestamp of the message to be updated. |
 | `channel` | `C1234567890` | Required | Channel containing the message to be updated. |
 | `text` | `Hello world` | Required | New text for the message, using the [default formatting rules](/docs/formatting). |
-| `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Optional | Structured message attachments. |
-| `parse` | `none` | Optional | Change how messages are treated. Defaults to `client`, unlike `chat.postMessage`. See below. |
-| `link_names` | `true` | Optional | Find and link channel names and usernames. Defaults to `none`. This parameter should be used in conjunction with `parse`. To set `link_names` to `1`, specify a `parse` mode of `full`. |
+| `ts` | `1405894322.002768` | Required | Timestamp of the message to be updated. |
 | `as_user` | `true` | Optional | Pass true to update the message as the authed user. [Bot users](/bot-users) in this context are considered authed users. |
+| `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Optional | Structured message attachments. |
+| `link_names` | `true` | Optional | Find and link channel names and usernames. Defaults to `none`. This parameter should be used in conjunction with `parse`. To set `link_names` to `1`, specify a `parse` mode of `full`. |
+| `parse` | `none` | Optional | Change how messages are treated. Defaults to `client`, unlike `chat.postMessage`. See below. |
 
 ## Formatting
 
@@ -32,12 +32,14 @@ Attempting to update other message types will return a `cant_update_message` err
 
 ## Response
 
-`{
+```
+{
         "ok": true,
         "channel": "C024BE91L",
         "ts": "1401383885.000061",
         "text": "Updated Text"
-    }`
+    }
+```
 
 The response includes the `text`, `channel` and `timestamp` properties of the updated message so clients can keep their local copies of the message in sync.
 

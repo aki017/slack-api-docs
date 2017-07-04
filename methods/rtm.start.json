@@ -6,35 +6,35 @@
       "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token.\nRequires scope: client"
     },
-    "simple_latest": {
+    "batch_presence_aware": {
       "required": false,
-      "example": "true",
-      "desc": "Return timestamp only for latest message object of each channel (improves performance)."
-    },
-    "no_unreads": {
-      "required": false,
-      "example": "true",
-      "desc": "Skip unread counts for each channel (improves performance)."
+      "example": "1",
+      "desc": "Group presence change notices as presence_change_batch events when possible. See batching."
     },
     "mpim_aware": {
       "required": false,
       "example": "true",
       "desc": "Returns MPIMs to the client in the API response."
     },
+    "no_latest": {
+      "required": false,
+      "example": "1",
+      "desc": "Exclude latest timestamps for channels, groups, mpims, and ims. Automatically sets no_unreads to 1"
+    },
+    "no_unreads": {
+      "required": false,
+      "example": "true",
+      "desc": "Skip unread counts for each channel (improves performance)."
+    },
     "presence_sub": {
       "required": false,
       "example": "true",
       "desc": "Only deliver presence events when requested by subscription. See presence subscriptions."
     },
-    "batch_presence_aware": {
+    "simple_latest": {
       "required": false,
-      "example": "1",
-      "desc": "Group presence change notices as presence_change_batch events when possible. See batching."
-    },
-    "no_latest": {
-      "required": false,
-      "example": "1",
-      "desc": "Exclude latest timestamps for channels, groups, mpims, and ims. Automatically sets no_unreads to 1"
+      "example": "true",
+      "desc": "Return timestamp only for latest message object of each channel (improves performance)."
     }
   },
   "errors": {

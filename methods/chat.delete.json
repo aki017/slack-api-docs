@@ -6,15 +6,15 @@
       "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token.\nRequires scope: chat:write:bot or chat:write:user"
     },
-    "ts": {
-      "required": true,
-      "example": "1405894322.002768",
-      "desc": "Timestamp of the message to be deleted."
-    },
     "channel": {
       "required": true,
       "example": "C1234567890",
       "desc": "Channel containing the message to be deleted."
+    },
+    "ts": {
+      "required": true,
+      "example": "1405894322.002768",
+      "desc": "Timestamp of the message to be deleted."
     },
     "as_user": {
       "required": false,

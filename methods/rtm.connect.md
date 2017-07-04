@@ -14,8 +14,8 @@ This method has the URL `https://slack.com/api/rtm.connect` and follows the [Sla
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `client` |
-| `presence_sub` | `true` | Optional, default=false | Only deliver presence events when requested by subscription. See [presence subscriptions](/docs/presence-and-status#subscriptions). |
 | `batch_presence_aware` | `1` | Optional, default=false | Group presence change notices as `presence_change_batch` events when possible. See [batching](/docs/presence-and-status#batching). |
+| `presence_sub` | `true` | Optional, default=false | Only deliver presence events when requested by subscription. See [presence subscriptions](/docs/presence-and-status#subscriptions). |
 
 ## Response
 
@@ -41,7 +41,7 @@ This method returns a WebSocket Message Server URL and limited information about
 
 The `url` property contains a WebSocket Message Server URL. Connecting to this URL will initiate a Real Time Messaging session. These URLs are only valid for 30 seconds, so connect quickly!
 
-The `self` property contains a small amount of information concerning the connecting user &mdash; an `id` and their `name`.
+The `self` property contains a small amount of information concerning the connecting user — an `id` and their `name`.
 
 The `team` attribute also houses brief information about the team, including its `id`, `name`, `domain`, and if it's part of an [Enterprise Grid](/enterprise-grid), the corresponding `enteprise_id`.
 

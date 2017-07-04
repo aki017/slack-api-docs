@@ -8,9 +8,9 @@ This method has the URL `https://slack.com/api/stars.add` and follows the [Slack
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `stars:write` |
+| `channel` | `C1234567890` | Optional | Channel to add star to, or channel where the message to add star to was posted (used with `timestamp`). |
 | `file` | `F1234567890` | Optional | File to add star to. |
 | `file_comment` | `Fc1234567890` | Optional | File comment to add star to. |
-| `channel` | `C1234567890` | Optional | Channel to add star to, or channel where the message to add star to was posted (used with `timestamp`). |
 | `timestamp` | `1234567890.123456` | Optional | Timestamp of the message to add star to. |
 
 ## Response

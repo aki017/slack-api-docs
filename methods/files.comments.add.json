@@ -6,15 +6,15 @@
       "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token.\nRequires scope: files:write:user"
     },
-    "file": {
-      "required": true,
-      "example": "F1234467890",
-      "desc": "File to add a comment to."
-    },
     "comment": {
       "required": true,
       "example": "Everyone should take a moment to read this file.",
       "desc": "Text of the comment to add."
+    },
+    "file": {
+      "required": true,
+      "example": "F1234467890",
+      "desc": "File to add a comment to."
     }
   },
   "errors": {

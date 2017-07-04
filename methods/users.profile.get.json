@@ -6,15 +6,15 @@
       "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token.\nRequires scope: users.profile:read"
     },
-    "user": {
-      "required": false,
-      "example": "U1234567890",
-      "desc": "User to retrieve profile info for"
-    },
     "include_labels": {
       "required": false,
       "example": "true",
       "desc": "Include labels for each ID in custom profile fields"
+    },
+    "user": {
+      "required": false,
+      "example": "W1234567890",
+      "desc": "User to retrieve profile info for"
     }
   },
   "errors": {

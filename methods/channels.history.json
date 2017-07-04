@@ -11,6 +11,16 @@
       "example": "C1234567890",
       "desc": "Channel to fetch history for."
     },
+    "count": {
+      "required": false,
+      "example": "100",
+      "desc": "Number of messages to return, between 1 and 1000."
+    },
+    "inclusive": {
+      "required": false,
+      "example": "true",
+      "desc": "Include messages with latest or oldest timestamp in results."
+    },
     "latest": {
       "required": false,
       "example": "1234567890.123456",
@@ -20,16 +30,6 @@
       "required": false,
       "example": "1234567890.123456",
       "desc": "Start of time range of messages to include in results."
-    },
-    "inclusive": {
-      "required": false,
-      "example": "true",
-      "desc": "Include messages with latest or oldest timestamp in results."
-    },
-    "count": {
-      "required": false,
-      "example": "100",
-      "desc": "Number of messages to return, between 1 and 1000."
     },
     "unreads": {
       "required": false,

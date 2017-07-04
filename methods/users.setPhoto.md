@@ -15,9 +15,9 @@ This method has the URL `https://slack.com/api/users.setPhoto` and follows the [
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `users.profile:write` |
 | `image` | `...` | Required | File contents via `multipart/form-data`. |
+| `crop_w` | `100` | Optional | Width/height of crop box (always square) |
 | `crop_x` | `10` | Optional | X coordinate of top-left corner of crop box |
 | `crop_y` | `15` | Optional | Y coordinate of top-left corner of crop box |
-| `crop_w` | `100` | Optional | Width/height of crop box (always square) |
 
 Use this method with a HTTP POST and provide your HTTP `Content-type` as `multipart/form-data`.
 

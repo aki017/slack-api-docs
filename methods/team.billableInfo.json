@@ -8,7 +8,7 @@
     },
     "user": {
       "required": false,
-      "example": "U1234567890",
+      "example": "W1234567890",
       "desc": "A user to retrieve the billable information for. Defaults to all users."
     }
   },

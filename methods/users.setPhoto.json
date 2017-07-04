@@ -11,6 +11,11 @@
       "example": "...",
       "desc": "File contents via multipart/form-data."
     },
+    "crop_w": {
+      "required": false,
+      "example": "100",
+      "desc": "Width/height of crop box (always square)"
+    },
     "crop_x": {
       "required": false,
       "example": "10",
@@ -20,11 +25,6 @@
       "required": false,
       "example": "15",
       "desc": "Y coordinate of top-left corner of crop box"
-    },
-    "crop_w": {
-      "required": false,
-      "example": "100",
-      "desc": "Width/height of crop box (always square)"
     }
   },
   "errors": {

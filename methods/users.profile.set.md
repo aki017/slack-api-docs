@@ -8,9 +8,9 @@ This method has the URL `https://slack.com/api/users.profile.set` and follows th
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `users.profile:write` |
-| `user` | `U1234567890` | Optional | ID of user to change. This argument may only be specified by team admins on paid teams. |
-| `profile` | `{ first_name: "John", ... }` | Optional | Collection of key:value pairs presented as a URL-encoded JSON hash. |
 | `name` | `first_name` | Optional | Name of a single key to set. Usable only if `profile` is not passed. |
+| `profile` | `{ first_name: "John", ... }` | Optional | Collection of key:value pairs presented as a URL-encoded JSON hash. |
+| `user` | `W1234567890` | Optional | ID of user to change. This argument may only be specified by team admins on paid teams. |
 | `value` | `John` | Optional | Value to set a single key to. Usable only if `profile` is not passed. |
 
 Individual fields can be updated by passing the pair of arguments `name` and`value`; or multiple fields can be updated at once by passing the argument`profile`.

@@ -6,6 +6,7 @@ This method has the URL `https://slack.com/api/api.test` and follows the [Slack 
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
+| `token` | &nbsp; | Required | |
 | `error` | `my_error` | Optional | Error response to return |
 | `foo` | `bar` | Optional | example property to return |
 
