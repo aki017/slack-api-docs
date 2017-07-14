@@ -10,6 +10,11 @@
       "required": false,
       "example": "true",
       "desc": "Don't return archived private channels."
+    },
+    "exclude_members": {
+      "required": false,
+      "example": "true",
+      "desc": "Exlude the members from each group"
     }
   },
   "errors": {

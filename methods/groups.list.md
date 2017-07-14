@@ -9,6 +9,7 @@ This method has the URL `https://slack.com/api/groups.list` and follows the [Sla
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
 Requires scope: `groups:read` |
 | `exclude_archived` | `true` | Optional, default=0 | Don't return archived private channels. |
+| `exclude_members` | `true` | Optional, default=false | Exlude the `members` from each `group` |
 
 ## Response
 
