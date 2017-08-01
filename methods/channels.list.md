@@ -59,6 +59,8 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
+| `invalid_cursor` | Value passed for `cursor` was not valid or is no longer valid. |
+| `pagination_not_available` | Pagination currently does not work for teams on an enterprise. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Invalid authentication token. |
 | `account_inactive` | Authentication token is for a deleted user or team. |
