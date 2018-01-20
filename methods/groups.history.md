@@ -1,13 +1,29 @@
+Fetches history of messages and events from a private channel.
+
+## Facts
+
+| Method URL: | `https://slack.com/api/groups.history` |
+| Preferred HTTP method: | `GET` |
+| Accepted content types: | [`application/x-www-form-urlencoded`](/web#post_bodies "Learn more about sending requests") |
+| Works with: | 
+
+| Token type | Required scope(s) |
+| --- | --- |
+| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [workspace](/docs/token-types#workspace) | [`groups:history`](/scopes/groups:history) |
+| [user](/docs/token-types#user) | [`groups:history`](/scopes/groups:history) [`read`](/scopes/read) |
+
+ |
+
+* * *
+
 This method returns a portion of messages/events from the specified private channel. To read the entire history for a private channel, call the method with no `latest` or`oldest` arguments, and then continue paging using the instructions below.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/groups.history` and follows the [Slack Web API calling conventions](/web#basics). <aside class="small">Present these parameters as part of an <code>application/x-www-form-urlencoded</code> querystring or POST body. <code>application/json</code> is not currently accepted.</aside>
-
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
-Requires scope: `groups:history` |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `G1234567890` | Required | Private channel to fetch history for. |
 | `count` | `100` | Optional, default=100 | Number of messages to return, between 1 and 1000. |
 | `inclusive` | `true` | Optional, default=0 | Include messages with latest or oldest timestamp in results. |
@@ -15,34 +31,46 @@ Requires scope: `groups:history` |
 | `oldest` | `1234567890.123456` | Optional, default=0 | Start of time range of messages to include in results. |
 | `unreads` | `true` | Optional, default=0 | Include `unread_count_display` in the output? |
 
+<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+
 ## Response
+
+Typical success response
 
 ```
 {
-        "ok": true,
-        "latest": "1358547726.000003",
-        "messages": [
-            {
-                "type": "message",
-                "ts": "1358546515.000008",
-                "user": "U2147483896",
-                "text": "Hello"
-            },
-            {
-                "type": "message",
-                "ts": "1358546515.000007",
-                "user": "U2147483896",
-                "text": "World",
-                "is_starred": true,
-            },
-            {
-                "type": "something_else",
-                "ts": "1358546515.000007",
-                "wibblr": true
-            }
-        ],
-        "has_more": false
-    }
+    "ok": true,
+    "latest": "1358547726.000003",
+    "messages": [
+        {
+            "type": "message",
+            "ts": "1358546515.000008",
+            "user": "U2147483896",
+            "text": "Hello"
+        },
+        {
+            "type": "message",
+            "ts": "1358546515.000007",
+            "user": "U2147483896",
+            "text": "World",
+            "is_starred": true
+        },
+        {
+            "type": "something_else",
+            "ts": "1358546515.000007"
+        }
+    ],
+    "has_more": false
+}
+```
+
+Typical error response
+
+```
+{
+    "ok": false,
+    "error": "channel_not_found"
+}
 ```
 
 The `messages` array up to 100 messages between `latest` and `oldest`. If there were more than 100 messages between those two points, then `has_more`will be true.
@@ -59,7 +87,7 @@ The `is_limited` boolean property is only included for free teams that have reac
 
 ## Errors
 
-This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
+This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should always check the value of the `ok` params in the response.
 
 | Error | Description |
 | --- | --- |
@@ -67,16 +95,18 @@ This table lists the expected errors that this method could return. However, oth
 | `invalid_ts_latest` | Value passed for `latest` was invalid |
 | `invalid_ts_oldest` | Value passed for `oldest` was invalid |
 | `not_authed` | No authentication token provided. |
-| `invalid_auth` | Invalid authentication token. |
-| `account_inactive` | Authentication token is for a deleted user or team. |
-| `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of common decency. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
+| `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
+| `account_inactive` | Authentication token is for a deleted user or workspace. |
+| `no_permission` | The workspace token used in this request does not have the permissions necessary to complete the request. |
+| `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |
 | `invalid_post_type` | The method was called via a `POST` request, but the specified `Content-Type` was invalid. Valid types are: `application/x-www-form-urlencoded` `multipart/form-data` `text/plain`. |
 | `missing_post_type` | The method was called via a `POST` request and included a data payload, but the request did not include a `Content-Type` header. |
-| `team_added_to_org` | The team associated with your request is currently undergoing migration to an Enterprise Organization. Web API and other platform operations will be intermittently unavailable until the transition is complete. |
+| `team_added_to_org` | The workspace associated with your request is currently undergoing migration to an Enterprise Organization. Web API and other platform operations will be intermittently unavailable until the transition is complete. |
 | `request_timeout` | The method was called via a `POST` request, but the `POST` data was either missing or truncated. |
+| `fatal_error` | The server could not complete your operation(s) without encountering a catastrophic error. It's possible some aspect of the operation succeeded before the error was raised. |
 
 ## Warnings
 

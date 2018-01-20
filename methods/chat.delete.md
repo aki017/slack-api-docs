@@ -1,18 +1,44 @@
+Deletes a message.
+
+## Facts
+
+| Method URL: | `https://slack.com/api/chat.delete` |
+| Preferred HTTP method: | `POST` |
+| Accepted content types: | [`application/x-www-form-urlencoded`](/web#post_bodies "Learn more about sending requests"), [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
+| Works with: | 
+
+| Token type | Required scope(s) |
+| --- | --- |
+| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [workspace](/docs/token-types#workspace) | [`chat:write`](/scopes/chat:write) |
+| [user](/docs/token-types#user) | [`chat:write:user`](/scopes/chat:write:user) [`chat:write:bot`](/scopes/chat:write:bot) [`post`](/scopes/post) |
+
+ |
+
+* * *
+
 This method deletes a message from a channel.
+
+When used with a typical user token, may only delete messages posted by that user.
+
+When used with an admin user's user token, may delete most messages posted in a workspace.
+
+When used with a bot user's token, may delete only messages posted by that bot user.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/chat.delete` and follows the [Slack Web API calling conventions](/web#basics). <aside class="small">Present these parameters as part of an <code>application/x-www-form-urlencoded</code> querystring or POST body. <code>application/json</code> is not currently accepted.</aside>
-
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
-Requires scope: `chat:write:bot` or `chat:write:user` |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Channel containing the message to be deleted. |
 | `ts` | `1405894322.002768` | Required | Timestamp of the message to be deleted. |
-| `as_user` | `true` | Optional | Pass true to delete the message as the authed user. [Bot users](/bot-users) in this context are considered authed users. |
+| `as_user` | `true` | Optional | Pass true to delete the message as the authed user with `chat:write:user` scope. [Bot users](/bot-users) in this context are considered authed users. If unused or false, the message will be deleted with `chat:write:bot` scope. |
+
+<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
+
+Typical success response
 
 ```
 {
@@ -22,11 +48,20 @@ Requires scope: `chat:write:bot` or `chat:write:user` |
 }
 ```
 
+Typical error response
+
+```
+{
+    "error": "message_not_found",
+    "ok": false
+}
+```
+
 The response includes the `channel` and `timestamp` properties of the deleted message.
 
 ## Errors
 
-This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
+This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should always check the value of the `ok` params in the response.
 
 | Error | Description |
 | --- | --- |
@@ -35,16 +70,18 @@ This table lists the expected errors that this method could return. However, oth
 | `cant_delete_message` | Authenticated user does not have permission to delete this message. |
 | `compliance_exports_prevent_deletion` | Compliance exports are on, messages can not be deleted |
 | `not_authed` | No authentication token provided. |
-| `invalid_auth` | Invalid authentication token. |
-| `account_inactive` | Authentication token is for a deleted user or team. |
-| `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of common decency. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
+| `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
+| `account_inactive` | Authentication token is for a deleted user or workspace. |
+| `no_permission` | The workspace token used in this request does not have the permissions necessary to complete the request. |
+| `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |
 | `invalid_post_type` | The method was called via a `POST` request, but the specified `Content-Type` was invalid. Valid types are: `application/x-www-form-urlencoded` `multipart/form-data` `text/plain`. |
 | `missing_post_type` | The method was called via a `POST` request and included a data payload, but the request did not include a `Content-Type` header. |
-| `team_added_to_org` | The team associated with your request is currently undergoing migration to an Enterprise Organization. Web API and other platform operations will be intermittently unavailable until the transition is complete. |
+| `team_added_to_org` | The workspace associated with your request is currently undergoing migration to an Enterprise Organization. Web API and other platform operations will be intermittently unavailable until the transition is complete. |
 | `request_timeout` | The method was called via a `POST` request, but the `POST` data was either missing or truncated. |
+| `fatal_error` | The server could not complete your operation(s) without encountering a catastrophic error. It's possible some aspect of the operation succeeded before the error was raised. |
 
 ## Warnings
 

@@ -1,18 +1,35 @@
+Renames a channel.
+
+## Facts
+
+| Method URL: | `https://slack.com/api/channels.rename` |
+| Preferred HTTP method: | `POST` |
+| Accepted content types: | [`application/x-www-form-urlencoded`](/web#post_bodies "Learn more about sending requests"), [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
+| Works with: | 
+
+| Token type | Required scope(s) |
+| --- | --- |
+| [workspace](/docs/token-types#workspace) | [`channels:write`](/scopes/channels:write) |
+| [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write) [`post`](/scopes/post) |
+
+ |
+
+* * *
+
 This method renames a team channel.
 
 The only people who can rename a channel are Team Admins, or the person that originally created the channel. Others will receive a "not\_authorized" error.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/channels.rename` and follows the [Slack Web API calling conventions](/web#basics). <aside class="small">Present these parameters as part of an <code>application/x-www-form-urlencoded</code> querystring or POST body. <code>application/json</code> is not currently accepted.</aside>
-
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
-Requires scope: `channels:write` |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Channel to rename |
 | `name` | &nbsp; | Required | New name for channel. |
 | `validate` | `true` | Optional | Whether to return errors on invalid channel name instead of modifying it to meet the specified criteria. |
+
+<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Naming
 
@@ -22,34 +39,56 @@ Channel names can only contain lowercase letters, numbers, hyphens, and undersco
 
 Returns a [channel object](/types/channel):
 
+Typical success response
+
 ```
 {
-    "ok": true,
     "channel": {
-        "id": "C024BE91L",
-        "name": "fun",
-
-        "created": 1360782804,
-        "creator": "U024BE7LH",
-
+        "created": 1477445146,
+        "creator": "U2U85N1RZ",
+        "id": "C2U875RJN",
         "is_archived": false,
+        "is_channel": true,
         "is_general": false,
-        "is_member": true,
-        "is_starred": true,
+        "is_member": false,
+        "is_mpim": false,
+        "is_org_shared": false,
+        "is_private": false,
+        "is_shared": false,
+        "members": [],
+        "name": "humans-and-bots",
+        "name_normalized": "humans-and-bots",
+        "previous_names": [
+            "humans"
+        ],
+        "purpose": {
+            "creator": "U2U85N1RZ",
+            "last_set": 1509475801,
+            "value": "the purpose of this channel is to bring people and robots together in harmony"
+        },
+        "topic": {
+            "creator": "U2U85N1RZ",
+            "last_set": 1509475775,
+            "value": "here be robots"
+        },
+        "unlinked": 0
+    },
+    "ok": true
+}
+```
 
-        "topic": { ... },
-        "purpose": { ... },
+Typical error response
 
-        "last_read": "1401383885.000061",
-        "unread_count": 0,
-        "unread_count_display": 0
-    }
+```
+{
+    "ok": false,
+    "error": "invalid_auth"
 }
 ```
 
 ## Errors
 
-This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
+This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should always check the value of the `ok` params in the response.
 
 | Error | Description |
 | --- | --- |
@@ -63,18 +102,20 @@ This table lists the expected errors that this method could return. However, oth
 | `invalid_name_maxlength` | Value passed for `name` exceeded max length. |
 | `invalid_name_specials` | Value passed for `name` contained unallowed special characters or upper case characters. |
 | `not_authed` | No authentication token provided. |
-| `invalid_auth` | Invalid authentication token. |
-| `account_inactive` | Authentication token is for a deleted user or team. |
+| `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
+| `account_inactive` | Authentication token is for a deleted user or workspace. |
+| `no_permission` | The workspace token used in this request does not have the permissions necessary to complete the request. |
 | `user_is_bot` | This method cannot be called by a bot user. |
 | `user_is_restricted` | This method cannot be called by a restricted user or single channel guest. |
-| `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of common decency. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
+| `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |
 | `invalid_post_type` | The method was called via a `POST` request, but the specified `Content-Type` was invalid. Valid types are: `application/x-www-form-urlencoded` `multipart/form-data` `text/plain`. |
 | `missing_post_type` | The method was called via a `POST` request and included a data payload, but the request did not include a `Content-Type` header. |
-| `team_added_to_org` | The team associated with your request is currently undergoing migration to an Enterprise Organization. Web API and other platform operations will be intermittently unavailable until the transition is complete. |
+| `team_added_to_org` | The workspace associated with your request is currently undergoing migration to an Enterprise Organization. Web API and other platform operations will be intermittently unavailable until the transition is complete. |
 | `request_timeout` | The method was called via a `POST` request, but the `POST` data was either missing or truncated. |
+| `fatal_error` | The server could not complete your operation(s) without encountering a catastrophic error. It's possible some aspect of the operation succeeded before the error was raised. |
 
 ## Warnings
 

@@ -1,17 +1,35 @@
+Removes a star from an item.
+
+## Facts
+
+| Method URL: | `https://slack.com/api/stars.remove` |
+| Preferred HTTP method: | `POST` |
+| Accepted content types: | [`application/x-www-form-urlencoded`](/web#post_bodies "Learn more about sending requests"), [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
+| Works with: | 
+
+| Token type | Required scope(s) |
+| --- | --- |
+| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [workspace](/docs/token-types#workspace) | [`stars:write`](/scopes/stars:write) |
+| [user](/docs/token-types#user) | [`stars:write`](/scopes/stars:write) [`post`](/scopes/post) |
+
+ |
+
+* * *
+
 This method removes a star from an item (message, file, file comment, channel, private group, or DM) on behalf of the authenticated user. One of `file`, `file_comment`, `channel`, or the combination of `channel` and `timestamp` must be specified.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/stars.remove` and follows the [Slack Web API calling conventions](/web#basics). <aside class="small">Present these parameters as part of an <code>application/x-www-form-urlencoded</code> querystring or POST body. <code>application/json</code> is not currently accepted.</aside>
-
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
-Requires scope: `stars:write` |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Optional | Channel to remove star from, or channel where the message to remove star from was posted (used with `timestamp`). |
 | `file` | `F1234567890` | Optional | File to remove star from. |
 | `file_comment` | `Fc1234567890` | Optional | File comment to remove star from. |
 | `timestamp` | `1234567890.123456` | Optional | Timestamp of the message to remove star from. |
+
+<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 
@@ -25,7 +43,7 @@ After making this call, the item will be unstarred and [a `star_removed` event](
 
 ## Errors
 
-This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
+This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should always check the value of the `ok` params in the response.
 
 | Error | Description |
 | --- | --- |
@@ -37,16 +55,18 @@ This table lists the expected errors that this method could return. However, oth
 | `no_item_specified` | `file`, `file_comment`, `channel` and `timestamp` was not specified. |
 | `not_starred` | The specified item is not currently starred by the authenticated user. |
 | `not_authed` | No authentication token provided. |
-| `invalid_auth` | Invalid authentication token. |
-| `account_inactive` | Authentication token is for a deleted user or team. |
-| `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of common decency. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
+| `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
+| `account_inactive` | Authentication token is for a deleted user or workspace. |
+| `no_permission` | The workspace token used in this request does not have the permissions necessary to complete the request. |
+| `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |
 | `invalid_post_type` | The method was called via a `POST` request, but the specified `Content-Type` was invalid. Valid types are: `application/x-www-form-urlencoded` `multipart/form-data` `text/plain`. |
 | `missing_post_type` | The method was called via a `POST` request and included a data payload, but the request did not include a `Content-Type` header. |
-| `team_added_to_org` | The team associated with your request is currently undergoing migration to an Enterprise Organization. Web API and other platform operations will be intermittently unavailable until the transition is complete. |
+| `team_added_to_org` | The workspace associated with your request is currently undergoing migration to an Enterprise Organization. Web API and other platform operations will be intermittently unavailable until the transition is complete. |
 | `request_timeout` | The method was called via a `POST` request, but the `POST` data was either missing or truncated. |
+| `fatal_error` | The server could not complete your operation(s) without encountering a catastrophic error. It's possible some aspect of the operation succeeded before the error was raised. |
 
 ## Warnings
 

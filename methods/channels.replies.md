@@ -1,65 +1,116 @@
+Retrieve a thread of messages posted to a channel
+
+## Facts
+
+| Method URL: | `https://slack.com/api/channels.replies` |
+| Preferred HTTP method: | `GET` |
+| Accepted content types: | [`application/x-www-form-urlencoded`](/web#post_bodies "Learn more about sending requests") |
+| Works with: | 
+
+| Token type | Required scope(s) |
+| --- | --- |
+| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [workspace](/docs/token-types#workspace) | [`channels:history`](/scopes/channels:history) |
+| [user](/docs/token-types#user) | [`channels:history`](/scopes/channels:history) [`read`](/scopes/read) |
+
+ |
+
+* * *
+
 This method returns an entire thread (a message plus all the messages in reply to it).
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/channels.replies` and follows the [Slack Web API calling conventions](/web#basics). <aside class="small">Present these parameters as part of an <code>application/x-www-form-urlencoded</code> querystring or POST body. <code>application/json</code> is not currently accepted.</aside>
-
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
-Requires scope: `channels:history` |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Channel to fetch thread from |
 | `thread_ts` | `1234567890.123456` | Required | Unique identifier of a thread's parent message |
+
+<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 The `channel` and `thread_ts` arguments are always required. `thread_ts` must be the timestamp of an existing message with 0 or more replies. If there are no replies then just the single message referenced by `thread_ts` will be returned - it is just an ordinary message.
 
 ## Sample Response
 
+Typical success response
+
 ```
 {
-    "ok": true,
+    "has_more": false,
     "messages": [
         {
+            "last_read": "1509484885.000082",
+            "replies": [
+                {
+                    "ts": "1509484424.000601",
+                    "user": "U2U85N1RZ"
+                },
+                {
+                    "ts": "1509484885.000082",
+                    "user": "U2U85N1RZ"
+                }
+            ],
+            "reply_count": 2,
+            "subscribed": true,
+            "text": "This is a channel message",
+            "thread_ts": "1485913694.000025",
+            "ts": "1485913694.000025",
             "type": "message",
-            "ts": "1358546515.000008",
-            "user": "U2147483896",
-            "text": "Hello"
+            "unread_count": 0,
+            "user": "U2X9P5FEL"
         },
         {
+            "parent_user_id": "U2X9P5FEL",
+            "text": "This is a thread reply",
+            "thread_ts": "1485913694.000025",
+            "ts": "1509484424.000601",
             "type": "message",
-            "ts": "1358546515.000007",
-            "user": "U2147483896",
-            "text": "World",
-            "is_starred": true,
+            "user": "U2U85N1RZ"
         },
         {
-            "type": "something_else",
-            "ts": "1358546515.000007",
-            "wibblr": true
+            "parent_user_id": "U2X9P5FEL",
+            "text": "This is another thread reply",
+            "thread_ts": "1485913694.000025",
+            "ts": "1509484885.000082",
+            "type": "message",
+            "user": "U2U85N1RZ"
         }
-    ]
+    ],
+    "ok": true
+}
+```
+
+Typical error response
+
+```
+{
+    "error": "thread_not_found",
+    "ok": false
 }
 ```
 
 ## Errors
 
-This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
+This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should always check the value of the `ok` params in the response.
 
 | Error | Description |
 | --- | --- |
 | `channel_not_found` | Value for `channel` was missing or invalid. |
 | `thread_not_found` | Value for `thread_ts` was missing or invalid. |
 | `not_authed` | No authentication token provided. |
-| `invalid_auth` | Invalid authentication token. |
-| `account_inactive` | Authentication token is for a deleted user or team. |
-| `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of common decency. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
+| `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
+| `account_inactive` | Authentication token is for a deleted user or workspace. |
+| `no_permission` | The workspace token used in this request does not have the permissions necessary to complete the request. |
+| `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |
 | `invalid_post_type` | The method was called via a `POST` request, but the specified `Content-Type` was invalid. Valid types are: `application/x-www-form-urlencoded` `multipart/form-data` `text/plain`. |
 | `missing_post_type` | The method was called via a `POST` request and included a data payload, but the request did not include a `Content-Type` header. |
-| `team_added_to_org` | The team associated with your request is currently undergoing migration to an Enterprise Organization. Web API and other platform operations will be intermittently unavailable until the transition is complete. |
+| `team_added_to_org` | The workspace associated with your request is currently undergoing migration to an Enterprise Organization. Web API and other platform operations will be intermittently unavailable until the transition is complete. |
 | `request_timeout` | The method was called via a `POST` request, but the `POST` data was either missing or truncated. |
+| `fatal_error` | The server could not complete your operation(s) without encountering a catastrophic error. It's possible some aspect of the operation succeeded before the error was raised. |
 
 ## Warnings
 

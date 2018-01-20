@@ -1,67 +1,56 @@
+Opens a direct message channel.
+
+## Facts
+
+| Method URL: | `https://slack.com/api/im.open` |
+| Preferred HTTP method: | `POST` |
+| Accepted content types: | [`application/x-www-form-urlencoded`](/web#post_bodies "Learn more about sending requests"), [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
+| Works with: | 
+
+| Token type | Required scope(s) |
+| --- | --- |
+| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [user](/docs/token-types#user) | [`im:write`](/scopes/im:write) [`post`](/scopes/post) |
+
+ |
+
+* * *
+
 This method opens a direct message channel with another member of your Slack team.
 
 ## Arguments
 
-This method has the URL `https://slack.com/api/im.open` and follows the [Slack Web API calling conventions](/web#basics). <aside class="small">Present these parameters as part of an <code>application/x-www-form-urlencoded</code> querystring or POST body. <code>application/json</code> is not currently accepted.</aside>
-
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token.  
-Requires scope: `im:write` |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `user` | `W1234567890` | Required | User to open a direct message channel with. |
+| `include_locale` | `true` | Optional | Set this to `true` to receive the locale for this im. Defaults to `false` |
 | `return_im` | `true` | Optional | Boolean, indicates you want the full IM channel definition in the response. |
+
+<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 
+Typical success response
+
 ```
 {
-    "ok": true,
-    "channel": {
-        "id": "D024BFF1M"
-    }
+    "ok": true
 }
 ```
 
-If the channel was already open the response will include `no_op` and`already_open` properties:
+Typical error response
 
 ```
 {
-    "ok": true,
-    "no_op": true,
-    "already_open": true,
-    "channel": {
-        "id": "D024BFF1M"
-    }
-}
-```
-
-In either case, if the `return_im` argument was passed, the channel object will contain the full channel definition:
-
-```
-{
-    "ok": true,
-    "channel": {
-        "id":"D024BE91L",
-        "is_im":true,
-        "user":"U024BE7LH",
-        "created":1434412652,
-        "last_read":"1442525627.000002",
-        "latest":{
-            "type":"message",
-            "user":"U024BE7LH",
-            "text":"hello",
-            "ts":"1442525627.000002"
-        },
-        "unread_count":0,
-        "unread_count_display":0,
-        "is_open":true
-    }
+    "ok": false,
+    "error": "invalid_auth"
 }
 ```
 
 ## Errors
 
-This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should _always_ check the value of the `ok` params in the response.
+This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should always check the value of the `ok` params in the response.
 
 | Error | Description |
 | --- | --- |
@@ -69,16 +58,18 @@ This table lists the expected errors that this method could return. However, oth
 | `user_not_visible` | The calling user is restricted from seeing the requested user. |
 | `user_disabled` | The `user` has been disabled. |
 | `not_authed` | No authentication token provided. |
-| `invalid_auth` | Invalid authentication token. |
-| `account_inactive` | Authentication token is for a deleted user or team. |
-| `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of common decency. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
+| `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
+| `account_inactive` | Authentication token is for a deleted user or workspace. |
+| `no_permission` | The workspace token used in this request does not have the permissions necessary to complete the request. |
+| `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |
 | `invalid_post_type` | The method was called via a `POST` request, but the specified `Content-Type` was invalid. Valid types are: `application/x-www-form-urlencoded` `multipart/form-data` `text/plain`. |
 | `missing_post_type` | The method was called via a `POST` request and included a data payload, but the request did not include a `Content-Type` header. |
-| `team_added_to_org` | The team associated with your request is currently undergoing migration to an Enterprise Organization. Web API and other platform operations will be intermittently unavailable until the transition is complete. |
+| `team_added_to_org` | The workspace associated with your request is currently undergoing migration to an Enterprise Organization. Web API and other platform operations will be intermittently unavailable until the transition is complete. |
 | `request_timeout` | The method was called via a `POST` request, but the `POST` data was either missing or truncated. |
+| `fatal_error` | The server could not complete your operation(s) without encountering a catastrophic error. It's possible some aspect of the operation succeeded before the error was raised. |
 
 ## Warnings
 
