@@ -32,7 +32,7 @@ This [Conversations API](/docs/conversations-api) method returns information abo
 
 ## Response
 
-Returns a [conversation object](/types/channel), which could be a public channel, private channel, direct message, multi-person direct message, depending completely on the `channel` ID and the permissions granted to your token.
+Returns a [conversation object](/types/conversation), which could be a public channel, private channel, direct message, multi-person direct message, depending completely on the `channel` ID and the permissions granted to your token.
 
 Typical success response for a public channel. (Also, a response from a private channel and a multi-party IM is very similar to this example.)
 
