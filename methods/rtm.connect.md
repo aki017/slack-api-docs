@@ -10,7 +10,6 @@ Starts a Real Time Messaging session.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`rtm:stream`](/scopes/rtm:stream) |
 | [user](/docs/token-types#user) | [`rtm:stream`](/scopes/rtm:stream) [`client`](/scopes/client) |
 
  |
