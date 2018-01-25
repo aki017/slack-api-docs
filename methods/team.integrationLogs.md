@@ -52,11 +52,11 @@ The response contains a list of activity logs followed by pagination information
         },
         {
             "app_id": "2345678901",
-            "app_type": "Johnny App"
+            "app_type": "Johnny App",
             "user_id": "U2345BCDE",
             "user_name": "Billy",
             "date": "1392163201",
-            "change_type": "added"
+            "change_type": "added",
             "scope": "chat:write:user,channels:read"
         },
         {
