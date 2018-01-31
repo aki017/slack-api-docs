@@ -3,8 +3,8 @@ Uploads or creates a file.
 ## Facts
 
 | Method URL: | `https://slack.com/api/files.upload` |
-| Preferred HTTP method: | `GET` |
-| Accepted content types: | [`application/x-www-form-urlencoded`](/web#post_bodies "Learn more about sending requests") |
+| Preferred HTTP method: | `POST` |
+| Accepted content types: | [`multipart/form-data`](/web#post_bodies "Learn more about sending requests") |
 | Works with: | 
 
 | Token type | Required scope(s) |

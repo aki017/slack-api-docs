@@ -97,6 +97,10 @@ A user's custom profile fields may be discovered using [`users.profile.get`](/me
 
 Apps created after January 4th, 2017 must request _both_ the `users:read` and `users:read.email` [OAuth permission scopes](/docs/oauth-scopes) simultaneously when using the [OAuth app installation flow](/docs/oauth) to enable access to the `email` field of user objects returned by this method.
 
+### Presence
+
+A user's presence is found using [`users.getPresence`](/methods/users.getPresence).
+
 ### Shared channels
 
 When looking up a user belonging to a foreign workspace party to a shared channel, you'll find an `is_stranger` boolean attribute.

@@ -31,6 +31,7 @@ This method posts [a message](/docs/messages) to a public channel, private chann
 | `icon_emoji` | `:chart_with_upwards_trend:` | Optional | Emoji to use as the icon for this message. Overrides `icon_url`. Must be used in conjunction with `as_user` set to `false`, otherwise ignored. See authorship below. |
 | `icon_url` | `http://lorempixel.com/48/48` | Optional | URL to an image to use as the icon for this message. Must be used in conjunction with `as_user` set to false, otherwise ignored. See authorship below. |
 | `link_names` | `true` | Optional | Find and link channel names and usernames. |
+| `mrkdwn` | `false` | Optional, default=true | Disable Slack markup parsing by setting to `false`. Enabled by default. |
 | `parse` | `full` | Optional | Change how messages are treated. Defaults to `none`. See below. |
 | `reply_broadcast` | `true` | Optional | Used in conjunction with `thread_ts` and indicates whether reply should be made visible to everyone in the channel or conversation. Defaults to `false`. |
 | `thread_ts` | `1234567890.123456` | Optional | Provide another message's `ts` value to make this message a reply. Avoid using a reply's `ts` value; use its parent instead. |

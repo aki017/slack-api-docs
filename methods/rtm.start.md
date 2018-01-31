@@ -33,11 +33,12 @@ The `members` array found in this and other methods will begin automatically tru
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `batch_presence_aware` | `1` | Optional, default=false | Only deliver presence events when requested by subscription. See [presence subscriptions](/docs/presence-and-status#subscriptions). |
+| `batch_presence_aware` | `1` | Optional, default=false | Batch presence deliveries via subscription. Enabling changes the shape of `presence_change` events. See [batch presence](/docs/presence-and-status#batching). |
 | `include_locale` | `true` | Optional | Set this to `true` to receive the locale for users and channels. Defaults to `false` |
 | `mpim_aware` | `true` | Optional | Returns MPIMs to the client in the API response. |
 | `no_latest` | `1` | Optional, default=0 | Exclude latest timestamps for channels, groups, mpims, and ims. Automatically sets `no_unreads` to `1` |
 | `no_unreads` | `true` | Optional | Skip unread counts for each channel (improves performance). |
+| `presence_sub` | `true` | Optional, default=true | Only deliver presence events when requested by subscription. See [presence subscriptions](/docs/presence-and-status#subscriptions). |
 | `simple_latest` | `true` | Optional | Return timestamp only for latest message object of each channel (improves performance). |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
@@ -94,7 +95,7 @@ The `self` property contains details on the authenticated user.
 
 The `team` property contains details on the authenticated user's team. If a team has not yet set a custom icon, the value of `team.icon.image_default` will be `true`.
 
-The `users` property contains a list of [user objects](/types/user), one for every member of the team.
+The `users` property contains a list of [user objects](/types/user), one for every member of the team. `presence` is no longer included for users. The list of users may truncate on especially long teams. Use [Web API methods](/methods#users) to retrieve information about users instead.
 
 The `channels` property is a list of [channel objects](/types/channel), one for every channel visible to the authenticated user. For regular or administrator accounts this list will include every team channel. The`is_member` property indicates if the user is a member of this channel. If true then the channel object will also include the topic, purpose, member list and read-state related information. The `latest`, `unread_count`, and `unread_count_display` attributes have been removed from this method's response. See [this changelog entry](/changelog/2017-04-start-using-rtm-connect-and-stop-using-rtm-start).
 
