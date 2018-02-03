@@ -61,7 +61,7 @@ You can pass multiple values in the types argument, like `types=spaces,snippets`
 }
 ```
 
-The response contains a list of [file objects](/types/file), followed by paging information. Files are always returned with the most recent first.
+The response contains a list of [file objects](/types/file), followed by paging information.
 
 The paging information contains the `count` of files returned, the `total` number of files matching the filter (if any was supplied), the `page` of results returned in this response and the total number of `pages` available.
 
