@@ -16,7 +16,9 @@ Marks a user as active.
 
 * * *
 
-This method lets the slack messaging server know that the authenticated user is currently active. [Consult the presence documentation](/docs/presence) for more details.
+This method lets the messaging server know the authenticated user is currently active, preventing Slack from automatically changing their status to `Away`. Calling this method will not change status from `Away` to `Active`.
+
+To change a user’s presence, call the [`users.setPresence`](/methods/users.setPresence) method. [Consult the presence documentation](/docs/presence) for more details.
 
 ## Arguments
 
