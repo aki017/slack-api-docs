@@ -35,7 +35,10 @@ Typical success response
 
 ```
 {
-    "ok": true
+    "ok": true,
+    "channel": {
+        "id": "D947RLWRX"
+    }
 }
 ```
 
