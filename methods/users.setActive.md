@@ -1,4 +1,4 @@
-Marks a user as active.
+Marked a user as active. Deprecated and non-functional.
 
 ## Facts
 
@@ -16,9 +16,13 @@ Marks a user as active.
 
 * * *
 
-This method lets the messaging server know the authenticated user is currently active, preventing Slack from automatically changing their status to `Away`. Calling this method will not change status from `Away` to `Active`.
+**This method is no longer functional and the behavior it controlled is no longer offered. The method will no longer exist beginning May 8, 2018.**
 
-To change a user’s presence, call the [`users.setPresence`](/methods/users.setPresence) method. [Consult the presence documentation](/docs/presence) for more details.
+This method once told the messaging server that the authenticated user was currently active, preventing Slack from automatically changing their status to `Away`.
+
+The Slack messaging server no longer offers this functionality and this method now performs no operation.
+
+To change a user's presence, call the [`users.setPresence`](/methods/users.setPresence) method. [Consult the presence documentation](/docs/presence) for more details.
 
 ## Arguments
 
