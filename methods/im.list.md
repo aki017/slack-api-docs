@@ -4,7 +4,7 @@ Lists direct message channels for the calling user.
 
 | Method URL: | `https://slack.com/api/im.list` |
 | Preferred HTTP method: | `GET` |
-| Accepted content types: | [`application/x-www-form-urlencoded`](/web#post_bodies "Learn more about sending requests") |
+| Accepted content types: | `application/x-www-form-urlencoded` |
 | Works with: | 
 
 | Token type | Required scope(s) |

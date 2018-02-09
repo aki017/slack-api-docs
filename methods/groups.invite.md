@@ -4,7 +4,7 @@ Invites a user to a private channel.
 
 | Method URL: | `https://slack.com/api/groups.invite` |
 | Preferred HTTP method: | `POST` |
-| Accepted content types: | [`application/x-www-form-urlencoded`](/web#post_bodies "Learn more about sending requests"), [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
+| Accepted content types: | `application/x-www-form-urlencoded`, [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
 | Works with: | 
 
 | Token type | Required scope(s) |

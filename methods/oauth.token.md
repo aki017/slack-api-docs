@@ -4,18 +4,11 @@ Exchanges a temporary OAuth verifier code for a workspace token.
 
 | Method URL: | `https://slack.com/api/oauth.token` |
 | Preferred HTTP method: | `GET` |
-| Accepted content types: | [`application/x-www-form-urlencoded`](/web#post_bodies "Learn more about sending requests") |
-| Works with: | 
-
-| Token type | Required scope(s) |
-| --- | --- |
-| [user](/docs/token-types#user) | _No scope required_ |
-
- |
+| Accepted content types: | `application/x-www-form-urlencoded` |
 
 * * *
 
-This method allows you to exchange a temporary OAuth verifier `code` for a " [workspace token](/docs/token-types#workspace)".
+This method allows you to exchange a temporary OAuth verifier `code` for a " [**workspace token**](/docs/token-types#workspace)".
 
 This is used as part of the [OAuth authentication flow](/docs/oauth) used by [workspace token-based Slack apps](/slack-apps-preview).
 

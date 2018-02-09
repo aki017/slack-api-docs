@@ -4,7 +4,7 @@ Turns on Do Not Disturb mode for the current user, or changes its duration.
 
 | Method URL: | `https://slack.com/api/dnd.setSnooze` |
 | Preferred HTTP method: | `GET` |
-| Accepted content types: | [`application/x-www-form-urlencoded`](/web#post_bodies "Learn more about sending requests") |
+| Accepted content types: | `application/x-www-form-urlencoded` |
 | Works with: | 
 
 | Token type | Required scope(s) |

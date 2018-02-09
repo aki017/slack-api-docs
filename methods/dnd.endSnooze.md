@@ -4,7 +4,7 @@ Ends the current user's snooze mode immediately.
 
 | Method URL: | `https://slack.com/api/dnd.endSnooze` |
 | Preferred HTTP method: | `POST` |
-| Accepted content types: | [`application/x-www-form-urlencoded`](/web#post_bodies "Learn more about sending requests"), [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
+| Accepted content types: | `application/x-www-form-urlencoded`, [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
 | Works with: | 
 
 | Token type | Required scope(s) |

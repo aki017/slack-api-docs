@@ -4,7 +4,7 @@ Uploads or creates a file.
 
 | Method URL: | `https://slack.com/api/files.upload` |
 | Preferred HTTP method: | `POST` |
-| Accepted content types: | [`multipart/form-data`](/web#post_bodies "Learn more about sending requests") |
+| Accepted content types: | `multipart/form-data`, `application/x-www-form-urlencoded` |
 | Works with: | 
 
 | Token type | Required scope(s) |
