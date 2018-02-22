@@ -21,7 +21,7 @@ This method returns a portion of [message events](/events/message) from the spec
 
 To read the entire history for a channel, call the method with no `latest` or`oldest` arguments, and then continue paging using the instructions below.
 
-To retrieve a single message, specify its `ts` value as `latest`, set `inclusive` to `true`, and dial your `count` down to `1`.
+To retrieve a single message, set `latest` to the message’s `ts` value, `inclusive` to `true`, and dial your `count` down to `1`.
 
 ## Arguments
 
@@ -116,9 +116,11 @@ Error response when the specified channel cannot be found
 
 ## Navigating through collections of messages
 
-The `messages` array contains up to 100 messages between `latest` and `oldest`. If there were more than 100 messages between those two points, then `has_more`will be true.
+The `messages` array contains up to 100 messages between `latest` and `oldest`. If there were more than 100 messages between those two points, then `has_more`will be `true`.
 
-If a message has the same timestamp as `latest` or `oldest` it will not be included in the list, unless `inclusive` is true. This allows a client to fetch all messages in a hole in channel history, by calling channels.history with `latest` set to the oldest message they have after the hole, and `oldest`to the latest message they have before the hole. If the response includes`has_more` then the client can make another call, using the `ts` value of the final messages as the `latest` param to get the next page of messages.
+Provide timestamps in `latest` and `oldest` to specify the period in channel’s history you want to cover. If a message has the same timestamp as `latest` or `oldest` it will not be included in the list, unless `inclusive` is true. The `inclusive` parameter is ignored when `latest` or `oldest` is not specified.
+
+If the response includes `has_more` then the client can make another call, using the `ts` value of the final messages as the `latest` param to get the next page of messages.
 
 If there are more than 100 messages between the two timestamps then the messages returned are the ones closest to `latest`. In most cases an application will want the most recent messages and will page backward from there. If `oldest` is provided but not `latest` then the messages returned are those closest to `oldest`, allowing you to page forward through history if desired.
 

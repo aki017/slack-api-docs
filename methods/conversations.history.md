@@ -150,7 +150,7 @@ This form of pagination can be used in conjunction with cursors.
 
 The `messages` array contains up to 100 messages between `latest` and `oldest`. If there were more than 100 messages between those two points, then `has_more`will be true.
 
-If a message has the same timestamp as `latest` or `oldest` it will not be included in the list. This allows a client to fetch all messages in a hole in channel history, by calling `conversations.history` with `latest` set to the oldest message they have after the hole, and `oldest` to the latest message they have before the hole. However, you can cover the hole and include the exact moment of the specified timestamp, set `inclusive` to `true`. The `inclusive` is ignored when `latest` or `oldest` is not specified.
+Provide timestamps in `latest` and `oldest` to specify the period in channel’s history you want to cover. If a message has the same timestamp as `latest` or `oldest` it will not be included in the list, unless `inclusive` is true. The `inclusive` parameter is ignored when `latest` or `oldest` is not specified.
 
 If the response includes `has_more` then the client can make another call, using the `ts` value of the final messages as the `latest` param to get the next page of messages.
 
