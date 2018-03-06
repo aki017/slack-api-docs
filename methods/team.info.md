@@ -5,6 +5,7 @@ Gets information about the current team.
 | Method URL: | `https://slack.com/api/team.info` |
 | Preferred HTTP method: | `GET` |
 | Accepted content types: | `application/x-www-form-urlencoded` |
+| Rate limiting: | [Tier 3](/docs/rate-limits#tier_t3) |
 | Works with: | 
 
 | Token type | Required scope(s) |

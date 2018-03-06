@@ -5,6 +5,7 @@ Sends a message to a channel.
 | Method URL: | `https://slack.com/api/chat.postMessage` |
 | Preferred HTTP method: | `POST` |
 | Accepted content types: | `application/x-www-form-urlencoded`, [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
+| Rate limiting: | [Special](/docs/rate-limits#tier_t5) |
 | Works with: | 
 
 | Token type | Required scope(s) |
@@ -53,7 +54,45 @@ Now you can send messages lovingly authored with the [message builder](/docs/mes
 
 Learn more about this support in the [Web API](/web) docs or [this changelog](/changelog/2017-10-keeping-up-with-the-jsons).
 
-## Formatting
+## Response
+
+Typical success response
+
+```
+{
+    "ok": true,
+    "channel": "C1H9RESGL",
+    "ts": "1503435956.000247",
+    "message": {
+        "text": "Here's a message for you",
+        "username": "ecto1",
+        "bot_id": "B19LU7CSY",
+        "attachments": [
+            {
+                "text": "This is an attachment",
+                "id": 1,
+                "fallback": "This is an attachment's fallback"
+            }
+        ],
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503435956.000247"
+    }
+}
+```
+
+Typical error response if too many attachments are included
+
+```
+{
+    "ok": false,
+    "error": "too_many_attachments"
+}
+```
+
+The response includes the "timestamp ID" (`ts`) and the channel-like thing where the message was posted. It also includes the complete message object, as parsed by our servers. This may differ from the provided arguments as our servers sanitize links, attachments, and other properties. Your message may mutate.
+
+## Formatting messages
 
 Messages are formatted as described in the [formatting spec](/docs/message-formatting). You can specify values for `parse` and `link_names` to change formatting behavior.
 
@@ -146,43 +185,9 @@ To send a direct message to the user _owning_ the token used in the request, pro
 
 <ts-icon class="ts_icon_info_circle"></ts-icon> We are phasing out support for ambiguously passing a "username" as a `channel` value. Please _always_ use channel-like IDs instead.
 
-## Response
+## Rate limiting
 
-Typical success response
-
-```
-{
-    "ok": true,
-    "channel": "C1H9RESGL",
-    "ts": "1503435956.000247",
-    "message": {
-        "text": "Here's a message for you",
-        "username": "ecto1",
-        "bot_id": "B19LU7CSY",
-        "attachments": [
-            {
-                "text": "This is an attachment",
-                "id": 1,
-                "fallback": "This is an attachment's fallback"
-            }
-        ],
-        "type": "message",
-        "subtype": "bot_message",
-        "ts": "1503435956.000247"
-    }
-}
-```
-
-Typical error response if too many attachments are included
-
-```
-{
-    "ok": false,
-    "error": "too_many_attachments"
-}
-```
-
-The response includes the "timestamp ID" (`ts`) and the channel-like thing where the message was posted. It also includes the complete message object, as parsed by our servers. This may differ from the provided arguments as our servers sanitize links, attachments, and other properties. Your message may mutate.
+`chat.postMessage` has special [rate limiting](/docs/rate-limits) conditions. It will generally allow an app to post 1 message per second to a specific channel. There are limits governing your app's relationship with the entire workspace above that, limiting posting to several hundred messages per minute. Generous burst behavior is also granted.
 
 ## Errors
 

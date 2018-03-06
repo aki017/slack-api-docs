@@ -5,6 +5,7 @@ Lists items pinned to a channel.
 | Method URL: | `https://slack.com/api/pins.list` |
 | Preferred HTTP method: | `GET` |
 | Accepted content types: | `application/x-www-form-urlencoded` |
+| Rate limiting: | [Tier 2](/docs/rate-limits#tier_t2) |
 | Works with: | 
 
 | Token type | Required scope(s) |

@@ -5,12 +5,14 @@ Retrieve a permalink URL for a specific extant message
 | Method URL: | `https://slack.com/api/chat.getPermalink` |
 | Preferred HTTP method: | `GET` |
 | Accepted content types: | `application/x-www-form-urlencoded` |
+| Rate limiting: | [Special](/docs/rate-limits#tier_t5) |
 | Works with: | 
 
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`tokens.basic`](/scopes/tokens.basic) |
+| [workspace](/docs/token-types#workspace) | _No scope required_ |
+| [user](/docs/token-types#user) | _No scope required_ |
 
  |
 
@@ -58,6 +60,10 @@ Error response when channel cannot be found
     "error": "channel_not_found"
 }
 ```
+
+## Rate limiting
+
+This method allows hundreds of requests per minute. Use it more or less as often as required, but please obey HTTP 429 _Too Many Requests_ status codes and wait to retry. Please consult [rate limits](/docs/rate-limits) for more information.
 
 ## Errors
 

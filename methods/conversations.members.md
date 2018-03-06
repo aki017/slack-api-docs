@@ -5,6 +5,7 @@ Retrieve members of a conversation.
 | Method URL: | `https://slack.com/api/conversations.members` |
 | Preferred HTTP method: | `GET` |
 | Accepted content types: | `application/x-www-form-urlencoded` |
+| Rate limiting: | [Tier 4](/docs/rate-limits#tier_t4) |
 | Works with: | 
 
 | Token type | Required scope(s) |

@@ -5,6 +5,7 @@ Exchanges a temporary OAuth code for an API token.
 | Method URL: | `https://slack.com/api/oauth.access` |
 | Preferred HTTP method: | `GET` |
 | Accepted content types: | `application/x-www-form-urlencoded` |
+| Rate limiting: | [Tier 4](/docs/rate-limits#tier_t4) |
 
 * * *
 

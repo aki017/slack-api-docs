@@ -5,6 +5,7 @@ List all users in a User Group
 | Method URL: | `https://slack.com/api/usergroups.users.list` |
 | Preferred HTTP method: | `GET` |
 | Accepted content types: | `application/x-www-form-urlencoded` |
+| Rate limiting: | [Tier 2](/docs/rate-limits#tier_t2) |
 | Works with: | 
 
 | Token type | Required scope(s) |

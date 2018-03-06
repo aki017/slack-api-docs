@@ -5,6 +5,7 @@ Retrieve a thread of messages posted to a direct message conversation from a mul
 | Method URL: | `https://slack.com/api/mpim.replies` |
 | Preferred HTTP method: | `GET` |
 | Accepted content types: | `application/x-www-form-urlencoded` |
+| Rate limiting: | [Tier 2](/docs/rate-limits#tier_t2) |
 | Works with: | 
 
 | Token type | Required scope(s) |

@@ -5,6 +5,7 @@ Checks authentication & identity.
 | Method URL: | `https://slack.com/api/auth.test` |
 | Preferred HTTP method: | `POST` |
 | Accepted content types: | `application/x-www-form-urlencoded`, [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
+| Rate limiting: | [Special](/docs/rate-limits#tier_t5) |
 | Works with: | 
 
 | Token type | Required scope(s) |
@@ -76,6 +77,10 @@ Error response when omitting a token
 ```
 
 When working against a team within an [Enterprise Grid](/enterprise-grid), you'll also find their `enterprise_id` here.
+
+## Rate limiting
+
+This method allows hundreds of requests per minute. Use it as often as is reasonably required. Please consult [rate limits](/docs/rate-limits) for more information.
 
 ## Errors
 

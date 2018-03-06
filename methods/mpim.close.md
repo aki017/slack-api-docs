@@ -5,6 +5,7 @@ Closes a multiparty direct message channel.
 | Method URL: | `https://slack.com/api/mpim.close` |
 | Preferred HTTP method: | `POST` |
 | Accepted content types: | `application/x-www-form-urlencoded`, [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
+| Rate limiting: | [Tier 2](/docs/rate-limits#tier_t2) |
 | Works with: | 
 
 | Token type | Required scope(s) |

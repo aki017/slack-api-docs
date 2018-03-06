@@ -5,6 +5,7 @@ Starts a Real Time Messaging session.
 | Method URL: | `https://slack.com/api/rtm.start` |
 | Preferred HTTP method: | `GET` |
 | Accepted content types: | `application/x-www-form-urlencoded` |
+| Rate limiting: | [Tier 1](/docs/rate-limits#tier_t1) |
 | Works with: | 
 
 | Token type | Required scope(s) |

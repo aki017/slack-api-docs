@@ -5,6 +5,7 @@ Gets billable users information for the current team.
 | Method URL: | `https://slack.com/api/team.billableInfo` |
 | Preferred HTTP method: | `GET` |
 | Accepted content types: | `application/x-www-form-urlencoded` |
+| Rate limiting: | [Tier 2](/docs/rate-limits#tier_t2) |
 | Works with: | 
 
 | Token type | Required scope(s) |
