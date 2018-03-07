@@ -22,7 +22,7 @@ This method returns information about a team channel.
 
 To retrieve information on a private channel, use [`groups.info`](/methods/groups.info).
 
-The `members` array found in this and other methods will begin automatically truncating at 1,500 results beginning December 1, 2017. Please Use [`conversations.members`](/methods/conversations.members) to manage memberships instead. [Read on to learn more.](/changelog/2017-10-members-array-truncating)
+The `members` array found in this and other methods will begin automatically truncating at 1,500 and eventually fewer results beginning December 1, 2017. As of March, 2018 the cap is 500. Please Use [`conversations.members`](/methods/conversations.members) to manage memberships instead. [Read on to learn more.](/changelog/2017-10-members-array-truncating)
 
 ## Arguments
 

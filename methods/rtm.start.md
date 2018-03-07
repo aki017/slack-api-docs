@@ -27,7 +27,7 @@ Please use [`rtm.connect`](/methods/rtm.connect) instead, especially when connec
 
 Consult the [RTM API documentation](/rtm) for full details on using the RTM API. You'll also find our [changelog entry](/changelog/2017-04-start-using-rtm-connect-and-stop-using-rtm-start) useful.
 
-The `members` array found in this and other methods will begin automatically truncating at 1,500 results beginning December 1, 2017. Please Use [`conversations.members`](/methods/conversations.members) to manage memberships instead. [Read on to learn more.](/changelog/2017-10-members-array-truncating)
+The `members` array found in this and other methods will begin automatically truncating at 1,500 and eventually fewer results beginning December 1, 2017. As of March, 2018 the cap is 500. Please Use [`conversations.members`](/methods/conversations.members) to manage memberships instead. [Read on to learn more.](/changelog/2017-10-members-array-truncating)
 
 ## Arguments
 
