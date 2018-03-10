@@ -11,7 +11,6 @@ Sets the purpose for a channel.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`channels:write`](/scopes/channels:write) |
 | [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write) [`post`](/scopes/post) |
 
  |

@@ -10,7 +10,6 @@ Creates a channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | [`channels:write`](/scopes/channels:write) |
 | [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write) [`read`](/scopes/read) |
 
  |

@@ -11,7 +11,6 @@ Gets information about a team file.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`files:read`](/scopes/files:read) |
 | [user](/docs/token-types#user) | [`files:read`](/scopes/files:read) [`read`](/scopes/read) |
 
  |

@@ -10,7 +10,6 @@ Searches for files matching a query.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | [`search:read`](/scopes/search:read) |
 | [user](/docs/token-types#user) | [`search:read`](/scopes/search:read) [`read`](/scopes/read) |
 
  |

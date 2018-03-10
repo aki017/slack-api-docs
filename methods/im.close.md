@@ -11,7 +11,6 @@ Close a direct message channel.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`im:write`](/scopes/im:write) |
 | [user](/docs/token-types#user) | [`im:write`](/scopes/im:write) [`post`](/scopes/post) |
 
  |
