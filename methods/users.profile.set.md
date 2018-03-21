@@ -59,7 +59,7 @@ You would send the `profile` parameter value URL-encoded as (without line breaks
 
 The `first_name` and `last_name` fields can be up to 35 characters each. The name `slackbot` cannot be used for either of these fields.
 
-The `email` field must be a valid email address. It cannot have spaces, and it must have an `@` and a domain. It cannot be in use by another member of the same team. Changing a user's email address will send an email to both the old and new addresses, and also post a slackbot to the user informing them of the change. This field can only be changed for users on paid teams.
+The `email` field must be a valid email address. It cannot have spaces, and it must have an `@` and a domain. It cannot be in use by another member of the same team. Changing a user's email address will send an email to both the old and new addresses, and also post a slackbot to the user informing them of the change. This field can only be changed _by admins_ for users on **paid** teams.
 
 After March 20, 2017 the `skype` field will always be an empty string and cannot be set otherwise. For more detail, please read [this changelog](/changelog/2017-02-minor-field-changes) entry.
 
@@ -142,7 +142,7 @@ This table lists the expected errors that this method could return. However, oth
 | `reserved_name` | First or last name are reserved. |
 | `invalid_profile` | Profile object passed in is not valid JSON (make sure it is URL encoded!). |
 | `profile_set_failed` | Failed to set user profile. |
-| `not_admin` | Only admins can update the profile of another user. |
+| `not_admin` | Only admins can update the profile of another user. Some fields, like `email` may only be updated by an admin. |
 | `not_app_admin` | Only team owners and selected members can update the profile of a bot user. |
 | `cannot_update_admin_user` | Only a primary owner can update the profile of an admin. |
 | `not_authed` | No authentication token provided. |
