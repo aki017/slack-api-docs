@@ -11,7 +11,7 @@ Edit an existing file comment.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`files:write:user`](/scopes/files:write:user) |
+| [workspace](/docs/token-types#workspace) | [`files:write`](/scopes/files:write) |
 | [user](/docs/token-types#user) | [`files:write:user`](/scopes/files:write:user) [`post`](/scopes/post) |
 
  |
