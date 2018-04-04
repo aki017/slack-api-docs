@@ -45,7 +45,7 @@ Typical success response
         "name": "spengler",
         "deleted": false,
         "color": "9f69e7",
-        "real_name": "episod",
+        "real_name": "Egon Spengler",
         "tz": "America\/Los_Angeles",
         "tz_label": "Pacific Daylight Time",
         "tz_offset": -25200,

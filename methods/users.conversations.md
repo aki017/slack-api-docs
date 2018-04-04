@@ -1,11 +1,11 @@
-Lists all channels in a Slack team.
+List conversations the calling user may access.
 
 ## Facts
 
-| Method URL: | `https://slack.com/api/conversations.list` |
+| Method URL: | `https://slack.com/api/users.conversations` |
 | Preferred HTTP method: | `GET` |
 | Accepted content types: | `application/x-www-form-urlencoded` |
-| Rate limiting: | [Tier 2](/docs/rate-limits#tier_t2) |
+| Rate limiting: | [Tier 3](/docs/rate-limits#tier_t3) |
 | Works with: | 
 
 | Token type | Required scope(s) |
@@ -19,7 +19,16 @@ Lists all channels in a Slack team.
 
 <ts-icon class="ts_icon_comment"></ts-icon> As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. A corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`.
 
-This [Conversations API](/docs/conversations-api) method returns a list of all [channel-like conversations](/types/conversation) in a workspace. The "channels" returned depend on what the calling token has access to and the directives placed in the `types` parameter.
+This method helps answer questions like:
+
+- Which conversations am I a member of?
+- Which public channels is my bot user in?
+- Do I have any direct messages open with my friend Suzy?
+- Is my bot a member of any private channels?
+
+`users.conversations` returns a list of all [channel-like conversations](/types/conversation) accessible to the user or app tied to the presented token, as part of our [Conversations API](/docs/conversations-api).
+
+Browse the public channel membership of other users with the `user` parameter. Private channel membership is only listed when the calling user, bot user, or app shares membership in a direct message, multi-person direct message, or private channel. Further filter channels by type with the `types` parameter.
 
 ## Arguments
 
@@ -29,7 +38,8 @@ This [Conversations API](/docs/conversations-api) method returns a list of all [
 | `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | Paginate through collections of data by setting the `cursor` parameter to a `next_cursor` attribute returned by a previous request's `response_metadata`. Default value fetches the first "page" of the collection. See [pagination](/docs/pagination) for more detail. |
 | `exclude_archived` | `true` | Optional, default=false | Set to `true` to exclude archived channels from the list |
 | `limit` | `20` | Optional, default=100 | The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the list hasn't been reached. Must be an integer no larger than 1000. |
-| `types` | `public_channel,private_channel` | Optional, default=public\_channel | Mix and match channel types by providing a comma-separated list of any combination of `public_channel`, `private_channel`, `mpim`, `im` |
+| `types` | `im,mpim` | Optional, default=public\_channel | Mix and match channel types by providing a comma-separated list of any combination of `public_channel`, `private_channel`, `mpim`, `im` |
+| `user` | `W0B2345D` | Optional | Browse conversations by a specific user ID's membership. Non-public channels are restricted to those where the calling user shares membership. |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
@@ -37,7 +47,7 @@ This [Conversations API](/docs/conversations-api) method returns a list of all [
 
 Returns a list of limited channel-like [conversation objects](/types/conversation).
 
-Typical success response with only public channels
+Typical success response with only public channels. Note how `num_members` and `is_member` are not returned like typical `conversations` objects.
 
 ```
 {
@@ -60,7 +70,6 @@ Typical success response with only public channels
             "is_org_shared": false,
             "pending_shared": [],
             "is_pending_ext_shared": false,
-            "is_member": true,
             "is_private": false,
             "is_mpim": false,
             "topic": {
@@ -73,8 +82,7 @@ Typical success response with only public channels
                 "creator": "",
                 "last_set": 0
             },
-            "previous_names": [],
-            "num_members": 4
+            "previous_names": []
         },
         {
             "id": "C061EG9T2",
@@ -93,7 +101,6 @@ Typical success response with only public channels
             "is_org_shared": false,
             "pending_shared": [],
             "is_pending_ext_shared": false,
-            "is_member": true,
             "is_private": false,
             "is_mpim": false,
             "topic": {
@@ -106,8 +113,7 @@ Typical success response with only public channels
                 "creator": "",
                 "last_set": 0
             },
-            "previous_names": [],
-            "num_members": 4
+            "previous_names": []
         }
     ],
     "response_metadata": {
@@ -139,7 +145,6 @@ Example response when mixing different conversation types together, like `im` an
             "is_org_shared": false,
             "pending_shared": [],
             "is_pending_ext_shared": false,
-            "is_member": true,
             "is_private": true,
             "is_mpim": true,
             "is_open": true,
@@ -189,9 +194,7 @@ Typical error response
 }
 ```
 
-To get a full [conversation object](/types/conversations), call the [`conversations.info`](/methods/conversations.info) method.
-
-Use [`conversations.members`](/methods/conversations.members) to retrieve and traverse membership.
+To get a full [conversation object](/types/conversations), call the [`conversations.info`](/methods/conversations.info) method. We omit the `is_member` and `num_members` fields in this method's response.
 
 See [conversation object](/types/conversations) for more detail on returned fields.
 
@@ -202,6 +205,12 @@ This method uses cursor-based pagination to make it easier to incrementally coll
 Responses will include a top-level `response_metadata` attribute containing a `next_cursor` value. By using this value as a `cursor` parameter in a subsequent request, along with `limit`, you may navigate through the collection page by virtual page.
 
 See [pagination](/docs/pagination) for more information.
+
+## Token support
+
+Using a [bot user token](/docs/token-types#bot), this method returns the channels and conversations your bot is party to. Specifying a `user` parameter filters to conversations your bot shares with that user.
+
+A [user token](/docs/token-types#user) armed with [`channels:read`](/scopes/channels:read) will similarly supply the channels the calling user is a member of. Supplying the `user` parameter narrows results to conversations featuring both the calling user and the identified user.
 
 ## Errors
 
