@@ -32,16 +32,16 @@ Ephemeral messages created by [`chat.postEphemeral`](/methods/chat.postEphemeral
 | `ts` | `1405894322.002768` | Required | Timestamp of the message to be updated. |
 | `as_user` | `true` | Optional | Pass true to update the message as the authed user. [Bot users](/bot-users) in this context are considered authed users. |
 | `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Optional | A JSON-based array of structured attachments, presented as a URL-encoded string. This field is required when not presenting `text`. |
-| `link_names` | `true` | Optional | Find and link channel names and usernames. Defaults to `none`. This parameter should be used in conjunction with `parse`. To set `link_names` to `1`, specify a `parse` mode of `full`. |
+| `link_names` | `true` | Optional | Find and link channel names and usernames. Defaults to `none`. See below. |
 | `parse` | `none` | Optional | Change how messages are treated. Defaults to `client`, unlike `chat.postMessage`. See below. |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Formatting
 
-The default value for parse will attempt to discover links in text but does not support URL markup. To update messages with URL markup, you must specify `parse=none`. For more information, refer to the [formatting spec](/docs/formatting).
+By default, Slack will attempt to discover links in text but does not support URL markup. To update messages with URL markup, you must specify `link_names=1` or `parse=none`. Names and channels will not be linkified in the `@username` or `#channel` format, unless you pass `link_names=1` or `parse=full`. For more information, refer to the [formatting spec](/docs/formatting).
 
-To use `link_names`, you'll need to explicitly set the `parse` parameter to `full`.
+If you used `link_names` or `parse` arguments in the original message, you should specify them when calling `chat.update` as well. Otherwise, the values you passed initially will be overwritten with this method’s defaults (`link_names=none`, `parse=client`).
 
 The optional `attachments` argument should contain a JSON-encoded array of attachments. If you do not include an attachments property, a message's previous attachments will remain visible. To remove a previous attachment, include an empty `attachments` array with your request. For more information, see the [attachments spec](/docs/attachments).
 
