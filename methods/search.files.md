@@ -23,7 +23,7 @@ This method returns files matching a search query.
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `query` | `pickleface` | Required | Search query. May contain booleans, etc. |
+| `query` | `pickleface` | Required | Search query. |
 | `count` | `20` | Optional, default=20 | Number of items to return per page. |
 | `highlight` | `true` | Optional | Pass a value of `true` to enable query highlight markers (see below). |
 | `page` | `2` | Optional, default=1 | Page number of results to return. |

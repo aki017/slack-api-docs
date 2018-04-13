@@ -23,7 +23,7 @@ This [Conversations API](/docs/conversations-api) method opens a multi-person di
 
 Use [`conversations.create`](/methods/conversations.create) for public or private channels.
 
-Provide 1 to 8 user IDs in the `user` parameter to open or resume a conversation. Providing only 1 ID will create a direct message. Providing more will create an `mpim`.
+Provide 1 to 8 user IDs in the `user` parameter to open or resume a conversation. Providing only 1 ID will create a direct message. Providing more will create an `mpim`. Don’t include the ID of the user you’re calling `conversations.open` on behalf of – we do that for you.
 
 If there are no conversations already in progress including that exact set of members, a new multi-person direct message conversation begins.
 
