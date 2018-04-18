@@ -23,7 +23,7 @@
     },
     "single_channel": {
       "required": false,
-      "example": "1",
+      "example": "true",
       "desc": "Request the user to add your app only to a single channel."
     }
   },

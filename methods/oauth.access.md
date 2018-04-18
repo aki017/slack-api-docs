@@ -1,4 +1,4 @@
-Exchanges a temporary OAuth code for an API token.
+Exchanges a temporary OAuth verifier code for an access token.
 
 ## Facts
 
@@ -9,11 +9,17 @@ Exchanges a temporary OAuth code for an API token.
 
 * * *
 
-This method allows you to exchange a temporary OAuth `code` for an API access token. This is used as part of the [OAuth authentication flow](/docs/oauth).
+This method allows you to exchange a temporary OAuth `code` for an API access token.
 
-As discussed [in RFC 6749](https://tools.ietf.org/html/rfc6749#section-2.3.1) it is possible to supply the Client ID and Client Secret using the HTTP Basic authentication scheme. If HTTP Basic authentication is used you do not need to supply the`client_id` and `client_secret` parameters as part of the request.
+This is the third step of the [OAuth authentication flow](/docs/oauth).
+
+We strongly recommend supplying the Client ID and Client Secret using the HTTP Basic authentication scheme, as discussed [in RFC 6749](https://tools.ietf.org/html/rfc6749#section-2.3.1).
+
+If at all possible, avoid sending `client_id` and `client_secret` as parameters in your request.
 
 **Keep your tokens secure**. Do not share tokens with users or anyone else.
+
+When used with a workspace token-based app, this method's response differs significantly.
 
 ## Arguments
 
@@ -23,19 +29,130 @@ As discussed [in RFC 6749](https://tools.ietf.org/html/rfc6749#section-2.3.1) it
 | `client_secret` | `33fea0113f5b1` | Required | Issued when you created your application. |
 | `code` | `ccdaa72ad` | Required | The `code` param returned via the OAuth callback. |
 | `redirect_uri` | `http://example.com` | Optional | This must match the originally submitted URI (if one was sent). |
+| `single_channel` | `true` | Optional, default=false | Request the user to add your app only to a single channel. |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 
+The response schema for this step of OAuth differs depending on [the scopes](/scopes) requested and the type of application used. When asking for the `bot` scope, you'll receive the token separately from the user token.
+
+Successful user token negotiation for a single scope
+
 ```
 {
-    "access_token": "xoxp-23984754863-2348975623103",
-    "scope": "read"
+    "access_token": "xoxp-XXXXXXXX-XXXXXXXX-XXXXX",
+    "scope": "groups:write",
+    "team_name": "Wyld Stallyns LLC",
+    "team_id": "TXXXXXXXXX"
 }
 ```
 
-You can use the returned token to call protected API methods on behalf of the user.
+Success example when asking for multiple scopes, a bot user token, and an incoming webhook
+
+```
+{
+    "access_token": "xoxp-XXXXXXXX-XXXXXXXX-XXXXX",
+    "scope": "incoming-webhook,commands,bot",
+    "team_name": "Team Installing Your Hook",
+    "team_id": "TXXXXXXXXX",
+    "incoming_webhook": {
+        "url": "https:\/\/hooks.slack.com\/TXXXXX\/BXXXXX\/XXXXXXXXXX",
+        "channel": "#channel-it-will-post-to",
+        "configuration_url": "https:\/\/teamname.slack.com\/services\/BXXXXX"
+    },
+    "bot": {
+        "bot_user_id": "UTTTTTTTTTTR",
+        "bot_access_token": "xoxb-XXXXXXXXXXXX-TTTTTTTTTTTTTT"
+    }
+}
+```
+
+Success example using a workspace token-based app produces a very different kind of response
+
+```
+{
+    "ok": true,
+    "access_token": "xoxa-access-token-string",
+    "token_type": "app",
+    "app_id": "A012345678",
+    "app_user_id": "U0NKHRW57",
+    "team_name": "Subarachnoid Workspace",
+    "team_id": "T061EG9R6",
+    "authorizing_user": {
+        "user_id": "U061F7AUR",
+        "app_home": "D0PNCRP9N"
+    },
+    "installer_user": {
+        "user_id": "U061F7AUR",
+        "app_home": "D0PNCRP9N"
+    },
+    "scopes": {
+        "app_home": [
+            "chat:write",
+            "im:history",
+            "im:read"
+        ],
+        "team": [],
+        "channel": [
+            "channels:history",
+            "channels:read",
+            "chat:write"
+        ],
+        "group": [
+            "chat:write"
+        ],
+        "mpim": [
+            "chat:write"
+        ],
+        "im": [
+            "chat:write"
+        ],
+        "user": []
+    }
+}
+```
+
+Typical error response
+
+```
+{
+    "ok": false,
+    "error": "invalid_client_id"
+}
+```
+
+## Workspace token-based app behavior
+
+Here's a primer on the fields you will receive when working with workspace token-based apps.
+
+- `access_token` - Your new workspace token that begins with `xoxa`. It can be very long.
+- `token_type` - You'll see `app` here. Workspace tokens were once known as `app` tokens. Maybe someday this value will become `workspace`.
+- `app_id` - This is the unique ID for your whole Slack app.
+- `app_user` - This is the user ID of your app. It's a user! It's an app! It's a user! It's an app! The user ID is unique to the team installing it.
+- `installer_user` - This node holds the `user_id` of the user that _originally_ installed this app. It also contains the `app_home` conversation ID for that same user.
+- `authorizing_user` - This node contains the `user_id` and `app_home` converation ID of the user _currently_ navigating through the authorization process. It might be different than the original installer.
+- `team_name` - This is what the team calls itself.
+- `team_id` - This is the unique ID for the team.
+- ~~`permissions`~~ - This field is no longer available. Use [`apps.permissions.info`](/methods/apps.permissions.info) to look up all of your app's permissions for this workspace instead.
+- `scopes` - All [OAuth scopes](/scopes) awarded to your app — not just those awarded this authorization attempt.
+- `single_channel_id` - if this app is approved for a single channel, that channel will be listed here. See single channel authorizations for more info.
+
+Use [`apps.permissions.info`](/methods/apps.permissions.info) to look up your app's permissions on the fly.
+
+#### Scopes categorized by resource
+
+Scopes are grouped by resource type:
+
+- `app_home` - your app's direct message conversation with the installer of this app
+- `team` - team-level permissions assigned to your app
+- `channel` - public channels
+- `group` - private channels
+- `mpim` - multi-member direct messages
+- `im` - direct messages
+- `user` - permissions to work with or as specific users
+
+The [Permissions API](/docs/permissions-api) describes in more detail how resources and scopes work together to enforce what your app can do.
 
 ## Errors
 

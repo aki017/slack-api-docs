@@ -11,6 +11,7 @@ Gets information about a team file.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [workspace](/docs/token-types#workspace) | [`files:read`](/scopes/files:read) |
 | [user](/docs/token-types#user) | [`files:read`](/scopes/files:read) [`read`](/scopes/read) |
 
  |
@@ -121,6 +122,7 @@ This table lists the expected errors that this method could return. However, oth
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
 | `token_revoked` | Authentication token is for a deleted user or workspace or the app has been removed. |
 | `no_permission` | The workspace token used in this request does not have the permissions necessary to complete the request. |
+| `org_login_required` | The workspace is undergoing an enterprise migration and will not be available until migration is complete. |
 | `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |

@@ -26,6 +26,8 @@ Per workspace, bot users have both a user ID (which can be looked up using [`use
 
 Use this method to look up the username and icons for those bot users. Use the `app_id` field to identify whether a bot belongs to your [Slack app](/slack-apps).
 
+Look for a `user_id` When the bot corresponds directly to a bot user account. Some bot-like entities aren't actually "bot users" and will not include a `user_id`.
+
 ## Arguments
 
 | Argument | Example | Required | Description |
@@ -57,6 +59,27 @@ When successful, returns bot info by bot ID.
 }
 ```
 
+When successful, returns bot info by bot ID.
+
+```
+{
+    "ok": true,
+    "bot": {
+        "id": "B061F7JD2",
+        "deleted": false,
+        "name": "beforebot",
+        "updated": 1449272004,
+        "app_id": "A161CLERW",
+        "user_id": "U012ABCDEF",
+        "icons": {
+            "image_36": "https:\/\/...",
+            "image_48": "https:\/\/...",
+            "image_72": "https:\/\/..."
+        }
+    }
+}
+```
+
 When no bot can be found, it returns an error.
 
 ```
@@ -78,6 +101,7 @@ This table lists the expected errors that this method could return. However, oth
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
 | `token_revoked` | Authentication token is for a deleted user or workspace or the app has been removed. |
 | `no_permission` | The workspace token used in this request does not have the permissions necessary to complete the request. |
+| `org_login_required` | The workspace is undergoing an enterprise migration and will not be available until migration is complete. |
 | `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |

@@ -20,9 +20,9 @@ Returns list of permissions this app has on a team.
 
 This feature only applies to the [workspace token-based Slack app developer preview](/slack-apps-preview), currently under active development.
 
-This method returns list of all current permissions this app has on a team. It's a part of the [Permissions API](/docs/permissions-api) made available to workspace token-based applications.
+This deprecated method returns list of all current permissions this app has on a team. It's a part of the [Permissions API](/docs/permissions-api) made available to workspace token-based applications.
 
-In the future, this method may become optionally paginated.
+Use [`apps.permissions.resources.list`](/methods/apps.permissions.resources.list) and [`apps.permissions.scopes.list`](/methods/apps.permissions.scopes.list) instead.
 
 ## Arguments
 
@@ -93,6 +93,73 @@ Standard success response when used with a user token
 }
 ```
 
+Response including a wildcard and team-level scopes
+
+```
+{
+    "ok": true,
+    "info": {
+        "team": {
+            "scopes": [
+                "users:read"
+            ],
+            "resources": {
+                "ids": [
+                    "T061EG9R6"
+                ]
+            }
+        },
+        "channel": {
+            "scopes": [
+                "channels:history",
+                "chat:write"
+            ],
+            "resources": {
+                "ids": [],
+                "wildcard": true,
+                "excluded_ids": []
+            }
+        },
+        "group": {
+            "scopes": [
+                "chat:write"
+            ],
+            "resources": {
+                "ids": []
+            }
+        },
+        "mpim": {
+            "scopes": [
+                "chat:write"
+            ],
+            "resources": {
+                "ids": []
+            }
+        },
+        "im": {
+            "scopes": [
+                "chat:write"
+            ],
+            "resources": {
+                "ids": []
+            }
+        },
+        "app_home": {
+            "scopes": [
+                "chat:write",
+                "im:history",
+                "im:read"
+            ],
+            "resources": {
+                "ids": [
+                    "D0PNCRP9N"
+                ]
+            }
+        }
+    }
+}
+```
+
 Standard failure response when used with an invalid token
 
 ```
@@ -113,6 +180,7 @@ This table lists the expected errors that this method could return. However, oth
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
 | `token_revoked` | Authentication token is for a deleted user or workspace or the app has been removed. |
 | `no_permission` | The workspace token used in this request does not have the permissions necessary to complete the request. |
+| `org_login_required` | The workspace is undergoing an enterprise migration and will not be available until migration is complete. |
 | `user_is_bot` | This method cannot be called by a bot user. |
 | `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
