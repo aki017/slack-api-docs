@@ -51,6 +51,10 @@ Typical error response
 }
 ```
 
+Revoking all [user tokens](/docs/token-types#user) an app has for a workspace will result in the app becoming uninstalled.
+
+Revoking a [bot user token](/docs/token-types#bot) will **not** uninstall the bot user or the app. It essentially resets the token value and you can obtain it again through another run through of the OAuth process. [Internal integrations](/internal-integrations) and apps installed only on your team offer the new bot user token in your app management console.
+
 ## Errors
 
 This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should always check the value of the `ok` params in the response.
