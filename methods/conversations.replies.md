@@ -11,6 +11,7 @@ Retrieve a thread of messages posted to a conversation
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [workspace](/docs/token-types#workspace) | [`channels:history`](/scopes/channels:history) [`groups:history`](/scopes/groups:history) [`im:history`](/scopes/im:history) [`mpim:history`](/scopes/mpim:history) |
 | [user](/docs/token-types#user) | [`channels:history`](/scopes/channels:history) [`groups:history`](/scopes/groups:history) [`im:history`](/scopes/im:history) [`mpim:history`](/scopes/mpim:history) [`read`](/scopes/read) |
 
  |
