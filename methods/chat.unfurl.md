@@ -41,7 +41,7 @@ The `unfurls` parameter expects a URL-encoded string of JSON. Unlike [`chat.post
 
 Consult the [unfurling](/docs/message-link-unfurling#slack_app_unfurling) docs for [more guidance](/docs/message-link-unfurling#unfurls_parameter) on this parameter.
 
-The `user_auth_required` parameter is optional. By providing a `1` or `true` value, it will require the user posting the link first authenticate themselves with your app. See also the authenticated unfurling docs.
+The `user_auth_required` parameter is optional. By providing a `1` or `true` value, it will require the user posting the link first authenticate themselves with your app. See also the [authenticated unfurling docs](/docs/message-link-unfurling#authenticated_unfurls).
 
 To point users to a specific page on your server to authenticate, pass a valid URL using the `user_auth_url` parameter. When sending this parameter via `application/x-www-form-urlencoded` GETs or POSTs, values must be URL-encoded such that `https://example.com/onboarding?user_id=xxx` becomes `https%3A%2F%2Fexample.com%2Fonboarding%3Fuser_id%3Dxxx`.
 

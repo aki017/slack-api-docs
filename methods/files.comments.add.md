@@ -18,6 +18,10 @@ Add a comment to an existing file.
 
 * * *
 
+<ts-icon class="ts_icon_all_files"></ts-icon> **File threads are on the way**  
+
+We're improving the file commenting experience beginning June 2018. [**Learn more**](/changelog/2018-05-file-threads-soon-tread) about what's new and potentially breaking changes.
+
 Add a comment to an existing file.
 
 ## Arguments

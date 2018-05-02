@@ -17,6 +17,10 @@ Lists & filters team files.
 
 * * *
 
+<ts-icon class="ts_icon_all_files"></ts-icon> **File threads are on the way**  
+
+We're improving the file commenting experience beginning June 2018. [**Learn more**](/changelog/2018-05-file-threads-soon-tread) about what's new and potentially breaking changes.
+
 This method returns a list of files within the team. It can be filtered and sliced in various ways.
 
 ## Arguments

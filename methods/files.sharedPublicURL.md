@@ -17,6 +17,10 @@ Enables a file for public/external sharing.
 
 * * *
 
+<ts-icon class="ts_icon_all_files"></ts-icon> **File threads are on the way**  
+
+We're improving the file commenting experience beginning June 2018. [**Learn more**](/changelog/2018-05-file-threads-soon-tread) about what's new and potentially breaking changes.
+
 This method enables public/external sharing for a file.
 
 ## Arguments
