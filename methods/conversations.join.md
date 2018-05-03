@@ -31,7 +31,7 @@ This [Conversations API](/docs/conversations-api) method joins a user to an exis
 
 ## Response
 
-If successful, the command returns a [conversatoin object](/types/conversation). If the calling token has already joined, it'll warn you about it too.
+If successful, the command returns a [conversation object](/types/conversation). If the calling token has already joined, it'll warn you about it too.
 
 Typical success response
 
