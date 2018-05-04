@@ -16,7 +16,7 @@ Returns list of scopes this app has on a team.
 
 * * *
 
-This method returns a list of all current scopes this app has on a team. It's a part of the [Permissions API](/docs/permissions-api) made available to workspace token-based applications.
+This method returns a list of all current scopes this app has on a team. It's a part of the [Permissions API](/docs/permissions-api) made available to workspace apps.
 
 ## Arguments
 

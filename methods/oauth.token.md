@@ -11,7 +11,7 @@ Exchanges a temporary OAuth verifier code for a workspace token.
 
 This **_deprecated_** method allowed you to exchange a temporary OAuth verifier `code` for a " [**workspace token**](/docs/token-types#workspace)". Use [`oauth.access`](/methods/oauth.access) to retrieve workspace tokens instead.
 
-This is used as part of the [OAuth authentication flow](/docs/oauth) used by [workspace token-based Slack apps](/slack-apps-preview).
+This is used as part of the [OAuth authentication flow](/docs/oauth) used by [workspace apps](/slack-apps-preview).
 
 As discussed [in RFC 6749](https://tools.ietf.org/html/rfc6749#section-2.3.1) it is **preferred** to supply the Client ID and Client Secret using the HTTP Basic authentication scheme. If HTTP Basic authentication is used you do not need to supply the `client_id` and `client_secret` parameters as part of the request.
 
@@ -33,7 +33,7 @@ As discussed [in RFC 6749](https://tools.ietf.org/html/rfc6749#section-2.3.1) it
 
 This method's response differs from those offered by the classic Slack app [`oauth.access`](/methods/oauth.acces) significantly.
 
-Success example using a workspace token-based app produces a very different kind of response
+Success example using a workspace app produces a very different kind of response
 
 ```
 {

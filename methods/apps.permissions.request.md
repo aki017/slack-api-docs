@@ -18,9 +18,9 @@ Allows an app to request additional scopes
 
 <ts-icon class="ts_icon_sparkles"></ts-icon> **Developer preview**  
 
-This feature only applies to the [workspace token-based Slack app developer preview](/slack-apps-preview), currently under active development.
+This feature is exclusive to our [workspace apps developer preview](/slack-apps-preview).
 
-This method is used to request additional permissions with a team. It's a part of the [Permissions API](/docs/permissions-api) made available to workspace token-based applications.
+This method is used to request additional permissions with a team. It's a part of the [Permissions API](/docs/permissions-api) made available to workspace apps.
 
 ## Arguments
 

@@ -19,7 +19,7 @@ If at all possible, avoid sending `client_id` and `client_secret` as parameters 
 
 **Keep your tokens secure**. Do not share tokens with users or anyone else.
 
-When used with a workspace token-based app, this method's response differs significantly.
+When used with a workspace app, this method's response differs significantly.
 
 ## Arguments
 
@@ -68,7 +68,7 @@ Success example when asking for multiple scopes, a bot user token, and an incomi
 }
 ```
 
-Success example using a workspace token-based app produces a very different kind of response
+Success example using a workspace app produces a very different kind of response
 
 ```
 {
@@ -122,9 +122,9 @@ Typical error response
 }
 ```
 
-## Workspace token-based app behavior
+## Workspace app behavior
 
-Here's a primer on the fields you will receive when working with workspace token-based apps.
+Here's a primer on the fields you will receive when working with workspace apps.
 
 - `access_token` - Your new workspace token that begins with `xoxa`. It can be very long.
 - `token_type` - You'll see `app` here. Workspace tokens were once known as `app` tokens. Maybe someday this value will become `workspace`.
