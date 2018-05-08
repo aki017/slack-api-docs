@@ -96,6 +96,7 @@ This table lists the expected errors that this method could return. However, oth
 | `msg_too_long` | Message text is too long |
 | `too_many_attachments` | Too many attachments were provided with this message. A maximum of 100 attachments are allowed on a message. |
 | `no_text` | No message text provided |
+| `as_user_not_supported` | The `as_user` parameter does not function with workspace apps. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
@@ -118,6 +119,7 @@ This table lists the expected warnings that this method will return. However, ot
 
 | Warning | Description |
 | --- | --- |
+| `message_truncated` | The `text` field of a message should have no more than 40,000 characters. We [truncate really long messages](/changelog/2018-04-truncating-really-long-messages). |
 | `missing_charset` | The method was called via a `POST` request, and recommended practice for the specified `Content-Type` is to include a `charset` parameter. However, no `charset` was present. Specifically, non-form-data content types (e.g. `text/plain`) are the ones for which `charset` is recommended. |
 | `superfluous_charset` | The method was called via a `POST` request, and the specified `Content-Type` is not defined to understand the `charset` parameter. However, `charset` was in fact present. Specifically, form-data content types (e.g. `multipart/form-data`) are the ones for which `charset` is superfluous. |
 

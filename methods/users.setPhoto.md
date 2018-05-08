@@ -3,8 +3,8 @@ Set the user profile photo
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.setPhoto` |
-| Preferred HTTP method: | `GET` |
-| Accepted content types: | `application/x-www-form-urlencoded` |
+| Preferred HTTP method: | `POST` |
+| Accepted content types: | `multipart/form-data`, `application/x-www-form-urlencoded` |
 | Rate limiting: | [Tier 2](/docs/rate-limits#tier_t2) |
 | Works with: | 
 
