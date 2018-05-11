@@ -22,6 +22,12 @@ Retrieve a thread of messages posted to a conversation
 
 This [Conversations API](/docs/conversations-api) method returns an entire thread (a message plus all the messages in reply to it), while [`conversations.history`](/methods/conversations.history) method returns only parent messages.
 
+The scopes and token types required to use this method vary by conversation type.
+
+[Bot user tokens](/docs/token-types#bot) may use this method for direct message and multi-party direct message conversations but lack sufficient permissions to use this method on public and private channels.
+
+To use `conversations.replies` with public or private channel threads, use a [user token](/docs/token-types#user) with [`channels:history`](/scopes/channels:history) or [`groups:history`](/scopes/groups:history) scopes.
+
 ## Arguments
 
 | Argument | Example | Required | Description |

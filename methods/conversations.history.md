@@ -24,6 +24,12 @@ This method returns a portion of [message events](/events/message) from the spec
 
 To read the entire history for a conversation, call the method with no `latest` or`oldest` arguments, and then continue paging using the instructions below.
 
+The scopes and token types required to use this method vary by conversation type.
+
+[Bot user tokens](/docs/token-types#bot) may use this method for direct message and multi-party direct message conversations but lack sufficient permissions to use this method on public and private channels.
+
+To use `conversations.history` with public or private channel threads, use a [user token](/docs/token-types#user) with [`channels:history`](/scopes/channels:history) or [`groups:history`](/scopes/groups:history) scopes.
+
 ## Arguments
 
 | Argument | Example | Required | Description |
@@ -152,7 +158,7 @@ This form of pagination can be used in conjunction with cursors.
 
 The `messages` array contains up to 100 messages between `latest` and `oldest`. If there were more than 100 messages between those two points, then `has_more`will be true.
 
-Provide timestamps in `latest` and `oldest` to specify the period in channel’s history you want to cover. If a message has the same timestamp as `latest` or `oldest` it will not be included in the list, unless `inclusive` is true. The `inclusive` parameter is ignored when `latest` or `oldest` is not specified.
+Provide timestamps in `latest` and `oldest` to specify the period in channel's history you want to cover. If a message has the same timestamp as `latest` or `oldest` it will not be included in the list, unless `inclusive` is true. The `inclusive` parameter is ignored when `latest` or `oldest` is not specified.
 
 If the response includes `has_more` then the client can make another call, using the `ts` value of the final messages as the `latest` param to get the next page of messages.
 
