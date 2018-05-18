@@ -18,7 +18,7 @@ Returns list of permissions this app has on a team.
 
 <ts-icon class="ts_icon_sparkles"></ts-icon> **Developer preview**  
 
-This feature is exclusive to our [workspace apps developer preview](/slack-apps-preview).
+This feature is exclusive to our [workspace apps developer preview](/workspace-apps-preview).
 
 This deprecated method returns list of all current permissions this app has on a team. It's a part of the [Permissions API](/docs/permissions-api) made available to workspace apps.
 
