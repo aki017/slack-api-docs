@@ -37,7 +37,7 @@ Standard success response when used with a user token
 ```
 {
     "ok": true,
-    "url": "https:\/\/subarachnoid.slack.com\/",
+    "url": "https://subarachnoid.slack.com/",
     "team": "Subarachnoid Workspace",
     "user": "grace",
     "team_id": "T12345678",
@@ -59,7 +59,7 @@ Success response when using a bot user token
 ```
 {
     "ok": true,
-    "url": "https:\/\/subarachnoid.slack.com\/",
+    "url": "https://subarachnoid.slack.com/",
     "team": "Subarachnoid Workspace",
     "user": "bot",
     "team_id": "T0G9PQBBK",

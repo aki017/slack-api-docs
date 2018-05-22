@@ -51,9 +51,9 @@ When successful, returns bot info by bot ID.
         "updated": 1449272004,
         "app_id": "A061BLERW",
         "icons": {
-            "image_36": "https:\/\/...",
-            "image_48": "https:\/\/...",
-            "image_72": "https:\/\/..."
+            "image_36": "https://...",
+            "image_48": "https://...",
+            "image_72": "https://..."
         }
     }
 }
@@ -72,9 +72,9 @@ When successful, returns bot info by bot ID.
         "app_id": "A161CLERW",
         "user_id": "U012ABCDEF",
         "icons": {
-            "image_36": "https:\/\/...",
-            "image_48": "https:\/\/...",
-            "image_72": "https:\/\/..."
+            "image_36": "https://...",
+            "image_48": "https://...",
+            "image_72": "https://..."
         }
     }
 }

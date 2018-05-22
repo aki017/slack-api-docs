@@ -111,12 +111,12 @@ Typical success response
         "real_name_normalized": "Egon Spengler",
         "display_name_normalized": "spengler",
         "email": "spengler@ghostbusters.example.com",
-        "image_24": "https:\/\/...\/avatar\/e3b51ca72dee4ef87916ae2b9240df50.jpg",
-        "image_32": "https:\/\/...\/avatar\/e3b51ca72dee4ef87916ae2b9240df50.jpg",
-        "image_48": "https:\/\/...\/avatar\/e3b51ca72dee4ef87916ae2b9240df50.jpg",
-        "image_72": "https:\/\/...\/avatar\/e3b51ca72dee4ef87916ae2b9240df50.jpg",
-        "image_192": "https:\/\/...\/avatar\/e3b51ca72dee4ef87916ae2b9240df50.jpg",
-        "image_512": "https:\/\/...\/avatar\/e3b51ca72dee4ef87916ae2b9240df50.jpg",
+        "image_24": "https://.../avatar/e3b51ca72dee4ef87916ae2b9240df50.jpg",
+        "image_32": "https://.../avatar/e3b51ca72dee4ef87916ae2b9240df50.jpg",
+        "image_48": "https://.../avatar/e3b51ca72dee4ef87916ae2b9240df50.jpg",
+        "image_72": "https://.../avatar/e3b51ca72dee4ef87916ae2b9240df50.jpg",
+        "image_192": "https://.../avatar/e3b51ca72dee4ef87916ae2b9240df50.jpg",
+        "image_512": "https://.../avatar/e3b51ca72dee4ef87916ae2b9240df50.jpg",
         "team": "T012AB3C4"
     }
 }

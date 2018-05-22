@@ -38,7 +38,7 @@ Standard success response
 {
     "ok": true,
     "channel": "C1H9RESGA",
-    "permalink": "https:\/\/ghostbusters.slack.com\/archives\/C1H9RESGA\/p135854651500008"
+    "permalink": "https://ghostbusters.slack.com/archives/C1H9RESGA/p135854651500008"
 }
 ```
 
@@ -48,7 +48,7 @@ When the provided `message_ts` is part of a thread, the permalink format changes
 {
     "ok": true,
     "channel": "C1H9RESGA",
-    "permalink": "https:\/\/ghostbusters.slack.com\/archives\/C1H9RESGL\/p135854651700023?thread_ts=1358546515.000008&cid=C1H9RESGL"
+    "permalink": "https://ghostbusters.slack.com/archives/C1H9RESGL/p135854651700023?thread_ts=1358546515.000008&cid=C1H9RESGL"
 }
 ```
 

@@ -57,9 +57,9 @@ Success example when asking for multiple scopes, a bot user token, and an incomi
     "team_name": "Team Installing Your Hook",
     "team_id": "TXXXXXXXXX",
     "incoming_webhook": {
-        "url": "https:\/\/hooks.slack.com\/TXXXXX\/BXXXXX\/XXXXXXXXXX",
+        "url": "https://hooks.slack.com/TXXXXX/BXXXXX/XXXXXXXXXX",
         "channel": "#channel-it-will-post-to",
-        "configuration_url": "https:\/\/teamname.slack.com\/services\/BXXXXX"
+        "configuration_url": "https://teamname.slack.com/services/BXXXXX"
     },
     "bot": {
         "bot_user_id": "UTTTTTTTTTTR",

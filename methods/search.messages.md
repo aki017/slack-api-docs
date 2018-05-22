@@ -55,7 +55,7 @@ Typical success response
                     "pending_shared": []
                 },
                 "iid": "cb64bdaa-c1e8-4631-8a91-0f78080113e9",
-                "permalink": "https:\/\/hitchhikers.slack.com\/archives\/C12345678\/p1508284197000015",
+                "permalink": "https://hitchhikers.slack.com/archives/C12345678/p1508284197000015",
                 "team": "T12345678",
                 "text": "The meaning of life the universe and everything is 42.",
                 "ts": "1508284197.000015",
@@ -76,7 +76,7 @@ Typical success response
                     "pending_shared": []
                 },
                 "iid": "9a00d3c9-bd2d-45b0-988b-6cff99ae2a90",
-                "permalink": "https:\/\/hitchhikers.slack.com\/archives\/C12345678\/p1508795665000236",
+                "permalink": "https://hitchhikers.slack.com/archives/C12345678/p1508795665000236",
                 "team": "T12345678",
                 "text": "The meaning of life the universe and everything is 101010",
                 "ts": "1508795665.000236",

@@ -72,11 +72,11 @@ Using with the `identity.avatar` scope yields the member's avatar images. _Avail
     "user": {
         "name": "Sonny Whether",
         "id": "U0G9QF9C6",
-        "image_24": "https:\/\/cdn.example.com\/sonny_24.jpg",
-        "image_32": "https:\/\/cdn.example.com\/sonny_32.jpg",
-        "image_48": "https:\/\/cdn.example.com\/sonny_48.jpg",
-        "image_72": "https:\/\/cdn.example.com\/sonny_72.jpg",
-        "image_192": "https:\/\/cdn.example.com\/sonny_192.jpg"
+        "image_24": "https://cdn.example.com/sonny_24.jpg",
+        "image_32": "https://cdn.example.com/sonny_32.jpg",
+        "image_48": "https://cdn.example.com/sonny_48.jpg",
+        "image_72": "https://cdn.example.com/sonny_72.jpg",
+        "image_192": "https://cdn.example.com/sonny_192.jpg"
     },
     "team": {
         "id": "T0G9PQBBK"

@@ -88,13 +88,13 @@ Typical success response included formatted messages from bots and incoming webh
         {
             "type": "message",
             "user": "U061F7AUR",
-            "text": "Isn't this whether dreadful? <https:\/\/badpuns.example.com\/puns\/123>",
+            "text": "Isn't this whether dreadful? <https://badpuns.example.com/puns/123>",
             "attachments": [
                 {
                     "service_name": "Leg end nary a laugh, Ink.",
                     "text": "This is likely a pun about the weather.",
                     "fallback": "We're withholding a pun from you",
-                    "thumb_url": "https:\/\/badpuns.example.com\/puns\/123.png",
+                    "thumb_url": "https://badpuns.example.com/puns/123.png",
                     "thumb_width": 1920,
                     "thumb_height": 700,
                     "id": 1

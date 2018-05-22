@@ -53,7 +53,7 @@ Typical success response
         "id": "T2U81E2FP",
         "name": "SlackDemo"
     },
-    "url": "wss:\/\/..."
+    "url": "wss://..."
 }
 ```
 

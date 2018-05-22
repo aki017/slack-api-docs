@@ -43,7 +43,7 @@ Typical success response
             "created": 1508881078,
             "created_by": "U2U85N1RZ",
             "message": {
-                "permalink": "https:\/\/hitchhikers.slack.com\/archives\/C2U86NC6H\/p1508197641000151",
+                "permalink": "https://hitchhikers.slack.com/archives/C2U86NC6H/p1508197641000151",
                 "pinned_to": [
                     "C2U86NC6H"
                 ],
@@ -59,7 +59,7 @@ Typical success response
             "created": 1508880991,
             "created_by": "U2U85N1RZ",
             "message": {
-                "permalink": "https:\/\/hitchhikers.slack.com\/archives\/C2U86NC6H\/p1508284197000015",
+                "permalink": "https://hitchhikers.slack.com/archives/C2U86NC6H/p1508284197000015",
                 "pinned_to": [
                     "C2U86NC6H"
                 ],
