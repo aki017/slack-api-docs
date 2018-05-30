@@ -144,6 +144,8 @@ A user's custom profile fields may be discovered using [`users.profile.get`](/me
 
 ## Email addresses
 
+{EMAIL\_NOTICE}
+
 Apps created after January 4th, 2017 must request _both_ the `users:read` and `users:read.email` [OAuth permission scopes](/docs/oauth-scopes) when using the [OAuth app installation flow](/docs/oauth) to enable access to the `email` field of user objects returned by this method.
 
 ## Pagination
