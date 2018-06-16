@@ -96,7 +96,8 @@ A user's custom profile fields may be discovered using [`users.profile.get`](/me
 
 ### Email addresses
 
-{EMAIL\_NOTICE}
+<ts-icon class="ts_icon_square_warning"></ts-icon> **Accessing email addresses**  
+ The [`users:read.email`](/scopes/users:read.email) OAuth scope is now required to access the `email` field in [user objects](/types/user) returned by the [`users.list`](/methods/users.list) and [`users.info`](/methods/users.info) web API methods. [`users:read`](/scopes/users:read) is no longer a sufficient scope for this data field. [Learn more](/changelog/2017-04-narrowing-email-access).
 
 Apps created after January 4th, 2017 must explicitly request the `users:read.email` [OAuth permission scope](/docs/oauth-scopes) when using the [OAuth app installation flow](/docs/oauth) to enable access to this method.
 

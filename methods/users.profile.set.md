@@ -24,7 +24,7 @@ Use this method to set a user's profile information, including name, email, curr
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `name` | `first_name` | Optional | Name of a single key to set. Usable only if `profile` is not passed. |
-| `profile` | `{ first_name: "John", ... }` | Optional | Collection of key:value pairs presented as a URL-encoded JSON hash. |
+| `profile` | `{ first_name: "John", ... }` | Optional | Collection of key:value pairs presented as a URL-encoded JSON hash. At most 50 fields may be set. Each field name is limited to 255 characters. |
 | `user` | `W1234567890` | Optional | ID of user to change. This argument may only be specified by team admins on paid teams. |
 | `value` | `John` | Optional | Value to set a single key to. Usable only if `profile` is not passed. |
 
