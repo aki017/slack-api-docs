@@ -11,6 +11,7 @@ Find a user with an email address.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [workspace](/docs/token-types#workspace) | [`users:read.email`](/scopes/users:read.email) |
 | [user](/docs/token-types#user) | [`users:read.email`](/scopes/users:read.email) |
 
  |
