@@ -10,17 +10,22 @@ Renames a conversation.
 
 | Token type | Required scope(s) |
 | --- | --- |
+| [workspace](/docs/token-types#workspace) | [`conversations:write`](/scopes/conversations:write) |
 | [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write) [`groups:write`](/scopes/groups:write) [`im:write`](/scopes/im:write) [`mpim:write`](/scopes/mpim:write) [`post`](/scopes/post) |
 
  |
 
 * * *
 
-<ts-icon class="ts_icon_comment"></ts-icon> As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. A corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`.
+<ts-icon class="ts_icon_comment"></ts-icon> As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. For classic Slack apps, a corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`. For workspace apps, a `conversations:` scope is all that's needed.
 
 This method renames a conversation. Some types of conversations cannot be renamed.
 
 The only the user that originally created a channel or an admin may rename it. Others will receive a `not_authorized` error.
+
+### Limits for workspace apps
+
+Because workspace apps can't yet act on behalf of users, they don't have the power to rename conversations, except when they're the owner/creator of the conversation.
 
 ## Arguments
 

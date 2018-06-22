@@ -11,7 +11,6 @@ Lists all channels in a Slack team.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`channels:read`](/scopes/channels:read) |
 | [user](/docs/token-types#user) | [`channels:read`](/scopes/channels:read) [`read`](/scopes/read) |
 
  |

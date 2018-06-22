@@ -11,7 +11,6 @@ Gets information about a private channel.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`groups:read`](/scopes/groups:read) |
 | [user](/docs/token-types#user) | [`groups:read`](/scopes/groups:read) [`read`](/scopes/read) |
 
  |

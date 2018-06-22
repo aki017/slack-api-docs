@@ -11,7 +11,6 @@ Fetches history of messages and events from a private channel.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`groups:history`](/scopes/groups:history) |
 | [user](/docs/token-types#user) | [`groups:history`](/scopes/groups:history) [`read`](/scopes/read) |
 
  |

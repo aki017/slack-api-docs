@@ -10,15 +10,20 @@ Invites users to a channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
+| [workspace](/docs/token-types#workspace) | [`conversations:write`](/scopes/conversations:write) |
 | [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write) [`groups:write`](/scopes/groups:write) [`im:write`](/scopes/im:write) [`mpim:write`](/scopes/mpim:write) [`post`](/scopes/post) |
 
  |
 
 * * *
 
-<ts-icon class="ts_icon_comment"></ts-icon> As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. A corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`.
+<ts-icon class="ts_icon_comment"></ts-icon> As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. For classic Slack apps, a corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`. For workspace apps, a `conversations:` scope is all that's needed.
 
 This [Conversations API](/docs/conversations-api) method invites 1-30 users to a public or private channel. The calling user must be a member of the channel.
+
+### Limits for workspace apps
+
+Because workspace apps can't yet act on behalf of users, they don't have the power to invite users to conversations, except when they're the owner/creator of the conversation.
 
 ## Arguments
 

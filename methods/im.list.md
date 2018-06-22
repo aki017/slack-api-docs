@@ -11,7 +11,6 @@ Lists direct message channels for the calling user.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`im:read`](/scopes/im:read) |
 | [user](/docs/token-types#user) | [`im:read`](/scopes/im:read) [`read`](/scopes/read) |
 
  |

@@ -11,7 +11,6 @@ Retrieve a thread of messages posted to a channel
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`channels:history`](/scopes/channels:history) |
 | [user](/docs/token-types#user) | [`channels:history`](/scopes/channels:history) [`read`](/scopes/read) |
 
  |

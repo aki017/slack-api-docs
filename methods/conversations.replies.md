@@ -11,14 +11,14 @@ Retrieve a thread of messages posted to a conversation
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`channels:history`](/scopes/channels:history) [`groups:history`](/scopes/groups:history) [`im:history`](/scopes/im:history) [`mpim:history`](/scopes/mpim:history) |
+| [workspace](/docs/token-types#workspace) | [`conversations:history`](/scopes/conversations:history) |
 | [user](/docs/token-types#user) | [`channels:history`](/scopes/channels:history) [`groups:history`](/scopes/groups:history) [`im:history`](/scopes/im:history) [`mpim:history`](/scopes/mpim:history) [`read`](/scopes/read) |
 
  |
 
 * * *
 
-<ts-icon class="ts_icon_comment"></ts-icon> As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. A corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`.
+<ts-icon class="ts_icon_comment"></ts-icon> As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. For classic Slack apps, a corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`. For workspace apps, a `conversations:` scope is all that's needed.
 
 This [Conversations API](/docs/conversations-api) method returns an entire thread (a message plus all the messages in reply to it), while [`conversations.history`](/methods/conversations.history) method returns only parent messages.
 

@@ -10,7 +10,6 @@ Retrieve a thread of messages posted to a direct message conversation from a mul
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | [`mpim:history`](/scopes/mpim:history) |
 | [user](/docs/token-types#user) | [`mpim:history`](/scopes/mpim:history) [`read`](/scopes/read) |
 
  |

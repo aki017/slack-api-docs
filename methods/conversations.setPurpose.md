@@ -11,15 +11,20 @@ Sets the purpose for a conversation.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [workspace](/docs/token-types#workspace) | [`conversations:write`](/scopes/conversations:write) |
 | [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write) [`groups:write`](/scopes/groups:write) [`im:write`](/scopes/im:write) [`mpim:write`](/scopes/mpim:write) [`post`](/scopes/post) |
 
  |
 
 * * *
 
-<ts-icon class="ts_icon_comment"></ts-icon> As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. A corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`.
+<ts-icon class="ts_icon_comment"></ts-icon> As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. For classic Slack apps, a corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`. For workspace apps, a `conversations:` scope is all that's needed.
 
 This method is used to change the purpose of a conversation. The calling user must be a member of the conversation. Not all conversation types may have a purpose set.
+
+### Limits for workspace apps
+
+Because workspace apps can't yet act on behalf of users, they don't have the power to set the purpose of conversations, except when they're already part of the conversation.
 
 ## Arguments
 

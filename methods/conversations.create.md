@@ -10,17 +10,22 @@ Initiates a public or private channel-based conversation
 
 | Token type | Required scope(s) |
 | --- | --- |
+| [workspace](/docs/token-types#workspace) | [`conversations:write`](/scopes/conversations:write) |
 | [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write) [`groups:write`](/scopes/groups:write) [`im:write`](/scopes/im:write) [`mpim:write`](/scopes/mpim:write) [`post`](/scopes/post) |
 
  |
 
 * * *
 
-<ts-icon class="ts_icon_comment"></ts-icon> As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. A corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`.
+<ts-icon class="ts_icon_comment"></ts-icon> As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. For classic Slack apps, a corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`. For workspace apps, a `conversations:` scope is all that's needed.
 
 Create a public or private channel using this [Conversations API](/docs/conversations-api) method.
 
 Use [`conversations.open`](/methods/conversations.open) to initiate or resume a direct message or multi-person direct message.
+
+### Limits for workspace apps
+
+At least one user needs to be invited when creating a public or private conversation. Otherwise apps could create invisible channels, which might cause a few problems.
 
 ## Arguments
 
@@ -29,6 +34,7 @@ Use [`conversations.open`](/methods/conversations.open) to initiate or resume a 
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `name` | `mychannel` | Required | Name of the public or private channel to create |
 | `is_private` | `true` | Optional | Create a private channel instead of a public one |
+| `user_ids` | `W1234567890,U2345678901,U3456789012` | Optional | **Required** for workspace apps. A list of between 1 and 30 human users that will be added to the newly-created conversation. This argument has no effect when used by classic Slack apps. |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
@@ -109,6 +115,10 @@ This table lists the expected errors that this method could return. However, oth
 | `invalid_name_maxlength` | Value passed for `name` exceeded max length. |
 | `invalid_name_specials` | Value passed for `name` contained unallowed special characters or upper case characters. |
 | `invalid_name` | Value passed for `name` was invalid. |
+| `invalid_users` | Value passed for `user_ids` was empty or invalid. |
+| `user_not_found` | One or more users in `user_ids` was not found. |
+| `too_many_convos_for_team` | The workspace has exceeded its limit of public and private channels. |
+| `too_many_convos_for_app_on_team` | This app has exceeded its per-workspace limit of public and private channels. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
