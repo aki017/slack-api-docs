@@ -19,6 +19,8 @@ Update the list of users for a User Group
 
 This method updates the list of users that belong to a User Group. This method replaces all users in a User Group with the list of users provided in the `users` parameter.
 
+Guests and bot users may not be part of a user group.
+
 ## Arguments
 
 | Argument | Example | Required | Description |

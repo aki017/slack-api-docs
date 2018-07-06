@@ -172,11 +172,13 @@ You'll need a message's `ts` value, uniquely identifying it within a conversatio
 
 Provide another message's `ts` value _as_ the `latest` parameter. Set `limit` to `1`. If it exists, you'll receive the queried message in return.
 
+Finally, use `inclusive=true` because otherwise we'll never retrieve the message we're actually after, just the ones that come after it.
+
 ```
-GET /api/channels.history?token=TOKEN_WITH_CHANNELS_HISTORY_SCOPE&channel=C2EB2QT8A&latest=1476909142.000007&inclusive=true&count=1
+GET /api/channels.history?token=TOKEN_WITH_CHANNELS_HISTORY_SCOPE&channel=C2EB2QT8A&latest=1476909142.000007&inclusive=true&limit=1
 ```
 
-Easily generate a permalink URL for any specific message using [`chat.getPermalink`](/methods/chat.getPermalink).
+You can easily generate a permalink URL for any specific message using [`chat.getPermalink`](/methods/chat.getPermalink).
 
 * * *
 
