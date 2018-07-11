@@ -10,6 +10,7 @@ Ends the current user's snooze mode immediately.
 
 | Token type | Required scope(s) |
 | --- | --- |
+| [workspace](/docs/token-types#workspace) | [`dnd:write:user`](/scopes/dnd:write:user) |
 | [user](/docs/token-types#user) | [`dnd:write`](/scopes/dnd:write) [`post`](/scopes/post) |
 
  |

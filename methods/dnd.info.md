@@ -11,6 +11,7 @@ Retrieves a user's current Do Not Disturb status.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [workspace](/docs/token-types#workspace) | [`dnd:read`](/scopes/dnd:read) |
 | [user](/docs/token-types#user) | [`dnd:read`](/scopes/dnd:read) [`read`](/scopes/read) |
 
  |

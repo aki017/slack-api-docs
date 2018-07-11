@@ -32,7 +32,7 @@ This method is used to request additional permissions with a team. It's a part o
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
-The `trigger_id` parameter is required and can be found attached to certain [Events API](/events-api) events and other avenues. See [Permissions API](/docs/permissions-api)
+The `trigger_id` parameter is required and can be found attached to certain [Events API](/events-api) events and other avenues. See [Permissions API](/docs/permissions-api) docs & this one [about triggers](/docs/triggers).
 
 ## Response
 

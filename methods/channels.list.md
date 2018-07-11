@@ -21,6 +21,8 @@ This method returns a list of all channels in the team. This includes channels t
 
 To retrieve a list of private channels, use [`groups.list`](/methods/groups.list).
 
+[Shared channels](/shard-channels) are not returned by this method. Use the [Conversations API](/docs/conversations-api) methods instead, like [`conversations.list`](/methods/conversations.list).
+
 _Having trouble getting a HTTP 200 response from this method?_ Try excluding the `members` list from each channel object using the `exclude_members` parameter.
 
 The `members` array found in this and other methods will begin automatically truncating at 1,500 and eventually fewer results beginning December 1, 2017. As of March, 2018 the cap is 500. Please Use [`conversations.members`](/methods/conversations.members) to manage memberships instead. [Read on to learn more.](/changelog/2017-10-members-array-truncating)

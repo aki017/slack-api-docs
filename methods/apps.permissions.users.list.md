@@ -1,8 +1,8 @@
-Retrieves the Do Not Disturb status for users on a team.
+Returns list of user grants and corresponding scopes this app has on a team.
 
 ## Facts
 
-| Method URL: | `https://slack.com/api/dnd.teamInfo` |
+| Method URL: | `https://slack.com/api/apps.permissions.users.list` |
 | Preferred HTTP method: | `GET` |
 | Accepted content types: | `application/x-www-form-urlencoded` |
 | Rate limiting: | [Tier 2](/docs/rate-limits#tier_t2) |
@@ -10,44 +10,72 @@ Retrieves the Do Not Disturb status for users on a team.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`dnd:read`](/scopes/dnd:read) |
-| [user](/docs/token-types#user) | [`dnd:read`](/scopes/dnd:read) [`read`](/scopes/read) |
+| [workspace](/docs/token-types#workspace) | _No scope required_ |
 
  |
 
 * * *
 
-Provides information about the current Do Not Disturb settings for users of a Slack team.
+This method returns a list of all the [user-centric permissions](/docs/working-for-users) awarded to a [workspace token](/docs/token-types#workspace).
+
+It's part of the [Permissions API](/docs/permissions-api), which is available only to workspace apps.
+
+To request user-centric permissions, use [`apps.permissions.users.request`](/methods/apps.permissions.users.request).
 
 ## Arguments
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `users` | `U1234,W4567` | Optional | Comma-separated list of users to fetch Do Not Disturb status for |
+| `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | Paginate through collections of data by setting the `cursor` parameter to a `next_cursor` attribute returned by a previous request's `response_metadata`. Default value fetches the first "page" of the collection. See [pagination](/docs/pagination) for more detail. |
+| `limit` | `20` | Optional | The maximum number of items to return. |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
-## Response
+## Example response
+
+Typical successful paginated response
 
 ```
 {
     "ok": true,
-    "users": {
-        "U023BECGF": {
-            "dnd_enabled": true,
-            "next_dnd_start_ts": 1450387800,
-            "next_dnd_end_ts": 1450423800
+    "resources": [
+        {
+            "id": "U0DES3UAN",
+            "scopes": [
+                "dnd:write:user",
+                "reminders:write:user"
+            ]
         },
-        "U058CJVAA": {
-            "dnd_enabled": false,
-            "next_dnd_start_ts": 1,
-            "next_dnd_end_ts": 1
+        {
+            "id": "U024BFF1M",
+            "scopes": [
+                "reminders:write:user"
+            ]
         }
+    ],
+    "response_metadata": {
+        "next_cursor": "dGVhbTdPMUg5UkFTT0w="
     }
 }
 ```
+
+Typical error response
+
+```
+{
+    "ok": false,
+    "error": "invalid_cursor"
+}
+```
+
+## Pagination
+
+This method uses cursor-based pagination to make it easier to incrementally collect information. To begin pagination, specify a `limit` value under `1000`. We recommend no more than `200` results at a time.
+
+Responses will include a top-level `response_metadata` attribute containing a `next_cursor` value. By using this value as a `cursor` parameter in a subsequent request, along with `limit`, you may navigate through the collection page by virtual page.
+
+See [pagination](/docs/pagination) for more information.
 
 ## Errors
 
@@ -55,12 +83,14 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
+| `invalid_cursor` | Value passed for `cursor` was not valid or is no longer valid. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
 | `token_revoked` | Authentication token is for a deleted user or workspace or the app has been removed. |
 | `no_permission` | The workspace token used in this request does not have the permissions necessary to complete the request. |
 | `org_login_required` | The workspace is undergoing an enterprise migration and will not be available until migration is complete. |
+| `user_is_bot` | This method cannot be called by a bot user. |
 | `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |

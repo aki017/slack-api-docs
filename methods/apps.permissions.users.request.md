@@ -1,8 +1,8 @@
-Retrieves the Do Not Disturb status for users on a team.
+Enables an app to trigger a permissions modal to grant an app access to a user access scope.
 
 ## Facts
 
-| Method URL: | `https://slack.com/api/dnd.teamInfo` |
+| Method URL: | `https://slack.com/api/apps.permissions.users.request` |
 | Preferred HTTP method: | `GET` |
 | Accepted content types: | `application/x-www-form-urlencoded` |
 | Rate limiting: | [Tier 2](/docs/rate-limits#tier_t2) |
@@ -10,44 +10,57 @@ Retrieves the Do Not Disturb status for users on a team.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`dnd:read`](/scopes/dnd:read) |
-| [user](/docs/token-types#user) | [`dnd:read`](/scopes/dnd:read) [`read`](/scopes/read) |
+| [workspace](/docs/token-types#workspace) | _No scope required_ |
 
  |
 
 * * *
 
-Provides information about the current Do Not Disturb settings for users of a Slack team.
+<ts-icon class="ts_icon_sparkles"></ts-icon> **Developer preview**  
+
+This feature is exclusive to our [workspace apps developer preview](/workspace-apps-preview).
+
+This method is used to request additional permissions from a user on a workspace.
+
+It's part of the [Permissions API](/docs/permissions-api) that is available only to workspace apps.
+
+To list currently awarded user-centric permissions, use [`apps.permissions.users.list`](/methods/apps.permissions.users.list).
 
 ## Arguments
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `users` | `U1234,W4567` | Optional | Comma-separated list of users to fetch Do Not Disturb status for |
+| `scopes` | &nbsp; | Required | A comma separated list of user scopes to request for |
+| `trigger_id` | &nbsp; | Required | Token used to trigger the request |
+| `user` | &nbsp; | Required | The user this scope is being requested for |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
+The `trigger_id` parameter is required and can be found attached to some [Events API](/events-api) events, interactive framework action URL invocations, dialog submissions, and other ways we send your app timely, user-initiated data. See these docs about the [Permissions API](/docs/permissions-api) and [triggers](/docs/triggers) to learn more.
+
 ## Response
+
+Standard success response when used with a user token
 
 ```
 {
-    "ok": true,
-    "users": {
-        "U023BECGF": {
-            "dnd_enabled": true,
-            "next_dnd_start_ts": 1450387800,
-            "next_dnd_end_ts": 1450423800
-        },
-        "U058CJVAA": {
-            "dnd_enabled": false,
-            "next_dnd_start_ts": 1,
-            "next_dnd_end_ts": 1
-        }
-    }
+    "ok": true
 }
 ```
+
+Standard failure response when trigger\_id is invalid
+
+```
+{
+    "ok": false,
+    "error": "invalid_trigger_id"
+}
+```
+
+A response other than `"ok": true` indicates the permission request was not presented to the user, perhaps due to an invalid or expired `trigger_id`.
+
+You'll receive related [app events](/events-api#app_events) if the user approves or rejects your permissions request. If the user does nothing, no event will emit.
 
 ## Errors
 
@@ -55,12 +68,17 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
+| `invalid_trigger` | The provided `trigger_id` is invalid. |
+| `trigger_exchanged` | The provided `trigger_id` has already been exchanged. |
+| `invalid_scope` | Scopes are invalid. |
+| `invalid_user` | There isn't a valid user to request permissions. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
 | `token_revoked` | Authentication token is for a deleted user or workspace or the app has been removed. |
 | `no_permission` | The workspace token used in this request does not have the permissions necessary to complete the request. |
 | `org_login_required` | The workspace is undergoing an enterprise migration and will not be available until migration is complete. |
+| `user_is_bot` | This method cannot be called by a bot user. |
 | `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |

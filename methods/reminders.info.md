@@ -10,6 +10,7 @@ Gets information about a reminder.
 
 | Token type | Required scope(s) |
 | --- | --- |
+| [workspace](/docs/token-types#workspace) | [`reminders:read:user`](/scopes/reminders:read:user) |
 | [user](/docs/token-types#user) | [`reminders:read`](/scopes/reminders:read) [`read`](/scopes/read) |
 
  |

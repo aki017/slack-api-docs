@@ -3,7 +3,7 @@ Exchanges a temporary OAuth verifier code for a workspace token.
 ## Facts
 
 | Method URL: | `https://slack.com/api/oauth.token` |
-| Preferred HTTP method: | `GET` |
+| Preferred HTTP method: | `POST` |
 | Accepted content types: | `application/x-www-form-urlencoded` |
 | Rate limiting: | [Tier 4](/docs/rate-limits#tier_t4) |
 

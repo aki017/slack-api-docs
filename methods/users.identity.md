@@ -21,7 +21,9 @@ After your [Slack app](/slack-apps) is awarded an identity token through [Sign i
 
 The returned fields depend on any additional authorization scopes you've requested.
 
-This method may only be used by tokens with the `identity.basic` scope, as provided in the [Sign in with Slack](/docs/sign-in-with-slack) process.
+With traditional Slack apps, this method must be called by individual user tokens with the `identity.basic` scope, as provided in the [Sign in with Slack](/docs/sign-in-with-slack) process.
+
+Workspace apps must use their workspace token with the `identity:read:user` scope and pass an authorized user's user ID as the `X-Slack-User` HTTP header of the request. See [working for users](/docs/working-for-users#sign_in_with_slack).
 
 ## Arguments
 
