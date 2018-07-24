@@ -18,9 +18,9 @@ Uploads or creates a file.
 
 * * *
 
-<ts-icon class="ts_icon_all_files"></ts-icon> **File threads are on the way**  
+<ts-icon class="ts_icon_all_files"></ts-icon> **File threads are here**  
 
-We're improving the file commenting experience beginning June 2018. [**Learn more**](/changelog/2018-05-file-threads-soon-tread) about what's new and potentially breaking changes.
+A new file commenting experience arrived on July 23, 2018. [**Learn more**](/changelog/2018-05-file-threads-soon-tread) about what's new and the migration path for apps already working with files and file comments.
 
 This method allows you to create or upload an existing file.
 
@@ -34,7 +34,8 @@ This method allows you to create or upload an existing file.
 | `file` | `...` | Optional | File contents via `multipart/form-data`. If omitting this parameter, you must submit `content`. |
 | `filename` | `foo.txt` | Optional | Filename of file. |
 | `filetype` | `php` | Optional | A [file type](/types/file#file_types) identifier. |
-| `initial_comment` | `Best!` | Optional | Initial comment to add to file. |
+| `initial_comment` | `Best!` | Optional | The message text introducing the file in specified `channels`. |
+| `thread_ts` | `1234567890.123456` | Optional | Provide another message's `ts` value to upload this file as a reply. Never use a reply's `ts` value; use its parent instead. |
 | `title` | `My File` | Optional | Title of file. |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
@@ -53,31 +54,167 @@ The file can also be shared directly into channels on upload, by specifying an o
 
 There is a 1 megabyte file size limit for files uploaded as snippets.
 
+Upload files and images into [message threads](/docs/message-threading) by providing the thread parent's `ts` value with the `thread_ts` parameter.
+
+The `initial_comment` field is used in messages to introduce the file in conversation.
+
 ## Response
 
+By default all newly-uploaded files are private and only visible to the owner. They become public once they are shared into a public channel (which can happen at upload time via the `channels` argument).
+
 If successful, the response will include a [file object](/types/file).
+
+Success response after uploading a file to a channel with an initial message
 
 ```
 {
     "ok": true,
-    "file": {...}
+    "file": {
+        "id": "F0TD00400",
+        "created": 1532293501,
+        "timestamp": 1532293501,
+        "name": "dramacat.gif",
+        "title": "dramacat",
+        "mimetype": "image/jpeg",
+        "filetype": "gif",
+        "pretty_type": "JPEG",
+        "user": "U0L4B9NSU",
+        "editable": false,
+        "size": 43518,
+        "mode": "hosted",
+        "is_external": false,
+        "external_type": "",
+        "is_public": false,
+        "public_url_shared": false,
+        "display_as_bot": false,
+        "username": "",
+        "url_private": "https://.../dramacat.gif",
+        "url_private_download": "https://.../dramacat.gif",
+        "thumb_64": "https://.../dramacat_64.gif",
+        "thumb_80": "https://.../dramacat_80.gif",
+        "thumb_360": "https://.../dramacat_360.gif",
+        "thumb_360_w": 360,
+        "thumb_360_h": 250,
+        "thumb_480": "https://.../dramacat_480.gif",
+        "thumb_480_w": 480,
+        "thumb_480_h": 334,
+        "thumb_160": "https://.../dramacat_160.gif",
+        "image_exif_rotation": 1,
+        "original_w": 526,
+        "original_h": 366,
+        "permalink": "https://.../dramacat.gif",
+        "permalink_public": "https://.../More-Path-Components",
+        "comments_count": 0,
+        "is_starred": false,
+        "shares": {
+            "private": {
+                "D0L4B9P0Q": [
+                    {
+                        "reply_users": [],
+                        "reply_users_count": 0,
+                        "reply_count": 0,
+                        "ts": "1532293503.000001"
+                    }
+                ]
+            }
+        },
+        "channels": [],
+        "groups": [],
+        "ims": [
+            "D0L4B9P0Q"
+        ],
+        "has_rich_preview": false
+    }
 }
 ```
 
-By default all newly-uploaded files are private and only visible to the owner. They become public once they are shared into a public channel (which can happen at upload time via the `channels` argument).
+Uploading a file with the `content` parameter creates an editable `text/plain` file by default
+
+```
+{
+    "ok": true,
+    "file": {
+        "id": "F0TD0GUTS",
+        "created": 1532294750,
+        "timestamp": 1532294750,
+        "name": "-.txt",
+        "title": "Untitled",
+        "mimetype": "text/plain",
+        "filetype": "text",
+        "pretty_type": "Plain Text",
+        "user": "U0L4B9NSU",
+        "editable": true,
+        "size": 11,
+        "mode": "snippet",
+        "is_external": false,
+        "external_type": "",
+        "is_public": true,
+        "public_url_shared": false,
+        "display_as_bot": false,
+        "username": "",
+        "url_private": "https://.../.txt",
+        "url_private_download": "https://...download/-.txt",
+        "permalink": "https://.../.txt",
+        "permalink_public": "https://.../.txt",
+        "edit_link": "https://.../.txt/edit",
+        "preview": "launch plan",
+        "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text/plain',window.getSelection().toString().replace(/\\u200b/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>launch plan</pre></div>\n</div>\n</div>\n",
+        "lines": 1,
+        "lines_more": 0,
+        "preview_is_truncated": false,
+        "comments_count": 0,
+        "is_starred": false,
+        "shares": {
+            "public": {
+                "C061EG9SL": [
+                    {
+                        "reply_users": [],
+                        "reply_users_count": 0,
+                        "reply_count": 0,
+                        "ts": "1532294750.000001",
+                        "channel_name": "general",
+                        "team_id": "T061EG9R6"
+                    }
+                ]
+            }
+        },
+        "channels": [
+            "C061EG9SL"
+        ],
+        "groups": [],
+        "ims": [],
+        "has_rich_preview": false
+    }
+}
+```
+
+Typical error response
+
+```
+{
+    "ok": false,
+    "error": "invalid_auth"
+}
+```
 
 ## Examples
 
-Upload "dramacat.gif" and share it in channel, using `multipart/form-data`:
+Upload "dramacat.gif" from the current directory and share it in two channels, using `multipart/form-data`:
 
 ```
-curl -F file=@dramacat.gif -F channels=C024BE91L,#general -F token=xxxx-xxxxxxxxx-xxxx https://slack.com/api/files.upload
+curl -F file=@dramacat.gif -F "initial_comment=Shakes the cat" -F channels=C024BE91L,D032AC32T -H "Authorization: Bearer xoxa-xxxxxxxxx-xxxx" https://slack.com/api/files.upload
 ```
 
-Create an editable file containing the text "Hello":
+Create an editable text file containing the text "launch plan":
 
 ```
-curl -F content="Hello" -F token=xxxx-xxxxxxxxx-xxxx https://slack.com/api/files.upload
+curl -F "content=launch plan" -H "Authorization: Bearer xoxb-xxxxxxxxx-xxxx" https://slack.com/api/files.upload
+```
+
+Upload another image to an existing message thread:
+
+```
+curl -F file=@drworm.gif -F "initial_comment=I play the drums." -F channels=C024BE91L -F thread_ts=1532293503.000001 -H "Authorization: Bearer xoxp-xxxxxxxxx-xxxx" https://slack.com/api/files.upload
 ```
 
 ## Errors

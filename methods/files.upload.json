@@ -34,7 +34,12 @@
     "initial_comment": {
       "required": false,
       "example": "Best!",
-      "desc": "Initial comment to add to file."
+      "desc": "The message text introducing the file in specified channels."
+    },
+    "thread_ts": {
+      "required": false,
+      "example": "1234567890.123456",
+      "desc": "Provide another message's ts value to upload this file as a reply. Never use a reply's ts value; use its parent instead."
     },
     "title": {
       "required": false,

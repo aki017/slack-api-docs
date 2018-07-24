@@ -18,9 +18,9 @@ Gets information about a team file.
 
 * * *
 
-<ts-icon class="ts_icon_all_files"></ts-icon> **File threads are on the way**  
+<ts-icon class="ts_icon_all_files"></ts-icon> **File threads are here**  
 
-We're improving the file commenting experience beginning June 2018. [**Learn more**](/changelog/2018-05-file-threads-soon-tread) about what's new and potentially breaking changes.
+A new file commenting experience arrived on July 23, 2018. [**Learn more**](/changelog/2018-05-file-threads-soon-tread) about what's new and the migration path for apps already working with files and file comments.
 
 This method returns information about a file in your team.
 
@@ -39,69 +39,89 @@ This method returns information about a file in your team.
 
 The response contains a [file object](/types/file), and a list of comment objects followed by paging information.
 
+Typical success response
+
 ```
 {
     "ok": true,
     "file": {
-        "id" : "F2147483862",
-        "timestamp" : 1356032811,
-
-        "name" : "file.htm",
-        "title" : "My HTML file",
-        "mimetype" : "text\/plain",
-        "filetype" : "text",
-        "pretty_type": "Text",
-        "user" : "U2147483697",
-
-        "mode" : "hosted",
-        "editable" : true,
+        "id": "F0S43PZDF",
+        "created": 1531763342,
+        "timestamp": 1531763342,
+        "name": "tedair.gif",
+        "title": "tedair.gif",
+        "mimetype": "image/gif",
+        "filetype": "gif",
+        "pretty_type": "GIF",
+        "user": "U061F7AUR",
+        "editable": false,
+        "size": 137531,
+        "mode": "hosted",
         "is_external": false,
         "external_type": "",
-
-        "size" : 12345,
-
-        "url": "https:\/\/slack-files.com\/files-pub\/T024BE7LD-F024BERPE-09acb6\/1.png",
-        "url_download": "https:\/\/slack-files.com\/files-pub\/T024BE7LD-F024BERPE-09acb6\/download\/1.png",
-        "url_private": "https:\/\/slack.com\/files-pri\/T024BE7LD-F024BERPE\/1.png",
-        "url_private_download": "https:\/\/slack.com\/files-pri\/T024BE7LD-F024BERPE\/download\/1.png",
-
-        "thumb_64": "https:\/\/slack-files.com\/files-tmb\/T024BE7LD-F024BERPE-c66246\/1_64.png",
-        "thumb_80": "https:\/\/slack-files.com\/files-tmb\/T024BE7LD-F024BERPE-c66246\/1_80.png",
-        "thumb_360": "https:\/\/slack-files.com\/files-tmb\/T024BE7LD-F024BERPE-c66246\/1_360.png",
-        "thumb_360_gif": "https:\/\/slack-files.com\/files-tmb\/T024BE7LD-F024BERPE-c66246\/1_360.gif",
-        "thumb_360_w": 100,
-        "thumb_360_h": 100,
-
-        "permalink": "https:\/\/tinyspeck.slack.com\/files\/cal\/F024BERPE\/1.png",
-        "edit_link": "https:\/\/tinyspeck.slack.com\/files\/cal\/F024BERPE\/1.png/edit",
-        "preview": "&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;meta charset='utf-8'&gt;",
-        "preview_highlight": "&lt;div class=\"sssh-code\"&gt;&lt;div class=\"sssh-line\"&gt;&lt;pre&gt;&lt;!DOCTYPE html...",
-        "lines" : 123,
-        "lines_more": 118,
-
         "is_public": true,
         "public_url_shared": false,
-        "channels": ["C024BE7LT", ...],
-        "groups": ["G12345", ...],
-        "initial_comment": {...},
-        "num_stars": 7,
-        "is_starred": true
-    },
-    "comments": [
-        {
-            "id": "Fc027BN9L9",
-            "timestamp": 1356032811,
-            "user": "U2147483697",
-            "comment": "This is a comment"
+        "display_as_bot": false,
+        "username": "",
+        "url_private": "https://.../tedair.gif",
+        "url_private_download": "https://.../tedair.gif",
+        "thumb_64": "https://.../tedair_64.png",
+        "thumb_80": "https://.../tedair_80.png",
+        "thumb_360": "https://.../tedair_360.png",
+        "thumb_360_w": 176,
+        "thumb_360_h": 226,
+        "thumb_160": "https://.../tedair_=_160.png",
+        "thumb_360_gif": "https://.../tedair_360.gif",
+        "image_exif_rotation": 1,
+        "original_w": 176,
+        "original_h": 226,
+        "deanimate_gif": "https://.../tedair_deanimate_gif.png",
+        "pjpeg": "https://.../tedair_pjpeg.jpg",
+        "permalink": "https://https://.../tedair.gif",
+        "permalink_public": "https://.../...",
+        "comments_count": 0,
+        "is_starred": false,
+        "shares": {
+            "public": {
+                "C0T8SE4AU": [
+                    {
+                        "reply_users": [
+                            "U061F7AUR"
+                        ],
+                        "reply_users_count": 1,
+                        "reply_count": 1,
+                        "ts": "1531763348.000001",
+                        "thread_ts": "1531763273.000015",
+                        "latest_reply": "1531763348.000001",
+                        "channel_name": "file-under",
+                        "team_id": "T061EG9R6"
+                    }
+                ]
+            }
         },
-        ...
-    ],
+        "channels": [
+            "C0T8SE4AU"
+        ],
+        "groups": [],
+        "ims": [],
+        "has_rich_preview": false
+    },
+    "comments": [],
     "paging": {
         "count": 100,
-        "total": 2,
+        "total": 0,
         "page": 1,
         "pages": 0
     }
+}
+```
+
+Typical error response
+
+```
+{
+    "ok": false,
+    "error": "invalid_auth"
 }
 ```
 

@@ -18,9 +18,9 @@ Edit an existing file comment.
 
 * * *
 
-<ts-icon class="ts_icon_all_files"></ts-icon> **File threads are on the way**  
+<ts-icon class="ts_icon_all_files"></ts-icon> **File threads are here**  
 
-We're improving the file commenting experience beginning June 2018. [**Learn more**](/changelog/2018-05-file-threads-soon-tread) about what's new and potentially breaking changes.
+A new file commenting experience arrived on July 23, 2018. [**Learn more**](/changelog/2018-05-file-threads-soon-tread) about what's new and the migration path for apps already working with files and file comments.
 
 Edit an existing comment on a file. Only the user who created a comment may make edits. Teams may configure a limited time window during which file comment edits are allowed.
 

@@ -17,9 +17,9 @@ Lists & filters team files.
 
 * * *
 
-<ts-icon class="ts_icon_all_files"></ts-icon> **File threads are on the way**  
+<ts-icon class="ts_icon_all_files"></ts-icon> **File threads are here**  
 
-We're improving the file commenting experience beginning June 2018. [**Learn more**](/changelog/2018-05-file-threads-soon-tread) about what's new and potentially breaking changes.
+A new file commenting experience arrived on July 23, 2018. [**Learn more**](/changelog/2018-05-file-threads-soon-tread) about what's new and the migration path for apps already working with files and file comments.
 
 This method returns a list of files within the team. It can be filtered and sliced in various ways.
 
@@ -48,21 +48,112 @@ You can pass multiple values in the types argument, like `types=spaces,snippets`
 
 ## Response
 
+Typical success response
+
 ```
 {
     "ok": true,
     "files": [
-        {...},
-        {...},
-        {...},
-        ...
+        {
+            "id": "F0S43P1CZ",
+            "created": 1531763254,
+            "timestamp": 1531763254,
+            "name": "billair.gif",
+            "title": "billair.gif",
+            "mimetype": "image/gif",
+            "filetype": "gif",
+            "pretty_type": "GIF",
+            "user": "U061F7AUR",
+            "editable": false,
+            "size": 144538,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https://.../billair.gif",
+            "url_private_download": "https://.../billair.gif",
+            "thumb_64": "https://.../billair_64.png",
+            "thumb_80": "https://.../billair_80.png",
+            "thumb_360": "https://.../billair_360.png",
+            "thumb_360_w": 176,
+            "thumb_360_h": 226,
+            "thumb_160": "https://.../billair_=_160.png",
+            "thumb_360_gif": "https://.../billair_360.gif",
+            "image_exif_rotation": 1,
+            "original_w": 176,
+            "original_h": 226,
+            "deanimate_gif": "https://.../billair_deanimate_gif.png",
+            "pjpeg": "https://.../billair_pjpeg.jpg",
+            "permalink": "https://https://.../billair.gif",
+            "permalink_public": "https://.../...",
+            "channels": [
+                "C0T8SE4AU"
+            ],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        {
+            "id": "F0S43PZDF",
+            "created": 1531763342,
+            "timestamp": 1531763342,
+            "name": "tedair.gif",
+            "title": "tedair.gif",
+            "mimetype": "image/gif",
+            "filetype": "gif",
+            "pretty_type": "GIF",
+            "user": "U061F7AUR",
+            "editable": false,
+            "size": 137531,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https://.../tedair.gif",
+            "url_private_download": "https://.../tedair.gif",
+            "thumb_64": "https://.../tedair_64.png",
+            "thumb_80": "https://.../tedair_80.png",
+            "thumb_360": "https://.../tedair_360.png",
+            "thumb_360_w": 176,
+            "thumb_360_h": 226,
+            "thumb_160": "https://.../tedair_=_160.png",
+            "thumb_360_gif": "https://.../tedair_360.gif",
+            "image_exif_rotation": 1,
+            "original_w": 176,
+            "original_h": 226,
+            "deanimate_gif": "https://.../tedair_deanimate_gif.png",
+            "pjpeg": "https://.../tedair_pjpeg.jpg",
+            "permalink": "https://https://.../tedair.gif",
+            "permalink_public": "https://.../...",
+            "channels": [
+                "C0T8SE4AU"
+            ],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        }
     ],
     "paging": {
         "count": 100,
-        "total": 295,
+        "total": 2,
         "page": 1,
-        "pages": 3
+        "pages": 1
     }
+}
+```
+
+Typical error response
+
+```
+{
+    "ok": false,
+    "error": "invalid_auth"
 }
 ```
 
