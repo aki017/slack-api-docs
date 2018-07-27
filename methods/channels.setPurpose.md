@@ -19,7 +19,7 @@ Sets the purpose for a channel.
 
 This method is used to change the purpose of a channel. The calling user must be a member of the channel.
 
-Only user tokens and [legacy custom integration bot users](/custom-integrations/bot-users) may use this method. Slack app bot user tokens will not work.
+Only user tokens may use this method. Bot user tokens will not work.
 
 ## Arguments
 

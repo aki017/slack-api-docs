@@ -122,7 +122,7 @@ If `as_user` is not provided at all, then the value is inferred, based on the sc
 
 ### When `as_user` is false
 
-When the `as_user` parameter is set to `false`, messages are posted as " [`bot_messages`](/events/message/bot_message)", with message authorship attributed to the default user name and icons associated with the [Custom Integration](/custom-integrations) or [Slack App](/slack-apps).
+When the `as_user` parameter is set to `false`, messages are posted as " [`bot_messages`](/events/message/bot_message)", with message authorship attributed to the user name and icons associated with the [Slack App](/slack-apps).
 
 With `as_user` set to `false`, you may also provide a `username` to explicitly specify the bot user's identity for this message, along with `icon_url` or `icon_emoji`.
 
