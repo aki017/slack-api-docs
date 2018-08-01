@@ -24,8 +24,10 @@ This method returns a list of private channels in the team that the caller is in
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | Parameter for pagination. Set `cursor` equal to the `next_cursor` attribute returned by the previous request's `response_metadata`. This parameter is optional, but pagination is mandatory: the default value simply fetches the first "page" of the collection. See [pagination](/docs/pagination) for more details. |
 | `exclude_archived` | `true` | Optional, default=0 | Don't return archived private channels. |
 | `exclude_members` | `true` | Optional, default=false | Exclude the `members` from each `group` |
+| `limit` | `20` | Optional, default=0 | The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the list hasn't been reached. |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
@@ -58,9 +60,22 @@ Returns a list of [group objects](/types/group) (also known as "private channel 
             }
         },
         ....
-    ]
+    ],
+    "response_metadata": {
+        "next_cursor": "dGVhbTpDMUg5UkVTR0w="
+    }
 }
 ```
+
+## Pagination
+This method uses cursor-based pagination to make it easier to incrementally collect information. To begin pagination, specify a `limit` value under `1000`. We recommend no more than `200` results at a time.  
+  
+Responses will include a top-level `response_metadata` attribute containing a `next_cursor` value. By using this value as a `cursor` parameter in a subsequent request, along with `limit`, you may navigate through the collection page by virtual page.  
+  
+ For apps created after August 7, 2018, this method defaults to cursor-based pagination. Use the `limit` and `cursor` parameters to guarantee your passage into the paradise of cursored pagination.  
+  
+ See [pagination](/docs/pagination) for more information.  
+  
 
 ## Errors
 

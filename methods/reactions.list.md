@@ -26,7 +26,9 @@ This method returns a list of all items (file, file comment, channel message, gr
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `count` | `20` | Optional, default=100 | Number of items to return per page. |
+| `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | Parameter for pagination. Set `cursor` equal to the `next_cursor` attribute returned by the previous request's `response_metadata`. This parameter is optional, but pagination is mandatory: the default value simply fetches the first "page" of the collection. See [pagination](/docs/pagination) for more details. |
 | `full` | `true` | Optional | If true always return the complete reaction list. |
+| `limit` | `20` | Optional, default=0 | The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the list hasn't been reached. |
 | `page` | `2` | Optional, default=1 | Page number of results to return. |
 | `user` | `W1234567890` | Optional | Show reactions made by this user. Defaults to the authed user. |
 
@@ -126,11 +128,8 @@ Typical success response
         }
     ],
     "ok": true,
-    "paging": {
-        "count": 100,
-        "page": 1,
-        "pages": 1,
-        "total": 3
+    "response_metadata": {
+        "next_cursor": "dGVhbTpDMUg5UkVTR0w="
     }
 }
 ```

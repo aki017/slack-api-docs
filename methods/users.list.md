@@ -150,12 +150,14 @@ A user's custom profile fields may be discovered using [`users.profile.get`](/me
 Apps created after January 4th, 2017 must request _both_ the `users:read` and `users:read.email` [OAuth permission scopes](/docs/oauth-scopes) when using the [OAuth app installation flow](/docs/oauth) to enable access to the `email` field of user objects returned by this method.
 
 ## Pagination
-
-This method uses cursor-based pagination to make it easier to incrementally collect information. To begin pagination, specify a `limit` value under `1000`. We recommend no more than `200` results at a time.
-
-Responses will include a top-level `response_metadata` attribute containing a `next_cursor` value. By using this value as a `cursor` parameter in a subsequent request, along with `limit`, you may navigate through the collection page by virtual page.
-
-See [pagination](/docs/pagination) for more information.
+This method uses cursor-based pagination to make it easier to incrementally collect information. To begin pagination, specify a `limit` value under `1000`. We recommend no more than `200` results at a time.  
+  
+Responses will include a top-level `response_metadata` attribute containing a `next_cursor` value. By using this value as a `cursor` parameter in a subsequent request, along with `limit`, you may navigate through the collection page by virtual page.  
+  
+ For apps created after August 7, 2018, this method defaults to cursor-based pagination. Use the `limit` and `cursor` parameters to guarantee your passage into the paradise of cursored pagination.  
+  
+ See [pagination](/docs/pagination) for more information.  
+  
 
 ### Legacy behavior
 

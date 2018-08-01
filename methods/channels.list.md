@@ -134,14 +134,16 @@ Use the `exclude_members` parameter to exclude the `members` collection from eac
 An `is_org_shared` attribute may appear set to `true` on channels that are shared channel between multiple teams of an [enterprise grid](/enterprise-grid). See the [enterprise grid shared channels documentation](/enterprise-grid#shared_channels) for more detail.
 
 ## Pagination
-
-This method uses cursor-based pagination to make it easier to incrementally collect information. To begin pagination, specify a `limit` value under `1000`. We recommend no more than `200` results at a time.
-
-Responses will include a top-level `response_metadata` attribute containing a `next_cursor` value. By using this value as a `cursor` parameter in a subsequent request, along with `limit`, you may navigate through the collection page by virtual page.
+This method uses cursor-based pagination to make it easier to incrementally collect information. To begin pagination, specify a `limit` value under `1000`. We recommend no more than `200` results at a time.  
+  
+Responses will include a top-level `response_metadata` attribute containing a `next_cursor` value. By using this value as a `cursor` parameter in a subsequent request, along with `limit`, you may navigate through the collection page by virtual page.  
+  
+ For apps created after August 7, 2018, this method defaults to cursor-based pagination. Use the `limit` and `cursor` parameters to guarantee your passage into the paradise of cursored pagination.  
+  
+ See [pagination](/docs/pagination) for more information.  
+  
 
 Please note that the argument for the method, `exclude_members` may not work well with pagination at this time. Channels with very large memberships and teams with many channels may cause the method to throw a HTTP 500 error. Please exclude memberships with `exclude_members` and look them up atomically with `channels.info` instead.
-
-See [pagination](/docs/pagination) for more information.
 
 ## Errors
 

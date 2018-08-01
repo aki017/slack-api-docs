@@ -31,6 +31,8 @@ This method returns information about a file in your team.
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `file` | `F2147483862` | Required | Specify a file by providing its ID. |
 | `count` | `20` | Optional, default=100 | Number of items to return per page. |
+| `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | Parameter for pagination. File comments are paginated for a single file. Set `cursor` equal to the `next_cursor` attribute returned by the previous request's `response_metadata`. This parameter is optional, but pagination is mandatory: the default value simply fetches the first "page" of the collection of comments. See [pagination](/docs/pagination) for more details. |
+| `limit` | `20` | Optional, default=0 | The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the list hasn't been reached. |
 | `page` | `2` | Optional, default=1 | Page number of results to return. |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
@@ -107,11 +109,8 @@ Typical success response
         "has_rich_preview": false
     },
     "comments": [],
-    "paging": {
-        "count": 100,
-        "total": 0,
-        "page": 1,
-        "pages": 0
+    "response_metadata": {
+        "next_cursor": "dGVhbTpDMUg5UkVTR0w="
     }
 }
 ```
@@ -132,6 +131,16 @@ Each comment object in the comments array contains details about a single commen
 The paging information contains the `count` of comments returned, the `total` number of comments, the `page` of results returned in this response and the total number of `pages` available. Please note that the max `count` value is `1000` and the max `page` value is `100`.
 
 [Bot user tokens](/bot-users) may use this method to access information about files appearing in the channels they belong to.
+
+## Pagination
+This method uses cursor-based pagination to make it easier to incrementally collect information. To begin pagination, specify a `limit` value under `1000`. We recommend no more than `200` results at a time.  
+  
+Responses will include a top-level `response_metadata` attribute containing a `next_cursor` value. By using this value as a `cursor` parameter in a subsequent request, along with `limit`, you may navigate through the collection page by virtual page.  
+  
+ For apps created after August 7, 2018, this method defaults to cursor-based pagination. Use the `limit` and `cursor` parameters to guarantee your passage into the paradise of cursored pagination.  
+  
+ See [pagination](/docs/pagination) for more information.  
+  
 
 ## Errors
 
