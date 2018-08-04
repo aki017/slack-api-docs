@@ -73,9 +73,15 @@ When the `as_user` parameter is set to `false`, messages are posted as " [`bot_m
 
 Set `as_user` to `true` and the authenticated user will appear as the author of the message. Posting as the authenticated user **requires** the`client` or the more preferred `chat:write:user` [scopes](/docs/oauth#auth_scopes).
 
-## Channels
+## Target channels and users
 
-You **must** specify a public channel, private channel, or an IM channel with the `channel` argument. Each one behaves slightly differently based on the authenticated user's permissions and additional arguments. If the user specified as the intended recipient is not in the given channel, the ephemeral message will not be delivered, and a `user_not_in_channel` error will be returned. Note that the `user` parameter expects a user's `id`, and not a screen name.
+You **must** specify a conversation container (public channel, private channel, or an IM channel) by providing its ID to the `channel` argument. You also must specify a target `user`.
+
+Each type of channel behaves slightly differently based on the authenticated user's permissions and additional arguments. If the target `user` is not in the given channel, the ephemeral message will not be delivered, and we'll return a `user_not_in_channel` error.
+
+Workspace apps will receive a `no_permission` error when they are not a member of the specified `channel`.
+
+Note that the `user` parameter expects a user's `id`, and not a username or display name.
 
 #### Post to a public channel
 
@@ -136,7 +142,7 @@ This table lists the expected errors that this method could return. However, oth
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
 | `token_revoked` | Authentication token is for a deleted user or workspace or the app has been removed. |
-| `no_permission` | The workspace token used in this request does not have the permissions necessary to complete the request. |
+| `no_permission` | The workspace token used in this request does not have the permissions necessary to complete the request. Make sure your app is a member of the conversation it's attempting to post a message to. |
 | `org_login_required` | The workspace is undergoing an enterprise migration and will not be available until migration is complete. |
 | `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_array_arg` | The method was passed a PHP-style array argument (e.g. with a name like `foo[7]`). These are never valid with the Slack API. |
