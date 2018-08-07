@@ -176,14 +176,14 @@ As long as the authenticated user is a member of the private group, you can eith
 
 #### Post to an IM channel
 
-Posting to an IM channel is a little more complex depending on the value of `as_user`.
+Warning: here be dragons. Posting to an IM channel is a little more complex depending on the value of `as_user` and the type of token associated with your app.
 
 - If `as_user` is false:
-  - Pass the IM channel's ID (`D023BB3L2`) as the value of `channel` to post to that IM channel _as the bot_. The IM channel's ID can be retrieved through the [im.list](/methods/im.list) API method.
-- If `as_user` is true:
-  - Pass the IM channel's ID (`D023BB3L2`) as the value of `channel` to post to that IM channel _as the authenticated user_. The IM channel's ID can be retrieved through the [im.list](/methods/im.list) API method.
+  - Pass the IM channel's ID (`D023BB3L2`) as the value of `channel` to post to that IM channel _as the app, bot, or user associated with the token_. You can change the icon and username that go with the message using the `icon_url` and `username` parameters. The IM channel's ID can be retrieved through the [im.list](/methods/im.list) API method.
+- If `as_user` is true (for workspace apps, this is always the case):
+  - Pass the IM channel's ID (`D023BB3L2`) or a user's ID (`U0G9QF9C6`) as the value of `channel` to post to that IM channel _as the app, bot, or user associated with the token_. The IM channel's ID can be retrieved through the [im.list](/methods/im.list) API method. When `as_user` is true, the caller may _not_ manipulate the icon and username on the message. You might receive a `channel_not_found` error if your app doesn't have permission to enter into an IM with the intended user.
 
-To send a direct message to the user _owning_ the token used in the request, provide the `channel` field with the a conversation/IM ID value found in a method like [`im.list`](/methods/im.list).
+To send a direct message to the user _owning_ the token used in the request, provide the `channel` field with a conversation/IM ID value found in a method like [`im.list`](/methods/im.list).
 
 <ts-icon class="ts_icon_info_circle"></ts-icon> We are phasing out support for ambiguously passing a "username" as a `channel` value. Please _always_ use channel-like IDs instead.
 

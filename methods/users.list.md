@@ -138,7 +138,7 @@ Typical error response
 
 ## Profile
 
-The profile hash contains as much information as the user has supplied in the default profile fields: `first_name`, `last_name`, `real_name`,`email`, `skype`, and the `image_*` fields. Data that has not been supplied may not be present at all, may be null or may contain an empty string (`""``).
+The profile hash contains as much information as the user has supplied in the default profile fields: `first_name`, `last_name`, `real_name`,`email`, `skype`, and the `image_*` fields. Data that has not been supplied may not be present at all, may be null or may contain an empty string (`""`).
 
 A user's custom profile fields may be discovered using [`users.profile.get`](/methods/users.profile.get).
 
