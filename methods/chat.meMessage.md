@@ -11,7 +11,7 @@ Share a me message into a channel.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`chat:write:user`](/scopes/chat:write:user) [`post`](/scopes/post) |
+| [user](/docs/token-types#user) | [`chat:write:user`](/scopes/chat:write:user) |
 
  |
 

@@ -11,7 +11,7 @@ Lists all reminders created by or for a given user.
 | Token type | Required scope(s) |
 | --- | --- |
 | [workspace](/docs/token-types#workspace) | [`reminders:read:user`](/scopes/reminders:read:user) |
-| [user](/docs/token-types#user) | [`reminders:read`](/scopes/reminders:read) [`read`](/scopes/read) |
+| [user](/docs/token-types#user) | [`reminders:read`](/scopes/reminders:read) |
 
  |
 

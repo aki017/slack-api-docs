@@ -11,7 +11,7 @@ Retrieve a thread of messages posted to a direct message conversation from a mul
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`mpim:history`](/scopes/mpim:history) [`read`](/scopes/read) |
+| [user](/docs/token-types#user) | [`mpim:history`](/scopes/mpim:history) |
 
  |
 

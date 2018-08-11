@@ -11,7 +11,7 @@ Create a User Group
 | Token type | Required scope(s) |
 | --- | --- |
 | [workspace](/docs/token-types#workspace) | [`usergroups:write`](/scopes/usergroups:write) |
-| [user](/docs/token-types#user) | [`usergroups:write`](/scopes/usergroups:write) [`post`](/scopes/post) |
+| [user](/docs/token-types#user) | [`usergroups:write`](/scopes/usergroups:write) |
 
  |
 

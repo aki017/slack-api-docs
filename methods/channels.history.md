@@ -11,7 +11,7 @@ Fetches history of messages and events from a channel.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`channels:history`](/scopes/channels:history) [`read`](/scopes/read) |
+| [user](/docs/token-types#user) | [`channels:history`](/scopes/channels:history) |
 
  |
 

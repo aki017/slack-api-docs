@@ -12,7 +12,7 @@ Un-pins an item from a channel.
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 | [workspace](/docs/token-types#workspace) | [`pins:write`](/scopes/pins:write) |
-| [user](/docs/token-types#user) | [`pins:write`](/scopes/pins:write) [`post`](/scopes/post) |
+| [user](/docs/token-types#user) | [`pins:write`](/scopes/pins:write) |
 
  |
 

@@ -11,7 +11,7 @@ List all users in a User Group
 | Token type | Required scope(s) |
 | --- | --- |
 | [workspace](/docs/token-types#workspace) | [`usergroups:read`](/scopes/usergroups:read) |
-| [user](/docs/token-types#user) | [`usergroups:read`](/scopes/usergroups:read) [`read`](/scopes/read) |
+| [user](/docs/token-types#user) | [`usergroups:read`](/scopes/usergroups:read) |
 
  |
 

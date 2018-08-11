@@ -11,7 +11,7 @@ Creates a reminder.
 | Token type | Required scope(s) |
 | --- | --- |
 | [workspace](/docs/token-types#workspace) | [`reminders:write:user`](/scopes/reminders:write:user) |
-| [user](/docs/token-types#user) | [`reminders:write`](/scopes/reminders:write) [`post`](/scopes/post) |
+| [user](/docs/token-types#user) | [`reminders:write`](/scopes/reminders:write) |
 
  |
 

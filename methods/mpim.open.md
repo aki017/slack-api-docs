@@ -11,7 +11,7 @@ This method opens a multiparty direct message.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`mpim:write`](/scopes/mpim:write) [`post`](/scopes/post) |
+| [user](/docs/token-types#user) | [`mpim:write`](/scopes/mpim:write) |
 
  |
 

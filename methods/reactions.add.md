@@ -12,7 +12,7 @@ Adds a reaction to an item.
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 | [workspace](/docs/token-types#workspace) | [`reactions:write`](/scopes/reactions:write) |
-| [user](/docs/token-types#user) | [`reactions:write`](/scopes/reactions:write) [`post`](/scopes/post) |
+| [user](/docs/token-types#user) | [`reactions:write`](/scopes/reactions:write) |
 
  |
 

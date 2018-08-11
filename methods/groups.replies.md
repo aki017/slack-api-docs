@@ -10,7 +10,7 @@ Retrieve a thread of messages posted to a private channel
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`groups:history`](/scopes/groups:history) [`read`](/scopes/read) |
+| [user](/docs/token-types#user) | [`groups:history`](/scopes/groups:history) |
 
  |
 

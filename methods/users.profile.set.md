@@ -11,7 +11,7 @@ Set the profile information for a user.
 | Token type | Required scope(s) |
 | --- | --- |
 | [workspace](/docs/token-types#workspace) | [`users.profile:write:user`](/scopes/users.profile:write:user) |
-| [user](/docs/token-types#user) | [`users.profile:write`](/scopes/users.profile:write) [`post`](/scopes/post) |
+| [user](/docs/token-types#user) | [`users.profile:write`](/scopes/users.profile:write) |
 
  |
 

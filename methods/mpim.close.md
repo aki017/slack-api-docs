@@ -11,7 +11,7 @@ Closes a multiparty direct message channel.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`mpim:write`](/scopes/mpim:write) [`post`](/scopes/post) |
+| [user](/docs/token-types#user) | [`mpim:write`](/scopes/mpim:write) |
 
  |
 

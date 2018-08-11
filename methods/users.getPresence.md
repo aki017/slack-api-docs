@@ -11,7 +11,7 @@ Gets user presence information.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`users:read`](/scopes/users:read) [`read`](/scopes/read) |
+| [user](/docs/token-types#user) | [`users:read`](/scopes/users:read) |
 
  |
 

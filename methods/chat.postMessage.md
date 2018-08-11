@@ -12,7 +12,7 @@ Sends a message to a channel.
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 | [workspace](/docs/token-types#workspace) | [`chat:write`](/scopes/chat:write) |
-| [user](/docs/token-types#user) | [`chat:write:user`](/scopes/chat:write:user) [`chat:write:bot`](/scopes/chat:write:bot) [`post`](/scopes/post) |
+| [user](/docs/token-types#user) | [`chat:write:user`](/scopes/chat:write:user) [`chat:write:bot`](/scopes/chat:write:bot) |
 
  |
 

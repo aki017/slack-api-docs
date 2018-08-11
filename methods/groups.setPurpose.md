@@ -11,7 +11,7 @@ Sets the purpose for a private channel.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`groups:write`](/scopes/groups:write) [`post`](/scopes/post) |
+| [user](/docs/token-types#user) | [`groups:write`](/scopes/groups:write) |
 
  |
 

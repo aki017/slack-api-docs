@@ -11,7 +11,7 @@ Provide custom unfurl behavior for user-posted URLs
 | Token type | Required scope(s) |
 | --- | --- |
 | [workspace](/docs/token-types#workspace) | [`links:write`](/scopes/links:write) |
-| [user](/docs/token-types#user) | [`links:write`](/scopes/links:write) [`post`](/scopes/post) |
+| [user](/docs/token-types#user) | [`links:write`](/scopes/links:write) |
 
  |
 

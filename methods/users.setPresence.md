@@ -11,7 +11,7 @@ Manually sets user presence.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`users:write`](/scopes/users:write) [`post`](/scopes/post) |
+| [user](/docs/token-types#user) | [`users:write`](/scopes/users:write) |
 
  |
 

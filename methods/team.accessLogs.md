@@ -10,7 +10,7 @@ Gets the access logs for the current team.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`admin`](/scopes/admin) |
+| [user](/docs/token-types#user) | _No scope required_ |
 
  |
 

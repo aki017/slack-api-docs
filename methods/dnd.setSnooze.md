@@ -11,7 +11,7 @@ Turns on Do Not Disturb mode for the current user, or changes its duration.
 | Token type | Required scope(s) |
 | --- | --- |
 | [workspace](/docs/token-types#workspace) | [`dnd:write:user`](/scopes/dnd:write:user) |
-| [user](/docs/token-types#user) | [`dnd:write`](/scopes/dnd:write) [`post`](/scopes/post) |
+| [user](/docs/token-types#user) | [`dnd:write`](/scopes/dnd:write) |
 
  |
 

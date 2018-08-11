@@ -10,7 +10,7 @@ Removes a user from a private channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`groups:write`](/scopes/groups:write) [`post`](/scopes/post) |
+| [user](/docs/token-types#user) | [`groups:write`](/scopes/groups:write) |
 
  |
 

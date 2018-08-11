@@ -10,7 +10,7 @@ Set the user profile photo
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`users.profile:write`](/scopes/users.profile:write) [`post`](/scopes/post) |
+| [user](/docs/token-types#user) | [`users.profile:write`](/scopes/users.profile:write) |
 
  |
 

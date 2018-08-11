@@ -10,7 +10,7 @@ Get a user's identity.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | [`identity:read:user`](/scopes/identity:read:user) |
+| [workspace](/docs/token-types#workspace) | [`identity.basic:user`](/scopes/identity.basic:user) |
 | [user](/docs/token-types#user) | [`identity.basic`](/scopes/identity.basic) |
 
  |

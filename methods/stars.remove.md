@@ -11,7 +11,7 @@ Removes a star from an item.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`stars:write`](/scopes/stars:write) [`post`](/scopes/post) |
+| [user](/docs/token-types#user) | [`stars:write`](/scopes/stars:write) |
 
  |
 

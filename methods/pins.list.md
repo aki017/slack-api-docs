@@ -12,7 +12,7 @@ Lists items pinned to a channel.
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 | [workspace](/docs/token-types#workspace) | [`pins:read`](/scopes/pins:read) |
-| [user](/docs/token-types#user) | [`pins:read`](/scopes/pins:read) [`read`](/scopes/read) |
+| [user](/docs/token-types#user) | [`pins:read`](/scopes/pins:read) |
 
  |
 

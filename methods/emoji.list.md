@@ -12,7 +12,7 @@ Lists custom emoji for a team.
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 | [workspace](/docs/token-types#workspace) | [`emoji:read`](/scopes/emoji:read) |
-| [user](/docs/token-types#user) | [`emoji:read`](/scopes/emoji:read) [`read`](/scopes/read) |
+| [user](/docs/token-types#user) | [`emoji:read`](/scopes/emoji:read) |
 
  |
 

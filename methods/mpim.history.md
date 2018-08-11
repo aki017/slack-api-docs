@@ -11,7 +11,7 @@ Fetches history of messages and events from a multiparty direct message.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`mpim:history`](/scopes/mpim:history) [`read`](/scopes/read) |
+| [user](/docs/token-types#user) | [`mpim:history`](/scopes/mpim:history) |
 
  |
 

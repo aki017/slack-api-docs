@@ -12,7 +12,7 @@ Gets information about the current team.
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 | [workspace](/docs/token-types#workspace) | [`team:read`](/scopes/team:read) |
-| [user](/docs/token-types#user) | [`team:read`](/scopes/team:read) [`read`](/scopes/read) |
+| [user](/docs/token-types#user) | [`team:read`](/scopes/team:read) |
 
  |
 

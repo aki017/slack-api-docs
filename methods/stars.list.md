@@ -11,7 +11,7 @@ Lists stars for a user.
 | Token type | Required scope(s) |
 | --- | --- |
 | [workspace](/docs/token-types#workspace) | [`stars:read`](/scopes/stars:read) |
-| [user](/docs/token-types#user) | [`stars:read`](/scopes/stars:read) [`read`](/scopes/read) |
+| [user](/docs/token-types#user) | [`stars:read`](/scopes/stars:read) |
 
  |
 

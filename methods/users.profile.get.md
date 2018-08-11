@@ -11,7 +11,7 @@ Retrieves a user's profile information.
 | Token type | Required scope(s) |
 | --- | --- |
 | [workspace](/docs/token-types#workspace) | [`users.profile:read`](/scopes/users.profile:read) |
-| [user](/docs/token-types#user) | [`users.profile:read`](/scopes/users.profile:read) [`read`](/scopes/read) |
+| [user](/docs/token-types#user) | [`users.profile:read`](/scopes/users.profile:read) |
 
  |
 

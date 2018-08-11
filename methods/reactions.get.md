@@ -12,7 +12,7 @@ Gets reactions for an item.
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 | [workspace](/docs/token-types#workspace) | [`reactions:read`](/scopes/reactions:read) |
-| [user](/docs/token-types#user) | [`reactions:read`](/scopes/reactions:read) [`read`](/scopes/read) |
+| [user](/docs/token-types#user) | [`reactions:read`](/scopes/reactions:read) |
 
  |
 

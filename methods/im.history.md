@@ -11,7 +11,7 @@ Fetches history of messages and events from direct message channel.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`im:history`](/scopes/im:history) [`read`](/scopes/read) |
+| [user](/docs/token-types#user) | [`im:history`](/scopes/im:history) |
 
  |
 

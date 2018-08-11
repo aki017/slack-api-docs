@@ -12,7 +12,7 @@ Gets information about a bot user.
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 | [workspace](/docs/token-types#workspace) | [`users:read`](/scopes/users:read) |
-| [user](/docs/token-types#user) | [`users:read`](/scopes/users:read) [`read`](/scopes/read) |
+| [user](/docs/token-types#user) | [`users:read`](/scopes/users:read) |
 
  |
 

@@ -10,7 +10,7 @@ Searches for messages matching a query.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`search:read`](/scopes/search:read) [`read`](/scopes/read) |
+| [user](/docs/token-types#user) | [`search:read`](/scopes/search:read) |
 
  |
 
