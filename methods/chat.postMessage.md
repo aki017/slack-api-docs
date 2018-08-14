@@ -11,7 +11,7 @@ Sends a message to a channel.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`chat:write`](/scopes/chat:write) |
+| [workspace](/docs/token-types#workspace) | [`chat:write`](/scopes/chat:write) [`conversations.app_home:create`](/scopes/conversations.app_home:create) |
 | [user](/docs/token-types#user) | [`chat:write:user`](/scopes/chat:write:user) [`chat:write:bot`](/scopes/chat:write:bot) |
 
  |
@@ -186,6 +186,12 @@ Warning: here be dragons. Posting to an IM channel is a little more complex depe
 To send a direct message to the user _owning_ the token used in the request, provide the `channel` field with a conversation/IM ID value found in a method like [`im.list`](/methods/im.list).
 
 <ts-icon class="ts_icon_info_circle"></ts-icon> We are phasing out support for ambiguously passing a "username" as a `channel` value. Please _always_ use channel-like IDs instead.
+
+## Begin a conversation in a user's App Home
+
+Workspace apps can use `chat.postMessage` as a one-stop shop for conversing with users. Your app can initiate a DM and then continue the conversation without switching to a different method.
+
+Request the [`conversations.app_home:create`](/scopes/conversations.app_home:create) scope during the typical OAuth or installation flow. Once that's granted, your workspace app can use the `chat.postMessage` method to start a conversation with a user from scratch in their App Home space. No separate call to `im.open` necessary. Simply call `chat.postMessage` and pass a user's ID (`U0G9QF9C6`) as the value of `channel` to post to that user's App Home channel.
 
 ## Rate limiting
 

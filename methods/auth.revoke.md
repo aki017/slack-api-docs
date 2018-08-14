@@ -51,6 +51,8 @@ Typical error response
 }
 ```
 
+Revoking a [workspace app token](/docs/token-types#workspace) has no additional side effects. The token is revoked, but the app is _not_ uninstalled. Use [`apps.uninstall`](/methods/apps.uninstall) to uninstall a workspace app.
+
 Revoking all [user tokens](/docs/token-types#user) an app has for a workspace will result in the app becoming uninstalled.
 
 Revoking a [bot user token](/docs/token-types#bot) will **not** uninstall the bot user or the app. It essentially resets the token value and you can obtain it again through another run through of the OAuth process. [Internal integrations](/internal-integrations) and apps installed only on your team offer the new bot user token in your app management console.
