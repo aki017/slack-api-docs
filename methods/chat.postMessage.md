@@ -132,8 +132,6 @@ Token types provide varying default identity values for `username`, `icon_url`, 
 
 - [test tokens](/docs/oauth-test-tokens)
   - generic user icon and "bot" username
-- [custom bot user token](/bot-users#custom_bot_users)
-  - generic bot icon, with generic "bot" username
 - [Slack App user token](/slack-apps) with [`chat:write:bot`](/docs/oauth-scopes)
   - inherits Slack App's icon, with generic "bot" username (see below)
 - [Slack App bot user token](/bot-users#share_your_bot_user_as_a_slack_app)
@@ -149,8 +147,6 @@ Token types provide varying default identity values for `username`, `icon_url`, 
 
 - [test tokens](/docs/oauth-test-tokens)
   - inherits the icon and username of the token owner
-- [custom bot user token](/bot-users#custom_bot_users)
-  - inherits bot user's specified icon and username
 - [Slack App user token](/slack-apps) with [`chat:write:user`](/docs/oauth-scopes)
   - inherits icon and username of the token owner
 - [Slack App bot user token](/bot-users#share_your_bot_user_as_a_slack_app)
