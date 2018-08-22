@@ -39,6 +39,7 @@ A simple form you might create could be modeled in JSON as:
   "callback_id": "ryde-46e2b0",
   "title": "Request a Ride",
   "submit_label": "Request",
+  "state": "Limo",
   "elements": [
     {
       "type": "text",
@@ -60,7 +61,7 @@ To prepare that as a HTTP POST to `dialog.open`, you'd optionally minify and the
 POST /api/dialog.open
 token=xoxb-such-and-such
 &trigger_id=13345224609.738474920.8088930838d88f008e0
-&dialog=%7B%22callback_id%22%3A%22ryde-46e2b0%22%2C%22title%22%3A%22Request%20a%20Ride%22%2C%22submit_label%22%3A%22Request%22%2C%22elements%22%3A%5B%7B%22type%22%3A%22text%22%2C%22label%22%3A%22Pickup%20Location%22%2C%22name%22%3A%22loc_origin%22%7D%2C%7B%22type%22%3A%22text%22%2C%22label%22%3A%22Dropoff%20Location%22%2C%22name%22%3A%22loc_destination%22%7D%5D%7D
+&dialog=%7B%22callback_id%22%3A%22ryde-46e2b0%22%2C%22title%22%3A%22Request%20a%20Ride%22%2C%22submit_label%22%3A%22Request%22%2C%22state%22%3A%22Limo%22%2C%22elements%22%3A%5B%7B%22type%22%3A%22text%22%2C%22label%22%3A%22Pickup%20Location%22%2C%22name%22%3A%22loc_origin%22%7D%2C%7B%22type%22%3A%22text%22%2C%22label%22%3A%22Dropoff%20Location%22%2C%22name%22%3A%22loc_destination%22%7D%5D%7D
 ```
 
 You can avoid this nonsense by [posting JSON instead](/web#posting_json).
@@ -101,6 +102,7 @@ The impossibility of all possible errors expressed in a single response:
             "The field `submit_button` cannot be longer than 24 characters",
             "The field `submit_button` can only be one word",
             "The field `callback_id` cannot be longer than 255 characters",
+            "The field `state` cannot be longer than 3000 characters",
             "The field `elements` must be a list",
             "The field `elements` has to include at least one element",
             "The field `elements` cannot include more than five elements",
