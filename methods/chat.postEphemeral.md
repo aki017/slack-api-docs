@@ -36,6 +36,7 @@ Use ephemeral messages to send users context-sensitive messages, relevant to the
 | `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Optional | A JSON-based array of structured attachments, presented as a URL-encoded string. |
 | `link_names` | `true` | Optional | Find and link channel names and usernames. |
 | `parse` | `full` | Optional | Change how messages are treated. Defaults to `none`. See below. |
+| `thread_ts` | `1234567890.123456` | Optional | Provide another message's `ts` value to make this message a reply. Avoid using a reply's `ts` value; use its parent instead. |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
