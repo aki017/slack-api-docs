@@ -31,32 +31,9 @@ Use this method to set a user's profile information, including name, email, curr
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
-Individual fields can be updated by passing the pair of arguments `name` and`value`; or multiple fields can be updated at once by passing the argument`profile`.
+Update individual fields by passing the pair of arguments `name` and`value`; or multiple fields can be updated at once by passing the argument`profile`.
 
-The `profile` argument accepts a URL-encoded JSON object containing all the fields to be updated as so:
-
-```
-{
-    "first_name": "John",
-    "last_name": "Smith",
-    "email": "john@smith.com",
-    "fields": {
-        "Xf06054BBB": {
-            "value": "Barista",
-            "alt": "I make the coffee & the tea!",
-        }
-    }
-}
-```
-
-You would send the `profile` parameter value URL-encoded as (without line breaks):
-
-```
-%7B%22first_name%22%3A%22John%22%2C%22last_name%22%3A%22Smith%22%2C%22email
-%22%3A%22john%40smith.com%22%2C%22fields%22%3A%7B%22Xf06054BBB%22%3A%7B
-%22value%22%3A%22Barista%22%2C%22alt%22%3A%22I%20make%20the%20coffee
-%20%26%20the%20tea%21%22%7D%7D
-```
+We **strongly recommend** using `application/json` POSTs when using this method. If you choose to use `application/x-www-form-urlencoded`, you must URL-encode the JSON provided to the `profile` field. See below
 
 The `first_name` and `last_name` fields can be up to 35 characters each. The name `slackbot` cannot be used for either of these fields.
 
@@ -70,29 +47,87 @@ The `fields` key is an array of key:value pairs holding the values for the user'
 
 Use [`team.profile.get`](/methods/team.profile.get) to retrieve the profile fields used by a team.
 
+## Building your HTTP request #{http\_request}
+
+This example demonstrates setting some basic profile fields and one extended field:
+
+```
+{
+    "profile": {
+        "first_name": "John",
+        "last_name": "Smith",
+        "email": "john@smith.com",
+        "fields": {
+            "Xf06054BBB": {
+                "value": "Barista",
+                "alt": "I make the coffee & the tea!"
+            }
+        }
+    }
+}
+```
+
+To send that JSON to `users.profile.set` with a workspace token, build a HTTP request like this, setting your content type, authorization credentials, and the user you're [acting on behalf of](/docs/working-for-users):
+
+```
+POST /users/profile.set
+Host: slack.com
+Authorization: Bearer xoxa-secret-token
+X-Slack-User: U123456
+Content-type: application/json; charset=utf-8
+{
+    "profile": {
+        "first_name": "John",
+        "last_name": "Smith",
+        "email": "john@smith.com",
+        "fields": {
+            "Xf06054BBB": {
+                "value": "Barista",
+                "alt": "I make the coffee & the tea!"
+            }
+        }
+    }
+}
+```
+
 ### Updating a user's current status
 
-Provide **both** `status_text` and `status_emoji` profile fields when using this method to set a user's custom status.
+This method is also used to set a user's [current status](/docs/presence-and-status#custom_status).
+
+To set status, both the `status_text` and `status_emoji` profile fields must be provided. Optionally, you can also provide a `status_expiration` field to set a time in the future when the status will clear.
 
 - `status_text` allows up to 100 characters, though we strongly encourage brevity.
 - `status_emoji` is a string referencing an emoji enabled for the Slack team, such as `:mountain_railway:`.
+- `status_expiration` is an integer specifying seconds since the epoch, more commonly known as "UNIX time". Providing `0` or omitting this field results in a custom status that will not expire.
 
-For example, to set a custom status of `🚞 riding a train`, you'd need to build this JSON payload:
+For example, to set a custom status of `🚞 riding a train` and have it expire on July 26th, 2018 at 17:51:46 UTC, construct this JSON payload:
 
 ```
 {
     "status_text": "riding a train",
-    "status_emoji": ":mountain_railway:"
+    "status_emoji": ":mountain_railway:",
+    "status_expiration": 1532627506
 }
 ```
 
-Then encode it as the URL-encoded `profile` parameter:
+Next, place the custom status fields within the user's `profile` and use [`users.profile.set`](/methods/users.profile.set). In this example, we're posting with JSON and using a workspace token while [acting on a user's behalf](/docs/working-for-users):
 
 ```
-%7B%22status_text%22%3A%22riding%20a%20train%22%2C%22status_emoji%22%3A%22%3Amountain_railway%3A%22%7D
+POST /api/users.profile.set
+Host: slack.com
+Content-type: application/json; charset=utf-8
+Authorization: Bearer xoxa_secret_token
+X-Slack-User: U123456
+{
+    "profile": {
+        "status_text": "riding a train",
+        "status_emoji": ":mountain_railway:",
+        "status_expiration": 1532627506
+    }
+}
 ```
 
-To unset a user's custom status, provide empty strings to both attributes: `""`.
+To manually unset a user's custom status, provide empty strings to both the `status_text` and `status_emoji` attributes: `""`.
 
 ## Response
 
@@ -107,6 +142,7 @@ Typical success response
         "avatar_hash": "ge3b51ca72de",
         "status_text": "Print is dead",
         "status_emoji": ":books:",
+        "status_expiration": 0,
         "real_name": "Egon Spengler",
         "display_name": "spengler",
         "real_name_normalized": "Egon Spengler",

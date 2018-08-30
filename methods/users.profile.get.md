@@ -46,6 +46,7 @@ Typical success response
         "avatar_hash": "ge3b51ca72de",
         "status_text": "Print is dead",
         "status_emoji": ":books:",
+        "status_expiration": 0,
         "real_name": "Egon Spengler",
         "display_name": "spengler",
         "real_name_normalized": "Egon Spengler",
@@ -73,7 +74,7 @@ Typical error response
 
 We hope you find the `first_name`, `last_name`, `email` attributes self-explanatory.
 
-The user's custom-set "current status" can be found in the `status_text` and `status_emoji` attributes. See [custom status](/docs/presence#custom_status) for more.
+The user's custom-set "current status" can be found in the `status_text` and `status_emoji` attributes. If the status is set to automatically expire, the `status_expiration` field provides the specific time in seconds since the epoch (UNIX time). See [custom status](/docs/presence#custom_status) for more info. `status_expiration` set to `0` indicates the status does not expire.
 
 The `image_` keys hold links to the different sizes we support for the user's profile image from 24x24 to 1024x1024 pixels. A link to the image in its original size is stored in `image_original`.
 
