@@ -51,7 +51,7 @@ Typical error response
 }
 ```
 
-Revoking a [workspace app token](/docs/token-types#workspace) has no additional side effects. The token is revoked, but the app is _not_ uninstalled. Use [`apps.uninstall`](/methods/apps.uninstall) to uninstall a workspace app.
+For a [workspace app](/docs/token-types#workspace), you may revoke either a long-lived _refresh token_ or a short-lived _access token_. In both cases, the token is revoked without further side effects: the app is not uninstalled. To uninstall a workspace app, use the [`app.uninstall`](/methods/app.uninstall) method.
 
 Revoking all [user tokens](/docs/token-types#user) an app has for a workspace will result in the app becoming uninstalled.
 

@@ -19,7 +19,7 @@ If at all possible, avoid sending `client_id` and `client_secret` as parameters 
 
 **Keep your tokens secure**. Do not share tokens with users or anyone else.
 
-When used with a workspace app, this method's response differs significantly.
+When used with a workspace app, this method's response differs significantly. It may be used as part of the initial OAuth authentication flow to gain a [**long-lived refresh token** and **short-lived access token**](/docs/rotating-and-refreshing-credentials), or it may be used subsequently to refresh the access token.
 
 ## Arguments
 
@@ -124,9 +124,18 @@ Typical error response
 
 ## Workspace app behavior
 
-Here's a primer on the fields you will receive when working with workspace apps.
+Workspace apps may call `oauth.access` in **two different scenarios**.
 
-- `access_token` - Your new workspace token that begins with `xoxa`. It can be very long.
+1. Upon receiving a temporary authorization code during the OAuth flow, the app calls this method to gain a **refresh token** and a short-lived **access token**.
+2. Subsequently, a workspace app calls this method in order to gain a new **access token** , passing the **refresh token** as argument and `grant_type=refresh_token` as a parameter.
+
+[Read more about the refresh token and access token split](/docs/rotating-and-refreshing-credentials).
+
+Here's a primer on the fields you will initally receive as a workspace app calling this method:
+
+- `access_token` - Your access token for this workspace. The token string begins with `xoxa-2` and can be very long. When automatic expiration is turned on, this token will expire after the duration specified in `expires_in`. After that it must be [refreshed using a `refresh_token` and token rotation](/docs/rotating-and-refreshing-tokens).
+- `refresh_token` - Your refresh token for this workspace. The token string begins with `xoxr`. Use this token to refresh a short-lived `access_token` by following the [token rotation instructions](/docs/rotating-and-refreshing-tokens).
+- `expires_in` - This integer tells your app how long the access token is valid for, in seconds.
 - `token_type` - You'll see `app` here. Workspace tokens were once known as `app` tokens. Maybe someday this value will become `workspace`.
 - `app_id` - This is the unique ID for your whole Slack app.
 - `app_user` - This is the user ID of your app. It's a user! It's an app! It's a user! It's an app! The user ID is unique to the team installing it.
@@ -137,6 +146,8 @@ Here's a primer on the fields you will receive when working with workspace apps.
 - ~~`permissions`~~ - This field is no longer available. Use [`apps.permissions.info`](/methods/apps.permissions.info) to look up all of your app's permissions for this workspace instead.
 - `scopes` - All [OAuth scopes](/scopes) awarded to your app — not just those awarded this authorization attempt.
 - `single_channel_id` - if this app is approved for a single channel, that channel will be listed here. See single channel authorizations for more info.
+
+A quick note on rate-limiting: `oauth.access` follows a custom rate-limiting scheme _for the refresh case only_. After your app has received its refresh token, it may call the endpoint with `grant_type=refresh_token` to gain a new access token at a rate of 10 calls per minute, with an occasional burst of up to 50.
 
 Use [`apps.permissions.info`](/methods/apps.permissions.info) to look up your app's permissions on the fly.
 
