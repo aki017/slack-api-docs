@@ -68,7 +68,7 @@ Typical error response
 }
 ```
 
-As you can see, we provide a minimal positive response when your unfurl attempt is successful. When it is not, you'll receive one of the errors below and `ok` will not be `false`.
+As you can see, we provide a minimal positive response when your unfurl attempt is successful. When it is not, you'll receive one of the errors below and `ok` will be `false`.
 
 ## Errors
 
