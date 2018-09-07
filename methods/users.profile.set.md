@@ -47,7 +47,7 @@ The `fields` key is an array of key:value pairs holding the values for the user'
 
 Use [`team.profile.get`](/methods/team.profile.get) to retrieve the profile fields used by a team.
 
-## Building your HTTP request #{http\_request}
+## Building your HTTP request
 
 This example demonstrates setting some basic profile fields and one extended field:
 
@@ -67,7 +67,7 @@ This example demonstrates setting some basic profile fields and one extended fie
 }
 ```
 
-To send that JSON to `users.profile.set` with a workspace token, build a HTTP request like this, setting your content type, authorization credentials, and the user you're [acting on behalf of](/docs/working-for-users):
+To send that JSON to `users.profile.set`, build an HTTP request like this, setting your content type, authorization credentials, and, **for workspace tokens** , an `X-Slack-User` header indicating the user you're [acting on behalf of](/docs/working-for-users):
 
 ```
 POST /users/profile.set
@@ -110,7 +110,7 @@ For example, to set a custom status of `🚞 riding a train` and have it expire 
 }
 ```
 
-Next, place the custom status fields within the user's `profile` and use [`users.profile.set`](/methods/users.profile.set). In this example, we're posting with JSON and using a workspace token while [acting on a user's behalf](/docs/working-for-users):
+Next, place the custom status fields within the user's `profile` and use [`users.profile.set`](/methods/users.profile.set). In this example, we're posting with JSON and using an `X-Slack-User` header combined with a workspace token to [act on a user's behalf](/docs/working-for-users):
 
 ```
 POST /api/users.profile.set
