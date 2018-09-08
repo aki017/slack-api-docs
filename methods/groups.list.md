@@ -17,7 +17,13 @@ Lists private channels that the calling user has access to.
 
 * * *
 
-This method returns a list of private channels in the team that the caller is in and archived groups that the caller was in. The list of (non-deactivated) members in each private channel is also returned.
+Don't use this method. Use [`conversations.list`](/methods/conversations.list) instead.
+
+This legacy method returns a list of private channels in the team that the caller is in and archived groups that the caller was in.
+
+The list of (non-deactivated) members in each private channel is also returned.
+
+Does not include private shared channels or channels that have been converted from public to private. Use the [Conversations API](/docs/conversations-api) instead.
 
 ## Arguments
 

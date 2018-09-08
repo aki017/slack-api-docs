@@ -17,7 +17,9 @@ Lists direct message channels for the calling user.
 
 * * *
 
-This method returns a list of all im channels that the user has.
+Don't use this method. Use [`conversations.list`](/methods/conversations.list) instead.
+
+This legacy method returns a list of all direct message channels the user has.
 
 ## Arguments
 

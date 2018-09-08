@@ -17,7 +17,9 @@ Gets information about a private channel.
 
 * * *
 
-This method returns information about a private channel.
+Don't use this method. Use [`conversations.info`](/methods/conversations.info) instead.
+
+This legacy method returns information about a private channel. It doesn't work with shared channels nor public channels that have been converted to private channels.
 
 ## Arguments
 
@@ -47,11 +49,11 @@ Returns a [group object](/types/group):
             "U024BE7LH"
         ],
 
-        "topic": { … },
-        "purpose": { … },
+        "topic": { ... },
+        "purpose": { ... },
 
         "last_read": "1401383885.000061",
-        "latest": { … }
+        "latest": { ... }
         "unread_count": 0,
         "unread_count_display": 0
 

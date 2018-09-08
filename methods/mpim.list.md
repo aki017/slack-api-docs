@@ -17,7 +17,9 @@ Lists multiparty direct message channels for the calling user.
 
 * * *
 
-This method returns a list of all multiparty direct message channels that the user has.
+Don't use this method. Use [`conversations.list`](/methods/conversations.list) instead.
+
+This legacy method returns a list of all multiparty direct message channels that the user has.
 
 ## Arguments
 

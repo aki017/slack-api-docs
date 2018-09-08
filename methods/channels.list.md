@@ -17,11 +17,13 @@ Lists all channels in a Slack team.
 
 * * *
 
-This method returns a list of all channels in the team. This includes channels the caller is in, channels they are not currently in, and archived channels but does not include private channels. The number of (non-deactivated) members in each channel is also returned.
+Don't use this method. Use [`conversations.list`](/methods/conversations.list) instead.
 
-To retrieve a list of private channels, use [`groups.list`](/methods/groups.list).
+This legacy method returns a list of all channels in the team. This includes channels the caller is in, channels they are not currently in, and archived channels but does not include private channels. The number of (non-deactivated) members in each channel is also returned.
 
-[Shared channels](/shard-channels) are not returned by this method. Use the [Conversations API](/docs/conversations-api) methods instead, like [`conversations.list`](/methods/conversations.list).
+To retrieve a list of private channels, use [`conversations.list`](/methods/conversations.list).
+
+[Shared channels](/shard-channels) and channels that have converted from public to private or back again are not returned by this method. Use the [Conversations API](/docs/conversations-api) methods instead, like [`conversations.list`](/methods/conversations.list).
 
 _Having trouble getting a HTTP 200 response from this method?_ Try excluding the `members` list from each channel object using the `exclude_members` parameter.
 
@@ -144,6 +146,8 @@ Responses will include a top-level `response_metadata` attribute containing a `n
   
 
 Please note that the argument for the method, `exclude_members` may not work well with pagination at this time. Channels with very large memberships and teams with many channels may cause the method to throw a HTTP 500 error. Please exclude memberships with `exclude_members` and look them up atomically with `channels.info` instead.
+
+* * *
 
 ## Errors
 

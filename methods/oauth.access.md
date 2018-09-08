@@ -133,8 +133,8 @@ Workspace apps may call `oauth.access` in **two different scenarios**.
 
 Here's a primer on the fields you will initally receive as a workspace app calling this method:
 
-- `access_token` - Your access token for this workspace. The token string begins with `xoxa-2` and can be very long. When automatic expiration is turned on, this token will expire after the duration specified in `expires_in`. After that it must be [refreshed using a `refresh_token` and token rotation](/docs/rotating-and-refreshing-tokens).
-- `refresh_token` - Your refresh token for this workspace. The token string begins with `xoxr`. Use this token to refresh a short-lived `access_token` by following the [token rotation instructions](/docs/rotating-and-refreshing-tokens).
+- `access_token` - Your access token for this workspace. The token string begins with `xoxa-2` and can be very long. When automatic expiration is turned on, this token will expire after the duration specified in `expires_in`. After that it must be [refreshed using a `refresh_token` and token rotation](/docs/rotating-and-refreshing-credentials).
+- `refresh_token` - Your refresh token for this workspace. The token string begins with `xoxr`. Use this token to refresh a short-lived `access_token` by following the [token rotation instructions](/docs/rotating-and-refreshing-credentials).
 - `expires_in` - This integer tells your app how long the access token is valid for, in seconds.
 - `token_type` - You'll see `app` here. Workspace tokens were once known as `app` tokens. Maybe someday this value will become `workspace`.
 - `app_id` - This is the unique ID for your whole Slack app.
