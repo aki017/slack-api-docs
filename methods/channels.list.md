@@ -23,7 +23,7 @@ This legacy method returns a list of all channels in the team. This includes cha
 
 To retrieve a list of private channels, use [`conversations.list`](/methods/conversations.list).
 
-[Shared channels](/shard-channels) and channels that have converted from public to private or back again are not returned by this method. Use the [Conversations API](/docs/conversations-api) methods instead, like [`conversations.list`](/methods/conversations.list).
+[Shared channels](/shared-channels) and channels that have converted from public to private or back again are not returned by this method. Use the [Conversations API](/docs/conversations-api) methods instead, like [`conversations.list`](/methods/conversations.list).
 
 _Having trouble getting a HTTP 200 response from this method?_ Try excluding the `members` list from each channel object using the `exclude_members` parameter.
 
