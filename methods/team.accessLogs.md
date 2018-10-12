@@ -16,7 +16,9 @@ Gets the access logs for the current team.
 
 * * *
 
-This method is used to get the access logs for users on a team.
+This method is used to retrieve the "access logs" for users on a workspace.
+
+Each access log entry represents a user accessing Slack from a specific user, IP address, and user agent combination.
 
 ## Arguments
 
@@ -31,36 +33,38 @@ This method is used to get the access logs for users on a team.
 
 ## Response
 
-The response contains a list of logins followed by pagination information.
+The method's paginated response contains a list of access log entries. Each item in the `logins` array represents a number of possible user interactions, collated by the user, IP address, and user agent combination. These include actual logins as well as other API calls that are typically made when accessing Slack.
+
+This response demonstrates pagination and two access log entries.
 
 ```
 {
     "ok": true,
     "logins": [
         {
-            "user_id": "U12345",
-            "username": "bob",
+            "user_id": "U45678",
+            "username": "alice",
             "date_first": 1422922864,
             "date_last": 1422922864,
             "count": 1,
             "ip": "127.0.0.1",
-            "user_agent": "SlackWeb Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/41.0.2272.35 Safari\/537.36",
+            "user_agent": "SlackWeb Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.35 Safari/537.36",
             "isp": "BigCo ISP",
             "country": "US",
             "region": "CA"
         },
         {
-            "user_id": "U45678",
-            "username": "alice",
+            "user_id": "U12345",
+            "username": "white_rabbit",
             "date_first": 1422922493,
             "date_last": 1422922493,
             "count": 1,
             "ip": "127.0.0.1",
-            "user_agent": "SlackWeb Mozilla\/5.0 (iPhone; CPU iPhone OS 8_1_3 like Mac OS X) AppleWebKit\/600.1.4 (KHTML, like Gecko) Version\/8.0 Mobile\/12B466 Safari\/600.1.4",
+            "user_agent": "SlackWeb Mozilla/5.0 (iPhone; CPU iPhone OS 8_1_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B466 Safari/600.1.4",
             "isp": "BigCo ISP",
             "country": "US",
             "region": "CA"
-        },
+        }
     ],
     "paging": {
         "count": 100,
@@ -71,9 +75,36 @@ The response contains a list of logins followed by pagination information.
 }
 ```
 
-Each login contains the user id and username that logged in. `date_first` is a unix timestamp of the first login for this user/ip/user\_agent combination.`date_last` is the most recent for that combination. `count` is the total number of logins for that combination. `ip` is the ip address of the device used to login. `user_agent` is the reported user agent string from the browser or client application. `isp` is our best guess at the internet service provider who owns the ip address. `country` and `region` are similarly where we think that login came from, based on the ip address.
+A workspace must be on a paid plan to use this method, otherwise the `paid_only` error is thrown:
+
+```
+{
+    "ok": false,
+    "error": "paid_only"
+}
+```
+
+Each access log entry contains the user `id` and `username` that accessed Slack.
+
+`date_first` is a unix timestamp of the first access log entry for this user, IP address, and user agent combination.
+
+`date_last` is the most recent for that combination.
+
+`count` is the total number of access log entries for that combination.
+
+`ip` is the IP address of the device used.
+
+`user_agent` is the reported user agent string from the browser or client application.
+
+`isp` is our _best guess_ at the internet service provider owning the IP address.
+
+`country` and `region` are also our best guesses on where the access originated, based on the IP address.
+
+### Pagination
 
 The paging information contains the `count` of items returned, the `total` number of items reacted to, the `page` of results returned in this response and the total number of `pages` available. Please note that the max `count` value is `1000` and the max `page` value is `100`.
+
+This method does not yet support cursored pagination.
 
 ## Errors
 
