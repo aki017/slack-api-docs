@@ -18,7 +18,7 @@ Enables an app to trigger a permissions modal to grant an app access to a user a
 
 <ts-icon class="ts_icon_sparkles"></ts-icon> **Developer preview has ended**  
 
-This feature was exclusive to our [workspace apps developer preview](/workspace-apps-preview). The preview has now ended, but fan-favorite features such as token rotation and the Conversations API will become available to classic Slack apps over the coming months.
+This feature was exclusive to our [workspace apps developer preview](/legacy-workspace-apps). The preview has now ended, but fan-favorite features such as token rotation and the Conversations API will become available to classic Slack apps over the coming months.
 
 This method is used to request additional permissions from a user on a workspace.
 
