@@ -19,7 +19,7 @@ If at all possible, avoid sending `client_id` and `client_secret` as parameters 
 
 **Keep your tokens secure**. Do not share tokens with users or anyone else.
 
-When used with a workspace app, this method's response differs significantly. It may be used as part of the initial OAuth authentication flow to gain a [**long-lived refresh token** and **short-lived access token**](/docs/rotating-and-refreshing-credentials), or it may be used subsequently to refresh the access token.
+When used with a legacy workspace app, this method's response differs significantly. It may be used as part of the initial OAuth authentication flow to gain a [**long-lived refresh token** and **short-lived access token**](/docs/rotating-and-refreshing-credentials), or it may be used subsequently to refresh the access token.
 
 ## Arguments
 
@@ -122,7 +122,7 @@ Typical error response
 }
 ```
 
-## Workspace app behavior
+## Legacy workspace app behavior
 
 Workspace apps may call `oauth.access` in **two different scenarios**.
 
