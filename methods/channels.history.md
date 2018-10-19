@@ -44,7 +44,6 @@ Typical success response containing the channel's history
 ```
 {
     "ok": true,
-    "latest": "1358547726.000003",
     "messages": [
         {
             "type": "message",
@@ -99,6 +98,24 @@ Typical success response containing the channel's history
             "type": "message",
             "subtype": "bot_message",
             "ts": "1503435956.000247"
+        }
+    ],
+    "has_more": false
+}
+```
+
+Typical success response with `latest` timestamp and `inclusive` parameters specified
+
+```
+{
+    "ok": true,
+    "latest": "1512085950.000216",
+    "messages": [
+        {
+            "type": "message",
+            "user": "U012AB3CDE",
+            "text": "I find you punny and would like to smell your nose letter",
+            "ts": "1512085950.000216"
         }
     ],
     "has_more": false
