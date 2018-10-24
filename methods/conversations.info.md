@@ -55,6 +55,7 @@ Typical success response for a public channel. (Also, a response from a private 
         "name_normalized": "general",
         "is_read_only": false,
         "is_shared": false,
+        "parent_conversation": 0,
         "is_ext_shared": false,
         "is_org_shared": false,
         "pending_shared": [],
