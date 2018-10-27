@@ -25,7 +25,7 @@ The only the user that originally created a channel or an admin may rename it. O
 
 ### Limits for workspace apps
 
-Because workspace apps can't yet act on behalf of users, they don't have the power to rename conversations, except when they're the owner/creator of the conversation.
+Because workspace apps can't act on behalf of users, they don't have the power to rename conversations, except when they're the owner/creator of the conversation.
 
 ## Arguments
 

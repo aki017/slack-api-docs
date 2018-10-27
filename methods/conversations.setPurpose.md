@@ -22,9 +22,13 @@ Sets the purpose for a conversation.
 
 This method is used to change the purpose of a conversation. The calling user must be a member of the conversation. Not all conversation types may have a purpose set.
 
+<ts-icon class="ts_icon_warning"></ts-icon> **Bots belonging to Slack apps are not supported**  
+
+This method cannot be called with bot user tokens belonging to Slack apps, although legacy bot tokens will work. To use this method in a Slack app, use a [user token](/docs/token-types#user) imbued with the necessary scope. [**Stay tuned**](/changelog) for updates as we bring a fuller feast of features to bots belonging to Slack apps.
+
 ### Limits for workspace apps
 
-Because workspace apps can't yet act on behalf of users, they don't have the power to set the purpose of conversations, except when they're already part of the conversation.
+Because workspace apps can't act on behalf of users, they don't have the power to set the purpose of conversations, except when they're already part of the conversation.
 
 ## Arguments
 

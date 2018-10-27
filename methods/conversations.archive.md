@@ -23,7 +23,7 @@ This method archives a conversation. Not all types of conversations can be archi
 
 ### Limits for workspace apps
 
-Because workspace apps can't yet act on behalf of users, they don't have the power to archive conversations, except when they're the owner/creator of the conversation.
+Because workspace apps can't act on behalf of users, they don't have the power to archive conversations, except when they're the owner/creator of the conversation.
 
 ## Arguments
 

@@ -18,7 +18,7 @@ Adds a reaction to an item.
 
 * * *
 
-This method adds a reaction (emoji) to an item (file, file comment, channel message, group message, or direct message). One of `file`, `file_comment`, or the combination of `channel` and `timestamp` must be specified.
+This method adds a reaction (emoji) to a message. Now that [file threads](/changelog/2018-05-file-threads-soon-tread#whats_changed) work the way you'd expect, the `file` and `file_comment` arguments are deprecated. Specify `channel` and `timestamp` instead.
 
 ## Arguments
 
@@ -27,8 +27,8 @@ This method adds a reaction (emoji) to an item (file, file comment, channel mess
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `name` | `thumbsup` | Required | Reaction (emoji) name. |
 | `channel` | `C1234567890` | Optional | Channel where the message to add reaction to was posted. |
-| `file` | `F1234567890` | Optional | File to add reaction to. |
-| `file_comment` | `Fc1234567890` | Optional | File comment to add reaction to. |
+| `file` | `F1234567890` | Optional | File to add reaction to. Now that [file threads](/changelog/2018-05-file-threads-soon-tread#whats_changed) work the way you'd expect, this argument is deprecated. Specify the timestamp and channel of the message associated with a file instead. |
+| `file_comment` | `Fc1234567890` | Optional | File comment to add reaction to. Now that [file threads](/changelog/2018-05-file-threads-soon-tread#whats_changed) work the way you'd expect, this argument is deprecated. Specify the timestamp and channel of the message associated with a file instead. |
 | `timestamp` | `1234567890.123456` | Optional | Timestamp of the message to add reaction to. |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).

@@ -20,6 +20,10 @@ Lists items pinned to a channel.
 
 This method lists the items pinned to a channel.
 
+<ts-icon class="ts_icon_warning"></ts-icon> **Bots belonging to Slack apps are not supported**  
+
+This method cannot be called with bot user tokens belonging to Slack apps, although legacy bot tokens will work. To use this method in a Slack app, use a [user token](/docs/token-types#user) imbued with the necessary scope. [**Stay tuned**](/changelog) for updates as we bring a fuller feast of features to bots belonging to Slack apps.
+
 ## Arguments
 
 | Argument | Example | Required | Description |

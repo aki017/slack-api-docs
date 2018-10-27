@@ -25,7 +25,7 @@ Use [`conversations.open`](/methods/conversations.open) to initiate or resume a 
 
 ### Limits for workspace apps
 
-At least one user needs to be invited when creating a public or private conversation. Otherwise apps could create invisible channels, which might cause a few problems.
+At least one user needs to be invited when creating a public or private conversation. Otherwise workspace apps could create invisible channels, which might cause a few problems.
 
 ## Arguments
 
