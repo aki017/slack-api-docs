@@ -115,6 +115,7 @@ This table lists the expected errors that this method could return. However, oth
 | --- | --- |
 | `file_not_found` | Value passed for `file` was invalid |
 | `not_allowed` | Public sharing has been disabled for this team |
+| `public_video_not_allowed` | Public sharing of videos is not available. A `Free` instance of Slack may encounter this error because free teams don't have the ability to share video files publicly. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
