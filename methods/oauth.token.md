@@ -9,6 +9,10 @@ Exchanges a temporary OAuth verifier code for a workspace token.
 
 * * *
 
+<ts-icon class="ts_icon_sparkles"></ts-icon> **Developer preview has ended**  
+
+This feature was exclusive to our [workspace apps developer preview](/legacy-workspace-apps). The preview has now ended, but fan-favorite features such as token rotation and the Conversations API will become available to classic Slack apps over the coming months.
+
 This **_deprecated_** method allowed you to exchange a temporary OAuth verifier `code` for a " [**workspace token**](/docs/token-types#workspace)". Use [`oauth.access`](/methods/oauth.access) to retrieve workspace tokens instead.
 
 This is used as part of the [OAuth authentication flow](/docs/oauth) used by [workspace apps](/workspace-apps-preview).
