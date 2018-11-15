@@ -67,13 +67,12 @@ This example demonstrates setting some basic profile fields and one extended fie
 }
 ```
 
-To send that JSON to `users.profile.set`, build an HTTP request like this, setting your content type, authorization credentials, and, **for workspace tokens** , an `X-Slack-User` header indicating the user you're [acting on behalf of](/docs/working-for-users):
+To send that JSON to `users.profile.set`, build an HTTP request like this, setting your content type, authorization credentials, and, **for workspace tokens only** , an `X-Slack-User` header indicating the user you're [acting on behalf of](/docs/working-for-users):
 
 ```
 POST /users/profile.set
 Host: slack.com
-Authorization: Bearer xoxa-secret-token
-X-Slack-User: U123456
+Authorization: Bearer xoxp-secret-token
 Content-type: application/json; charset=utf-8
 {
     "profile": {
@@ -110,14 +109,13 @@ For example, to set a custom status of `🚞 riding a train` and have it expire 
 }
 ```
 
-Next, place the custom status fields within the user's `profile` and use [`users.profile.set`](/methods/users.profile.set). In this example, we're posting with JSON and using an `X-Slack-User` header combined with a workspace token to [act on a user's behalf](/docs/working-for-users):
+Next, place the custom status fields within the user's `profile` and use [`users.profile.set`](/methods/users.profile.set):
 
 ```
 POST /api/users.profile.set
 Host: slack.com
 Content-type: application/json; charset=utf-8
-Authorization: Bearer xoxa_secret_token
-X-Slack-User: U123456
+Authorization: Bearer xoxp_secret_token
 {
     "profile": {
         "status_text": "riding a train",
