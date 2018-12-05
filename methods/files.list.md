@@ -34,14 +34,18 @@ This method returns a list of files within the team. It can be filtered and slic
 | `ts_from` | `123456789` | Optional, default=0 | Filter files created after this timestamp (inclusive). |
 | `ts_to` | `123456789` | Optional, default=now | Filter files created before this timestamp (inclusive). |
 | `types` | `images` | Optional, default=all | Filter files by type:
-- `all` - All files
-- `spaces` - Posts
-- `snippets` - Snippets
-- `images` - Image files
-- `gdocs` - Google docs
-- `zips` - Zip files
-- `pdfs` - PDF files
-You can pass multiple values in the types argument, like `types=spaces,snippets`.The default value is `all`, which does not filter the list. |
+```
+* `all` - All files
+* `spaces` - Posts
+* `snippets` - Snippets
+* `images` - Image files
+* `gdocs` - Google docs
+* `zips` - Zip files
+* `pdfs` - PDF files
+
+You can pass multiple values in the types argument, like `types=spaces,snippets`.The default value is `all`, which does not filter the list.
+```
+ |
 | `user` | `W1234567890` | Optional | Filter files created by a single user. |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
