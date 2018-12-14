@@ -24,7 +24,7 @@ This method returns messages matching a search query.
 | --- | --- | --- | --- |
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `query` | `pickleface` | Required | Search query. |
-| `count` | `20` | Optional, default=20 | Pass the number of results you want per "page". Maximum of `100`. |
+| `count` | `20` | Optional, default=20 | Number of items to return per page. |
 | `highlight` | `true` | Optional | Pass a value of `true` to enable query highlight markers (see below). |
 | `page` | `2` | Optional, default=1 | Page number of results to return. |
 | `sort` | `timestamp` | Optional, default=score | Return matches sorted by either `score` or `timestamp`. |

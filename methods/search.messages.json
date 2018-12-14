@@ -14,7 +14,7 @@
     "count": {
       "required": false,
       "example": "20",
-      "desc": "Pass the number of results you want per \"page\". Maximum of 100."
+      "desc": "Number of items to return per page."
     },
     "highlight": {
       "required": false,
