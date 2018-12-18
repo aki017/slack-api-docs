@@ -165,6 +165,8 @@ The response contains a list of [file objects](/types/file), followed by paging 
 
 The paging information contains the `count` of files returned, the `total` number of files matching the filter (if any was supplied), the `page` of results returned in this response and the total number of `pages` available.
 
+If cursor paging is used, a `nextCursor` argument will be returned instead of the normal paging information such as `count`, `total`, `page`, and `pages`. It will be up to the client to keep track of that information, with the peace of mind that the cursor pagination will return files in a stable ordering.
+
 ## Errors
 
 This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should always check the value of the `ok` params in the response.
