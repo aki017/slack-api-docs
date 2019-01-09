@@ -26,7 +26,7 @@ Per workspace, bot users have both a user ID (which can be looked up using [`use
 
 Use this method to look up the username and icons for those bot users. Use the `app_id` field to identify whether a bot belongs to your [Slack app](/slack-apps).
 
-Look for a `user_id` When the bot corresponds directly to a bot user account. Some bot-like entities aren't actually "bot users" and will not include a `user_id`.
+Look for a `user_id` when the bot corresponds directly to a bot user account. Some bot-like entities aren't actually "bot users" and will not include a `user_id`.
 
 ## Arguments
 
@@ -38,26 +38,6 @@ Look for a `user_id` When the bot corresponds directly to a bot user account. So
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
-
-When successful, returns bot info by bot ID.
-
-```
-{
-    "ok": true,
-    "bot": {
-        "id": "B061F7JQ1",
-        "deleted": false,
-        "name": "commandeer",
-        "updated": 1449272004,
-        "app_id": "A061BLERW",
-        "icons": {
-            "image_36": "https://...",
-            "image_48": "https://...",
-            "image_72": "https://..."
-        }
-    }
-}
-```
 
 When successful, returns bot info by bot ID.
 
