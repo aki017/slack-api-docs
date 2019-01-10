@@ -34,13 +34,13 @@ To use `conversations.history` with public or private channel threads, use a [us
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `channel` | `C1234567890` | Required | Conversation ID to fetch history for. |
-| `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | Paginate through collections of data by setting the `cursor` parameter to a `next_cursor` attribute returned by a previous request's `response_metadata`. Default value fetches the first "page" of the collection. See [pagination](/docs/pagination) for more detail. |
-| `inclusive` | `true` | Optional, default=0 | Include messages with latest or oldest timestamp in results only when either timestamp is specified. |
-| `latest` | `1234567890.123456` | Optional, default=now | End of time range of messages to include in results. |
-| `limit` | `20` | Optional, default=100 | The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the users list hasn't been reached. |
-| `oldest` | `1234567890.123456` | Optional, default=0 | Start of time range of messages to include in results. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `channel` | `C1234567890` | Required | |
+| `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | |
+| `inclusive` | `true` | Optional, default=0 | |
+| `latest` | `1234567890.123456` | Optional, default=now | |
+| `limit` | `20` | Optional, default=100 | |
+| `oldest` | `1234567890.123456` | Optional, default=0 | |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

@@ -23,10 +23,10 @@ This method opens a direct message channel with another member of your Slack tea
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `user` | `W1234567890` | Required | User to open a direct message channel with. |
-| `include_locale` | `true` | Optional | Set this to `true` to receive the locale for this im. Defaults to `false` |
-| `return_im` | `true` | Optional | Boolean, indicates you want the full IM channel definition in the response. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `user` | `W1234567890` | Required | |
+| `include_locale` | `true` | Optional | |
+| `return_im` | `true` | Optional | |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

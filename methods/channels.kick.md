@@ -22,9 +22,9 @@ This method allows a user to remove another member from a team channel.
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `channel` | `C1234567890` | Required | Channel to remove user from. |
-| `user` | `W1234567890` | Required | User to remove from channel. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `channel` | `C1234567890` | Required | |
+| `user` | `W1234567890` | Required | |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

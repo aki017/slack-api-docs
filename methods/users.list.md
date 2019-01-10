@@ -24,11 +24,11 @@ This method returns a list of all users in the workspace. This includes deleted/
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | Paginate through collections of data by setting the `cursor` parameter to a `next_cursor` attribute returned by a previous request's `response_metadata`. Default value fetches the first "page" of the collection. See [pagination](/docs/pagination) for more detail. |
-| `include_locale` | `true` | Optional | Set this to `true` to receive the locale for users. Defaults to `false` |
-| `limit` | `20` | Optional, default=0 | The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the users list hasn't been reached. |
-| `presence` | `true` | Optional, default=false | Deprecated. Whether to include presence data in the output. Defaults to `false`. Setting this to `true` reduces performance, especially with large teams. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | |
+| `include_locale` | `true` | Optional | |
+| `limit` | `20` | Optional, default=0 | |
+| `presence` | `true` | Optional, default=false | |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

@@ -28,7 +28,7 @@ This method cannot be called with bot user tokens belonging to Slack apps, altho
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

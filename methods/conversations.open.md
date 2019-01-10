@@ -33,10 +33,10 @@ Subsequent calls to `conversations.open` with the same set of users will return 
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `channel` | `G1234567890` | Optional | Resume a conversation by supplying an `im` or `mpim`'s ID. Or provide the `users` field instead. |
-| `return_im` | `true` | Optional | Boolean, indicates you want the full IM channel definition in the response. |
-| `users` | `W1234567890,U2345678901,U3456789012` | Optional | Comma separated lists of users. If only one user is included, this creates a 1:1 DM. The ordering of the users is preserved whenever a multi-person direct message is returned. Supply a `channel` when not supplying `users`. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `channel` | `G1234567890` | Optional | |
+| `return_im` | `true` | Optional | |
+| `users` | `W1234567890,U2345678901,U3456789012` | Optional | |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

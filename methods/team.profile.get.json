@@ -4,12 +4,12 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token bearing required scopes."
+      "desc": ""
     },
     "visibility": {
       "required": false,
       "example": "all",
-      "desc": "Filter by visibility."
+      "desc": ""
     }
   },
   "errors": {

@@ -34,12 +34,12 @@ Browse the public channel membership of other users with the `user` parameter. P
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | Paginate through collections of data by setting the `cursor` parameter to a `next_cursor` attribute returned by a previous request's `response_metadata`. Default value fetches the first "page" of the collection. See [pagination](/docs/pagination) for more detail. |
-| `exclude_archived` | `true` | Optional, default=false | Set to `true` to exclude archived channels from the list |
-| `limit` | `20` | Optional, default=100 | The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the list hasn't been reached. Must be an integer no larger than 1000. |
-| `types` | `im,mpim` | Optional, default=public\_channel | Mix and match channel types by providing a comma-separated list of any combination of `public_channel`, `private_channel`, `mpim`, `im` |
-| `user` | `W0B2345D` | Optional | Browse conversations by a specific user ID's membership. Non-public channels are restricted to those where the calling user shares membership. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | |
+| `exclude_archived` | `true` | Optional, default=false | |
+| `limit` | `20` | Optional, default=100 | |
+| `types` | `im,mpim` | Optional, default=public\_channel | |
+| `user` | `W0B2345D` | Optional | |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

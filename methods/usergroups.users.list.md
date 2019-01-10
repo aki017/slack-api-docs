@@ -23,9 +23,9 @@ This method returns a list of all users within a User Group.
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `usergroup` | `S0604QSJC` | Required | The encoded ID of the User Group to update. |
-| `include_disabled` | `true` | Optional | Allow results that involve disabled User Groups. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `usergroup` | `S0604QSJC` | Required | |
+| `include_disabled` | `true` | Optional | |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

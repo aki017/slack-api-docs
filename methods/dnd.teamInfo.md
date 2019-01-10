@@ -24,8 +24,8 @@ Provides information about the current Do Not Disturb settings for users of a Sl
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `users` | `U1234,W4567` | Optional | Comma-separated list of users to fetch Do Not Disturb status for |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `users` | `U1234,W4567` | Optional | |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

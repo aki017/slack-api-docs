@@ -23,8 +23,8 @@ Adjusts the snooze duration for a user's Do Not Disturb settings. If a snooze se
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `num_minutes` | `60` | Required | Number of minutes, from now, to snooze until. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `num_minutes` | `60` | Required | |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

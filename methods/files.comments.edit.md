@@ -27,10 +27,10 @@ Edit an existing comment on a file. Only the user who created a comment may make
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `comment` | `Everyone should take a moment to read this file, seriously.` | Required | Text of the comment to edit. |
-| `file` | `F1234567890` | Required | File containing the comment to edit. |
-| `id` | `Fc1234567890` | Required | The comment to edit. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `comment` | `Everyone should take a moment to read this file, seriously.` | Required | |
+| `file` | `F1234567890` | Required | |
+| `id` | `Fc1234567890` | Required | |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

@@ -27,15 +27,15 @@ This method allows you to create or upload an existing file.
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `channels` | `C1234567890,C2345678901,C3456789012` | Optional | Comma-separated list of channel names or IDs where the file will be shared. |
-| `content` | `...` | Optional | File contents via a POST variable. If omitting this parameter, you must provide a `file`. |
-| `file` | `...` | Optional | File contents via `multipart/form-data`. If omitting this parameter, you must submit `content`. |
-| `filename` | `foo.txt` | Optional | Filename of file. |
-| `filetype` | `php` | Optional | A [file type](/types/file#file_types) identifier. |
-| `initial_comment` | `Best!` | Optional | The message text introducing the file in specified `channels`. |
-| `thread_ts` | `1234567890.123456` | Optional | Provide another message's `ts` value to upload this file as a reply. Never use a reply's `ts` value; use its parent instead. |
-| `title` | `My File` | Optional | Title of file. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `channels` | `C1234567890,C2345678901,C3456789012` | Optional | |
+| `content` | `...` | Optional | |
+| `file` | `...` | Optional | |
+| `filename` | `foo.txt` | Optional | |
+| `filetype` | `php` | Optional | |
+| `initial_comment` | `Best!` | Optional | |
+| `thread_ts` | `1234567890.123456` | Optional | |
+| `title` | `My File` | Optional | |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

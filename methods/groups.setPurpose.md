@@ -23,9 +23,9 @@ This method is used to change the purpose of a private channel. The calling user
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `channel` | `G1234567890` | Required | Private channel to set the purpose of |
-| `purpose` | `My Purpose` | Required | The new purpose |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `channel` | `G1234567890` | Required | |
+| `purpose` | `My Purpose` | Required | |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

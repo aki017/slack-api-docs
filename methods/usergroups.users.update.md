@@ -25,10 +25,10 @@ Guests and bot users may not be part of a user group.
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `usergroup` | `S0604QSJC` | Required | The encoded ID of the User Group to update. |
-| `users` | `U060R4BJ4,U060RNRCZ` | Required | A comma separated string of encoded user IDs that represent the entire list of users for the User Group. |
-| `include_count` | `true` | Optional | Include the number of users in the User Group. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `usergroup` | `S0604QSJC` | Required | |
+| `users` | `U060R4BJ4,U060RNRCZ` | Required | |
+| `include_count` | `true` | Optional | |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

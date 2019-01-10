@@ -31,10 +31,10 @@ At least one user needs to be invited when creating a public or private conversa
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `name` | `mychannel` | Required | Name of the public or private channel to create |
-| `is_private` | `true` | Optional | Create a private channel instead of a public one |
-| `user_ids` | `W1234567890,U2345678901,U3456789012` | Optional | **Required** for workspace apps. A list of between 1 and 30 human users that will be added to the newly-created conversation. This argument has no effect when used by classic Slack apps. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `name` | `mychannel` | Required | |
+| `is_private` | `true` | Optional | |
+| `user_ids` | `W1234567890,U2345678901,U3456789012` | Optional | |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

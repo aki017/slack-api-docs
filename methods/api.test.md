@@ -25,8 +25,8 @@ You can also use this method as a very basic way to test whether Slack's [Web AP
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `error` | `my_error` | Optional | Error response to return |
-| `foo` | `bar` | Optional | example property to return |
+| `error` | `my_error` | Optional | |
+| `foo` | `bar` | Optional | |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

@@ -23,9 +23,9 @@ This method enables a User Group which was previously disabled.
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `usergroup` | `S0604QSJC` | Required | The encoded ID of the User Group to enable. |
-| `include_count` | `true` | Optional | Include the number of users in the User Group. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `usergroup` | `S0604QSJC` | Required | |
+| `include_count` | `true` | Optional | |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

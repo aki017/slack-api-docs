@@ -23,8 +23,8 @@ This method opens a private channel.
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `channel` | `G1234567890` | Required | Private channel to open. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `channel` | `G1234567890` | Required | |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

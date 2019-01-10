@@ -4,22 +4,22 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token bearing required scopes."
+      "desc": ""
     },
     "scopes": {
       "required": true,
       "example": " ",
-      "desc": "A comma separated list of user scopes to request for"
+      "desc": ""
     },
     "trigger_id": {
       "required": true,
       "example": " ",
-      "desc": "Token used to trigger the request"
+      "desc": ""
     },
     "user": {
       "required": true,
       "example": " ",
-      "desc": "The user this scope is being requested for"
+      "desc": ""
     }
   },
   "errors": {

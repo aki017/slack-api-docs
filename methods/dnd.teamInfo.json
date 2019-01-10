@@ -4,12 +4,12 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token bearing required scopes."
+      "desc": ""
     },
     "users": {
       "required": false,
       "example": "U1234,W4567",
-      "desc": "Comma-separated list of users to fetch Do Not Disturb status for"
+      "desc": ""
     }
   },
   "errors": {

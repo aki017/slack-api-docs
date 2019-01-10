@@ -4,17 +4,17 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token bearing required scopes."
+      "desc": ""
     },
     "channel": {
       "required": true,
       "example": "C1234567890",
-      "desc": "Conversation to set the topic of"
+      "desc": ""
     },
     "topic": {
       "required": true,
       "example": "Apply topically for best effects",
-      "desc": "The new topic string. Does not support formatting or linkification."
+      "desc": ""
     }
   },
   "errors": {

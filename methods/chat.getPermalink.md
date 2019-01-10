@@ -24,9 +24,9 @@ Easily exchange a message timestamp and a channel ID for a friendly HTTP-based p
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `channel` | `C1234567890` | Required | The ID of the conversation or channel containing the message |
-| `message_ts` | `1234567890.123456` | Required | A message's `ts` value, uniquely identifying it within a channel |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `channel` | `C1234567890` | Required | |
+| `message_ts` | `1234567890.123456` | Required | |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

@@ -24,10 +24,10 @@ Each access log entry represents a user accessing Slack from a specific user, IP
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `before` | `1457989166` | Optional, default=now | End of time range of logs to include in results (inclusive). |
-| `count` | `20` | Optional, default=100 | Number of items to return per page. |
-| `page` | `2` | Optional, default=1 | Page number of results to return. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `before` | `1457989166` | Optional, default=now | |
+| `count` | `20` | Optional, default=100 | |
+| `page` | `2` | Optional, default=1 | |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

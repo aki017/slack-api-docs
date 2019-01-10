@@ -4,12 +4,12 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token bearing required scopes."
+      "desc": ""
     },
     "channel": {
       "required": true,
       "example": "C1234567890",
-      "desc": "ID of conversation to unarchive"
+      "desc": ""
     }
   },
   "errors": {

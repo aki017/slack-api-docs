@@ -4,27 +4,27 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token bearing required scopes."
+      "desc": ""
     },
     "channel": {
       "required": true,
       "example": "C1234567890",
-      "desc": "Channel where the item is pinned to."
+      "desc": ""
     },
     "file": {
       "required": false,
       "example": "F1234567890",
-      "desc": "File to un-pin."
+      "desc": ""
     },
     "file_comment": {
       "required": false,
       "example": "Fc1234567890",
-      "desc": "File comment to un-pin."
+      "desc": ""
     },
     "timestamp": {
       "required": false,
       "example": "1234567890.123456",
-      "desc": "Timestamp of the message to un-pin."
+      "desc": ""
     }
   },
   "errors": {

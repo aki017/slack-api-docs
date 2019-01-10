@@ -24,9 +24,9 @@ This method returns information about a member of a workspace.
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `user` | `W1234567890` | Required | User to get info on |
-| `include_locale` | `true` | Optional | Set this to `true` to receive the locale for this user. Defaults to `false` |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `user` | `W1234567890` | Required | |
+| `include_locale` | `true` | Optional | |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

@@ -29,9 +29,9 @@ You can use any existing tokens authorized for the team to request for the user 
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `users` | `W1234567890,U2345678901,U3456789012` | Required | A comma-separated list of user ids, up to 400 per request |
-| `to_old` | `true` | Optional, default= | Specify `true` to convert `W` global user IDs to workspace-specific `U` IDs. Defaults to `false`. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `users` | `W1234567890,U2345678901,U3456789012` | Required | |
+| `to_old` | `true` | Optional, default= | |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

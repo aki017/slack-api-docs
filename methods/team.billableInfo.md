@@ -23,8 +23,8 @@ This method lists billable information for each user on the team. Currently this
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `user` | `W1234567890` | Optional | A user to retrieve the billable information for. Defaults to all users. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `user` | `W1234567890` | Optional | |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

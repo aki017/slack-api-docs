@@ -4,12 +4,12 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token bearing required scopes."
+      "desc": ""
     },
     "file": {
       "required": true,
       "example": "F1234567890",
-      "desc": "File to revoke"
+      "desc": ""
     }
   },
   "errors": {

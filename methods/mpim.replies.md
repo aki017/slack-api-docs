@@ -23,9 +23,9 @@ This method returns an entire thread (a message plus all the messages in reply t
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `channel` | `C1234567890` | Required | Multiparty direct message channel to fetch thread from. |
-| `thread_ts` | `1234567890.123456` | Required | Unique identifier of a thread's parent message. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `channel` | `C1234567890` | Required | |
+| `thread_ts` | `1234567890.123456` | Required | |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

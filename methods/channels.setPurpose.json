@@ -4,17 +4,17 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token bearing required scopes."
+      "desc": ""
     },
     "channel": {
       "required": true,
       "example": "C1234567890",
-      "desc": "Channel to set the purpose of"
+      "desc": ""
     },
     "purpose": {
       "required": true,
       "example": "My Purpose",
-      "desc": "The new purpose"
+      "desc": ""
     }
   },
   "errors": {

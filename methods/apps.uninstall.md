@@ -23,9 +23,9 @@ This method uninstalls a workspace app. Unlike [auth.revoke](/methods/auth.revok
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `client_id` | `56579136444.26251006572` | Required | Issued when you created your application. |
-| `client_secret` | `f25b5ceaf8a3c2a2c4f52bb4f0b0499e` | Required | Issued when you created your application. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `client_id` | `56579136444.26251006572` | Required | |
+| `client_secret` | `f25b5ceaf8a3c2a2c4f52bb4f0b0499e` | Required | |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

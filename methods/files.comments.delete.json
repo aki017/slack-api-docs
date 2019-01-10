@@ -4,17 +4,17 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token bearing required scopes."
+      "desc": ""
     },
     "file": {
       "required": true,
       "example": "F1234567890",
-      "desc": "File to delete a comment from."
+      "desc": ""
     },
     "id": {
       "required": true,
       "example": "Fc1234567890",
-      "desc": "The comment to delete."
+      "desc": ""
     }
   },
   "errors": {

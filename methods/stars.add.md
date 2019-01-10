@@ -23,11 +23,11 @@ This method adds a star to an item (message, file, file comment, channel, privat
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `channel` | `C1234567890` | Optional | Channel to add star to, or channel where the message to add star to was posted (used with `timestamp`). |
-| `file` | `F1234567890` | Optional | File to add star to. |
-| `file_comment` | `Fc1234567890` | Optional | File comment to add star to. |
-| `timestamp` | `1234567890.123456` | Optional | Timestamp of the message to add star to. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `channel` | `C1234567890` | Optional | |
+| `file` | `F1234567890` | Optional | |
+| `file_comment` | `Fc1234567890` | Optional | |
+| `timestamp` | `1234567890.123456` | Optional | |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

@@ -32,8 +32,8 @@ Look for a `user_id` when the bot corresponds directly to a bot user account. So
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `bot` | `B12345678` | Optional | Bot user to get info on |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `bot` | `B12345678` | Optional | |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

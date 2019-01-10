@@ -25,11 +25,11 @@ When used with a legacy workspace app, this method's response differs significan
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `client_id` | `4b39e9-752c4` | Required | Issued when you created your application. |
-| `client_secret` | `33fea0113f5b1` | Required | Issued when you created your application. |
-| `code` | `ccdaa72ad` | Required | The `code` param returned via the OAuth callback. |
-| `redirect_uri` | `http://example.com` | Optional | This must match the originally submitted URI (if one was sent). |
-| `single_channel` | `true` | Optional, default=false | Request the user to add your app only to a single channel. |
+| `client_id` | `4b39e9-752c4` | Required | |
+| `client_secret` | `33fea0113f5b1` | Required | |
+| `code` | `ccdaa72ad` | Required | |
+| `redirect_uri` | `http://example.com` | Optional | |
+| `single_channel` | `true` | Optional, default=false | |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

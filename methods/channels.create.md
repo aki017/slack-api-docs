@@ -24,9 +24,9 @@ To create a private channel, use [`groups.create`](/methods/groups.create).
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `name` | `mychannel` | Required | Name of channel to create |
-| `validate` | `true` | Optional | Whether to return errors on invalid channel name instead of modifying it to meet the specified criteria. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `name` | `mychannel` | Required | |
+| `validate` | `true` | Optional | |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

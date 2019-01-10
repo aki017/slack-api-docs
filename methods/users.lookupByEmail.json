@@ -4,12 +4,12 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token bearing required scopes."
+      "desc": ""
     },
     "email": {
       "required": true,
       "example": "spengler@ghostbusters.example.com",
-      "desc": "An email address belonging to a user in the workspace"
+      "desc": ""
     }
   },
   "errors": {

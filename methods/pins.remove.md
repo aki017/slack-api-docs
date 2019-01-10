@@ -24,11 +24,11 @@ This method un-pins an item (file, file comment, channel message, or group messa
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `channel` | `C1234567890` | Required | Channel where the item is pinned to. |
-| `file` | `F1234567890` | Optional | File to un-pin. |
-| `file_comment` | `Fc1234567890` | Optional | File comment to un-pin. |
-| `timestamp` | `1234567890.123456` | Optional | Timestamp of the message to un-pin. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `channel` | `C1234567890` | Required | |
+| `file` | `F1234567890` | Optional | |
+| `file_comment` | `Fc1234567890` | Optional | |
+| `timestamp` | `1234567890.123456` | Optional | |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

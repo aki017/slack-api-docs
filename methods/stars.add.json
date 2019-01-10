@@ -4,27 +4,27 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": "Authentication token bearing required scopes."
+      "desc": ""
     },
     "channel": {
       "required": false,
       "example": "C1234567890",
-      "desc": "Channel to add star to, or channel where the message to add star to was posted (used with timestamp)."
+      "desc": ""
     },
     "file": {
       "required": false,
       "example": "F1234567890",
-      "desc": "File to add star to."
+      "desc": ""
     },
     "file_comment": {
       "required": false,
       "example": "Fc1234567890",
-      "desc": "File comment to add star to."
+      "desc": ""
     },
     "timestamp": {
       "required": false,
       "example": "1234567890.123456",
-      "desc": "Timestamp of the message to add star to."
+      "desc": ""
     }
   },
   "errors": {

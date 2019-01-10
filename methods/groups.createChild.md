@@ -31,8 +31,8 @@ The new private channel will have a special `parent_group` property pointing to 
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `channel` | `G1234567890` | Required | Private channel to clone and archive. |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
+| `channel` | `G1234567890` | Required | |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
