@@ -33,6 +33,8 @@ When used with a legacy workspace app, this method's response differs significan
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
+A potential gotcha: while `redirect_uri` is optional, it is _required_ if your app passed it as a parameter to `oauth/authorization` in the first step of the OAuth flow.
+
 ## Response
 
 The response schema for this step of OAuth differs depending on [the scopes](/scopes) requested and the type of application used. When asking for the `bot` scope, you'll receive the token separately from the user token.
