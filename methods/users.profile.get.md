@@ -23,9 +23,9 @@ Use this method to retrieve a user's profile information.
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `include_labels` | `true` | Optional, default=false | |
-| `user` | `W1234567890` | Optional | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `include_labels` | `true` | Optional, default=false | Include labels for each ID in custom profile fields |
+| `user` | `W1234567890` | Optional | User to retrieve profile info for |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

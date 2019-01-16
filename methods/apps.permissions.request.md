@@ -26,9 +26,9 @@ This method is used to request additional permissions with a team. It's a part o
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `scopes` | &nbsp; | Required | |
-| `trigger_id` | &nbsp; | Required | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `scopes` | &nbsp; | Required | A comma separated list of scopes to request for |
+| `trigger_id` | &nbsp; | Required | Token used to trigger the permissions API |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

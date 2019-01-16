@@ -28,11 +28,11 @@ To remove a profile image, use the companion method [`users.deletePhoto`](/metho
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `image` | `...` | Required | |
-| `crop_w` | `100` | Optional | |
-| `crop_x` | `10` | Optional | |
-| `crop_y` | `15` | Optional | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `image` | `...` | Required | File contents via `multipart/form-data`. |
+| `crop_w` | `100` | Optional | Width/height of crop box (always square) |
+| `crop_x` | `10` | Optional | X coordinate of top-left corner of crop box |
+| `crop_y` | `15` | Optional | Y coordinate of top-left corner of crop box |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

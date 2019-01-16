@@ -23,9 +23,9 @@ This method moves the read cursor in a direct message channel.
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `channel` | `D1234567890` | Required | |
-| `ts` | `1234567890.123456` | Required | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `channel` | `D1234567890` | Required | Direct message channel to set reading cursor in. |
+| `ts` | `1234567890.123456` | Required | Timestamp of the most recently seen message. |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

@@ -23,11 +23,11 @@ This method removes a star from an item (message, file, file comment, channel, p
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `channel` | `C1234567890` | Optional | |
-| `file` | `F1234567890` | Optional | |
-| `file_comment` | `Fc1234567890` | Optional | |
-| `timestamp` | `1234567890.123456` | Optional | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `channel` | `C1234567890` | Optional | Channel to remove star from, or channel where the message to remove star from was posted (used with `timestamp`). |
+| `file` | `F1234567890` | Optional | File to remove star from. |
+| `file_comment` | `Fc1234567890` | Optional | File comment to remove star from. |
+| `timestamp` | `1234567890.123456` | Optional | Timestamp of the message to remove star from. |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

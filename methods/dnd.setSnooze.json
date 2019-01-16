@@ -4,12 +4,12 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": ""
+      "desc": "Authentication token bearing required scopes."
     },
     "num_minutes": {
       "required": true,
       "example": "60",
-      "desc": ""
+      "desc": "Number of minutes, from now, to snooze until."
     }
   },
   "errors": {

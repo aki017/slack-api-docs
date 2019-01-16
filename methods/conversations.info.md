@@ -26,9 +26,9 @@ This [Conversations API](/docs/conversations-api) method returns information abo
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `channel` | `C1234567890` | Required | |
-| `include_locale` | `true` | Optional | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `channel` | `C1234567890` | Required | Conversation ID to learn more about |
+| `include_locale` | `true` | Optional | Set this to `true` to receive the locale for this conversation. Defaults to `false` |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

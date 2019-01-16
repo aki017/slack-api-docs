@@ -24,12 +24,12 @@ This method returns a list of all reactions for a single item (file, file commen
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `channel` | `C1234567890` | Optional | |
-| `file` | `F1234567890` | Optional | |
-| `file_comment` | `Fc1234567890` | Optional | |
-| `full` | `true` | Optional | |
-| `timestamp` | `1234567890.123456` | Optional | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `channel` | `C1234567890` | Optional | Channel where the message to get reactions for was posted. |
+| `file` | `F1234567890` | Optional | File to get reactions for. |
+| `file_comment` | `Fc1234567890` | Optional | File comment to get reactions for. |
+| `full` | `true` | Optional | If true always return the complete reaction list. |
+| `timestamp` | `1234567890.123456` | Optional | Timestamp of the message to get reactions for. |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

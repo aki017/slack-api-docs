@@ -24,10 +24,10 @@ The only people who can rename a channel are Team Admins, or the person that ori
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `channel` | `C1234567890` | Required | |
-| `name` | &nbsp; | Required | |
-| `validate` | `true` | Optional | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `channel` | `C1234567890` | Required | Channel to rename |
+| `name` | &nbsp; | Required | New name for channel. |
+| `validate` | `true` | Optional | Whether to return errors on invalid channel name instead of modifying it to meet the specified criteria. |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

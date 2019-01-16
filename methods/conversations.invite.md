@@ -29,9 +29,9 @@ Because workspace apps can't act on behalf of users, they don't have the power t
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `channel` | `C1234567890` | Required | |
-| `users` | `W1234567890,U2345678901,U3456789012` | Required | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `channel` | `C1234567890` | Required | The ID of the public or private channel to invite user(s) to. |
+| `users` | `W1234567890,U2345678901,U3456789012` | Required | A comma separated list of user IDs. Up to 30 users may be listed. |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

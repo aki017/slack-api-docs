@@ -4,17 +4,17 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": ""
+      "desc": "Authentication token bearing required scopes."
     },
     "channel": {
       "required": true,
       "example": "G1234567890",
-      "desc": ""
+      "desc": "Private channel to get info on"
     },
     "include_locale": {
       "required": false,
       "example": "true",
-      "desc": ""
+      "desc": "Set this to true to receive the locale for this group. Defaults to false"
     }
   },
   "errors": {

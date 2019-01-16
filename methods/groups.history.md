@@ -27,13 +27,13 @@ This method cannot be called with bot user tokens belonging to Slack apps, altho
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `channel` | `G1234567890` | Required | |
-| `count` | `100` | Optional, default=100 | |
-| `inclusive` | `true` | Optional, default=0 | |
-| `latest` | `1234567890.123456` | Optional, default=now | |
-| `oldest` | `1234567890.123456` | Optional, default=0 | |
-| `unreads` | `true` | Optional, default=0 | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `channel` | `G1234567890` | Required | Private channel to fetch history for. |
+| `count` | `100` | Optional, default=100 | Number of messages to return, between 1 and 1000. |
+| `inclusive` | `true` | Optional, default=0 | Include messages with latest or oldest timestamp in results. |
+| `latest` | `1234567890.123456` | Optional, default=now | End of time range of messages to include in results. |
+| `oldest` | `1234567890.123456` | Optional, default=0 | Start of time range of messages to include in results. |
+| `unreads` | `true` | Optional, default=0 | Include `unread_count_display` in the output? |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

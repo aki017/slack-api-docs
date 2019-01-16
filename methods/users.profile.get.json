@@ -4,17 +4,17 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": ""
+      "desc": "Authentication token bearing required scopes."
     },
     "include_labels": {
       "required": false,
       "example": "true",
-      "desc": ""
+      "desc": "Include labels for each ID in custom profile fields"
     },
     "user": {
       "required": false,
       "example": "W1234567890",
-      "desc": ""
+      "desc": "User to retrieve profile info for"
     }
   },
   "errors": {

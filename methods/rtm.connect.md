@@ -29,9 +29,9 @@ Please consult the [RTM API documentation](/rtm) for full details on using the R
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `batch_presence_aware` | `1` | Optional, default=false | |
-| `presence_sub` | `true` | Optional, default=true | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `batch_presence_aware` | `1` | Optional, default=false | Batch presence deliveries via subscription. Enabling changes the shape of `presence_change` events. See [batch presence](/docs/presence-and-status#batching). |
+| `presence_sub` | `true` | Optional, default=true | Only deliver presence events when requested by subscription. See [presence subscriptions](/docs/presence-and-status#subscriptions). |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

@@ -4,12 +4,12 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": ""
+      "desc": "Authentication token bearing required scopes."
     },
     "user": {
       "required": false,
       "example": "W1234567890",
-      "desc": ""
+      "desc": "A user to retrieve the billable information for. Defaults to all users."
     }
   },
   "errors": {

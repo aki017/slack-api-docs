@@ -23,10 +23,10 @@ This method creates a reminder.
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `text` | `eat a banana` | Required | |
-| `time` | `1602288000` | Required | |
-| `user` | `U18888888` | Optional | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `text` | `eat a banana` | Required | The content of the reminder |
+| `time` | `1602288000` | Required | When this reminder should happen: the Unix timestamp (up to five years from now), the number of seconds until the reminder (if within 24 hours), or a natural language description (Ex. "in 15 minutes," or "every Thursday") |
+| `user` | `U18888888` | Optional | The user who will receive the reminder. If no user is specified, the reminder will go to user who created it. |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

@@ -25,8 +25,8 @@ Opening a multiparty direct message takes a list of up-to 8 encoded user ids. If
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `users` | `W1234567890,U2345678901,U3456789012` | Required | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `users` | `W1234567890,U2345678901,U3456789012` | Required | Comma separated lists of users. The ordering of the users is preserved whenever a MPIM group is returned. |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

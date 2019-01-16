@@ -23,10 +23,10 @@ This method returns a list of all User Groups in the team. This can optionally i
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `include_count` | `true` | Optional | |
-| `include_disabled` | `true` | Optional | |
-| `include_users` | `true` | Optional | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `include_count` | `true` | Optional | Include the number of users in each User Group. |
+| `include_disabled` | `true` | Optional | Include disabled User Groups. |
+| `include_users` | `true` | Optional | Include the list of users for each User Group. |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

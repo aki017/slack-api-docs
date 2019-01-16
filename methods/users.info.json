@@ -4,17 +4,17 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": ""
+      "desc": "Authentication token bearing required scopes."
     },
     "user": {
       "required": true,
       "example": "W1234567890",
-      "desc": ""
+      "desc": "User to get info on"
     },
     "include_locale": {
       "required": false,
       "example": "true",
-      "desc": ""
+      "desc": "Set this to true to receive the locale for this user. Defaults to false"
     }
   },
   "errors": {

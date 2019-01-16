@@ -4,22 +4,22 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": ""
+      "desc": "Authentication token bearing required scopes."
     },
     "before": {
       "required": false,
       "example": "1457989166",
-      "desc": ""
+      "desc": "End of time range of logs to include in results (inclusive)."
     },
     "count": {
       "required": false,
       "example": "20",
-      "desc": ""
+      "desc": "Number of items to return per page."
     },
     "page": {
       "required": false,
       "example": "2",
-      "desc": ""
+      "desc": "Page number of results to return."
     }
   },
   "errors": {

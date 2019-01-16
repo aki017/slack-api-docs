@@ -24,12 +24,12 @@ This method removes a reaction (emoji) from an item (file, file comment, channel
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `name` | `thumbsup` | Required | |
-| `channel` | `C1234567890` | Optional | |
-| `file` | `F1234567890` | Optional | |
-| `file_comment` | `Fc1234567890` | Optional | |
-| `timestamp` | `1234567890.123456` | Optional | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `name` | `thumbsup` | Required | Reaction (emoji) name. |
+| `channel` | `C1234567890` | Optional | Channel where the message to remove reaction from was posted. |
+| `file` | `F1234567890` | Optional | File to remove reaction from. |
+| `file_comment` | `Fc1234567890` | Optional | File comment to remove reaction from. |
+| `timestamp` | `1234567890.123456` | Optional | Timestamp of the message to remove reaction from. |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

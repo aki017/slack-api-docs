@@ -4,12 +4,12 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": ""
+      "desc": "Authentication token bearing required scopes."
     },
     "user": {
       "required": true,
       "example": "W1234567890",
-      "desc": ""
+      "desc": "User to get presence info on. Defaults to the authed user."
     }
   },
   "errors": {

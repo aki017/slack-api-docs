@@ -25,13 +25,13 @@ The first time this method is executed with a particular `ts` and `channel` comb
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `channel` | `C1234567890` | Required | |
-| `ts` | &nbsp; | Required | |
-| `unfurls` | &nbsp; | Required | |
-| `user_auth_message` | &nbsp; | Optional | |
-| `user_auth_required` | `true` | Optional, default=0 | |
-| `user_auth_url` | `https://example.com/onboarding?user_id=xxx` | Optional | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `channel` | `C1234567890` | Required | Channel ID of the message |
+| `ts` | &nbsp; | Required | Timestamp of the message to add unfurl behavior to. |
+| `unfurls` | &nbsp; | Required | URL-encoded JSON map with keys set to URLs featured in the the message, pointing to their unfurl message attachments. |
+| `user_auth_message` | &nbsp; | Optional | Provide a simply-formatted string to send as an ephemeral message to the user as invitation to authenticate further and enable full unfurling behavior |
+| `user_auth_required` | `true` | Optional, default=0 | Set to `true` or `1` to indicate the user must install your Slack app to trigger unfurls for this domain |
+| `user_auth_url` | `https://example.com/onboarding?user_id=xxx` | Optional | Send users to this custom URL where they will complete authentication in your app to fully trigger unfurling. Value should be properly URL-encoded. |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

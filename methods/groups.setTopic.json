@@ -4,17 +4,17 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": ""
+      "desc": "Authentication token bearing required scopes."
     },
     "channel": {
       "required": true,
       "example": "G1234567890",
-      "desc": ""
+      "desc": "Private channel to set the topic of"
     },
     "topic": {
       "required": true,
       "example": "My Topic",
-      "desc": ""
+      "desc": "The new topic"
     }
   },
   "errors": {

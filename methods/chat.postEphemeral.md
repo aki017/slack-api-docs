@@ -28,15 +28,15 @@ Use ephemeral messages to send users context-sensitive messages, relevant to the
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `channel` | `C1234567890` | Required | |
-| `text` | `Hello world` | Required | |
-| `user` | `U0BPQUNTA` | Required | |
-| `as_user` | `true` | Optional | |
-| `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Optional | |
-| `link_names` | `true` | Optional | |
-| `parse` | `full` | Optional | |
-| `thread_ts` | `1234567890.123456` | Optional | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `channel` | `C1234567890` | Required | Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name. |
+| `text` | `Hello world` | Required | Text of the message to send. See below for an explanation of formatting. This field is usually required, unless you're providing only `attachments` instead. |
+| `user` | `U0BPQUNTA` | Required | `id` of the user who will receive the ephemeral message. The user should be in the channel specified by the `channel` argument. |
+| `as_user` | `true` | Optional | Pass true to post the message as the authed user. Defaults to true if the chat:write:bot scope is not included. Otherwise, defaults to false. |
+| `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Optional | A JSON-based array of structured attachments, presented as a URL-encoded string. |
+| `link_names` | `true` | Optional | Find and link channel names and usernames. |
+| `parse` | `full` | Optional | Change how messages are treated. Defaults to `none`. See below. |
+| `thread_ts` | `1234567890.123456` | Optional | Provide another message's `ts` value to make this message a reply. Avoid using a reply's `ts` value; use its parent instead. |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

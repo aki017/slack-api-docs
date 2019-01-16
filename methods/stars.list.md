@@ -23,11 +23,11 @@ This method lists the items starred by the authed user.
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `count` | `20` | Optional, default=100 | |
-| `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | |
-| `limit` | `20` | Optional, default=0 | |
-| `page` | `2` | Optional, default=1 | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `count` | `20` | Optional, default=100 | Number of items to return per page. |
+| `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | Parameter for pagination. Set `cursor` equal to the `next_cursor` attribute returned by the previous request's `response_metadata`. This parameter is optional, but pagination is mandatory: the default value simply fetches the first "page" of the collection. See [pagination](/docs/pagination) for more details. |
+| `limit` | `20` | Optional, default=0 | The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the list hasn't been reached. |
+| `page` | `2` | Optional, default=1 | Page number of results to return. |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

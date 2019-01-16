@@ -4,12 +4,12 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": ""
+      "desc": "Authentication token bearing required scopes."
     },
     "reminder": {
       "required": true,
       "example": "Rm12345678",
-      "desc": ""
+      "desc": "The ID of the reminder"
     }
   },
   "errors": {

@@ -22,13 +22,13 @@ This method returns messages matching a search query.
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `query` | `pickleface` | Required | |
-| `count` | `20` | Optional, default=20 | |
-| `highlight` | `true` | Optional | |
-| `page` | `2` | Optional, default=1 | |
-| `sort` | `timestamp` | Optional, default=score | |
-| `sort_dir` | `asc` | Optional, default=desc | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `query` | `pickleface` | Required | Search query. |
+| `count` | `20` | Optional, default=20 | Number of items to return per page. |
+| `highlight` | `true` | Optional | Pass a value of `true` to enable query highlight markers (see below). |
+| `page` | `2` | Optional, default=1 | Page number of results to return. |
+| `sort` | `timestamp` | Optional, default=score | Return matches sorted by either `score` or `timestamp`. |
+| `sort_dir` | `asc` | Optional, default=desc | Change sort direction to ascending (`asc`) or descending (`desc`). |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

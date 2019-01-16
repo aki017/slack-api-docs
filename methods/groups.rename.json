@@ -4,22 +4,22 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": ""
+      "desc": "Authentication token bearing required scopes."
     },
     "channel": {
       "required": true,
       "example": "G1234567890",
-      "desc": ""
+      "desc": "Private channel to rename"
     },
     "name": {
       "required": true,
       "example": " ",
-      "desc": ""
+      "desc": "New name for private channel."
     },
     "validate": {
       "required": false,
       "example": "true",
-      "desc": ""
+      "desc": "Whether to return errors on invalid channel name instead of modifying it to meet the specified criteria."
     }
   },
   "errors": {

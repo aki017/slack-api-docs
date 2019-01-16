@@ -27,9 +27,9 @@ Add a comment to an existing file.
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `comment` | `Everyone should take a moment to read this file.` | Required | |
-| `file` | `F1234467890` | Required | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `comment` | `Everyone should take a moment to read this file.` | Required | Text of the comment to add. |
+| `file` | `F1234467890` | Required | File to add a comment to. |
 
 <ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

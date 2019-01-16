@@ -4,12 +4,12 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": ""
+      "desc": "Authentication token bearing required scopes."
     },
     "bot": {
       "required": false,
       "example": "B12345678",
-      "desc": ""
+      "desc": "Bot user to get info on"
     }
   },
   "errors": {

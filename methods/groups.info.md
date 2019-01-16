@@ -25,9 +25,9 @@ This legacy method returns information about a private channel. It doesn't work 
 
 | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | |
-| `channel` | `G1234567890` | Required | |
-| `include_locale` | `true` | Optional | |
+| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `channel` | `G1234567890` | Required | Private channel to get info on |
+| `include_locale` | `true` | Optional | Set this to `true` to receive the locale for this group. Defaults to `false` |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 

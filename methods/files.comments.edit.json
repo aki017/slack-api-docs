@@ -4,22 +4,22 @@
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
-      "desc": ""
+      "desc": "Authentication token bearing required scopes."
     },
     "comment": {
       "required": true,
       "example": "Everyone should take a moment to read this file, seriously.",
-      "desc": ""
+      "desc": "Text of the comment to edit."
     },
     "file": {
       "required": true,
       "example": "F1234567890",
-      "desc": ""
+      "desc": "File containing the comment to edit."
     },
     "id": {
       "required": true,
       "example": "Fc1234567890",
-      "desc": ""
+      "desc": "The comment to edit."
     }
   },
   "errors": {
