@@ -11,6 +11,7 @@ Add a comment to an existing file.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [workspace](/docs/token-types#workspace) | [`files:write:user`](/scopes/files:write:user) |
 | [user](/docs/token-types#user) | [`files:write:user`](/scopes/files:write:user) |
 
  |
