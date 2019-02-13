@@ -32,6 +32,7 @@ Ephemeral messages created by [`chat.postEphemeral`](/methods/chat.postEphemeral
 | `ts` | `1405894322.002768` | Required | Timestamp of the message to be updated. |
 | `as_user` | `true` | Optional | Pass true to update the message as the authed user. [Bot users](/bot-users) in this context are considered authed users. |
 | `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Optional | A JSON-based array of structured attachments, presented as a URL-encoded string. This field is required when not presenting `text`. |
+| `blocks` | `[{"type": "section", "text": {"type": "plain_text", "text": "Hello world"}}]` | Optional | A JSON-based array of structured blocks, presented as a URL-encoded string. |
 | `link_names` | `true` | Optional | Find and link channel names and usernames. Defaults to `none`. See below. |
 | `parse` | `none` | Optional | Change how messages are treated. Defaults to `client`, unlike `chat.postMessage`. See below. |
 
