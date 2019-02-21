@@ -29,6 +29,7 @@ This [Conversations API](/docs/conversations-api) method returns information abo
 | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Conversation ID to learn more about |
 | `include_locale` | `true` | Optional | Set this to `true` to receive the locale for this conversation. Defaults to `false` |
+| `include_num_members` | `true` | Optional, default=false | Set to `true` to include the member count for the specified conversation. Defaults to `false` |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
@@ -107,6 +108,34 @@ Typical success response for a 1:1 direct message
         "is_open": true,
         "locale": "en-US",
         "priority": 0.043016851216706
+    }
+}
+```
+
+When using the method with the `include_num_members` parameter, we return a `num_members` field
+
+```
+{
+    "ok": true,
+    "channel": {
+        "id": "C012AB3CD",
+        "created": 1507235627,
+        "is_im": true,
+        "is_org_shared": false,
+        "user": "U27FFLNF4",
+        "last_read": "1513718191.000038",
+        "latest": {
+            "type": "message",
+            "user": "U5R3PALPN",
+            "text": "Psssst!",
+            "ts": "1513718191.000038"
+        },
+        "unread_count": 0,
+        "unread_count_display": 0,
+        "is_open": true,
+        "locale": "en-US",
+        "priority": 0.043016851216706,
+        "num_members": 2
     }
 }
 ```
