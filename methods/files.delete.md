@@ -41,6 +41,8 @@ This method deletes a file from your team.
 }
 ```
 
+Note: this method works as expected on [tombstoned files](/changelog/2019-03-wild-west-for-files-no-more).
+
 ## Errors
 
 This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should always check the value of the `ok` params in the response.

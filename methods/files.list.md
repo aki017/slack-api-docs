@@ -163,6 +163,8 @@ Typical error response
 
 The response contains a list of [file objects](/types/file), followed by paging information.
 
+In order to gather information on [tombstoned files](/changelog/2019-03-wild-west-for-files-no-more) in Free workspaces, so that you can delete or revoke them, pass the `show_files_hidden_by_limit` parameter. While the yielded files will still be redacted, you'll gain the `id` of the files so that you can delete or revoke them.
+
 The paging information contains the `count` of files returned, the `total` number of files matching the filter (if any was supplied), the `page` of results returned in this response and the total number of `pages` available.
 
 If cursor paging is used, a `nextCursor` argument will be returned instead of the normal paging information such as `count`, `total`, `page`, and `pages`. It will be up to the client to keep track of that information, with the peace of mind that the cursor pagination will return files in a stable ordering.
