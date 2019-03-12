@@ -33,19 +33,7 @@ This method returns a list of files within the team. It can be filtered and slic
 | `page` | `2` | Optional, default=1 | Page number of results to return. |
 | `ts_from` | `123456789` | Optional, default=0 | Filter files created after this timestamp (inclusive). |
 | `ts_to` | `123456789` | Optional, default=now | Filter files created before this timestamp (inclusive). |
-| `types` | `images` | Optional, default=all | Filter files by type:
-```
-* `all` - All files
-* `spaces` - Posts
-* `snippets` - Snippets
-* `images` - Image files
-* `gdocs` - Google docs
-* `zips` - Zip files
-* `pdfs` - PDF files
-
-You can pass multiple values in the types argument, like `types=spaces,snippets`.The default value is `all`, which does not filter the list.
-```
- |
+| `types` | `images` | Optional, default=all | Filter files by type (see below). You can pass multiple values in the types argument, like `types=spaces,snippets`.The default value is `all`, which does not filter the list. |
 | `user` | `W1234567890` | Optional | Filter files created by a single user. |
 
 <ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
@@ -168,6 +156,18 @@ In order to gather information on [tombstoned files](/changelog/2019-03-wild-wes
 The paging information contains the `count` of files returned, the `total` number of files matching the filter (if any was supplied), the `page` of results returned in this response and the total number of `pages` available.
 
 If cursor paging is used, a `nextCursor` argument will be returned instead of the normal paging information such as `count`, `total`, `page`, and `pages`. It will be up to the client to keep track of that information, with the peace of mind that the cursor pagination will return files in a stable ordering.
+
+### Types
+
+The file types you may encounter include (but are not limited to):
+
+- `all` - All files
+- `spaces` - Posts
+- `snippets` - Snippets
+- `images` - Image files
+- `gdocs` - Google docs
+- `zips` - Zip files
+- `pdfs` - PDF files
 
 ## Errors
 
