@@ -1,5 +1,3 @@
-Enables an app to trigger a permissions modal to grant an app access to a user access scope.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/apps.permissions.users.request` |
@@ -10,15 +8,10 @@ Enables an app to trigger a permissions modal to grant an app access to a user a
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | _No scope required_ |
 
  |
 
 * * *
-
-<ts-icon class="ts_icon_sparkles"></ts-icon> **Developer preview has ended**  
-
-This feature was exclusive to our [workspace apps developer preview](/legacy-workspace-apps). The preview has now ended, but fan-favorite features such as token rotation and the Conversations API will become available to classic Slack apps over the coming months.
 
 This method is used to request additional permissions from a user on a workspace.
 
@@ -28,14 +21,14 @@ To list currently awarded user-centric permissions, use [`apps.permissions.users
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `scopes` | &nbsp; | Required | A comma separated list of user scopes to request for |
 | `trigger_id` | &nbsp; | Required | Token used to trigger the request |
 | `user` | &nbsp; | Required | The user this scope is being requested for |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 The `trigger_id` parameter is required and can be found attached to some [Events API](/events-api) events, interactive framework action URL invocations, dialog submissions, and other ways we send your app timely, user-initiated data. See these docs about the [Permissions API](/docs/permissions-api) and [triggers](/docs/triggers) to learn more.
 

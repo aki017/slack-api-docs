@@ -1,5 +1,3 @@
-Searches for messages matching a query.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/search.messages` |
@@ -10,7 +8,7 @@ Searches for messages matching a query.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`search:read`](/scopes/search:read) |
+| [user](/docs/token-types#user) | [`search:read`](/scopes/search:read)&nbsp; |
 
  |
 
@@ -20,9 +18,9 @@ This method returns messages matching a search query.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `query` | `pickleface` | Required | Search query. |
 | `count` | `20` | Optional, default=20 | Number of items to return per page. |
 | `highlight` | `true` | Optional | Pass a value of `true` to enable query highlight markers (see below). |
@@ -30,7 +28,7 @@ This method returns messages matching a search query.
 | `sort` | `timestamp` | Optional, default=score | Return matches sorted by either `score` or `timestamp`. |
 | `sort_dir` | `asc` | Optional, default=desc | Change sort direction to ascending (`asc`) or descending (`desc`). |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 
@@ -117,7 +115,7 @@ Typical error response
 
 Messages are searched primarily inside the message text themselves, with a lower priority on the messages immediately before and after. Search results may be returned in which matches are only on the `previous`, `previous_2`, `next`, or `next_2` messages, but not the message itself. When a search query matches more than one message in close proximity to each other only one match will be returned. Using the`highlights=true` parameter you can identify which items match the query, and which are provided for context only.
 
-If more than one search term is provided, users and channels are also matched at a lower priority. To specifically search within a channel, group, or DM, add `in:channel_name`, `in:group_name`, or `in:username`. To search for messages from a specific speaker, add `from:username` or`from:botname`.
+If more than one search term is provided, users and channels are also matched at a lower priority. To specifically search within a channel, group, or DM, add `in:channel_name`, `in:group_name`, or `in:@UserID`. To search for messages from a specific speaker, add `from:@UserID` or`from:botname`.
 
 For IM results, the `type` is set to `"im"` and the `channel.name` property contains the user ID of the target user. For private group results, type is set to `"group"`.
 

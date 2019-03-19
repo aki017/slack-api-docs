@@ -1,5 +1,5 @@
 {
-  "desc": "Gets the access logs for the current team.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

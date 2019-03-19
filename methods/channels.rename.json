@@ -1,5 +1,5 @@
 {
-  "desc": "Renames a channel.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

@@ -1,5 +1,5 @@
 {
-  "desc": "Get a user's identity.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

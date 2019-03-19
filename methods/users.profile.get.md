@@ -1,5 +1,3 @@
-Retrieves a user's profile information.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.profile.get` |
@@ -10,8 +8,7 @@ Retrieves a user's profile information.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | [`users.profile:read`](/scopes/users.profile:read) |
-| [user](/docs/token-types#user) | [`users.profile:read`](/scopes/users.profile:read) |
+| [user](/docs/token-types#user) | [`users.profile:read`](/scopes/users.profile:read)&nbsp; |
 
  |
 
@@ -21,13 +18,13 @@ Use this method to retrieve a user's profile information.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `include_labels` | `true` | Optional, default=false | Include labels for each ID in custom profile fields |
 | `user` | `W1234567890` | Optional | User to retrieve profile info for |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 If you're frequently calling `users.profile.get` on behalf of a team or user, we recommend caching labels retrieved from [`team.profile.get`](/methods/team.profile.get). Please only use the `include_labels` parameter with `users.profile.get` **sparingly**.
 
@@ -86,7 +83,7 @@ For a description of the `fields` key, see the [users.profile.set](/methods/user
 ### Email addresses
 
 <ts-icon class="ts_icon_square_warning"></ts-icon> **Accessing email addresses**  
- The [`users:read.email`](/scopes/users:read.email) OAuth scope is now required to access the `email` field in [user objects](/types/user) returned by the [`users.list`](/methods/users.list) and [`users.info`](/methods/users.info) web API methods. [`users:read`](/scopes/users:read) is no longer a sufficient scope for this data field. [Learn more](/changelog/2017-04-narrowing-email-access).
+The [`users:read.email`](/scopes/users:read.email) OAuth scope is now required to access the `email` field in [user objects](/types/user) returned by the [`users.list`](/methods/users.list) and [`users.info`](/methods/users.info) web API methods. [`users:read`](/scopes/users:read) is no longer a sufficient scope for this data field. [Learn more](/changelog/2017-04-narrowing-email-access).
 
 Apps created after January 4th, 2017 must request _both_ the `users:read` and `users:read.email` [OAuth permission scopes](/docs/oauth-scopes) simultaneously when using the [OAuth app installation flow](/docs/oauth) to enable access to the `email` field of user objects returned by this method.
 

@@ -1,5 +1,3 @@
-Update an existing User Group
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/usergroups.update` |
@@ -10,8 +8,7 @@ Update an existing User Group
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | [`usergroups:write`](/scopes/usergroups:write) |
-| [user](/docs/token-types#user) | [`usergroups:write`](/scopes/usergroups:write) |
+| [user](/docs/token-types#user) | [`usergroups:write`](/scopes/usergroups:write)&nbsp; |
 
  |
 
@@ -21,9 +18,9 @@ This method updates the properties of an existing User Group.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `usergroup` | `S0604QSJC` | Required | The encoded ID of the User Group to update. |
 | `channels` | `C1234567890,C2345678901,C3456789012` | Optional | A comma separated string of encoded channel IDs for which the User Group uses as a default. |
 | `description` | &nbsp; | Optional | A short description of the User Group. |
@@ -31,7 +28,7 @@ This method updates the properties of an existing User Group.
 | `include_count` | `true` | Optional | Include the number of users in the User Group. |
 | `name` | `My Test Team` | Optional | A name for the User Group. Must be unique among User Groups. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

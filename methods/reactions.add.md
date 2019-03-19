@@ -1,5 +1,3 @@
-Adds a reaction to an item.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/reactions.add` |
@@ -11,8 +9,7 @@ Adds a reaction to an item.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`reactions:write`](/scopes/reactions:write) |
-| [user](/docs/token-types#user) | [`reactions:write`](/scopes/reactions:write) |
+| [user](/docs/token-types#user) | [`reactions:write`](/scopes/reactions:write)&nbsp; |
 
  |
 
@@ -22,16 +19,16 @@ This method adds a reaction (emoji) to a message. Now that [file threads](/chang
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `name` | `thumbsup` | Required | Reaction (emoji) name. |
 | `channel` | `C1234567890` | Optional | Channel where the message to add reaction to was posted. |
 | `file` | `F1234567890` | Optional | File to add reaction to. Now that [file threads](/changelog/2018-05-file-threads-soon-tread#whats_changed) work the way you'd expect, this argument is deprecated. Specify the timestamp and channel of the message associated with a file instead. |
 | `file_comment` | `Fc1234567890` | Optional | File comment to add reaction to. Now that [file threads](/changelog/2018-05-file-threads-soon-tread#whats_changed) work the way you'd expect, this argument is deprecated. Specify the timestamp and channel of the message associated with a file instead. |
 | `timestamp` | `1234567890.123456` | Optional | Timestamp of the message to add reaction to. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

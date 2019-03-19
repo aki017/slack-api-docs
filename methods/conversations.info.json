@@ -1,5 +1,5 @@
 {
-  "desc": "Retrieve information about a conversation.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

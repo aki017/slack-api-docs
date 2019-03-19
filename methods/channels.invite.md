@@ -1,5 +1,3 @@
-Invites a user to a channel.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/channels.invite` |
@@ -10,7 +8,7 @@ Invites a user to a channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write) |
+| [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write)&nbsp; |
 
  |
 
@@ -20,13 +18,13 @@ This method is used to invite a user to a channel. The calling user must be a me
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Channel to invite user to. |
 | `user` | `W1234567890` | Required | User to invite to channel. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

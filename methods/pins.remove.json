@@ -1,5 +1,5 @@
 {
-  "desc": "Un-pins an item from a channel.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

@@ -1,5 +1,3 @@
-Find a user with an email address.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.lookupByEmail` |
@@ -11,8 +9,7 @@ Find a user with an email address.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`users:read.email`](/scopes/users:read.email) |
-| [user](/docs/token-types#user) | [`users:read.email`](/scopes/users:read.email) |
+| [user](/docs/token-types#user) | [`users:read.email`](/scopes/users:read.email)&nbsp; |
 
  |
 
@@ -24,12 +21,12 @@ Custom bot users cannot use this method.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `email` | `spengler@ghostbusters.example.com` | Required | An email address belonging to a user in the workspace |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 
@@ -98,7 +95,7 @@ A user's custom profile fields may be discovered using [`users.profile.get`](/me
 ### Email addresses
 
 <ts-icon class="ts_icon_square_warning"></ts-icon> **Accessing email addresses**  
- The [`users:read.email`](/scopes/users:read.email) OAuth scope is now required to access the `email` field in [user objects](/types/user) returned by the [`users.list`](/methods/users.list) and [`users.info`](/methods/users.info) web API methods. [`users:read`](/scopes/users:read) is no longer a sufficient scope for this data field. [Learn more](/changelog/2017-04-narrowing-email-access).
+The [`users:read.email`](/scopes/users:read.email) OAuth scope is now required to access the `email` field in [user objects](/types/user) returned by the [`users.list`](/methods/users.list) and [`users.info`](/methods/users.info) web API methods. [`users:read`](/scopes/users:read) is no longer a sufficient scope for this data field. [Learn more](/changelog/2017-04-narrowing-email-access).
 
 Apps created after January 4th, 2017 must explicitly request the `users:read.email` [OAuth permission scope](/docs/oauth-scopes) when using the [OAuth app installation flow](/docs/oauth) to enable access to this method.
 

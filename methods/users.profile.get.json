@@ -1,5 +1,5 @@
 {
-  "desc": "Retrieves a user's profile information.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

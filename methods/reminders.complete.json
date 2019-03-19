@@ -1,5 +1,5 @@
 {
-  "desc": "Marks a reminder as complete.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

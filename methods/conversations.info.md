@@ -1,5 +1,3 @@
-Retrieve information about a conversation.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/conversations.info` |
@@ -11,27 +9,26 @@ Retrieve information about a conversation.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`conversations:read`](/scopes/conversations:read) |
-| [user](/docs/token-types#user) | [`channels:read`](/scopes/channels:read) [`groups:read`](/scopes/groups:read) [`im:read`](/scopes/im:read) [`mpim:read`](/scopes/mpim:read) |
+| [user](/docs/token-types#user) | [`channels:read`](/scopes/channels:read)&nbsp; [`groups:read`](/scopes/groups:read)&nbsp; [`im:read`](/scopes/im:read)&nbsp; [`mpim:read`](/scopes/mpim:read)&nbsp; |
 
  |
 
 * * *
 
-<ts-icon class="ts_icon_comment"></ts-icon> As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. For classic Slack apps, a corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`. For workspace apps, a `conversations:` scope is all that's needed.
+<ts-icon class="ts_icon_comment"></ts-icon>As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. For classic Slack apps, a corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`. For workspace apps, a `conversations:` scope is all that's needed.
 
 This [Conversations API](/docs/conversations-api) method returns information about a workspace [conversation](/types/conversation).
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Conversation ID to learn more about |
 | `include_locale` | `true` | Optional | Set this to `true` to receive the locale for this conversation. Defaults to `false` |
 | `include_num_members` | `true` | Optional, default=false | Set to `true` to include the member count for the specified conversation. Defaults to `false` |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

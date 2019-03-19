@@ -1,5 +1,5 @@
 {
-  "desc": "Retrieve a team's profile.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

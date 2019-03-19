@@ -1,5 +1,5 @@
 {
-  "desc": "Gets the integration logs for the current team.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

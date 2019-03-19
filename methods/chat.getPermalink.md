@@ -1,5 +1,3 @@
-Retrieve a permalink URL for a specific extant message
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/chat.getPermalink` |
@@ -11,7 +9,6 @@ Retrieve a permalink URL for a specific extant message
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | _No scope required_ |
 | [user](/docs/token-types#user) | _No scope required_ |
 
  |
@@ -22,13 +19,13 @@ Easily exchange a message timestamp and a channel ID for a friendly HTTP-based p
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | The ID of the conversation or channel containing the message |
 | `message_ts` | `1234567890.123456` | Required | A message's `ts` value, uniquely identifying it within a channel |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

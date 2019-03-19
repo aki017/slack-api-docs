@@ -1,5 +1,3 @@
-Pins an item to a channel.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/pins.add` |
@@ -11,8 +9,7 @@ Pins an item to a channel.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`pins:write`](/scopes/pins:write) |
-| [user](/docs/token-types#user) | [`pins:write`](/scopes/pins:write) |
+| [user](/docs/token-types#user) | [`pins:write`](/scopes/pins:write)&nbsp; |
 
  |
 
@@ -24,15 +21,15 @@ Note that you cannot pin join/leave messages in channels and groups.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Channel to pin the item in. |
 | `file` | `F1234567890` | Optional | File to pin. |
 | `file_comment` | `Fc1234567890` | Optional | File comment to pin. |
 | `timestamp` | `1234567890.123456` | Optional | Timestamp of the message to pin. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

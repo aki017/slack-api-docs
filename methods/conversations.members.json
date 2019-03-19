@@ -1,5 +1,5 @@
 {
-  "desc": "Retrieve members of a conversation.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

@@ -1,5 +1,3 @@
-Searches for messages and files matching a query.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/search.all` |
@@ -10,7 +8,7 @@ Searches for messages and files matching a query.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`search:read`](/scopes/search:read) |
+| [user](/docs/token-types#user) | [`search:read`](/scopes/search:read)&nbsp; |
 
  |
 
@@ -20,9 +18,9 @@ This method allows users and applications to search both messages and files in a
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `query` | `pickleface` | Required | Search query. May contains booleans, etc. |
 | `count` | `20` | Optional, default=20 | Number of items to return per page. |
 | `highlight` | `true` | Optional | Pass a value of `true` to enable query highlight markers (see below). |
@@ -30,7 +28,7 @@ This method allows users and applications to search both messages and files in a
 | `sort` | `timestamp` | Optional, default=score | Return matches sorted by either `score` or `timestamp`. |
 | `sort_dir` | `asc` | Optional, default=desc | Change sort direction to ascending (`asc`) or descending (`desc`). |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

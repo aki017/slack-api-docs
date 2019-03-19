@@ -1,5 +1,5 @@
 {
-  "desc": "Lists multiparty direct message channels for the calling user.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

@@ -1,5 +1,5 @@
 {
-  "desc": "Reverses conversation archival.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

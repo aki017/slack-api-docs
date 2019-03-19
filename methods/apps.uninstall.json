@@ -1,5 +1,5 @@
 {
-  "desc": "Uninstalls your app from a workspace.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

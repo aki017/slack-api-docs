@@ -1,5 +1,3 @@
-Gets information about a private channel.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/groups.info` |
@@ -11,7 +9,7 @@ Gets information about a private channel.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`groups:read`](/scopes/groups:read) |
+| [user](/docs/token-types#user) | [`groups:read`](/scopes/groups:read)&nbsp; |
 
  |
 
@@ -23,13 +21,13 @@ This legacy method returns information about a private channel. It doesn't work 
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `G1234567890` | Required | Private channel to get info on |
 | `include_locale` | `true` | Optional | Set this to `true` to receive the locale for this group. Defaults to `false` |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

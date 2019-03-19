@@ -1,5 +1,3 @@
-Clones and archives a private channel.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/groups.createChild` |
@@ -10,7 +8,7 @@ Clones and archives a private channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`groups:write`](/scopes/groups:write) |
+| [user](/docs/token-types#user) | [`groups:write`](/scopes/groups:write)&nbsp; |
 
  |
 
@@ -29,12 +27,12 @@ The new private channel will have a special `parent_group` property pointing to 
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `G1234567890` | Required | Private channel to clone and archive. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

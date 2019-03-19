@@ -1,5 +1,5 @@
 {
-  "desc": "Searches for messages matching a query.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

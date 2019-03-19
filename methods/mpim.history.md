@@ -1,5 +1,3 @@
-Fetches history of messages and events from a multiparty direct message.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/mpim.history` |
@@ -11,7 +9,7 @@ Fetches history of messages and events from a multiparty direct message.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`mpim:history`](/scopes/mpim:history) |
+| [user](/docs/token-types#user) | [`mpim:history`](/scopes/mpim:history)&nbsp; |
 
  |
 
@@ -21,9 +19,9 @@ This method returns a portion of messages/events from the specified multiparty d
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `G1234567890` | Required | Multiparty direct message to fetch history for. |
 | `count` | `100` | Optional, default=100 | Number of messages to return, between 1 and 1000. |
 | `inclusive` | `true` | Optional, default=0 | Include messages with latest or oldest timestamp in results. |
@@ -31,7 +29,7 @@ This method returns a portion of messages/events from the specified multiparty d
 | `oldest` | `1234567890.123456` | Optional, default=0 | Start of time range of messages to include in results. |
 | `unreads` | `true` | Optional, default=0 | Include `unread_count_display` in the output? |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

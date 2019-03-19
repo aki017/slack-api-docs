@@ -1,5 +1,5 @@
 {
-  "desc": "Fetches a conversation's history of messages and events.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

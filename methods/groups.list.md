@@ -1,5 +1,3 @@
-Lists private channels that the calling user has access to.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/groups.list` |
@@ -11,7 +9,7 @@ Lists private channels that the calling user has access to.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`groups:read`](/scopes/groups:read) |
+| [user](/docs/token-types#user) | [`groups:read`](/scopes/groups:read)&nbsp; |
 
  |
 
@@ -27,15 +25,15 @@ Does not include private shared channels or channels that have been converted fr
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | Parameter for pagination. Set `cursor` equal to the `next_cursor` attribute returned by the previous request's `response_metadata`. This parameter is optional, but pagination is mandatory: the default value simply fetches the first "page" of the collection. See [pagination](/docs/pagination) for more details. |
 | `exclude_archived` | `true` | Optional, default=0 | Don't return archived private channels. |
 | `exclude_members` | `true` | Optional, default=false | Exclude the `members` from each `group` |
 | `limit` | `20` | Optional, default=0 | The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the list hasn't been reached. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

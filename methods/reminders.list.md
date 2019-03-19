@@ -1,5 +1,3 @@
-Lists all reminders created by or for a given user.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/reminders.list` |
@@ -10,8 +8,7 @@ Lists all reminders created by or for a given user.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | [`reminders:read:user`](/scopes/reminders:read:user) |
-| [user](/docs/token-types#user) | [`reminders:read`](/scopes/reminders:read) |
+| [user](/docs/token-types#user) | [`reminders:read`](/scopes/reminders:read)&nbsp; |
 
  |
 
@@ -21,11 +18,11 @@ This method lists all reminders created by or for a given user.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

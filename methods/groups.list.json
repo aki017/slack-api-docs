@@ -1,5 +1,5 @@
 {
-  "desc": "Lists private channels that the calling user has access to.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

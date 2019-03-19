@@ -1,5 +1,5 @@
 {
-  "desc": "Opens a direct message channel.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

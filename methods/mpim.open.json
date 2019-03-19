@@ -1,5 +1,5 @@
 {
-  "desc": "This method opens a multiparty direct message.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

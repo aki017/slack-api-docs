@@ -1,5 +1,3 @@
-Joins a channel, creating it if needed.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/channels.join` |
@@ -10,7 +8,7 @@ Joins a channel, creating it if needed.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write) |
+| [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write)&nbsp; |
 
  |
 
@@ -22,13 +20,13 @@ The `members` array found in this and other methods will begin automatically tru
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `name` | `#general` | Required | Name of channel to join |
 | `validate` | `true` | Optional | Whether to return errors on invalid channel name instead of modifying it to meet the specified criteria. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

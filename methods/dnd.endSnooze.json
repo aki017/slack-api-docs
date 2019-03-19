@@ -1,5 +1,5 @@
 {
-  "desc": "Ends the current user's snooze mode immediately.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

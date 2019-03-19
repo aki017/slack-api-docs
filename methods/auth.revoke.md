@@ -1,5 +1,3 @@
-Revokes a token.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/auth.revoke` |
@@ -11,7 +9,6 @@ Revokes a token.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | _No scope required_ |
 | [user](/docs/token-types#user) | _No scope required_ |
 
  |
@@ -22,12 +19,12 @@ This method revokes an access token. Use it when you no longer need a token. For
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `test` | `true` | Optional | Setting this parameter to `1` triggers a _testing mode_ where the specified token will not actually be revoked. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

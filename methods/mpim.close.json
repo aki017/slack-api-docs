@@ -1,5 +1,5 @@
 {
-  "desc": "Closes a multiparty direct message channel.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

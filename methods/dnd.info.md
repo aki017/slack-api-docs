@@ -1,5 +1,3 @@
-Retrieves a user's current Do Not Disturb status.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/dnd.info` |
@@ -11,8 +9,7 @@ Retrieves a user's current Do Not Disturb status.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`dnd:read`](/scopes/dnd:read) |
-| [user](/docs/token-types#user) | [`dnd:read`](/scopes/dnd:read) |
+| [user](/docs/token-types#user) | [`dnd:read`](/scopes/dnd:read)&nbsp; |
 
  |
 
@@ -22,12 +19,12 @@ Provides information about a user's current Do Not Disturb settings.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `user` | `U1234` | Optional | User to fetch status for (defaults to current user) |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

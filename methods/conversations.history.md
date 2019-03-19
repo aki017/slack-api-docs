@@ -1,5 +1,3 @@
-Fetches a conversation's history of messages and events.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/conversations.history` |
@@ -11,14 +9,13 @@ Fetches a conversation's history of messages and events.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`conversations:history`](/scopes/conversations:history) |
-| [user](/docs/token-types#user) | [`channels:history`](/scopes/channels:history) [`groups:history`](/scopes/groups:history) [`im:history`](/scopes/im:history) [`mpim:history`](/scopes/mpim:history) |
+| [user](/docs/token-types#user) | [`channels:history`](/scopes/channels:history)&nbsp; [`groups:history`](/scopes/groups:history)&nbsp; [`im:history`](/scopes/im:history)&nbsp; [`mpim:history`](/scopes/mpim:history)&nbsp; |
 
  |
 
 * * *
 
-<ts-icon class="ts_icon_comment"></ts-icon> As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. For classic Slack apps, a corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`. For workspace apps, a `conversations:` scope is all that's needed.
+<ts-icon class="ts_icon_comment"></ts-icon>As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. For classic Slack apps, a corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`. For workspace apps, a `conversations:` scope is all that's needed.
 
 This method returns a portion of [message events](/events/message) from the specified conversation.
 
@@ -32,9 +29,9 @@ To use `conversations.history` with public or private channel threads, use a [us
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Conversation ID to fetch history for. |
 | `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | Paginate through collections of data by setting the `cursor` parameter to a `next_cursor` attribute returned by a previous request's `response_metadata`. Default value fetches the first "page" of the collection. See [pagination](/docs/pagination) for more detail. |
 | `inclusive` | `true` | Optional, default=0 | Include messages with latest or oldest timestamp in results only when either timestamp is specified. |
@@ -42,7 +39,7 @@ To use `conversations.history` with public or private channel threads, use a [us
 | `limit` | `20` | Optional, default=100 | The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the users list hasn't been reached. |
 | `oldest` | `1234567890.123456` | Optional, default=0 | Start of time range of messages to include in results. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

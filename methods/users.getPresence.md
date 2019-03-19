@@ -1,5 +1,3 @@
-Gets user presence information.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.getPresence` |
@@ -11,7 +9,7 @@ Gets user presence information.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`users:read`](/scopes/users:read) |
+| [user](/docs/token-types#user) | [`users:read`](/scopes/users:read)&nbsp; |
 
  |
 
@@ -21,12 +19,12 @@ This method lets you find out information about a user's presence. [Consult the 
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `user` | `W1234567890` | Required | User to get presence info on. Defaults to the authed user. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

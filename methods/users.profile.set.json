@@ -1,5 +1,5 @@
 {
-  "desc": "Set the profile information for a user.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

@@ -1,5 +1,3 @@
-Gets information about a reminder.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/reminders.info` |
@@ -10,8 +8,7 @@ Gets information about a reminder.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | [`reminders:read:user`](/scopes/reminders:read:user) |
-| [user](/docs/token-types#user) | [`reminders:read`](/scopes/reminders:read) |
+| [user](/docs/token-types#user) | [`reminders:read`](/scopes/reminders:read)&nbsp; |
 
  |
 
@@ -21,12 +18,12 @@ This method returns information about a reminder.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `reminder` | `Rm23456789` | Required | The ID of the reminder |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

@@ -1,11 +1,16 @@
-Exchanges a temporary OAuth verifier code for an access token.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/oauth.access` |
 | Preferred HTTP method: | `POST` |
 | Accepted content types: | `application/x-www-form-urlencoded` |
 | Rate limiting: | [Tier 4](/docs/rate-limits#tier_t4) |
+| Works with: | 
+
+| Token type | Required scope(s) |
+| --- | --- |
+| [user](/docs/token-types#user) | _No scope required_ |
+
+ |
 
 * * *
 
@@ -23,15 +28,15 @@ When used with a legacy workspace app, this method's response differs significan
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `client_id` | `4b39e9-752c4` | Required | Issued when you created your application. |
+ | `client_id` | `4b39e9-752c4` | Required | Issued when you created your application. |
 | `client_secret` | `33fea0113f5b1` | Required | Issued when you created your application. |
 | `code` | `ccdaa72ad` | Required | The `code` param returned via the OAuth callback. |
 | `redirect_uri` | `http://example.com` | Optional | This must match the originally submitted URI (if one was sent). |
 | `single_channel` | `true` | Optional, default=false | Request the user to add your app only to a single channel. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 A potential gotcha: while `redirect_uri` is optional, it is _required_ if your app passed it as a parameter to `oauth/authorization` in the first step of the OAuth flow.
 

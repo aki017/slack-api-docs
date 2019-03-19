@@ -1,5 +1,3 @@
-Lists all users in a Slack team.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.list` |
@@ -11,8 +9,7 @@ Lists all users in a Slack team.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`users:read`](/scopes/users:read) |
-| [user](/docs/token-types#user) | [`users:read`](/scopes/users:read) |
+| [user](/docs/token-types#user) | [`users:read`](/scopes/users:read)&nbsp; |
 
  |
 
@@ -22,15 +19,15 @@ This method returns a list of all users in the workspace. This includes deleted/
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | Paginate through collections of data by setting the `cursor` parameter to a `next_cursor` attribute returned by a previous request's `response_metadata`. Default value fetches the first "page" of the collection. See [pagination](/docs/pagination) for more detail. |
 | `include_locale` | `true` | Optional | Set this to `true` to receive the locale for users. Defaults to `false` |
 | `limit` | `20` | Optional, default=0 | The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the users list hasn't been reached. |
 | `presence` | `true` | Optional, default=false | Deprecated. Whether to include presence data in the output. Defaults to `false`. Setting this to `true` reduces performance, especially with large teams. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 
@@ -145,7 +142,7 @@ A user's custom profile fields may be discovered using [`users.profile.get`](/me
 ## Email addresses
 
 <ts-icon class="ts_icon_square_warning"></ts-icon> **Accessing email addresses**  
- The [`users:read.email`](/scopes/users:read.email) OAuth scope is now required to access the `email` field in [user objects](/types/user) returned by the [`users.list`](/methods/users.list) and [`users.info`](/methods/users.info) web API methods. [`users:read`](/scopes/users:read) is no longer a sufficient scope for this data field. [Learn more](/changelog/2017-04-narrowing-email-access).
+The [`users:read.email`](/scopes/users:read.email) OAuth scope is now required to access the `email` field in [user objects](/types/user) returned by the [`users.list`](/methods/users.list) and [`users.info`](/methods/users.info) web API methods. [`users:read`](/scopes/users:read) is no longer a sufficient scope for this data field. [Learn more](/changelog/2017-04-narrowing-email-access).
 
 Apps created after January 4th, 2017 must request _both_ the `users:read` and `users:read.email` [OAuth permission scopes](/docs/oauth-scopes) when using the [OAuth app installation flow](/docs/oauth) to enable access to the `email` field of user objects returned by this method.
 

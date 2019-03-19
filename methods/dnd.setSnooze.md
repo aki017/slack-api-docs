@@ -1,5 +1,3 @@
-Turns on Do Not Disturb mode for the current user, or changes its duration.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/dnd.setSnooze` |
@@ -10,8 +8,7 @@ Turns on Do Not Disturb mode for the current user, or changes its duration.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | [`dnd:write:user`](/scopes/dnd:write:user) |
-| [user](/docs/token-types#user) | [`dnd:write`](/scopes/dnd:write) |
+| [user](/docs/token-types#user) | [`dnd:write`](/scopes/dnd:write)&nbsp; |
 
  |
 
@@ -21,12 +18,12 @@ Adjusts the snooze duration for a user's Do Not Disturb settings. If a snooze se
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `num_minutes` | `60` | Required | Number of minutes, from now, to snooze until. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

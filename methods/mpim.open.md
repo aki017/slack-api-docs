@@ -1,5 +1,3 @@
-This method opens a multiparty direct message.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/mpim.open` |
@@ -11,7 +9,7 @@ This method opens a multiparty direct message.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`mpim:write`](/scopes/mpim:write) |
+| [user](/docs/token-types#user) | [`mpim:write`](/scopes/mpim:write)&nbsp; |
 
  |
 
@@ -23,12 +21,12 @@ Opening a multiparty direct message takes a list of up-to 8 encoded user ids. If
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `users` | `W1234567890,U2345678901,U3456789012` | Required | Comma separated lists of users. The ordering of the users is preserved whenever a MPIM group is returned. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

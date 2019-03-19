@@ -1,5 +1,3 @@
-Deletes an existing comment on a file.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/files.comments.delete` |
@@ -11,8 +9,7 @@ Deletes an existing comment on a file.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`files:write:user`](/scopes/files:write:user) |
-| [user](/docs/token-types#user) | [`files:write:user`](/scopes/files:write:user) |
+| [user](/docs/token-types#user) | [`files:write:user`](/scopes/files:write:user)&nbsp; |
 
  |
 
@@ -26,13 +23,13 @@ Delete an existing comment on a file. Only the original author of the comment or
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `file` | `F1234567890` | Required | File to delete a comment from. |
 | `id` | `Fc1234567890` | Required | The comment to delete. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

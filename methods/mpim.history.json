@@ -1,5 +1,5 @@
 {
-  "desc": "Fetches history of messages and events from a multiparty direct message.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

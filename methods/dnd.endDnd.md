@@ -1,5 +1,3 @@
-Ends the current user's Do Not Disturb session immediately.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/dnd.endDnd` |
@@ -10,8 +8,7 @@ Ends the current user's Do Not Disturb session immediately.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | [`dnd:write:user`](/scopes/dnd:write:user) |
-| [user](/docs/token-types#user) | [`dnd:write`](/scopes/dnd:write) |
+| [user](/docs/token-types#user) | [`dnd:write`](/scopes/dnd:write)&nbsp; |
 
  |
 
@@ -21,11 +18,11 @@ Ends the user's currently scheduled Do Not Disturb session immediately.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

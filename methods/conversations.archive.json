@@ -1,5 +1,5 @@
 {
-  "desc": "Archives a conversation.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

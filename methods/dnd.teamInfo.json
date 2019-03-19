@@ -1,5 +1,5 @@
 {
-  "desc": "Retrieves the Do Not Disturb status for users on a team.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

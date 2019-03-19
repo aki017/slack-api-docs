@@ -1,5 +1,5 @@
 {
-  "desc": "Closes a direct message or multi-person direct message.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

@@ -1,5 +1,3 @@
-Open a dialog with a user
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/dialog.open` |
@@ -11,7 +9,6 @@ Open a dialog with a user
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | _No scope required_ |
 | [user](/docs/token-types#user) | _No scope required_ |
 
  |
@@ -22,13 +19,13 @@ Open a dialog with a user by exchanging a `trigger_id` received from another int
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `dialog` | &nbsp; | Required | The dialog definition. This must be a JSON-encoded string. |
 | `trigger_id` | `12345.98765.abcd2358fdea` | Required | Exchange a trigger to post to the user. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 As with all of our Web API methods, `dialog.open` primarily takes URL-encoded parameters as arguments. Similar to [`chat.postMessage`](/methods/chat.postMessage), [`chat.unfurl`](/methods/chat.unful), and [`chat.update`](/methods/chat.update) this method also includes a parameter that expects a JSON object encoded with `application/x-www-form-urlencoded`.
 

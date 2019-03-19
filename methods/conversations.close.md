@@ -1,5 +1,3 @@
-Closes a direct message or multi-person direct message.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/conversations.close` |
@@ -11,24 +9,24 @@ Closes a direct message or multi-person direct message.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write) [`groups:write`](/scopes/groups:write) [`im:write`](/scopes/im:write) [`mpim:write`](/scopes/mpim:write) |
+| [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write)&nbsp; [`groups:write`](/scopes/groups:write)&nbsp; [`im:write`](/scopes/im:write)&nbsp; [`mpim:write`](/scopes/mpim:write)&nbsp; |
 
  |
 
 * * *
 
-<ts-icon class="ts_icon_comment"></ts-icon> As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. For classic Slack apps, a corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`. For workspace apps, a `conversations:` scope is all that's needed.
+<ts-icon class="ts_icon_comment"></ts-icon>As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. For classic Slack apps, a corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`. For workspace apps, a `conversations:` scope is all that's needed.
 
 This [Conversations API](/docs/conversations-api) method closes direct messages, multi-person or 1:1 or otherwise.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `G1234567890` | Required | Conversation to close. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

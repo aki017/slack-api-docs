@@ -1,5 +1,3 @@
-Updates a message.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/chat.update` |
@@ -11,8 +9,7 @@ Updates a message.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`chat:write`](/scopes/chat:write) [`conversations.app_home:create`](/scopes/conversations.app_home:create) |
-| [user](/docs/token-types#user) | [`chat:write:user`](/scopes/chat:write:user) [`chat:write:bot`](/scopes/chat:write:bot) |
+| [user](/docs/token-types#user) | [`chat:write:user`](/scopes/chat:write:user)&nbsp; [`chat:write:bot`](/scopes/chat:write:bot)&nbsp; |
 
  |
 
@@ -24,9 +21,9 @@ Ephemeral messages created by [`chat.postEphemeral`](/methods/chat.postEphemeral
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Channel containing the message to be updated. |
 | `text` | `Hello world` | Required | New text for the message, using the [default formatting rules](/docs/formatting). It's not required when presenting `attachments`. |
 | `ts` | `1405894322.002768` | Required | Timestamp of the message to be updated. |
@@ -36,7 +33,7 @@ Ephemeral messages created by [`chat.postEphemeral`](/methods/chat.postEphemeral
 | `link_names` | `true` | Optional | Find and link channel names and usernames. Defaults to `none`. See below. |
 | `parse` | `none` | Optional | Change how messages are treated. Defaults to `client`, unlike `chat.postMessage`. See below. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Formatting
 

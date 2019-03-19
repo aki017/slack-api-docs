@@ -1,5 +1,3 @@
-Returns list of scopes this app has on a team.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/apps.permissions.scopes.list` |
@@ -10,7 +8,6 @@ Returns list of scopes this app has on a team.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | _No scope required_ |
 
  |
 
@@ -24,11 +21,11 @@ This deprecated method returned a list of all current scopes this app had on a t
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Example response
 

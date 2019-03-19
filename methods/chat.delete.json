@@ -1,5 +1,5 @@
 {
-  "desc": "Deletes a message.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

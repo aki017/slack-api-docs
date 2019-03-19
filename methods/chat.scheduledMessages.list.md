@@ -1,5 +1,3 @@
-Returns a list of scheduled messages.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/chat.scheduledMessages.list` |
@@ -21,16 +19,16 @@ This method returns a list of pending scheduled messages.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C123456789` | Optional | The channel of the scheduled messages |
 | `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | For pagination purposes, this is the `cursor` value returned from a previous call to `chat.scheduledmessages.list` indicating where you want to start this call from. |
 | `latest` | `1562137200` | Optional | A UNIX timestamp of the latest value in the time range |
 | `limit` | `100` | Optional | Maximum number of original entries to return. |
 | `oldest` | `1562137200` | Optional | A UNIX timestamp of the oldest value in the time range |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 `oldest` signifies the UNIX timestamp of the earliest range you're interested in. `latest` signifies the latest. If both `oldest` and `latest` are specified, `oldest` must be less than `latest`.
 

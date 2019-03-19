@@ -1,5 +1,5 @@
 {
-  "desc": "Archives a channel.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

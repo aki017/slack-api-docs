@@ -1,5 +1,3 @@
-Gets information about the current team.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/team.info` |
@@ -11,8 +9,7 @@ Gets information about the current team.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`team:read`](/scopes/team:read) |
-| [user](/docs/token-types#user) | [`team:read`](/scopes/team:read) |
+| [user](/docs/token-types#user) | [`team:read`](/scopes/team:read)&nbsp; |
 
  |
 
@@ -22,11 +19,11 @@ This method provides information about your team.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

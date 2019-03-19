@@ -1,5 +1,3 @@
-Deletes a pending scheduled message from the queue.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/chat.deleteScheduledMessage` |
@@ -11,7 +9,7 @@ Deletes a pending scheduled message from the queue.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`chat:write:user`](/scopes/chat:write:user) [`chat:write:bot`](/scopes/chat:write:bot) |
+| [user](/docs/token-types#user) | [`chat:write:user`](/scopes/chat:write:user)&nbsp; [`chat:write:bot`](/scopes/chat:write:bot)&nbsp; |
 
  |
 
@@ -21,14 +19,14 @@ This method deletes a pending scheduled message before it is sent.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C123456789` | Required | The channel the scheduled\_message is posting to |
 | `scheduled_message_id` | `Q1234ABCD` | Required | `scheduled_message_id` returned from call to chat.scheduleMessage |
 | `as_user` | `true` | Optional | Pass true to delete the message as the authed user with `chat:write:user` scope. [Bot users](/bot-users) in this context are considered authed users. If unused or false, the message will be deleted with `chat:write:bot` scope. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 There are two ways to determine the `scheduled_message_id` of a message you wish to delete:
 

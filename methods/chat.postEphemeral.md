@@ -1,5 +1,3 @@
-Sends an ephemeral message to a user in a channel.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/chat.postEphemeral` |
@@ -11,8 +9,7 @@ Sends an ephemeral message to a user in a channel.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`chat:write`](/scopes/chat:write) [`conversations.app_home:create`](/scopes/conversations.app_home:create) |
-| [user](/docs/token-types#user) | [`chat:write:user`](/scopes/chat:write:user) [`chat:write:bot`](/scopes/chat:write:bot) |
+| [user](/docs/token-types#user) | [`chat:write:user`](/scopes/chat:write:user)&nbsp; [`chat:write:bot`](/scopes/chat:write:bot)&nbsp; |
 
  |
 
@@ -26,9 +23,9 @@ Use ephemeral messages to send users context-sensitive messages, relevant to the
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name. |
 | `text` | `Hello world` | Required | Text of the message to send. See below for an explanation of formatting. This field is usually required, unless you're providing only `attachments` instead. |
 | `user` | `U0BPQUNTA` | Required | `id` of the user who will receive the ephemeral message. The user should be in the channel specified by the `channel` argument. |
@@ -37,9 +34,9 @@ Use ephemeral messages to send users context-sensitive messages, relevant to the
 | `blocks` | `[{"type": "section", "text": {"type": "plain_text", "text": "Hello world"}}]` | Optional | A JSON-based array of structured blocks, presented as a URL-encoded string. |
 | `link_names` | `true` | Optional | Find and link channel names and usernames. |
 | `parse` | `full` | Optional | Change how messages are treated. Defaults to `none`. See below. |
-| `thread_ts` | `1234567890.123456` | Optional | Provide another message's `ts` value to make this message a reply. Avoid using a reply's `ts` value; use its parent instead. |
+| `thread_ts` | `1234567890.123456` | Optional | Provide another message's `ts` value to post this message in a thread. Avoid using a reply's `ts` value; use its parent's value instead. Ephemeral messages in threads are only shown if there is already an active thread. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 A message must have either `text` or `attachments` or both. The `text` parameter is required unless you provide `attachments`. Use both parameters in conjunction with each other to create awesome messages.
 

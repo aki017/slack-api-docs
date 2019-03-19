@@ -1,5 +1,5 @@
 {
-  "desc": "Pins an item to a channel.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

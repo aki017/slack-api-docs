@@ -1,5 +1,3 @@
-Update the list of users for a User Group
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/usergroups.users.update` |
@@ -10,8 +8,7 @@ Update the list of users for a User Group
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | [`usergroups:write`](/scopes/usergroups:write) |
-| [user](/docs/token-types#user) | [`usergroups:write`](/scopes/usergroups:write) |
+| [user](/docs/token-types#user) | [`usergroups:write`](/scopes/usergroups:write)&nbsp; |
 
  |
 
@@ -23,14 +20,14 @@ Guests and bot users may not be part of a user group.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `usergroup` | `S0604QSJC` | Required | The encoded ID of the User Group to update. |
 | `users` | `U060R4BJ4,U060RNRCZ` | Required | A comma separated string of encoded user IDs that represent the entire list of users for the User Group. |
 | `include_count` | `true` | Optional | Include the number of users in the User Group. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

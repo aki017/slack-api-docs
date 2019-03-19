@@ -1,5 +1,3 @@
-Get a user's identity.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.identity` |
@@ -10,8 +8,7 @@ Get a user's identity.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | [`identity.basic:user`](/scopes/identity.basic:user) |
-| [user](/docs/token-types#user) | [`identity.basic`](/scopes/identity.basic) |
+| [user](/docs/token-types#user) | [`identity.basic`](/scopes/identity.basic)&nbsp; |
 
  |
 
@@ -25,11 +22,11 @@ With traditional Slack apps, this method must be called by individual user token
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

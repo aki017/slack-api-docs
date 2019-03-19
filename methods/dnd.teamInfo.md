@@ -1,5 +1,3 @@
-Retrieves the Do Not Disturb status for users on a team.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/dnd.teamInfo` |
@@ -11,8 +9,7 @@ Retrieves the Do Not Disturb status for users on a team.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`dnd:read`](/scopes/dnd:read) |
-| [user](/docs/token-types#user) | [`dnd:read`](/scopes/dnd:read) |
+| [user](/docs/token-types#user) | [`dnd:read`](/scopes/dnd:read)&nbsp; |
 
  |
 
@@ -22,12 +19,12 @@ Provides information about the current Do Not Disturb settings for users of a Sl
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `users` | `U1234,W4567` | Optional | Comma-separated list of users to fetch Do Not Disturb status for |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

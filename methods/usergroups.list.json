@@ -1,5 +1,5 @@
 {
-  "desc": "List all User Groups for a team",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

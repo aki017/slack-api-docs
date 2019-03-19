@@ -1,5 +1,3 @@
-For Enterprise Grid workspaces, map local user IDs to global user IDs
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/migration.exchange` |
@@ -11,7 +9,7 @@ For Enterprise Grid workspaces, map local user IDs to global user IDs
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`tokens.basic`](/scopes/tokens.basic) |
+| [user](/docs/token-types#user) | [`tokens.basic`](/scopes/tokens.basic)&nbsp; |
 
  |
 
@@ -27,13 +25,13 @@ You can use any existing tokens authorized for the team to request for the user 
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `users` | &nbsp; | Required | A comma-separated list of user ids, up to 400 per request |
 | `to_old` | `true` | Optional, default= | Specify `true` to convert `W` global user IDs to workspace-specific `U` IDs. Defaults to `false`. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 The `to_old` parameter is `false` by default. When `false`, the method returns a `user_id_map` mapping from local user IDs to global user IDs. For a reverse mapping from _global_ user IDs back to _local_ user IDs, set `to_old` to `true`.
 

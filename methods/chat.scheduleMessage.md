@@ -1,5 +1,3 @@
-Schedules a message to be sent to a channel.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/chat.scheduleMessage` |
@@ -11,7 +9,7 @@ Schedules a message to be sent to a channel.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`chat:write:user`](/scopes/chat:write:user) [`chat:write:bot`](/scopes/chat:write:bot) |
+| [user](/docs/token-types#user) | [`chat:write:user`](/scopes/chat:write:user)&nbsp; [`chat:write:bot`](/scopes/chat:write:bot)&nbsp; |
 
  |
 
@@ -21,9 +19,9 @@ This method schedules [a message](/docs/messages) for delivery to a public chann
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Channel, private group, or DM channel to send message to. Can be an encoded ID, or a name. See below for more details. |
 | `post_at` | `299876400` | Required | Unix EPOCH timestamp of time in future to send the message. |
 | `text` | `Hello world` | Required | Text of the message to send. See below for an explanation of formatting. This field is usually required, unless you're providing only `attachments` instead. Provide no more than 40,000 characters or [risk truncation](/changelog/2018-04-truncating-really-long-messages). |
@@ -37,7 +35,7 @@ This method schedules [a message](/docs/messages) for delivery to a public chann
 | `unfurl_links` | `true` | Optional | Pass true to enable unfurling of primarily text-based content. |
 | `unfurl_media` | `false` | Optional | Pass false to disable unfurling of media content. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 The `post_at` arg is a Unix EPOCH timestamp, representing the time the message should post to Slack in the future.
 

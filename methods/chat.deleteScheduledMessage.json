@@ -1,5 +1,5 @@
 {
-  "desc": "Deletes a pending scheduled message from the queue.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

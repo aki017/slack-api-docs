@@ -1,5 +1,5 @@
 {
-  "desc": "Removes a star from an item.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

@@ -1,5 +1,3 @@
-Retrieve a thread of messages posted to a direct message conversation
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/im.replies` |
@@ -11,7 +9,7 @@ Retrieve a thread of messages posted to a direct message conversation
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`im:history`](/scopes/im:history) |
+| [user](/docs/token-types#user) | [`im:history`](/scopes/im:history)&nbsp; |
 
  |
 
@@ -21,13 +19,13 @@ This method returns an entire thread (a message plus all the messages in reply t
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Direct message channel to fetch thread from |
 | `thread_ts` | `1234567890.123456` | Required | Unique identifier of a thread's parent message |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 The `channel` and `thread_ts` arguments are always required. `thread_ts` must be the timestamp of an existing message with 0 or more replies. If there are no replies then just the single message referenced by `thread_ts` will be returned - it is just an ordinary message.
 

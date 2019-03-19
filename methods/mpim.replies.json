@@ -1,5 +1,5 @@
 {
-  "desc": "Retrieve a thread of messages posted to a direct message conversation from a multiparty direct message.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

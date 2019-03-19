@@ -1,5 +1,3 @@
-Manually sets user presence.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.setPresence` |
@@ -11,7 +9,7 @@ Manually sets user presence.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`users:write`](/scopes/users:write) |
+| [user](/docs/token-types#user) | [`users:write`](/scopes/users:write)&nbsp; |
 
  |
 
@@ -21,12 +19,12 @@ This method lets you set the calling user's manual presence. [Consult the presen
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `presence` | `away` | Required | Either `auto` or `away` |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

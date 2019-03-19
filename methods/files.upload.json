@@ -1,5 +1,5 @@
 {
-  "desc": "Uploads or creates a file.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

@@ -1,5 +1,3 @@
-Removes a user from a channel.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/channels.kick` |
@@ -10,7 +8,7 @@ Removes a user from a channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write) |
+| [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write)&nbsp; |
 
  |
 
@@ -20,13 +18,13 @@ This method allows a user to remove another member from a team channel.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Channel to remove user from. |
 | `user` | `W1234567890` | Required | User to remove from channel. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

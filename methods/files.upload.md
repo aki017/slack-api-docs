@@ -1,5 +1,3 @@
-Uploads or creates a file.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/files.upload` |
@@ -11,8 +9,7 @@ Uploads or creates a file.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`files:write:user`](/scopes/files:write:user) |
-| [user](/docs/token-types#user) | [`files:write:user`](/scopes/files:write:user) |
+| [user](/docs/token-types#user) | [`files:write:user`](/scopes/files:write:user)&nbsp; |
 
  |
 
@@ -26,9 +23,9 @@ This method allows you to create or upload an existing file.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channels` | `C1234567890,C2345678901,C3456789012` | Optional | Comma-separated list of channel names or IDs where the file will be shared. |
 | `content` | `...` | Optional | File contents via a POST variable. If omitting this parameter, you must provide a `file`. |
 | `file` | `...` | Optional | File contents via `multipart/form-data`. If omitting this parameter, you must submit `content`. |
@@ -38,7 +35,7 @@ This method allows you to create or upload an existing file.
 | `thread_ts` | `1234567890.123456` | Optional | Provide another message's `ts` value to upload this file as a reply. Never use a reply's `ts` value; use its parent instead. |
 | `title` | `My File` | Optional | Title of file. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 **You must provide either a `file` or `content` parameter.**
 

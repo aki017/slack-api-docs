@@ -1,5 +1,3 @@
-Lists custom emoji for a team.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/emoji.list` |
@@ -11,8 +9,7 @@ Lists custom emoji for a team.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`emoji:read`](/scopes/emoji:read) |
-| [user](/docs/token-types#user) | [`emoji:read`](/scopes/emoji:read) |
+| [user](/docs/token-types#user) | [`emoji:read`](/scopes/emoji:read)&nbsp; |
 
  |
 
@@ -26,11 +23,11 @@ This method cannot be called with bot user tokens belonging to Slack apps, altho
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

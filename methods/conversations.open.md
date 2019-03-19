@@ -1,5 +1,3 @@
-Opens or resumes a direct message or multi-person direct message.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/conversations.open` |
@@ -11,13 +9,13 @@ Opens or resumes a direct message or multi-person direct message.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write) [`groups:write`](/scopes/groups:write) [`im:write`](/scopes/im:write) [`mpim:write`](/scopes/mpim:write) |
+| [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write)&nbsp; [`groups:write`](/scopes/groups:write)&nbsp; [`im:write`](/scopes/im:write)&nbsp; [`mpim:write`](/scopes/mpim:write)&nbsp; |
 
  |
 
 * * *
 
-<ts-icon class="ts_icon_comment"></ts-icon> As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. For classic Slack apps, a corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`. For workspace apps, a `conversations:` scope is all that's needed.
+<ts-icon class="ts_icon_comment"></ts-icon>As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. For classic Slack apps, a corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`. For workspace apps, a `conversations:` scope is all that's needed.
 
 This [Conversations API](/docs/conversations-api) method opens a multi-person direct message or just a 1:1 direct message.
 
@@ -31,14 +29,14 @@ Subsequent calls to `conversations.open` with the same set of users will return 
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `G1234567890` | Optional | Resume a conversation by supplying an `im` or `mpim`'s ID. Or provide the `users` field instead. |
 | `return_im` | `true` | Optional | Boolean, indicates you want the full IM channel definition in the response. |
 | `users` | `W1234567890,U2345678901,U3456789012` | Optional | Comma separated lists of users. If only one user is included, this creates a 1:1 DM. The ordering of the users is preserved whenever a multi-person direct message is returned. Supply a `channel` when not supplying `users`. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

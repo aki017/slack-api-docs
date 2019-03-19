@@ -1,5 +1,5 @@
 {
-  "desc": "Gets user presence information.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

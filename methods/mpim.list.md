@@ -1,5 +1,3 @@
-Lists multiparty direct message channels for the calling user.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/mpim.list` |
@@ -11,7 +9,7 @@ Lists multiparty direct message channels for the calling user.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`mpim:read`](/scopes/mpim:read) |
+| [user](/docs/token-types#user) | [`mpim:read`](/scopes/mpim:read)&nbsp; |
 
  |
 
@@ -23,13 +21,13 @@ This legacy method returns a list of all multiparty direct message channels that
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | Parameter for pagination. Set `cursor` equal to the `next_cursor` attribute returned by the previous request's `response_metadata`. This parameter is optional, but pagination is mandatory: the default value simply fetches the first "page" of the collection. See [pagination](/docs/pagination) for more details. |
 | `limit` | `20` | Optional, default=0 | The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the list hasn't been reached. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

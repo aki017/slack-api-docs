@@ -1,5 +1,3 @@
-Marked a user as active. Deprecated and non-functional.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.setActive` |
@@ -11,7 +9,7 @@ Marked a user as active. Deprecated and non-functional.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`users:write`](/scopes/users:write) |
+| [user](/docs/token-types#user) | [`users:write`](/scopes/users:write)&nbsp; |
 
  |
 
@@ -27,11 +25,11 @@ To change a user's presence, call the [`users.setPresence`](/methods/users.setPr
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

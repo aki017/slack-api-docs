@@ -1,5 +1,5 @@
 {
-  "desc": "Gets information about the current team.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

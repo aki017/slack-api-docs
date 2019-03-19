@@ -1,5 +1,3 @@
-Lists all channels in a Slack team.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/channels.list` |
@@ -11,7 +9,7 @@ Lists all channels in a Slack team.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`channels:read`](/scopes/channels:read) |
+| [user](/docs/token-types#user) | [`channels:read`](/scopes/channels:read)&nbsp; |
 
  |
 
@@ -31,15 +29,15 @@ The `members` array found in this and other methods will begin automatically tru
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | Paginate through collections of data by setting the `cursor` parameter to a `next_cursor` attribute returned by a previous request's `response_metadata`. Default value fetches the first "page" of the collection. See [pagination](/docs/pagination) for more detail. |
 | `exclude_archived` | `true` | Optional, default=false | Exclude archived channels from the list |
 | `exclude_members` | `true` | Optional, default=false | Exclude the `members` collection from each `channel` |
 | `limit` | `20` | Optional, default=0 | The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the users list hasn't been reached. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

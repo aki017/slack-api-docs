@@ -1,5 +1,3 @@
-Checks API calling code.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/api.test` |
@@ -10,7 +8,6 @@ Checks API calling code.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | _No scope required_ |
 | [user](/docs/token-types#user) | _No scope required_ |
 
  |
@@ -23,12 +20,12 @@ You can also use this method as a very basic way to test whether Slack's [Web AP
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `error` | `my_error` | Optional | Error response to return |
+ | `error` | `my_error` | Optional | Error response to return |
 | `foo` | `bar` | Optional | example property to return |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

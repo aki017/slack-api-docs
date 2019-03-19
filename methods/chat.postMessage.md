@@ -1,5 +1,3 @@
-Sends a message to a channel.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/chat.postMessage` |
@@ -11,8 +9,7 @@ Sends a message to a channel.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`chat:write`](/scopes/chat:write) [`conversations.app_home:create`](/scopes/conversations.app_home:create) |
-| [user](/docs/token-types#user) | [`chat:write:user`](/scopes/chat:write:user) [`chat:write:bot`](/scopes/chat:write:bot) |
+| [user](/docs/token-types#user) | [`chat:write:user`](/scopes/chat:write:user)&nbsp; [`chat:write:bot`](/scopes/chat:write:bot)&nbsp; |
 
  |
 
@@ -22,9 +19,9 @@ This method posts [a message](/docs/messages) to a public channel, private chann
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name. See below for more details. |
 | `text` | `Hello world` | Required | Text of the message to send. See below for an explanation of formatting. This field is usually required, unless you're providing only `attachments` instead. Provide no more than 40,000 characters or [risk truncation](/changelog/2018-04-truncating-really-long-messages). |
 | `as_user` | `true` | Optional | Pass true to post the message as the authed user, instead of as a bot. Defaults to false. See authorship below. |
@@ -41,7 +38,7 @@ This method posts [a message](/docs/messages) to a public channel, private chann
 | `unfurl_media` | `false` | Optional | Pass false to disable unfurling of media content. |
 | `username` | `My Bot` | Optional | Set your bot's user name. Must be used in conjunction with `as_user` set to false, otherwise ignored. See authorship below. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 Please note that the default value of the `as_user` parameter varies depending on the kind of token you're using. It's best to be explicit with this value. Read more about Authorship to understand how its default value may vary.
 

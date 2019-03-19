@@ -1,5 +1,3 @@
-Delete the user profile photo
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.deletePhoto` |
@@ -10,7 +8,7 @@ Delete the user profile photo
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`users.profile:write`](/scopes/users.profile:write) |
+| [user](/docs/token-types#user) | [`users.profile:write`](/scopes/users.profile:write)&nbsp; |
 
  |
 
@@ -22,11 +20,11 @@ To upload a new profile image, use the companion method [`users.setPhoto`](/meth
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

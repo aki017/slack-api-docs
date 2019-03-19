@@ -1,5 +1,3 @@
-Close a direct message channel.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/im.close` |
@@ -11,7 +9,7 @@ Close a direct message channel.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`im:write`](/scopes/im:write) |
+| [user](/docs/token-types#user) | [`im:write`](/scopes/im:write)&nbsp; |
 
  |
 
@@ -21,12 +19,12 @@ This method closes a direct message channel.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `D1234567890` | Required | Direct message channel to close. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

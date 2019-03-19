@@ -1,5 +1,3 @@
-Retrieve a team's profile.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/team.profile.get` |
@@ -10,8 +8,7 @@ Retrieve a team's profile.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | [`users.profile:read`](/scopes/users.profile:read) |
-| [user](/docs/token-types#user) | [`users.profile:read`](/scopes/users.profile:read) |
+| [user](/docs/token-types#user) | [`users.profile:read`](/scopes/users.profile:read)&nbsp; |
 
  |
 
@@ -21,12 +18,12 @@ This method is used to get the profile field definitions for this team.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `visibility` | `all` | Optional | Filter by visibility. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 The optional `visibility` argument allows the client to filter the profile fields based on visibility. The following values are supported:
 

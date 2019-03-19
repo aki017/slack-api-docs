@@ -1,5 +1,5 @@
 {
-  "desc": "Unarchives a private channel.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

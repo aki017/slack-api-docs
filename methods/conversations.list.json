@@ -1,5 +1,5 @@
 {
-  "desc": "Lists all channels in a Slack team.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

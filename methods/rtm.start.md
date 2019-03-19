@@ -1,5 +1,3 @@
-Starts a Real Time Messaging session.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/rtm.start` |
@@ -31,9 +29,9 @@ The `members` array found in this and other methods will begin automatically tru
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `batch_presence_aware` | `1` | Optional, default=false | Batch presence deliveries via subscription. Enabling changes the shape of `presence_change` events. See [batch presence](/docs/presence-and-status#batching). |
 | `include_locale` | `true` | Optional | Set this to `true` to receive the locale for users and channels. Defaults to `false` |
 | `mpim_aware` | `true` | Optional | Returns MPIMs to the client in the API response. |
@@ -42,7 +40,7 @@ The `members` array found in this and other methods will begin automatically tru
 | `presence_sub` | `true` | Optional, default=true | Only deliver presence events when requested by subscription. See [presence subscriptions](/docs/presence-and-status#subscriptions). |
 | `simple_latest` | `true` | Optional | Return timestamp only for latest message object of each channel (improves performance). |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 Note that setting `no_latest=1` will automatically set `no_unreads=1`.
 

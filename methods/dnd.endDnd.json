@@ -1,5 +1,5 @@
 {
-  "desc": "Ends the current user's Do Not Disturb session immediately.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

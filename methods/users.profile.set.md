@@ -1,5 +1,3 @@
-Set the profile information for a user.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.profile.set` |
@@ -10,8 +8,7 @@ Set the profile information for a user.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | [`users.profile:write:user`](/scopes/users.profile:write:user) |
-| [user](/docs/token-types#user) | [`users.profile:write`](/scopes/users.profile:write) |
+| [user](/docs/token-types#user) | [`users.profile:write`](/scopes/users.profile:write)&nbsp; |
 
  |
 
@@ -21,15 +18,15 @@ Use this method to set a user's profile information, including name, email, curr
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `name` | `first_name` | Optional | Name of a single key to set. Usable only if `profile` is not passed. |
 | `profile` | `{ first_name: "John", ... }` | Optional | Collection of key:value pairs presented as a URL-encoded JSON hash. At most 50 fields may be set. Each field name is limited to 255 characters. |
 | `user` | `W1234567890` | Optional | ID of user to change. This argument may only be specified by team admins on paid teams. |
 | `value` | `John` | Optional | Value to set a single key to. Usable only if `profile` is not passed. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 Update individual fields by passing the pair of arguments `name` and`value`; or multiple fields can be updated at once by passing the argument`profile`.
 

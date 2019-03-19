@@ -1,5 +1,3 @@
-List all User Groups for a team
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/usergroups.list` |
@@ -10,8 +8,7 @@ List all User Groups for a team
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | [`usergroups:read`](/scopes/usergroups:read) |
-| [user](/docs/token-types#user) | [`usergroups:read`](/scopes/usergroups:read) |
+| [user](/docs/token-types#user) | [`usergroups:read`](/scopes/usergroups:read)&nbsp; |
 
  |
 
@@ -21,14 +18,14 @@ This method returns a list of all User Groups in the team. This can optionally i
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `include_count` | `true` | Optional | Include the number of users in each User Group. |
 | `include_disabled` | `true` | Optional | Include disabled User Groups. |
 | `include_users` | `true` | Optional | Include the list of users for each User Group. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

@@ -1,5 +1,3 @@
-Removes a reaction from an item.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/reactions.remove` |
@@ -11,8 +9,7 @@ Removes a reaction from an item.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`reactions:write`](/scopes/reactions:write) |
-| [user](/docs/token-types#user) | [`reactions:write`](/scopes/reactions:write) |
+| [user](/docs/token-types#user) | [`reactions:write`](/scopes/reactions:write)&nbsp; |
 
  |
 
@@ -22,16 +19,16 @@ This method removes a reaction (emoji) from an item (file, file comment, channel
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `name` | `thumbsup` | Required | Reaction (emoji) name. |
 | `channel` | `C1234567890` | Optional | Channel where the message to remove reaction from was posted. |
 | `file` | `F1234567890` | Optional | File to remove reaction from. |
 | `file_comment` | `Fc1234567890` | Optional | File comment to remove reaction from. |
 | `timestamp` | `1234567890.123456` | Optional | Timestamp of the message to remove reaction from. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

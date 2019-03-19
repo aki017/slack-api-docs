@@ -1,5 +1,3 @@
-Opens a direct message channel.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/im.open` |
@@ -11,7 +9,7 @@ Opens a direct message channel.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`im:write`](/scopes/im:write) |
+| [user](/docs/token-types#user) | [`im:write`](/scopes/im:write)&nbsp; |
 
  |
 
@@ -21,14 +19,14 @@ This method opens a direct message channel with another member of your Slack tea
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `user` | `W1234567890` | Required | User to open a direct message channel with. |
 | `include_locale` | `true` | Optional | Set this to `true` to receive the locale for this im. Defaults to `false` |
 | `return_im` | `true` | Optional | Boolean, indicates you want the full IM channel definition in the response. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

@@ -1,5 +1,3 @@
-Leaves a private channel.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/groups.leave` |
@@ -10,7 +8,7 @@ Leaves a private channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`groups:write`](/scopes/groups:write) |
+| [user](/docs/token-types#user) | [`groups:write`](/scopes/groups:write)&nbsp; |
 
  |
 
@@ -20,12 +18,12 @@ This method is used to leave a private channel.
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `G1234567890` | Required | Private channel to leave |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

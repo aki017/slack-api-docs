@@ -1,5 +1,3 @@
-Archives a conversation.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/conversations.archive` |
@@ -10,14 +8,13 @@ Archives a conversation.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | [`conversations:write`](/scopes/conversations:write) |
-| [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write) [`groups:write`](/scopes/groups:write) [`im:write`](/scopes/im:write) [`mpim:write`](/scopes/mpim:write) |
+| [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write)&nbsp; [`groups:write`](/scopes/groups:write)&nbsp; [`im:write`](/scopes/im:write)&nbsp; [`mpim:write`](/scopes/mpim:write)&nbsp; |
 
  |
 
 * * *
 
-<ts-icon class="ts_icon_comment"></ts-icon> As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. For classic Slack apps, a corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`. For workspace apps, a `conversations:` scope is all that's needed.
+<ts-icon class="ts_icon_comment"></ts-icon>As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. For classic Slack apps, a corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`. For workspace apps, a `conversations:` scope is all that's needed.
 
 This method archives a conversation. Not all types of conversations can be archived.
 
@@ -27,12 +24,12 @@ Because workspace apps can't act on behalf of users, they don't have the power t
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | ID of conversation to archive |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 

@@ -1,5 +1,5 @@
 {
-  "desc": "Lists reactions made by a user.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

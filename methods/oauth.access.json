@@ -1,5 +1,5 @@
 {
-  "desc": "Exchanges a temporary OAuth verifier code for an access token.",
+  "desc": "",
   "args": {
     "client_id": {
       "required": true,

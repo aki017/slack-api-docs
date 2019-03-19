@@ -1,5 +1,3 @@
-Gets information about a bot user.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/bots.info` |
@@ -11,8 +9,7 @@ Gets information about a bot user.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [workspace](/docs/token-types#workspace) | [`users:read`](/scopes/users:read) |
-| [user](/docs/token-types#user) | [`users:read`](/scopes/users:read) |
+| [user](/docs/token-types#user) | [`users:read`](/scopes/users:read)&nbsp; |
 
  |
 
@@ -30,12 +27,12 @@ Look for a `user_id` when the bot corresponds directly to a bot user account. So
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `bot` | `B12345678` | Optional | Bot user to get info on |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

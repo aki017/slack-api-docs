@@ -1,5 +1,3 @@
-Lists & filters team files.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/files.list` |
@@ -10,8 +8,7 @@ Lists & filters team files.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | [`files:read`](/scopes/files:read) |
-| [user](/docs/token-types#user) | [`files:read`](/scopes/files:read) |
+| [user](/docs/token-types#user) | [`files:read`](/scopes/files:read)&nbsp; |
 
  |
 
@@ -25,9 +22,9 @@ This method returns a list of files within the team. It can be filtered and slic
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Optional | Filter files appearing in a specific channel, indicated by its ID. |
 | `count` | `20` | Optional, default=100 | Number of items to return per page. |
 | `page` | `2` | Optional, default=1 | Page number of results to return. |
@@ -36,7 +33,7 @@ This method returns a list of files within the team. It can be filtered and slic
 | `types` | `images` | Optional, default=all | Filter files by type (see below). You can pass multiple values in the types argument, like `types=spaces,snippets`.The default value is `all`, which does not filter the list. |
 | `user` | `W1234567890` | Optional | Filter files created by a single user. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

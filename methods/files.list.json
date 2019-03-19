@@ -1,5 +1,5 @@
 {
-  "desc": "Lists & filters team files.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

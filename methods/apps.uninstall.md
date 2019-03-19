@@ -1,5 +1,3 @@
-Uninstalls your app from a workspace.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/apps.uninstall` |
@@ -10,7 +8,6 @@ Uninstalls your app from a workspace.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | _No scope required_ |
 | [user](/docs/token-types#user) | _No scope required_ |
 
  |
@@ -21,13 +18,13 @@ This method uninstalls a workspace app. Unlike [auth.revoke](/methods/auth.revok
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `client_id` | `56579136444.26251006572` | Required | Issued when you created your application. |
 | `client_secret` | `f25b5ceaf8a3c2a2c4f52bb4f0b0499e` | Required | Issued when you created your application. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

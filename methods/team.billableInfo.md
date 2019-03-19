@@ -1,5 +1,3 @@
-Gets billable users information for the current team.
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/team.billableInfo` |
@@ -10,7 +8,6 @@ Gets billable users information for the current team.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | |
 | [user](/docs/token-types#user) | _No scope required_ |
 
  |
@@ -21,12 +18,12 @@ This method lists billable information for each user on the team. Currently this
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `user` | `W1234567890` | Optional | A user to retrieve the billable information for. Defaults to all users. |
 
-<ts-icon class="ts_icon_code"></ts-icon> Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 ## Response
 

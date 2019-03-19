@@ -1,5 +1,5 @@
 {
-  "desc": "Deletes an existing comment on a file.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,

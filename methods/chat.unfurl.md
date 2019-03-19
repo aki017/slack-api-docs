@@ -1,5 +1,3 @@
-Provide custom unfurl behavior for user-posted URLs
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/chat.unfurl` |
@@ -10,8 +8,7 @@ Provide custom unfurl behavior for user-posted URLs
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [workspace](/docs/token-types#workspace) | [`links:write`](/scopes/links:write) |
-| [user](/docs/token-types#user) | [`links:write`](/scopes/links:write) |
+| [user](/docs/token-types#user) | [`links:write`](/scopes/links:write)&nbsp; |
 
  |
 
@@ -23,9 +20,9 @@ The first time this method is executed with a particular `ts` and `channel` comb
 
 ## Arguments
 
-| Argument | Example | Required | Description |
+ | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
-| `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Channel ID of the message |
 | `ts` | &nbsp; | Required | Timestamp of the message to add unfurl behavior to. |
 | `unfurls` | &nbsp; | Required | URL-encoded JSON map with keys set to URLs featured in the the message, pointing to their unfurl blocks or message attachments. |
@@ -33,7 +30,7 @@ The first time this method is executed with a particular `ts` and `channel` comb
 | `user_auth_required` | `true` | Optional, default=0 | Set to `true` or `1` to indicate the user must install your Slack app to trigger unfurls for this domain |
 | `user_auth_url` | `https://example.com/onboarding?user_id=xxx` | Optional | Send users to this custom URL where they will complete authentication in your app to fully trigger unfurling. Value should be properly URL-encoded. |
 
-<ts-icon class="ts_icon_code"></ts-icon> This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 The provided `ts` value must correspond to a message in the specified `channel`. Additionally, the message must contain a fully-qualified URL pointing to a domain that is already registered and associated with your Slack app.
 

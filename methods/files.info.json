@@ -1,5 +1,5 @@
 {
-  "desc": "Gets information about a team file.",
+  "desc": "",
   "args": {
     "token": {
       "required": true,
