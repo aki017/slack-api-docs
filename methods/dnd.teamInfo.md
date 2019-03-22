@@ -15,7 +15,7 @@
 
 * * *
 
-Provides information about the current Do Not Disturb settings for users of a Slack team.
+Provides information about the current Do Not Disturb settings for up to 50 users of a Slack team.
 
 ## Arguments
 

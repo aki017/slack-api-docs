@@ -17,6 +17,10 @@
 
 This feature was exclusive to our [workspace apps developer preview](/legacy-workspace-apps). The preview has now ended, but fan-favorite features such as token rotation and the Conversations API will become available to classic Slack apps over the coming months.
 
+<ts-icon class="ts_icon_sparkles"></ts-icon> **Developer preview has ended**  
+
+This feature was exclusive to our [workspace apps developer preview](/legacy-workspace-apps). The preview has now ended, but fan-favorite features such as token rotation and the Conversations API will become available to classic Slack apps over the coming months.
+
 This deprecated method returns list of all current permissions this app has on a team. It's a part of the [Permissions API](/docs/permissions-api) made available to workspace apps.
 
 ## Arguments

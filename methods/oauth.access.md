@@ -4,13 +4,6 @@
 | Preferred HTTP method: | `POST` |
 | Accepted content types: | `application/x-www-form-urlencoded` |
 | Rate limiting: | [Tier 4](/docs/rate-limits#tier_t4) |
-| Works with: | 
-
-| Token type | Required scope(s) |
-| --- | --- |
-| [user](/docs/token-types#user) | _No scope required_ |
-
- |
 
 * * *
 
