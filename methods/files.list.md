@@ -152,7 +152,7 @@ In order to gather information on [tombstoned files](/changelog/2019-03-wild-wes
 
 The paging information contains the `count` of files returned, the `total` number of files matching the filter (if any was supplied), the `page` of results returned in this response and the total number of `pages` available.
 
-If cursor paging is used, a `nextCursor` argument will be returned instead of the normal paging information such as `count`, `total`, `page`, and `pages`. It will be up to the client to keep track of that information, with the peace of mind that the cursor pagination will return files in a stable ordering.
+If cursor paging is used, a `nextCursor` argument will be returned instead of the normal paging information such as `count`, `total`, `page`, and `pages`. It will be up to the client to keep track of that information.
 
 ### Types
 

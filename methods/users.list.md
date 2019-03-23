@@ -25,7 +25,6 @@ This method returns a list of all users in the workspace. This includes deleted/
 | `cursor` | `dXNlcjpVMDYxTkZUVDI=` | Optional | Paginate through collections of data by setting the `cursor` parameter to a `next_cursor` attribute returned by a previous request's `response_metadata`. Default value fetches the first "page" of the collection. See [pagination](/docs/pagination) for more detail. |
 | `include_locale` | `true` | Optional | Set this to `true` to receive the locale for users. Defaults to `false` |
 | `limit` | `20` | Optional, default=0 | The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the users list hasn't been reached. |
-| `presence` | `true` | Optional, default=false | Deprecated. Whether to include presence data in the output. Defaults to `false`. Setting this to `true` reduces performance, especially with large teams. |
 
 <ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
@@ -165,8 +164,6 @@ One day pagination will become required to use this method.
 ## Presence
 
 Retrieving a workspace's presence with this method is now deprecated. Use [`users.getPresence`](/methods/users.getPresence) or [presence subscriptions](/docs/presence-and-status#subcriptions) instead.
-
-The `presence` parameter will _cease functioning_ on September 26, 2018. [Learn more](/changelog/2018-01-presence-present-and-future).
 
 ## Errors
 
