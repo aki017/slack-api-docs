@@ -15,7 +15,9 @@
 
 * * *
 
-Provides information about the current Do Not Disturb settings for up to 50 users of a Slack team.
+Provides information about the current Do Not Disturb settings for a list of users in a Slack team.
+
+<ts-icon class="ts_icon_info_circle"></ts-icon> The `users` argument will be _required_ starting June 3, 2019. Future-proof your app by explicitly listing which `users` you wish to see Do Not Disturb settings for.
 
 ## Arguments
 
