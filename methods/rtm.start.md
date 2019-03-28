@@ -51,7 +51,7 @@ This method returns lots of data about the current state of a team, along with a
 ```
 {
     "ok": true,
-    "url": "wss:\/\/ms9.slack-msgs.com\/websocket\/7I5yBpcvk",
+    "url": "wss:\/\/wss-primary.slack.com\/websocket\/7I5yBpcvk",
 
     "self": {
         "id": "U023BECGF",
