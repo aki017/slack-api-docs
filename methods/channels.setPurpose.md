@@ -26,6 +26,7 @@ Only user tokens may use this method. Bot user tokens will not work.
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Channel to set the purpose of |
 | `purpose` | `My Purpose` | Required | The new purpose |
+| `name_tagging` | `true` | Optional | if it is true, treat this like a message and not an unescaped thing |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
