@@ -13,6 +13,10 @@
 
 * * *
 
+<ts-icon class="ts_icon_sparkles"></ts-icon> **Developer preview has ended**  
+
+This feature was exclusive to our [workspace apps developer preview](/legacy-workspace-apps). The preview has now ended, but fan-favorite features such as token rotation and the Conversations API will become available to classic Slack apps over the coming months.
+
 This method returns a list of all the [user-centric permissions](/docs/working-for-users) awarded to a [workspace token](/docs/token-types#workspace).
 
 It's part of the [Permissions API](/docs/permissions-api), which is available only to workspace apps.
