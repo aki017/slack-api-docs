@@ -157,7 +157,7 @@ Responses will include a top-level `response_metadata` attribute containing a `n
 
 ### Legacy behavior
 
-At this time, providing no `limit` value will result in Slack attempting to deliver you the entire result set. If the collection is too large you may experience HTTP 500 errors. Resolve this scenario by using pagination.
+At this time, providing no `limit` value will result in Slack attempting to deliver you the entire result set. If the collection is too large you may experience `limit_required` or HTTP 500 errors. Resolve this scenario by using pagination.
 
 One day pagination will become required to use this method.
 
@@ -172,6 +172,7 @@ This table lists the expected errors that this method could return. However, oth
 | Error | Description |
 | --- | --- |
 | `invalid_cursor` | Value passed for `cursor` was not valid or is no longer valid. |
+| `limit_required` | For large teams a limit is required. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
