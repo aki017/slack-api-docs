@@ -143,7 +143,7 @@ Responses will include a top-level `response_metadata` attribute containing a `n
  See [pagination](/docs/pagination) for more information.  
   
 
-Please note that the argument for the method, `exclude_members` may not work well with pagination at this time. Channels with very large memberships and teams with many channels may cause the method to throw a HTTP 500 error. Please exclude memberships with `exclude_members` and look them up atomically with `channels.info` instead.
+Please note that the argument for the method, `exclude_members` may not work well with pagination at this time. Channels with very large memberships and teams with many channels may cause the method to throw a `limit_required` or HTTP 500 error. Please exclude memberships with `exclude_members` and look them up atomically with `channels.info` instead.
 
 * * *
 
@@ -154,6 +154,7 @@ This table lists the expected errors that this method could return. However, oth
 | Error | Description |
 | --- | --- |
 | `invalid_cursor` | Value passed for `cursor` was not valid or is no longer valid. |
+| `limit_required` | For large teams a limit is required. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
