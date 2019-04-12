@@ -14,7 +14,7 @@
 
 * * *
 
-This method uninstalls a workspace app. Unlike [auth.revoke](/methods/auth.revoke), which revokes a single token, this method revokes _all_ tokens associated with a single installation of a workspace app.
+This method uninstalls an app. Unlike [auth.revoke](/methods/auth.revoke), which revokes a single token, this method revokes _all_ tokens associated with a single installation of an app.
 
 ## Arguments
 
