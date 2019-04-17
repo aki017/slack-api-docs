@@ -45,9 +45,9 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
-| `channel_not_found` | Value passed for `channel` was invalid. |
-| `invalid_timestamp` | Value passed for `timestamp` was invalid. |
 | `not_in_channel` | Caller is not a member of the channel. |
+| `invalid_timestamp` | Value passed for `timestamp` was invalid. |
+| `channel_not_found` | Value passed for `channel` was invalid. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |

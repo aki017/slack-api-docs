@@ -44,9 +44,9 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
-| `missing_duration` | No value provided for `num_minutes` |
 | `snooze_failed` | There was a problem setting the user's Do Not Disturb status |
 | `too_long` | The value for `num_minutes` was too large |
+| `missing_duration` | No value provided for `num_minutes` |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
