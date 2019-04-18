@@ -138,8 +138,6 @@ This method uses cursor-based pagination to make it easier to incrementally coll
   
 Responses will include a top-level `response_metadata` attribute containing a `next_cursor` value. By using this value as a `cursor` parameter in a subsequent request, along with `limit`, you may navigate through the collection page by virtual page.  
   
- For apps created after August 7, 2018, this method defaults to cursor-based pagination. Use the `limit` and `cursor` parameters to guarantee your passage into the paradise of cursored pagination.  
-  
  See [pagination](/docs/pagination) for more information.  
   
 
