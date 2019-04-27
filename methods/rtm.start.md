@@ -113,6 +113,7 @@ This table lists the expected errors that this method could return. However, oth
 | Error | Description |
 | --- | --- |
 | `migration_in_progress` | Workspace is being migrated between servers. See [the `team_migration_started` event documentation](/events/team_migration_started) for details. |
+| `rtm_connect_required` | For large teams please use `rtm.connect` instead of `rtm.start`. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
