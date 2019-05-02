@@ -26,11 +26,11 @@ Use ephemeral messages to send users context-sensitive messages, relevant to the
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Required | A JSON-based array of structured attachments, presented as a URL-encoded string. |
 | `channel` | `C1234567890` | Required | Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name. |
 | `text` | `Hello world` | Required | Text of the message to send. See below for an explanation of formatting. This field is usually required, unless you're providing only `attachments` instead. |
 | `user` | `U0BPQUNTA` | Required | `id` of the user who will receive the ephemeral message. The user should be in the channel specified by the `channel` argument. |
 | `as_user` | `true` | Optional | Pass true to post the message as the authed user. Defaults to true if the chat:write:bot scope is not included. Otherwise, defaults to false. |
-| `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Optional | A JSON-based array of structured attachments, presented as a URL-encoded string. |
 | `blocks` | `[{"type": "section", "text": {"type": "plain_text", "text": "Hello world"}}]` | Optional | A JSON-based array of structured blocks, presented as a URL-encoded string. |
 | `link_names` | `true` | Optional | Find and link channel names and usernames. |
 | `parse` | `full` | Optional | Change how messages are treated. Defaults to `none`. See below. |
@@ -131,9 +131,9 @@ This table lists the expected errors that this method could return. However, oth
 | Error | Description |
 | --- | --- |
 | `restricted_action` | A workspace preference prevents the authenticated user from posting. |
-| `channel_not_found` | Value passed for `channel` was invalid. |
-| `is_archived` | Channel has been archived. |
 | `too_many_attachments` | Too many attachments were provided with this message. A maximum of 100 attachments are allowed on a message. |
+| `is_archived` | Channel has been archived. |
+| `channel_not_found` | Value passed for `channel` was invalid. |
 | `msg_too_long` | Message text is too long |
 | `no_text` | No message text provided |
 | `user_not_in_channel` | Intended recipient is not in the specified channel. |
