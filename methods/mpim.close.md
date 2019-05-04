@@ -51,6 +51,8 @@ This table lists the expected errors that this method could return. However, oth
 | Error | Description |
 | --- | --- |
 | `channel_not_found` | Value passed for `channel` was invalid. |
+| `team_not_found` | Associated MPIM team not found. |
+| `user_not_found` | User in MPIM not found. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
