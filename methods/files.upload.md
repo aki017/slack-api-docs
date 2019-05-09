@@ -55,6 +55,8 @@ Upload files and images into [message threads](/docs/message-threading) by provi
 
 The `initial_comment` field is used in messages to introduce the file in conversation.
 
+If you only specify a `filename`, we remove the file extension and populate the file's `title` with the remaining value. So, if you want the file's extension to be shown in Slack, you must include it in the `title` argument when uploading it.
+
 ## Response
 
 By default all newly-uploaded files are private and only visible to the owner. They become public once they are shared into a public channel (which can happen at upload time via the `channels` argument).

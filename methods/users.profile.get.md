@@ -87,6 +87,8 @@ The [`users:read.email`](/scopes/users:read.email) OAuth scope is now required t
 
 Apps created after January 4th, 2017 must request _both_ the `users:read` and `users:read.email` [OAuth permission scopes](/docs/oauth-scopes) simultaneously when using the [OAuth app installation flow](/docs/oauth) to enable access to the `email` field of user objects returned by this method.
 
+If the _Email Display_ setting is unchecked in your Slack Admin settings, `users.profile.get` does not return an `email` value.
+
 ## Errors
 
 This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should always check the value of the `ok` params in the response.
