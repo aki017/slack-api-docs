@@ -15,7 +15,9 @@
 
 * * *
 
-This method pins an item (file, file comment, channel message, or group message) to a particular channel. The `channel` argument is required and one of `file`, `file_comment`, or `timestamp` must also be specified.
+<ts-icon class="ts_icon_info_circle"></ts-icon> We are phasing out support for pinning **files and file comments only**. This method will no longer accept the `file` and `file_comment` parameters beginning August 22, 2019.
+
+This method pins a channel message or group message to a particular channel. The `channel` argument is required and `timestamp` must also be specified.
 
 Note that you cannot pin join/leave messages in channels and groups.
 
