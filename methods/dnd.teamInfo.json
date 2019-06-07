@@ -7,7 +7,7 @@
       "desc": "Authentication token bearing required scopes."
     },
     "users": {
-      "required": false,
+      "required": true,
       "example": "U1234,W4567",
       "desc": "Comma-separated list of users to fetch Do Not Disturb status for"
     }

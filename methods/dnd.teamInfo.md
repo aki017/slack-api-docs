@@ -17,14 +17,14 @@
 
 Provides information about the current Do Not Disturb settings for a list of users in a Slack team.
 
-<ts-icon class="ts_icon_info_circle"></ts-icon> The `users` argument will be _required_ starting June 3, 2019. Future-proof your app by explicitly listing which `users` you wish to see Do Not Disturb settings for.
+<ts-icon class="ts_icon_info_circle"></ts-icon> The `users` argument is now _required_.
 
 ## Arguments
 
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `users` | `U1234,W4567` | Optional | Comma-separated list of users to fetch Do Not Disturb status for |
+| `users` | `U1234,W4567` | Required | Comma-separated list of users to fetch Do Not Disturb status for |
 
 <ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
