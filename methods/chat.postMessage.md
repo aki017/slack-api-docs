@@ -183,9 +183,9 @@ To send a direct message to the user _owning_ the token used in the request, pro
 
 ## Begin a conversation in a user's App Home
 
-Workspace apps can use `chat.postMessage` as a one-stop shop for conversing with users. Your app can initiate a DM and then continue the conversation without switching to a different method.
+Start a conversation with users in your [App Home](/reference/app-home).
 
-Request the [`conversations.app_home:create`](/scopes/conversations.app_home:create) scope during the typical OAuth or installation flow. Once that's granted, your workspace app can use the `chat.postMessage` method to start a conversation with a user from scratch in their App Home space. No separate call to `im.open` necessary. Simply call `chat.postMessage` and pass a user's ID (`U0G9QF9C6`) as the value of `channel` to post to that user's App Home channel.
+With the `chat:write` scope enabled, call `chat.postMessage` and pass a user's ID (`U0G9QF9C6`) as the value of `channel` to post to that user's App Home channel. You can use their direct message channel ID (as found with `im.open`, for instance) instead.
 
 ## Rate limiting
 
