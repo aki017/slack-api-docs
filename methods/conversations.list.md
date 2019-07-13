@@ -193,6 +193,8 @@ Use [`conversations.members`](/methods/conversations.members) to retrieve and tr
 
 See [conversation object](/types/conversations) for more detail on returned fields.
 
+Some fields in the response, like `unread_count` and `unread_count_display`, are included for DM conversations only.
+
 ## Pagination
 This method uses cursor-based pagination to make it easier to incrementally collect information. To begin pagination, specify a `limit` value under `1000`. We recommend no more than `200` results at a time.  
   

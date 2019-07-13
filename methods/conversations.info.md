@@ -146,6 +146,8 @@ Typical error response when a channel cannot be found
 }
 ```
 
+Some fields in the response, like `unread_count` and `unread_count_display`, are included for DM conversations only.
+
 ## Errors
 
 This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should always check the value of the `ok` params in the response.
