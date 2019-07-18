@@ -18,6 +18,17 @@ This method wipes a user session, leaving the user unauthenticated. The user’s
 
 By default, this method resets all sessions for a given user. Use the `web_only` and `mobile_only` parameters to wipe only web or only mobile sessions.
 
+## Arguments
+
+ | Argument | Example | Required | Description |
+| --- | --- | --- | --- |
+ | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `user_id` | `W12345678` | Required | The ID of the user to wipe sessions for |
+| `mobile_only` | `true` | Optional | Only expire mobile sessions (default: false) |
+| `web_only` | `true` | Optional | Only expire web sessions (default: false) |
+
+<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+
 Here's an example call to this endpoint:
 
 ```
