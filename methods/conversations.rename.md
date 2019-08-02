@@ -8,6 +8,7 @@
 
 | Token type | Required scope(s) |
 | --- | --- |
+| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 | [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write)&nbsp; [`groups:write`](/scopes/groups:write)&nbsp; [`im:write`](/scopes/im:write)&nbsp; [`mpim:write`](/scopes/mpim:write)&nbsp; |
 
  |
@@ -123,7 +124,6 @@ This table lists the expected errors that this method could return. However, oth
 | `no_permission` | The workspace token used in this request does not have the permissions necessary to complete the request. Make sure your app is a member of the conversation it's attempting to post a message to. |
 | `org_login_required` | The workspace is undergoing an enterprise migration and will not be available until migration is complete. |
 | `ekm_access_denied` | Administrators have suspended the ability to post a message. |
-| `is_bot` | This method cannot be called by a bot user. |
 | `user_is_restricted` | This method cannot be called by a restricted user or single channel guest. |
 | `invalid_arguments` | The method was called with invalid arguments. |
 | `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
