@@ -36,7 +36,7 @@ Because workspace apps can't act on behalf of users, they don't have the power t
 
 ## Naming
 
-Conversation names can only contain lowercase letters, numbers, hyphens, and underscores, and must be 21 characters or less. We will validate the submitted channel name and modify it to meet the above criteria. When calling this method, we recommend storing the channel's `name` value that is returned in the response.
+Conversation names can only contain lowercase letters, numbers, hyphens, and underscores, and must be 80 characters or less. We will validate the submitted channel name and modify it to meet the above criteria. When calling this method, we recommend storing the channel's `name` value that is returned in the response.
 
 ## Response
 

@@ -37,7 +37,7 @@ At least one user needs to be invited when creating a public or private conversa
 
 ## Naming
 
-Channel names may only contain lowercase letters, numbers, hyphens, and underscores, and must be 21 characters or less. When calling this method, we recommend storing both the channel's `id` and `name` value that returned in the response.
+Channel names may only contain lowercase letters, numbers, hyphens, and underscores, and must be 80 characters or less. When calling this method, we recommend storing both the channel's `id` and `name` value that returned in the response.
 
 Channel names are always validated by this method, unlike [`channels.create`](/methods/channels.create).
 

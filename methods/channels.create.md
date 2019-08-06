@@ -30,7 +30,7 @@ To create a private channel, use [`groups.create`](/methods/groups.create).
 
 ## Naming
 
-Channel names can only contain lowercase letters, numbers, hyphens, and underscores, and must be 21 characters or less. We will validate the submitted channel name and modify it to meet the above criteria. When calling this method, we recommend storing the channel's `name` value that is returned in the response.
+Channel names can only contain lowercase letters, numbers, hyphens, and underscores, and must be 80 characters or less. We will validate the submitted channel name and modify it to meet the above criteria. When calling this method, we recommend storing the channel's `name` value that is returned in the response.
 
 ## Response
 
