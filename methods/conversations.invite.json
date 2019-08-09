@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Invites users to a channel.",
   "args": {
     "token": {
       "required": true,

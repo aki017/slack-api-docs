@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Updates a message.",
   "args": {
     "token": {
       "required": true,

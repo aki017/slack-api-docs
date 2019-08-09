@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Leaves a private channel.",
   "args": {
     "token": {
       "required": true,

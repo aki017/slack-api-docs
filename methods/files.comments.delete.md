@@ -1,3 +1,5 @@
+Deletes an existing comment on a file.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/files.comments.delete` |

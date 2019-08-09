@@ -1,3 +1,5 @@
+Lists custom emoji for a team.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/emoji.list` |

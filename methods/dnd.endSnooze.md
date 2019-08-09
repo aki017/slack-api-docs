@@ -1,3 +1,5 @@
+Ends the current user's snooze mode immediately.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/dnd.endSnooze` |

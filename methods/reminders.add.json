@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Creates a reminder.",
   "args": {
     "token": {
       "required": true,

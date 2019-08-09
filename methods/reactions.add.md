@@ -1,3 +1,5 @@
+Adds a reaction to an item.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/reactions.add` |

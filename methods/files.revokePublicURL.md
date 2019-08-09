@@ -1,3 +1,5 @@
+Revokes public/external sharing access for a file
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/files.revokePublicURL` |

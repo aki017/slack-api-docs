@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Lists all reminders created by or for a given user.",
   "args": {
     "token": {
       "required": true,

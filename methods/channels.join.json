@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Joins a channel, creating it if needed.",
   "args": {
     "token": {
       "required": true,

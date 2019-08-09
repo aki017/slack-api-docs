@@ -1,3 +1,5 @@
+Wipes all valid sessions on all devices for a given user
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/admin.users.session.reset` |

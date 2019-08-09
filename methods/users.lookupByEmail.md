@@ -1,3 +1,5 @@
+Find a user with an email address.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.lookupByEmail` |

@@ -1,3 +1,5 @@
+Gets the access logs for the current team.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/team.accessLogs` |

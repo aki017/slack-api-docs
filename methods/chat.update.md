@@ -1,3 +1,5 @@
+Updates a message.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/chat.update` |

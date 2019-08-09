@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Set the user profile photo",
   "args": {
     "token": {
       "required": true,

@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Turns on Do Not Disturb mode for the current user, or changes its duration.",
   "args": {
     "token": {
       "required": true,

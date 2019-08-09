@@ -1,3 +1,5 @@
+Initiates a public or private channel-based conversation
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/conversations.create` |

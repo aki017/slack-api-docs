@@ -1,3 +1,5 @@
+Manually sets user presence.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.setPresence` |

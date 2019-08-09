@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Schedules a message to be sent to a channel.",
   "args": {
     "token": {
       "required": true,

@@ -1,3 +1,5 @@
+Pins an item to a channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/pins.add` |

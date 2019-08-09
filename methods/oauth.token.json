@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Exchanges a temporary OAuth verifier code for a workspace token.",
   "args": {
     "client_id": {
       "required": true,

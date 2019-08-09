@@ -1,3 +1,5 @@
+Unarchives a channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/channels.unarchive` |

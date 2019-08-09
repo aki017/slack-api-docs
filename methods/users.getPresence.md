@@ -1,3 +1,5 @@
+Gets user presence information.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.getPresence` |

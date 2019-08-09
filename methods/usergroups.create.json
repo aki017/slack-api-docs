@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Create a User Group",
   "args": {
     "token": {
       "required": true,

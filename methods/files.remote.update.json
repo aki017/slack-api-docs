@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Updates an existing remote file.",
   "args": {
     "token": {
       "required": true,

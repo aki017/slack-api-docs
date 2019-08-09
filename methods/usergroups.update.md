@@ -1,3 +1,5 @@
+Update an existing User Group
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/usergroups.update` |

@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Lists items pinned to a channel.",
   "args": {
     "token": {
       "required": true,

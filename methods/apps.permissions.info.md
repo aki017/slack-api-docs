@@ -1,3 +1,5 @@
+Returns list of permissions this app has on a team.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/apps.permissions.info` |

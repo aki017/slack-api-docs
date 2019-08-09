@@ -1,3 +1,5 @@
+Sends an ephemeral message to a user in a channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/chat.postEphemeral` |

@@ -1,3 +1,5 @@
+Delete the user profile photo
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.deletePhoto` |

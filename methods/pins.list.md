@@ -1,3 +1,5 @@
+Lists items pinned to a channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/pins.list` |

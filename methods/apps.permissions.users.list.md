@@ -1,3 +1,5 @@
+Returns list of user grants and corresponding scopes this app has on a team.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/apps.permissions.users.list` |

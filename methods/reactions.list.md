@@ -1,3 +1,5 @@
+Lists reactions made by a user.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/reactions.list` |

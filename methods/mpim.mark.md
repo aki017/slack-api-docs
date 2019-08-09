@@ -1,3 +1,5 @@
+Sets the read cursor in a multiparty direct message channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/mpim.mark` |

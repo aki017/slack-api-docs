@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Deletes a file.",
   "args": {
     "token": {
       "required": true,

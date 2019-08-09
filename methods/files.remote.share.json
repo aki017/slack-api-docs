@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Share a remote file into a channel.",
   "args": {
     "token": {
       "required": true,

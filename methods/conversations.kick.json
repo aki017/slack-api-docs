@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Removes a user from a conversation.",
   "args": {
     "token": {
       "required": true,

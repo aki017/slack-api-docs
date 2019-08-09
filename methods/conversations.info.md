@@ -1,3 +1,5 @@
+Retrieve information about a conversation.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/conversations.info` |

@@ -1,3 +1,5 @@
+Renames a conversation.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/conversations.rename` |

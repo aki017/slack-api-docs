@@ -1,3 +1,5 @@
+Exchanges a temporary OAuth verifier code for a workspace token.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/oauth.token` |

@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Retrieves a user's current Do Not Disturb status.",
   "args": {
     "token": {
       "required": true,

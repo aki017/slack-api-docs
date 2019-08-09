@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Sets the purpose for a conversation.",
   "args": {
     "token": {
       "required": true,

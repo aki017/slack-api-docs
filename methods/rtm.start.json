@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Starts a Real Time Messaging session.",
   "args": {
     "token": {
       "required": true,

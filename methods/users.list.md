@@ -1,3 +1,5 @@
+Lists all users in a Slack team.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.list` |

@@ -1,3 +1,5 @@
+Archives a conversation.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/conversations.archive` |

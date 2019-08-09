@@ -1,3 +1,5 @@
+Sets the read cursor in a direct message channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/im.mark` |

@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Leaves a channel.",
   "args": {
     "token": {
       "required": true,

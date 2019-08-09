@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Gets information about a bot user.",
   "args": {
     "token": {
       "required": true,

@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Retrieve a thread of messages posted to a private channel",
   "args": {
     "token": {
       "required": true,

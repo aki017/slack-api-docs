@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Clones and archives a private channel.",
   "args": {
     "token": {
       "required": true,

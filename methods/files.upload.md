@@ -1,3 +1,5 @@
+Uploads or creates a file.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/files.upload` |

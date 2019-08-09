@@ -1,3 +1,5 @@
+Sets the purpose for a private channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/groups.setPurpose` |

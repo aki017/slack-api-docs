@@ -1,3 +1,5 @@
+Share a remote file into a channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/files.remote.share` |

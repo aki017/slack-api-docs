@@ -1,3 +1,5 @@
+Sets the topic for a channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/channels.setTopic` |

@@ -1,3 +1,5 @@
+Lists stars for a user.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/stars.list` |

@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Gets reactions for an item.",
   "args": {
     "token": {
       "required": true,

@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Provide custom unfurl behavior for user-posted URLs",
   "args": {
     "token": {
       "required": true,

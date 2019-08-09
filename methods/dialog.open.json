@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Open a dialog with a user",
   "args": {
     "token": {
       "required": true,

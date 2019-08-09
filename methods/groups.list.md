@@ -1,3 +1,5 @@
+Lists private channels that the calling user has access to.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/groups.list` |

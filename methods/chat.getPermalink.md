@@ -1,3 +1,5 @@
+Retrieve a permalink URL for a specific extant message
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/chat.getPermalink` |

@@ -1,3 +1,5 @@
+Joins a channel, creating it if needed.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/channels.join` |

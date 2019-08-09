@@ -1,3 +1,5 @@
+Gets information about a user.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.info` |

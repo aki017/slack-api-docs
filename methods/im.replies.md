@@ -1,3 +1,5 @@
+Retrieve a thread of messages posted to a direct message conversation
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/im.replies` |

@@ -1,3 +1,5 @@
+Revokes a token.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/auth.revoke` |

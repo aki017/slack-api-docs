@@ -1,3 +1,5 @@
+Closes a multiparty direct message channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/mpim.close` |

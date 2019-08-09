@@ -1,3 +1,5 @@
+Gets information about the current team.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/team.info` |

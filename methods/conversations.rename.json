@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Renames a conversation.",
   "args": {
     "token": {
       "required": true,

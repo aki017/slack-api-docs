@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Adds a file from a remote service",
   "args": {
     "token": {
       "required": true,

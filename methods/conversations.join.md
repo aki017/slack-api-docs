@@ -1,3 +1,5 @@
+Joins an existing conversation.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/conversations.join` |

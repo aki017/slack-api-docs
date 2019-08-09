@@ -1,3 +1,5 @@
+Set the user profile photo
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.setPhoto` |

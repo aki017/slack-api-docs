@@ -1,3 +1,5 @@
+List all users in a User Group
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/usergroups.users.list` |

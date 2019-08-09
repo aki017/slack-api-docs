@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Lists all users in a Slack team.",
   "args": {
     "token": {
       "required": true,

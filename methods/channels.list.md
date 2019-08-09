@@ -1,3 +1,5 @@
+Lists all channels in a Slack team.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/channels.list` |

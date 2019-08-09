@@ -1,3 +1,5 @@
+Fetches history of messages and events from a multiparty direct message.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/mpim.history` |

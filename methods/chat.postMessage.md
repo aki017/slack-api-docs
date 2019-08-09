@@ -1,3 +1,5 @@
+Sends a message to a channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/chat.postMessage` |

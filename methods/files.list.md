@@ -1,3 +1,5 @@
+Lists & filters team files.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/files.list` |

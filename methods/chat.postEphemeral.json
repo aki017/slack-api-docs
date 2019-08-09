@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Sends an ephemeral message to a user in a channel.",
   "args": {
     "token": {
       "required": true,

@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Deletes a reminder.",
   "args": {
     "token": {
       "required": true,

@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Enables a file for public/external sharing.",
   "args": {
     "token": {
       "required": true,

@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Update an existing User Group",
   "args": {
     "token": {
       "required": true,

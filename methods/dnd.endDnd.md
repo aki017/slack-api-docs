@@ -1,3 +1,5 @@
+Ends the current user's Do Not Disturb session immediately.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/dnd.endDnd` |

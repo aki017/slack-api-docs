@@ -1,3 +1,5 @@
+Adds a file from a remote service
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/files.remote.add` |

@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Removes a reaction from an item.",
   "args": {
     "token": {
       "required": true,

@@ -1,3 +1,5 @@
+Retrieve a thread of messages posted to a conversation
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/conversations.replies` |

@@ -1,3 +1,5 @@
+List conversations the calling user may access.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.conversations` |

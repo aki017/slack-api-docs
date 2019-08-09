@@ -1,3 +1,5 @@
+Schedules a message to be sent to a channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/chat.scheduleMessage` |

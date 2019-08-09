@@ -1,3 +1,5 @@
+Returns a list of scheduled messages.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/chat.scheduledMessages.list` |

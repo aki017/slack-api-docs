@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Returns a list of scheduled messages.",
   "args": {
     "token": {
       "required": true,

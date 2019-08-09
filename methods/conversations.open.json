@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Opens or resumes a direct message or multi-person direct message.",
   "args": {
     "token": {
       "required": true,

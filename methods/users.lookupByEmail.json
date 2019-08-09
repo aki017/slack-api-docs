@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Find a user with an email address.",
   "args": {
     "token": {
       "required": true,

@@ -1,3 +1,5 @@
+Gets information about a reminder.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/reminders.info` |

@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Manually sets user presence.",
   "args": {
     "token": {
       "required": true,

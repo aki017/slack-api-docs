@@ -1,3 +1,5 @@
+Deletes a file.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/files.delete` |

@@ -1,3 +1,5 @@
+Uninstalls your app from a workspace.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/apps.uninstall` |

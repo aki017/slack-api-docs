@@ -1,3 +1,5 @@
+Share a me message into a channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/chat.meMessage` |

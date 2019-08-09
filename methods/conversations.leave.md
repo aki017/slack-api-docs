@@ -1,3 +1,5 @@
+Leaves a conversation.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/conversations.leave` |

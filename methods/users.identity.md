@@ -1,3 +1,5 @@
+Get a user's identity.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.identity` |

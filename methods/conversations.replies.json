@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Retrieve a thread of messages posted to a conversation",
   "args": {
     "token": {
       "required": true,

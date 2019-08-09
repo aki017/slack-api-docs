@@ -1,3 +1,5 @@
+Gets information about a team file.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/files.info` |

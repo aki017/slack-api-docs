@@ -1,3 +1,5 @@
+Sets the purpose for a conversation.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/conversations.setPurpose` |

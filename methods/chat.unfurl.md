@@ -1,3 +1,5 @@
+Provide custom unfurl behavior for user-posted URLs
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/chat.unfurl` |

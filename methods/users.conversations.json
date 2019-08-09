@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "List conversations the calling user may access.",
   "args": {
     "token": {
       "required": true,

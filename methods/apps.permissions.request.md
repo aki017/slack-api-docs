@@ -1,3 +1,5 @@
+Allows an app to request additional scopes
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/apps.permissions.request` |

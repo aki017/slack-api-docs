@@ -1,3 +1,5 @@
+Turns on Do Not Disturb mode for the current user, or changes its duration.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/dnd.setSnooze` |

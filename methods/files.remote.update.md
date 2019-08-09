@@ -1,3 +1,5 @@
+Updates an existing remote file.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/files.remote.update` |

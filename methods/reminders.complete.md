@@ -1,3 +1,5 @@
+Marks a reminder as complete.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/reminders.complete` |

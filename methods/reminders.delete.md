@@ -1,3 +1,5 @@
+Deletes a reminder.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/reminders.delete` |

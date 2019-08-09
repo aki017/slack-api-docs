@@ -1,3 +1,5 @@
+Fetches history of messages and events from direct message channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/im.history` |

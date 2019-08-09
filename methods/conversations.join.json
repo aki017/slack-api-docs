@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Joins an existing conversation.",
   "args": {
     "token": {
       "required": true,

@@ -1,3 +1,5 @@
+Retrieve members of a conversation.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/conversations.members` |

@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Remove a remote file.",
   "args": {
     "token": {
       "required": true,

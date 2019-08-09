@@ -1,3 +1,5 @@
+Checks API calling code.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/api.test` |

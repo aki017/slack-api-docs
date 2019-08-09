@@ -1,3 +1,5 @@
+Deletes a pending scheduled message from the queue.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/chat.deleteScheduledMessage` |

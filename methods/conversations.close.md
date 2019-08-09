@@ -1,3 +1,5 @@
+Closes a direct message or multi-person direct message.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/conversations.close` |

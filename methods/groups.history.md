@@ -1,3 +1,5 @@
+Fetches history of messages and events from a private channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/groups.history` |

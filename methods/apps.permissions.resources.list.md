@@ -1,3 +1,5 @@
+Returns list of resource grants this app has on a team.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/apps.permissions.resources.list` |

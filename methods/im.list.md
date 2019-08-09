@@ -1,3 +1,5 @@
+Lists direct message channels for the calling user.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/im.list` |

@@ -1,3 +1,5 @@
+For Enterprise Grid workspaces, map local user IDs to global user IDs
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/migration.exchange` |

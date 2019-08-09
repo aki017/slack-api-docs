@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Allows an app to request additional scopes",
   "args": {
     "token": {
       "required": true,

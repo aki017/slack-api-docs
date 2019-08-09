@@ -1,3 +1,5 @@
+Removes a star from an item.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/stars.remove` |

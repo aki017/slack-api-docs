@@ -1,3 +1,5 @@
+Adds a star to an item.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/stars.add` |

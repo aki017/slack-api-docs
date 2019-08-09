@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Close a direct message channel.",
   "args": {
     "token": {
       "required": true,

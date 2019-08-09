@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Gets information about a reminder.",
   "args": {
     "token": {
       "required": true,

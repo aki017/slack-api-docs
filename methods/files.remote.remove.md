@@ -1,3 +1,5 @@
+Remove a remote file.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/files.remote.remove` |

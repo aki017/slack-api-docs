@@ -1,3 +1,5 @@
+Gets information about a bot user.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/bots.info` |

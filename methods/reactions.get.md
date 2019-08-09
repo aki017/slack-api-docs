@@ -1,3 +1,5 @@
+Gets reactions for an item.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/reactions.get` |

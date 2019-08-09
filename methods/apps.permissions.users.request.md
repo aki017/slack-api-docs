@@ -1,3 +1,5 @@
+Enables an app to trigger a permissions modal to grant an app access to a user access scope.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/apps.permissions.users.request` |

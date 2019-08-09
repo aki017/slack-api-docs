@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Lists direct message channels for the calling user.",
   "args": {
     "token": {
       "required": true,

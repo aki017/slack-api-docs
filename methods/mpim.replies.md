@@ -1,3 +1,5 @@
+Retrieve a thread of messages posted to a direct message conversation from a multiparty direct message.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/mpim.replies` |

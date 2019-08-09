@@ -1,3 +1,5 @@
+Set the profile information for a user.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.profile.set` |

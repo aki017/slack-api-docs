@@ -1,3 +1,5 @@
+Open a dialog with a user
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/dialog.open` |

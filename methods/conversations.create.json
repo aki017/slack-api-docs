@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Initiates a public or private channel-based conversation",
   "args": {
     "token": {
       "required": true,

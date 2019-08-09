@@ -1,3 +1,5 @@
+Opens a private channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/groups.open` |

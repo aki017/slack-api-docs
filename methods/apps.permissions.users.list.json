@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Returns list of user grants and corresponding scopes this app has on a team.",
   "args": {
     "token": {
       "required": true,

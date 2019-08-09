@@ -1,3 +1,5 @@
+Un-pins an item from a channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/pins.remove` |

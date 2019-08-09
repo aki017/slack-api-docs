@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Sets the purpose for a private channel.",
   "args": {
     "token": {
       "required": true,

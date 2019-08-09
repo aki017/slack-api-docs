@@ -1,3 +1,5 @@
+Checks authentication & identity.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/auth.test` |

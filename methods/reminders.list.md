@@ -1,3 +1,5 @@
+Lists all reminders created by or for a given user.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/reminders.list` |

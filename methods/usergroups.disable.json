@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Disable an existing User Group",
   "args": {
     "token": {
       "required": true,

@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Delete the user profile photo",
   "args": {
     "token": {
       "required": true,

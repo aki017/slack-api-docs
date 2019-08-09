@@ -1,3 +1,5 @@
+Gets information about a channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/channels.info` |

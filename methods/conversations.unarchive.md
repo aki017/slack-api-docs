@@ -1,3 +1,5 @@
+Reverses conversation archival.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/conversations.unarchive` |

@@ -1,3 +1,5 @@
+Invites users to a channel.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/conversations.invite` |

@@ -1,3 +1,5 @@
+Starts a Real Time Messaging session.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/rtm.start` |

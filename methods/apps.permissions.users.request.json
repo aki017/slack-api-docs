@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Enables an app to trigger a permissions modal to grant an app access to a user access scope.",
   "args": {
     "token": {
       "required": true,

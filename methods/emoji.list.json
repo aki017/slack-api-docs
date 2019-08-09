@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Lists custom emoji for a team.",
   "args": {
     "token": {
       "required": true,

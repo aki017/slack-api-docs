@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Gets information about a user.",
   "args": {
     "token": {
       "required": true,

@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Searches for files matching a query.",
   "args": {
     "token": {
       "required": true,

@@ -1,3 +1,5 @@
+Searches for files matching a query.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/search.files` |

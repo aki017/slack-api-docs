@@ -1,3 +1,5 @@
+Retrieves a user's profile information.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.profile.get` |

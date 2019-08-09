@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Lists stars for a user.",
   "args": {
     "token": {
       "required": true,

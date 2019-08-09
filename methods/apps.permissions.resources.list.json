@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Returns list of resource grants this app has on a team.",
   "args": {
     "token": {
       "required": true,

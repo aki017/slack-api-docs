@@ -1,3 +1,5 @@
+Create a User Group
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/usergroups.create` |

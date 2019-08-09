@@ -1,3 +1,5 @@
+Retrieves the Do Not Disturb status for up to 50 users on a team.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/dnd.teamInfo` |

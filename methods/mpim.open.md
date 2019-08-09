@@ -1,3 +1,5 @@
+This method opens a multiparty direct message.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/mpim.open` |

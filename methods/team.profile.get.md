@@ -1,3 +1,5 @@
+Retrieve a team's profile.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/team.profile.get` |

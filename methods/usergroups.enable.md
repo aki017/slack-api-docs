@@ -1,3 +1,5 @@
+Enable a User Group
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/usergroups.enable` |

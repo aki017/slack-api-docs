@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Gets billable users information for the current team.",
   "args": {
     "token": {
       "required": true,

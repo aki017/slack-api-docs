@@ -1,3 +1,5 @@
+Fetches a conversation's history of messages and events.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/conversations.history` |

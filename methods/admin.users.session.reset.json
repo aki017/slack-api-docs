@@ -1,5 +1,5 @@
 {
-  "desc": "",
+  "desc": "Wipes all valid sessions on all devices for a given user",
   "args": {
     "token": {
       "required": true,

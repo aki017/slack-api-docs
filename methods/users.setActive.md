@@ -1,3 +1,5 @@
+Marked a user as active. Deprecated and non-functional.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/users.setActive` |

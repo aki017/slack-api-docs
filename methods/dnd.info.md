@@ -1,3 +1,5 @@
+Retrieves a user's current Do Not Disturb status.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/dnd.info` |

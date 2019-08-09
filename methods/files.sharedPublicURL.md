@@ -1,3 +1,5 @@
+Enables a file for public/external sharing.
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/files.sharedPublicURL` |

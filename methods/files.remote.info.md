@@ -1,3 +1,5 @@
+Retrieve information about a remote file added to Slack
+
 ## Facts
 
 | Method URL: | `https://slack.com/api/files.remote.info` |
