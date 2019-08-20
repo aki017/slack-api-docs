@@ -19,9 +19,9 @@ Pins an item to a channel.
 
 <ts-icon class="ts_icon_info_circle"></ts-icon> We are phasing out support for pinning **files and file comments only**. This method will no longer accept the `file` and `file_comment` parameters beginning August 22, 2019.
 
-This method pins a channel message or group message to a particular channel. The `channel` argument is required and `timestamp` must also be specified.
+This method pins a message to a particular conversation or channel.
 
-Note that you cannot pin join/leave messages in channels and groups.
+Both the `channel` and `timestamp` arguments are required. The provided `channel` should be the ID of a public or private channel you want to pin to and the `timestamp` should be the `ts` value of [a message](/types/message) within that conversation.
 
 ## Arguments
 
@@ -29,8 +29,6 @@ Note that you cannot pin join/leave messages in channels and groups.
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Channel to pin the item in. |
-| `file` | `F1234567890` | Optional | File to pin. |
-| `file_comment` | `Fc1234567890` | Optional | File comment to pin. |
 | `timestamp` | `1234567890.123456` | Optional | Timestamp of the message to pin. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
@@ -54,7 +52,9 @@ Typical error response
 }
 ```
 
-After making this call the pin is saved to the database and [a `pin_added` event](/events/pin_added) is broadcast via the [RTM API](/rtm).
+After processing, a [`pin_added`](/events/pin_added) event is broadcast via the [Events](/events-api) and [RTM](/rtm) APIs.
+
+Some objects cannot be pinned: channel join messages, files, and file comments. A `not_pinnable` error is thrown when we "_no can do_."
 
 ## Errors
 

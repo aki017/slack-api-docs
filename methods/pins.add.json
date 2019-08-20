@@ -11,16 +11,6 @@
       "example": "C1234567890",
       "desc": "Channel to pin the item in."
     },
-    "file": {
-      "required": false,
-      "example": "F1234567890",
-      "desc": "File to pin."
-    },
-    "file_comment": {
-      "required": false,
-      "example": "Fc1234567890",
-      "desc": "File comment to pin."
-    },
     "timestamp": {
       "required": false,
       "example": "1234567890.123456",

@@ -17,7 +17,7 @@ Adds a reaction to an item.
 
 * * *
 
-This method adds a reaction (emoji) to a message. Now that [file threads](/changelog/2018-05-file-threads-soon-tread#whats_changed) work the way you'd expect, the `file` and `file_comment` arguments are deprecated. Specify `channel` and `timestamp` instead.
+This method adds a reaction (emoji) to a message. Now that [file threads](/changelog/2018-05-file-threads-soon-tread#whats_changed) work the way you'd expect, the `file` and `file_comment` arguments are deprecated. Specify only `channel` and `timestamp` instead.
 
 ## Arguments
 
@@ -51,7 +51,9 @@ Typical error response
 }
 ```
 
-After making this call, the reaction is saved and [a `reaction_added` event](/events/reaction_added) is broadcast through the [RTM API](/rtm) for the calling user.
+After making this call, the reaction is saved and [a `reaction_added` event](/events/reaction_added) is broadcast via the [Events](/events-api) and [RTM](/rtm) APIs.
+
+A `not_reactable` error is thrown when we decline the opportunity to attach your app's personally selected emoji reaction to a file or file comment. It's not because of how your app feels, it's because that approach is retired. Your app can express its inner reacji for any message though, by specifying `channel` and `timestamp`.
 
 ## Errors
 
@@ -59,6 +61,7 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
+| `not_reactable` | Whatever you passed in, like a `file` or `file_comment`, can't be reacted to anymore. Your app can react to messages though. |
 | `file_comment_not_found` | File comment specified by `file_comment` does not exist. |
 | `invalid_name` | Value passed for `name` was invalid. |
 | `too_many_emoji` | The limit for distinct reactions (i.e emoji) on the item has been reached. |
