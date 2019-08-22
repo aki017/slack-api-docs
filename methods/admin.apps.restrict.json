@@ -1,50 +1,38 @@
 {
-  "desc": "Lists & filters team files.",
+  "desc": "Restrict an app for installation on a workspace.",
   "args": {
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes."
     },
-    "channel": {
+    "app_id": {
       "required": false,
-      "example": "C1234567890",
-      "desc": "Filter files appearing in a specific channel, indicated by its ID."
+      "example": "A12345",
+      "desc": "The id of the app to restrict."
     },
-    "count": {
+    "request_id": {
       "required": false,
-      "example": "20",
-      "desc": "Number of items to return per page."
+      "example": "Ar12345",
+      "desc": "The id of the request to restrict."
     },
-    "page": {
+    "team_id": {
       "required": false,
-      "example": "2",
-      "desc": "Page number of results to return."
-    },
-    "ts_from": {
-      "required": false,
-      "example": "123456789",
-      "desc": "Filter files created after this timestamp (inclusive)."
-    },
-    "ts_to": {
-      "required": false,
-      "example": "123456789",
-      "desc": "Filter files created before this timestamp (inclusive)."
-    },
-    "types": {
-      "required": false,
-      "example": "images",
-      "desc": "Filter files by type (see below). You can pass multiple values in the types argument, like types=spaces,snippets.The default value is all, which does not filter the list."
-    },
-    "user": {
-      "required": false,
-      "example": "W1234567890",
-      "desc": "Filter files created by a single user."
+      "example": " ",
+      "desc": ""
     }
   },
   "errors": {
-    "user_not_found": "Value passed for `user` was invalid",
-    "unknown_type": "Value passed for `types` was invalid",
+    "invalid_request_id": "The `request_id` passed is invalid.",
+    "invalid_app_id": "The `app_id` passed is invalid.",
+    "request_id_required_for_custom_integrations": "A `request_id` is required for custom integrations",
+    "feature_not_enabled": "Returned when the Admin APIs feature is not enabled for this team",
+    "not_an_admin": "This method is only accessible by org owners and admins",
+    "request_id_or_app_id_is_required": "Must include a `request_id` or `app_id`",
+    "too_many_ids_provided": "Please provide only `app_id` OR `request_id`",
+    "request_already_resolved": "The app request has already been resolved",
+    "team_not_found": "Returned when team id is not found.",
+    "app_management_app_not_installed_on_org": "The app management app must be installed on the org.",
     "not_authed": "No authentication token provided.",
     "invalid_auth": "Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request.",
     "account_inactive": "Authentication token is for a deleted user or workspace.",
@@ -53,6 +41,7 @@
     "org_login_required": "The workspace is undergoing an enterprise migration and will not be available until migration is complete.",
     "ekm_access_denied": "Administrators have suspended the ability to post a message.",
     "missing_scope": "The token used is not granted the specific scope permissions required to complete this request.",
+    "is_bot": "This method cannot be called by a bot user.",
     "invalid_arguments": "The method was called with invalid arguments.",
     "invalid_arg_name": "The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call.",
     "invalid_charset": "The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`.",
