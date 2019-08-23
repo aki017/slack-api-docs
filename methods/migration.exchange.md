@@ -10,7 +10,6 @@ For Enterprise Grid workspaces, map local user IDs to global user IDs
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 | [user](/docs/token-types#user) | [`tokens.basic`](/scopes/tokens.basic)&nbsp; |
 
  |

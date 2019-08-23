@@ -10,7 +10,6 @@ Open a dialog with a user
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 | [user](/docs/token-types#user) | _No scope required_ |
 
  |
