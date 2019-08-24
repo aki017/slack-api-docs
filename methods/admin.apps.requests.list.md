@@ -31,6 +31,8 @@ This method requires an `admin.*` scope. It's obtained through the normal [OAuth
 
 <ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
+`team_id` is **required** if your Enterprise Grid org contains more than one workspace.
+
 ## Response
 
 ## Errors

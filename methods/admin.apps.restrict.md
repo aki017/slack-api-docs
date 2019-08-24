@@ -33,6 +33,8 @@ This method requires an `admin.*` scope. It's obtained through the normal [OAuth
 
 Either `app_id` or `request_id` is required. These IDs can be obtained either directly via the [`app_requested` event](/events/app_requested), or by the [`admin.apps.requests.list` method](/methods/admin.apps.requests.list).
 
+`team_id` is **required** if your Enterprise Grid org contains more than one workspace.
+
 ## Response
 
 ```
