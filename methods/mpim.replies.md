@@ -10,7 +10,6 @@ Retrieve a thread of messages posted to a direct message conversation from a mul
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 | [user](/docs/token-types#user) | [`mpim:history`](/scopes/mpim:history)&nbsp; |
 
  |
@@ -85,6 +84,7 @@ This table lists the expected errors that this method could return. However, oth
 | `org_login_required` | The workspace is undergoing an enterprise migration and will not be available until migration is complete. |
 | `ekm_access_denied` | Administrators have suspended the ability to post a message. |
 | `missing_scope` | The token used is not granted the specific scope permissions required to complete this request. |
+| `is_bot` | This method cannot be called by a bot user. |
 | `invalid_arguments` | The method was called with invalid arguments. |
 | `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
