@@ -1,11 +1,11 @@
-Checks authentication & identity.
+Update an existing view.
 
 ## Facts
 
-| Method URL: | `https://slack.com/api/auth.test` |
+| Method URL: | `https://slack.com/api/views.update` |
 | Preferred HTTP method: | `POST` |
 | Accepted content types: | `application/x-www-form-urlencoded`, [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
-| Rate limiting: | [Special](/docs/rate-limits#tier_t5) |
+| Rate limiting: | [Tier 4](/docs/rate-limits#tier_t4) |
 | Works with: | 
 
 | Token type | Required scope(s) |
@@ -17,69 +17,88 @@ Checks authentication & identity.
 
 * * *
 
-This method checks authentication and tells "you" who you are, even if you might be a bot.
-
-You can also use this method to test whether Slack API authentication is functional. [Learn more](/faq#availability).
+Update a view by passing a new view definition along with the `view_id` returned in [`views.open`](/methods/views.open) or the `external_id`. See the [modals](/block-kit/surfaces/modals#updating_views) documentation to learn more about updating views and avoiding race conditions with the `hash` argument.
 
 ## Arguments
 
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `view` | &nbsp; | Required | The view payload. This must be a JSON-encoded string. |
+| `external_id` | `bmarley_view2` | Optional | A unique identifier of the view set by the developer. Must be unique for all views on a team. Max length of 255 characters. Either `view_id` or `external_id` is required. |
+| `hash` | `156772938.1827394` | Optional | A string that represents view state to protect against possible race conditions. |
+| `view_id` | `VMM512F2U` | Optional | A unique identifier of the view to be updated. Either `view_id` or `external_id` is required. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 
-Standard success response when used with a user token
+If you pass a valid view payload along with a `view_id` or `external_id`, you'll receive a success response with the updated payload.
+
+Typical success response includes the updated view payload.
 
 ```
 {
     "ok": true,
-    "url": "https://subarachnoid.slack.com/",
-    "team": "Subarachnoid Workspace",
-    "user": "grace",
-    "team_id": "T12345678",
-    "user_id": "W12345678"
+    "view": {
+        "id": "VNM522E2U",
+        "team_id": "T9M4RL1JM",
+        "type": "modal",
+        "title": {
+            "type": "plain_text",
+            "text": "Updated Modal",
+            "emoji": true
+        },
+        "close": {
+            "type": "plain_text",
+            "text": "Close",
+            "emoji": true
+        },
+        "submit": null,
+        "blocks": [
+            {
+                "type": "section",
+                "block_id": "s_block",
+                "text": {
+                    "type": "plain_text",
+                    "text": "I am but an updated modal",
+                    "emoji": true
+                },
+                "accessory": {
+                    "type": "button",
+                    "action_id": "button_4",
+                    "text": {
+                        "type": "plain_text",
+                        "text": "Click me"
+                    }
+                }
+            }
+        ],
+        "private_metadata": "",
+        "callback_id": "view_2",
+        "external_id": "",
+        "state": {
+            "values": []
+        },
+        "hash": "1569262015.55b5e41b",
+        "clear_on_close": true,
+        "notify_on_close": false,
+        "root_view_id": "VNN729E3U",
+        "previous_view_id": null,
+        "app_id": "AAD3351BQ",
+        "bot_id": "BADF7A34H"
+    }
 }
 ```
 
-Standard failure response when used with an invalid token
+Typical error response.
 
 ```
 {
     "ok": false,
-    "error": "invalid_auth"
+    "error": "not_found"
 }
 ```
-
-Success response when using a bot user token
-
-```
-{
-    "ok": true,
-    "url": "https://subarachnoid.slack.com/",
-    "team": "Subarachnoid Workspace",
-    "user": "bot",
-    "team_id": "T0G9PQBBK",
-    "user_id": "W23456789"
-}
-```
-
-Error response when omitting a token
-
-```
-{
-    "ok": false,
-    "error": "not_authed"
-}
-```
-
-When working against a team within an [Enterprise Grid](/enterprise-grid), you'll also find their `enterprise_id` here.
-
-## Rate limiting
-
-This method allows hundreds of requests per minute. Use it as often as is reasonably required. Please consult [rate limits](/docs/rate-limits) for more information.
 
 ## Errors
 
@@ -87,6 +106,10 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
+| `hash_conflict` | Error returned when the provided `hash` doesn't match the current stored value. |
+| `not_found` | Error returned when the given `view_id` or `external_id` doesn't exist. |
+| `duplicate_external_id` | Error returned when the given `external_id` has already be used. |
+| `view_too_large` | Error returned if the provided view is greater than 250kb. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |

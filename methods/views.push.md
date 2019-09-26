@@ -1,11 +1,11 @@
-Checks authentication & identity.
+Push a view onto the stack of a root view.
 
 ## Facts
 
-| Method URL: | `https://slack.com/api/auth.test` |
+| Method URL: | `https://slack.com/api/views.push` |
 | Preferred HTTP method: | `POST` |
 | Accepted content types: | `application/x-www-form-urlencoded`, [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
-| Rate limiting: | [Special](/docs/rate-limits#tier_t5) |
+| Rate limiting: | [Tier 4](/docs/rate-limits#tier_t4) |
 | Works with: | 
 
 | Token type | Required scope(s) |
@@ -17,69 +17,94 @@ Checks authentication & identity.
 
 * * *
 
-This method checks authentication and tells "you" who you are, even if you might be a bot.
+Push a new view onto the existing view stack by passing a view payload and a valid `trigger_id` generated from an interaction within the existing modal. The pushed view is added to the top of the stack, so the user will go back to the previous view after they complete or cancel the pushed view.
 
-You can also use this method to test whether Slack API authentication is functional. [Learn more](/faq#availability).
+After a modal is opened, the app is limited to pushing 2 additional views.
+
+Read the [modals](/block-kit/surfaces/modals) documentation to learn more about tye lifecycle and intricacies of views.
 
 ## Arguments
 
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `trigger_id` | `12345.98765.abcd2358fdea` | Required | Exchange a trigger to post to the user. |
+| `view` | &nbsp; | Required | The view payload. This must be a JSON-encoded string. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 
-Standard success response when used with a user token
+If you pass a valid view payload along with a valid `trigger_id`, you'll receive a success response with the view payload that was pushed to the stack.
+
+Typical success response includes the pushed view payload.
 
 ```
 {
     "ok": true,
-    "url": "https://subarachnoid.slack.com/",
-    "team": "Subarachnoid Workspace",
-    "user": "grace",
-    "team_id": "T12345678",
-    "user_id": "W12345678"
+    "view": {
+        "id": "VNM522E2U",
+        "team_id": "T9M4RL1JM",
+        "type": "modal",
+        "title": {
+            "type": "plain_text",
+            "text": "Pushed Modal",
+            "emoji": true
+        },
+        "close": {
+            "type": "plain_text",
+            "text": "Back",
+            "emoji": true
+        },
+        "submit": {
+            "type": "plain_text",
+            "text": "Save",
+            "emoji": true
+        },
+        "blocks": [
+            {
+                "type": "input",
+                "block_id": "edit_details",
+                "element": {
+                    "type": "plain_text_input",
+                    "action_id": "detail_input",
+                    "label": {
+                        "type": "plain_text",
+                        "text": "Edit details"
+                    }
+                }
+            }
+        ],
+        "private_metadata": "",
+        "callback_id": "view_4",
+        "external_id": "",
+        "state": {
+            "values": []
+        },
+        "hash": "1569362015.55b5e41b",
+        "clear_on_close": true,
+        "notify_on_close": false,
+        "root_view_id": "VNN729E3U",
+        "previous_view_id": null,
+        "app_id": "AAD3351BQ",
+        "bot_id": "BADF7A34H"
+    }
 }
 ```
 
-Standard failure response when used with an invalid token
+Typical error response.
 
 ```
 {
     "ok": false,
-    "error": "invalid_auth"
+    "error": "invalid_arguments",
+    "response_metadata": {
+        "messages": [
+            "missing required field: title"
+        ]
+    }
 }
 ```
-
-Success response when using a bot user token
-
-```
-{
-    "ok": true,
-    "url": "https://subarachnoid.slack.com/",
-    "team": "Subarachnoid Workspace",
-    "user": "bot",
-    "team_id": "T0G9PQBBK",
-    "user_id": "W23456789"
-}
-```
-
-Error response when omitting a token
-
-```
-{
-    "ok": false,
-    "error": "not_authed"
-}
-```
-
-When working against a team within an [Enterprise Grid](/enterprise-grid), you'll also find their `enterprise_id` here.
-
-## Rate limiting
-
-This method allows hundreds of requests per minute. Use it as often as is reasonably required. Please consult [rate limits](/docs/rate-limits) for more information.
 
 ## Errors
 
@@ -87,6 +112,9 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
+| `push_limit_reached` | Error returned when the max push limit has been reached for views. Currently the limit is 3. |
+| `duplicate_external_id` | Error returned when the given `external_id` has already be used. |
+| `view_too_large` | Error returned if the provided view is greater than 250kb. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |

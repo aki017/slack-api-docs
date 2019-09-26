@@ -1,11 +1,11 @@
-Checks authentication & identity.
+Open a view for a user.
 
 ## Facts
 
-| Method URL: | `https://slack.com/api/auth.test` |
+| Method URL: | `https://slack.com/api/views.open` |
 | Preferred HTTP method: | `POST` |
 | Accepted content types: | `application/x-www-form-urlencoded`, [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
-| Rate limiting: | [Special](/docs/rate-limits#tier_t5) |
+| Rate limiting: | [Tier 4](/docs/rate-limits#tier_t4) |
 | Works with: | 
 
 | Token type | Required scope(s) |
@@ -17,69 +17,84 @@ Checks authentication & identity.
 
 * * *
 
-This method checks authentication and tells "you" who you are, even if you might be a bot.
-
-You can also use this method to test whether Slack API authentication is functional. [Learn more](/faq#availability).
+Open a modal with a user by exchanging a `trigger_id` received from another interaction. See the [modals](/block-kit/surfaces/modals) documentation to learn how to obtain triggers from interactive components.
 
 ## Arguments
 
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `trigger_id` | `12345.98765.abcd2358fdea` | Required | Exchange a trigger to post to the user. |
+| `view` | &nbsp; | Required | The view payload. This must be a JSON-encoded string. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 
-Standard success response when used with a user token
+Assuming your view payload was properly formatted, valid, and the `trigger_id` was viable, you will receive a success response.
+
+Typical success response includes the opened view payload.
 
 ```
 {
     "ok": true,
-    "url": "https://subarachnoid.slack.com/",
-    "team": "Subarachnoid Workspace",
-    "user": "grace",
-    "team_id": "T12345678",
-    "user_id": "W12345678"
+    "view": {
+        "id": "VMHU10V25",
+        "team_id": "T8N4K1JN",
+        "type": "modal",
+        "title": {
+            "type": "plain_text",
+            "text": "Quite a plain modal"
+        },
+        "submit": {
+            "type": "plain_text",
+            "text": "Create"
+        },
+        "blocks": [
+            {
+                "type": "input",
+                "block_id": "a_block_id",
+                "label": {
+                    "type": "plain_text",
+                    "text": "A simple label",
+                    "emoji": true
+                },
+                "optional": false,
+                "element": {
+                    "type": "plain_text_input",
+                    "action_id": "an_action_id"
+                }
+            }
+        ],
+        "private_metadata": "Shh it is a secret",
+        "callback_id": "identify_your_modals",
+        "external_id": "",
+        "state": {
+            "values": []
+        },
+        "hash": "156772938.1827394",
+        "clear_on_close": false,
+        "notify_on_close": false,
+        "root_view_id": "VMHU10V25",
+        "app_id": "AA4928AQ",
+        "bot_id": "BA13894H"
+    }
 }
 ```
 
-Standard failure response when used with an invalid token
+Typical error response, before getting to any possible validation errors.
 
 ```
 {
     "ok": false,
-    "error": "invalid_auth"
+    "error": "invalid_arguments",
+    "response_metadata": {
+        "messages": [
+            "invalid `trigger_id`"
+        ]
+    }
 }
 ```
-
-Success response when using a bot user token
-
-```
-{
-    "ok": true,
-    "url": "https://subarachnoid.slack.com/",
-    "team": "Subarachnoid Workspace",
-    "user": "bot",
-    "team_id": "T0G9PQBBK",
-    "user_id": "W23456789"
-}
-```
-
-Error response when omitting a token
-
-```
-{
-    "ok": false,
-    "error": "not_authed"
-}
-```
-
-When working against a team within an [Enterprise Grid](/enterprise-grid), you'll also find their `enterprise_id` here.
-
-## Rate limiting
-
-This method allows hundreds of requests per minute. Use it as often as is reasonably required. Please consult [rate limits](/docs/rate-limits) for more information.
 
 ## Errors
 
@@ -87,6 +102,8 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
+| `duplicate_external_id` | Error returned when the given `external_id` has already be used. |
+| `view_too_large` | Error returned if the provided view is greater than 250kb. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
