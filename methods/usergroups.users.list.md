@@ -35,10 +35,10 @@ Standard success response when used with a user token
 ```
 {
     "ok": true,
-    "users": [
-        "U060R4BJ4",
-        "W123A4BC5"
-    ]
+    "users": {
+        "0": "U060R4BJ4",
+        "1": "W123A4BC5"
+    }
 }
 ```
 

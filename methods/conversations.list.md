@@ -42,8 +42,8 @@ Typical success response with only public channels
 ```
 {
     "ok": true,
-    "channels": [
-        {
+    "channels": {
+        "0": {
             "id": "C012AB3CD",
             "name": "general",
             "is_channel": true,
@@ -58,7 +58,7 @@ Typical success response with only public channels
             "is_shared": false,
             "is_ext_shared": false,
             "is_org_shared": false,
-            "pending_shared": [],
+            "pending_shared": {},
             "is_pending_ext_shared": false,
             "is_member": true,
             "is_private": false,
@@ -73,10 +73,10 @@ Typical success response with only public channels
                 "creator": "",
                 "last_set": 0
             },
-            "previous_names": [],
+            "previous_names": {},
             "num_members": 4
         },
-        {
+        "1": {
             "id": "C061EG9T2",
             "name": "random",
             "is_channel": true,
@@ -91,7 +91,7 @@ Typical success response with only public channels
             "is_shared": false,
             "is_ext_shared": false,
             "is_org_shared": false,
-            "pending_shared": [],
+            "pending_shared": {},
             "is_pending_ext_shared": false,
             "is_member": true,
             "is_private": false,
@@ -106,10 +106,10 @@ Typical success response with only public channels
                 "creator": "",
                 "last_set": 0
             },
-            "previous_names": [],
+            "previous_names": {},
             "num_members": 4
         }
-    ],
+    },
     "response_metadata": {
         "next_cursor": "dGVhbTpDMDYxRkE1UEI="
     }
@@ -121,8 +121,8 @@ Example response when mixing different conversation types together, like `im` an
 ```
 {
     "ok": true,
-    "channels": [
-        {
+    "channels": {
+        "0": {
             "id": "G0AKFJBEU",
             "name": "mpdm-mr.banks--slactions-jackson--beforebot-1",
             "is_channel": false,
@@ -137,7 +137,7 @@ Example response when mixing different conversation types together, like `im` an
             "is_shared": false,
             "is_ext_shared": false,
             "is_org_shared": false,
-            "pending_shared": [],
+            "pending_shared": {},
             "is_pending_ext_shared": false,
             "is_member": true,
             "is_private": true,
@@ -155,7 +155,7 @@ Example response when mixing different conversation types together, like `im` an
             },
             "priority": 0
         },
-        {
+        "1": {
             "id": "D0C0F7S8Y",
             "created": 1498500348,
             "is_im": true,
@@ -164,7 +164,7 @@ Example response when mixing different conversation types together, like `im` an
             "is_user_deleted": false,
             "priority": 0
         },
-        {
+        "2": {
             "id": "D0BSHH4AD",
             "created": 1498511030,
             "is_im": true,
@@ -173,7 +173,7 @@ Example response when mixing different conversation types together, like `im` an
             "is_user_deleted": false,
             "priority": 0
         }
-    ],
+    },
     "response_metadata": {
         "next_cursor": "aW1faWQ6RDBCSDk1RExI"
     }

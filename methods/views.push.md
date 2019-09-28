@@ -61,8 +61,8 @@ Typical success response includes the pushed view payload.
             "text": "Save",
             "emoji": true
         },
-        "blocks": [
-            {
+        "blocks": {
+            "0": {
                 "type": "input",
                 "block_id": "edit_details",
                 "element": {
@@ -74,12 +74,12 @@ Typical success response includes the pushed view payload.
                     }
                 }
             }
-        ],
+        },
         "private_metadata": "",
         "callback_id": "view_4",
         "external_id": "",
         "state": {
-            "values": []
+            "values": {}
         },
         "hash": "1569362015.55b5e41b",
         "clear_on_close": true,
@@ -99,9 +99,9 @@ Typical error response.
     "ok": false,
     "error": "invalid_arguments",
     "response_metadata": {
-        "messages": [
-            "missing required field: title"
-        ]
+        "messages": {
+            "0": "missing required field: title"
+        }
     }
 }
 ```

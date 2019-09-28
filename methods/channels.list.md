@@ -50,8 +50,8 @@ Typical cursored success response
 ```
 {
     "ok": true,
-    "channels": [
-        {
+    "channels": {
+        "0": {
             "id": "C0G9QF9GW",
             "name": "random",
             "is_channel": true,
@@ -65,10 +65,10 @@ Typical cursored success response
             "is_member": true,
             "is_private": false,
             "is_mpim": false,
-            "members": [
-                "U0G9QF9C6",
-                "U0G9WFXNZ"
-            ],
+            "members": {
+                "0": "U0G9QF9C6",
+                "1": "U0G9WFXNZ"
+            },
             "topic": {
                 "value": "Other stuff",
                 "creator": "U0G9QF9C6",
@@ -79,10 +79,10 @@ Typical cursored success response
                 "creator": "",
                 "last_set": 0
             },
-            "previous_names": [],
+            "previous_names": {},
             "num_members": 2
         },
-        {
+        "1": {
             "id": "C0G9QKBBL",
             "name": "general",
             "is_channel": true,
@@ -96,10 +96,10 @@ Typical cursored success response
             "is_member": true,
             "is_private": false,
             "is_mpim": false,
-            "members": [
-                "U0G9QF9C6",
-                "U0G9WFXNZ"
-            ],
+            "members": {
+                "0": "U0G9QF9C6",
+                "1": "U0G9WFXNZ"
+            },
             "topic": {
                 "value": "Talk about anything!",
                 "creator": "U0G9QF9C6",
@@ -110,10 +110,10 @@ Typical cursored success response
                 "creator": "U0G9QF9C6",
                 "last_set": 1449709334
             },
-            "previous_names": [],
+            "previous_names": {},
             "num_members": 2
         }
-    ],
+    },
     "response_metadata": {
         "next_cursor": "dGVhbTpDMUg5UkVTR0w="
     }

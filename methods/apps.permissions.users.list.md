@@ -42,21 +42,21 @@ Typical successful paginated response
 ```
 {
     "ok": true,
-    "resources": [
-        {
+    "resources": {
+        "0": {
             "id": "U0DES3UAN",
-            "scopes": [
-                "dnd:write:user",
-                "reminders:write:user"
-            ]
+            "scopes": {
+                "0": "dnd:write:user",
+                "1": "reminders:write:user"
+            }
         },
-        {
+        "1": {
             "id": "U024BFF1M",
-            "scopes": [
-                "reminders:write:user"
-            ]
+            "scopes": {
+                "0": "reminders:write:user"
+            }
         }
-    ],
+    },
     "response_metadata": {
         "next_cursor": "dGVhbTdPMUg5UkFTT0w="
     }

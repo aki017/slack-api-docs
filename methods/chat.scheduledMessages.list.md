@@ -41,14 +41,14 @@ Typical success response
 ```
 {
     "ok": true,
-    "scheduled_messages": [
-        {
+    "scheduled_messages": {
+        "0": {
             "id": 1298393284,
             "channel_id": "C1H9RESGL",
             "post_at": 1551991428,
             "date_created": 1551891734
         }
-    ],
+    },
     "response_metadata": {
         "next_cursor": ""
     }

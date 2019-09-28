@@ -63,13 +63,13 @@ Typical success response
         "text": "Here's a message for you in the future",
         "username": "ecto1",
         "bot_id": "B19LU7CSY",
-        "attachments": [
-            {
+        "attachments": {
+            "0": {
                 "text": "This is an attachment",
                 "id": 1,
                 "fallback": "This is an attachment's fallback"
             }
-        ],
+        },
         "type": "delayed_message",
         "subtype": "bot_message"
     }

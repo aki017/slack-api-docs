@@ -48,62 +48,62 @@ Typical success response containing the channel's history
 ```
 {
     "ok": true,
-    "messages": [
-        {
+    "messages": {
+        "0": {
             "type": "message",
             "ts": "1358546515.000008",
             "user": "U2147483896",
             "text": "Hello"
         },
-        {
+        "1": {
             "type": "message",
             "ts": "1358546515.000007",
             "user": "U2147483896",
             "text": "World",
             "is_starred": true,
-            "reactions": [
-                {
+            "reactions": {
+                "0": {
                     "name": "space_invader",
                     "count": 3,
-                    "users": [
-                        "U1",
-                        "U2",
-                        "U3"
-                    ]
+                    "users": {
+                        "0": "U1",
+                        "1": "U2",
+                        "2": "U3"
+                    }
                 },
-                {
+                "1": {
                     "name": "sweet_potato",
                     "count": 5,
-                    "users": [
-                        "U1",
-                        "U2",
-                        "U3",
-                        "U4",
-                        "U5"
-                    ]
+                    "users": {
+                        "0": "U1",
+                        "1": "U2",
+                        "2": "U3",
+                        "3": "U4",
+                        "4": "U5"
+                    }
                 }
-            ]
+            }
         },
-        {
+        "2": {
             "type": "something_else",
             "ts": "1358546515.000007"
         },
-        {
+        "3": {
             "text": "Containment unit is 98% full",
             "username": "ecto1138",
             "bot_id": "B19LU7CSY",
-            "attachments": [
-                {
+            "attachments": {
+                "0": {
                     "text": "Don't get too attached",
                     "id": 1,
                     "fallback": "This is an attachment fallback"
                 }
-            ],
+            },
             "type": "message",
             "subtype": "bot_message",
             "ts": "1503435956.000247"
         }
-    ],
+    },
     "has_more": false
 }
 ```
@@ -114,14 +114,14 @@ Typical success response with `latest` timestamp and `inclusive` parameters spec
 {
     "ok": true,
     "latest": "1512085950.000216",
-    "messages": [
-        {
+    "messages": {
+        "0": {
             "type": "message",
             "user": "U012AB3CDE",
             "text": "I find you punny and would like to smell your nose letter",
             "ts": "1512085950.000216"
         }
-    ],
+    },
     "has_more": false
 }
 ```

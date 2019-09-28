@@ -59,9 +59,9 @@ Typical success response resulting in a new channel
         "latest": null,
         "unread_count": 0,
         "unread_count_display": 0,
-        "members": [
-            "U061F7AUR"
-        ],
+        "members": {
+            "0": "U061F7AUR"
+        },
         "topic": {
             "value": "",
             "creator": "",
@@ -72,7 +72,7 @@ Typical success response resulting in a new channel
             "creator": "",
             "last_set": 0
         },
-        "previous_names": []
+        "previous_names": {}
     }
 }
 ```

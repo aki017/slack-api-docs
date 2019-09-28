@@ -45,8 +45,8 @@ Typical success response
 {
     "ok": true,
     "profile": {
-        "fields": [
-            {
+        "fields": {
+            "0": {
                 "id": "Xf06054AAA",
                 "ordering": 0,
                 "label": "Phone extension",
@@ -56,7 +56,7 @@ Typical success response
                 "options": null,
                 "is_hidden": 1
             },
-            {
+            "1": {
                 "id": "Xf06054BBB",
                 "ordering": 1,
                 "label": "Date of birth",
@@ -65,7 +65,7 @@ Typical success response
                 "possible_values": null,
                 "options": null
             },
-            {
+            "2": {
                 "id": "Xf06054CCC",
                 "ordering": 2,
                 "label": "Facebook",
@@ -74,21 +74,21 @@ Typical success response
                 "possible_values": null,
                 "options": null
             },
-            {
+            "3": {
                 "id": "Xf06054DDD",
                 "ordering": 3,
                 "label": "House",
                 "hint": "Hogwarts, obviously",
                 "type": "options_list",
-                "possible_values": [
-                    "Gryffindor",
-                    "Hufflepuff",
-                    "Ravenclaw",
-                    "Slytherin"
-                ],
+                "possible_values": {
+                    "0": "Gryffindor",
+                    "1": "Hufflepuff",
+                    "2": "Ravenclaw",
+                    "3": "Slytherin"
+                },
                 "options": null
             },
-            {
+            "4": {
                 "id": "Xf06054EEE",
                 "ordering": 4,
                 "label": "Location",
@@ -99,7 +99,7 @@ Typical success response
                     "is_protected": 1
                 }
             },
-            {
+            "5": {
                 "id": "Xf06054FFF",
                 "ordering": 5,
                 "label": "Manager",
@@ -108,7 +108,7 @@ Typical success response
                 "possible_values": null,
                 "options": null
             }
-        ]
+        }
     }
 }
 ```

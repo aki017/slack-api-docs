@@ -109,21 +109,21 @@ Success response after uploading a file to a channel with an initial message
         "is_starred": false,
         "shares": {
             "private": {
-                "D0L4B9P0Q": [
-                    {
-                        "reply_users": [],
+                "D0L4B9P0Q": {
+                    "0": {
+                        "reply_users": {},
                         "reply_users_count": 0,
                         "reply_count": 0,
                         "ts": "1532293503.000001"
                     }
-                ]
+                }
             }
         },
-        "channels": [],
-        "groups": [],
-        "ims": [
-            "D0L4B9P0Q"
-        ],
+        "channels": {},
+        "groups": {},
+        "ims": {
+            "0": "D0L4B9P0Q"
+        },
         "has_rich_preview": false
     }
 }
@@ -167,23 +167,23 @@ Uploading a file with the `content` parameter creates an editable `text/plain` f
         "is_starred": false,
         "shares": {
             "public": {
-                "C061EG9SL": [
-                    {
-                        "reply_users": [],
+                "C061EG9SL": {
+                    "0": {
+                        "reply_users": {},
                         "reply_users_count": 0,
                         "reply_count": 0,
                         "ts": "1532294750.000001",
                         "channel_name": "general",
                         "team_id": "T061EG9R6"
                     }
-                ]
+                }
             }
         },
-        "channels": [
-            "C061EG9SL"
-        ],
-        "groups": [],
-        "ims": [],
+        "channels": {
+            "0": "C061EG9SL"
+        },
+        "groups": {},
+        "ims": {},
         "has_rich_preview": false
     }
 }

@@ -50,33 +50,33 @@ Typical success response
 
 ```
 {
-    "messages": [
-        {
+    "messages": {
+        "0": {
             "type": "message",
             "user": "U061F7AUR",
             "text": "island",
             "thread_ts": "1482960137.003543",
             "reply_count": 3,
-            "replies": [
-                {
+            "replies": {
+                "0": {
                     "user": "U061F7AUR",
                     "ts": "1483037603.017503"
                 },
-                {
+                "1": {
                     "user": "U061F7AUR",
                     "ts": "1483051909.018632"
                 },
-                {
+                "2": {
                     "user": "U061F7AUR",
                     "ts": "1483125339.020269"
                 }
-            ],
+            },
             "subscribed": true,
             "last_read": "1484678597.521003",
             "unread_count": 0,
             "ts": "1482960137.003543"
         },
-        {
+        "1": {
             "type": "message",
             "user": "U061F7AUR",
             "text": "one island",
@@ -84,7 +84,7 @@ Typical success response
             "parent_user_id": "U061F7AUR",
             "ts": "1483037603.017503"
         },
-        {
+        "2": {
             "type": "message",
             "user": "U061F7AUR",
             "text": "two island",
@@ -92,7 +92,7 @@ Typical success response
             "parent_user_id": "U061F7AUR",
             "ts": "1483051909.018632"
         },
-        {
+        "3": {
             "type": "message",
             "user": "U061F7AUR",
             "text": "three for the land",
@@ -100,7 +100,7 @@ Typical success response
             "parent_user_id": "U061F7AUR",
             "ts": "1483125339.020269"
         }
-    ],
+    },
     "has_more": true,
     "ok": true,
     "response_metadata": {

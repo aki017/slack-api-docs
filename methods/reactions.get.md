@@ -41,24 +41,24 @@ Typical success response
 ```
 {
     "file": {
-        "channels": [
-            "C2U7V2YA2"
-        ],
+        "channels": {
+            "0": "C2U7V2YA2"
+        },
         "comments_count": 1,
         "created": 1507850315,
-        "groups": [],
+        "groups": {},
         "id": "F7H0D7ZA4",
-        "ims": [],
+        "ims": {},
         "name": "computer.gif",
-        "reactions": [
-            {
+        "reactions": {
+            "0": {
                 "count": 1,
                 "name": "stuck_out_tongue_winking_eye",
-                "users": [
-                    "U2U85N1RV"
-                ]
+                "users": {
+                    "0": "U2U85N1RV"
+                }
             }
-        ],
+        },
         "timestamp": 1507850315,
         "title": "computer.gif",
         "user": "U2U85N1RV"

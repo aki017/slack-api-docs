@@ -50,8 +50,8 @@ Typical success response includes the opened view payload.
             "type": "plain_text",
             "text": "Create"
         },
-        "blocks": [
-            {
+        "blocks": {
+            "0": {
                 "type": "input",
                 "block_id": "a_block_id",
                 "label": {
@@ -65,12 +65,12 @@ Typical success response includes the opened view payload.
                     "action_id": "an_action_id"
                 }
             }
-        ],
+        },
         "private_metadata": "Shh it is a secret",
         "callback_id": "identify_your_modals",
         "external_id": "",
         "state": {
-            "values": []
+            "values": {}
         },
         "hash": "156772938.1827394",
         "clear_on_close": false,
@@ -89,9 +89,9 @@ Typical error response, before getting to any possible validation errors.
     "ok": false,
     "error": "invalid_arguments",
     "response_metadata": {
-        "messages": [
-            "invalid `trigger_id`"
-        ]
+        "messages": {
+            "0": "invalid `trigger_id`"
+        }
     }
 }
 ```

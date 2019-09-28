@@ -57,7 +57,7 @@ Typical success response when an invitation is extended
         "is_shared": false,
         "is_ext_shared": false,
         "is_org_shared": false,
-        "pending_shared": [],
+        "pending_shared": {},
         "is_pending_ext_shared": false,
         "is_member": true,
         "is_private": false,
@@ -73,11 +73,11 @@ Typical success response when an invitation is extended
             "creator": "W012A3BCD",
             "last_set": 1449709364
         },
-        "previous_names": [
-            "specifics",
-            "abstractions",
-            "etc"
-        ],
+        "previous_names": {
+            "0": "specifics",
+            "1": "abstractions",
+            "2": "etc"
+        },
         "num_members": 23,
         "locale": "en-US"
     }

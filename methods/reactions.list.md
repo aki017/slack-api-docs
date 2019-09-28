@@ -41,83 +41,83 @@ Typical success response
 
 ```
 {
-    "items": [
-        {
+    "items": {
+        "0": {
             "type": "message",
             "channel": "C3UKJTQAC",
             "message": {
                 "bot_id": "B4VLRLMKJ",
-                "reactions": [
-                    {
+                "reactions": {
+                    "0": {
                         "count": 1,
                         "name": "robot_face",
-                        "users": [
-                            "U2U85N1RV"
-                        ]
+                        "users": {
+                            "0": "U2U85N1RV"
+                        }
                     }
-                ],
+                },
                 "subtype": "bot_message",
                 "text": "Hello from Python! :tada:",
                 "ts": "1507849573.000090",
                 "username": "Shipit Notifications"
             }
         },
-        {
+        "1": {
             "comment": {
                 "type": "file_comment",
                 "comment": "This is a file comment",
                 "created": 1508286096,
                 "id": "Fc7LP08P1U",
-                "reactions": [
-                    {
+                "reactions": {
+                    "0": {
                         "count": 1,
                         "name": "white_check_mark",
-                        "users": [
-                            "U2U85N1RV"
-                        ]
+                        "users": {
+                            "0": "U2U85N1RV"
+                        }
                     }
-                ],
+                },
                 "timestamp": 1508286096,
                 "user": "U2U85N1RV"
             },
             "file": {
-                "channels": [
-                    "C2U7V2YA2"
-                ],
+                "channels": {
+                    "0": "C2U7V2YA2"
+                },
                 "comments_count": 1,
                 "created": 1507850315,
-                "reactions": [
-                    {
+                "reactions": {
+                    "0": {
                         "count": 1,
                         "name": "stuck_out_tongue_winking_eye",
-                        "users": [
-                            "U2U85N1RV"
-                        ]
+                        "users": {
+                            "0": "U2U85N1RV"
+                        }
                     }
-                ],
+                },
                 "title": "computer.gif",
                 "user": "U2U85N1RV",
                 "username": ""
             }
         },
-        {
+        "2": {
             "file": {
-                "channels": [
-                    "C2U7V2YA2"
-                ],
+                "channels": {
+                    "0": "C2U7V2YA2"
+                },
                 "comments_count": 1,
                 "created": 1507850315,
                 "id": "F7H0D7ZA4",
                 "name": "computer.gif",
-                "reactions": [
-                    {
+                "reactions": {
+                    "0": {
                         "count": 1,
                         "name": "stuck_out_tongue_winking_eye",
-                        "users": [
-                            "U2U85N1RV"
-                        ]
+                        "users": {
+                            "0": "U2U85N1RV"
+                        }
                     }
-                ],
+                },
                 "size": 1639034,
                 "title": "computer.gif",
                 "user": "U2U85N1RV",
@@ -125,7 +125,7 @@ Typical success response
             },
             "type": "file"
         }
-    ],
+    },
     "ok": true,
     "response_metadata": {
         "next_cursor": "dGVhbTpDMUg5UkVTR0w="

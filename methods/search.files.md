@@ -41,9 +41,9 @@ Typical success response
 ```
 {
     "files": {
-        "matches": [
-            {
-                "channels": [],
+        "matches": {
+            "0": {
+                "channels": {},
                 "comments_count": 1,
                 "created": 1507850315,
                 "deanimate_gif": "https://files.slack.com/files-tmb/T2U81E2BB-F7H0D7ZBB-21624821e6/computer_deanimate_gif.png",
@@ -51,10 +51,10 @@ Typical success response
                 "editable": false,
                 "external_type": "",
                 "filetype": "gif",
-                "groups": [],
+                "groups": {},
                 "id": "F7H0D7ZBB",
                 "image_exif_rotation": 1,
-                "ims": [],
+                "ims": {},
                 "is_external": false,
                 "is_public": true,
                 "mimetype": "image/gif",
@@ -67,15 +67,15 @@ Typical success response
                 "pretty_type": "GIF",
                 "preview": null,
                 "public_url_shared": false,
-                "reactions": [
-                    {
+                "reactions": {
+                    "0": {
                         "count": 1,
                         "name": "stuck_out_tongue_winking_eye",
-                        "users": [
-                            "U2U85N1RZ"
-                        ]
+                        "users": {
+                            "0": "U2U85N1RZ"
+                        }
                     }
-                ],
+                },
                 "score": "0.38899223746309",
                 "size": 1639034,
                 "thumb_160": "https://files.slack.com/files-tmb/T2U81E2BB-F7H0D7ZBB-21624821e6/computer_160.png",
@@ -97,7 +97,7 @@ Typical success response
                 "user": "U2U85N1RZ",
                 "username": ""
             }
-        ],
+        },
         "pagination": {
             "first": 1,
             "last": 3,

@@ -59,10 +59,10 @@ Typical success response
         },
         "unread_count": 0,
         "unread_count_display": 0,
-        "members": [
-            "U0G9QF9C6",
-            "U1QNSQB9U"
-        ],
+        "members": {
+            "0": "U0G9QF9C6",
+            "1": "U1QNSQB9U"
+        },
         "topic": {
             "value": "My Topic",
             "creator": "U0G9QF9C6",
@@ -73,7 +73,7 @@ Typical success response
             "creator": "U0G9QF9C6",
             "last_set": 1503435128
         },
-        "previous_names": []
+        "previous_names": {}
     }
 }
 ```

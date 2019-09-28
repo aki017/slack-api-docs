@@ -39,8 +39,8 @@ Typical success response
 ```
 {
     "ok": true,
-    "members": [
-        {
+    "members": {
+        "0": {
             "id": "W012A3CDE",
             "team_id": "T012AB3C4",
             "name": "spengler",
@@ -77,7 +77,7 @@ Typical success response
             "is_app_user": false,
             "has_2fa": false
         },
-        {
+        "1": {
             "id": "W07QCRPA4",
             "team_id": "T0G9PQBBK",
             "name": "glinda",
@@ -117,7 +117,7 @@ Typical success response
             "updated": 1480527098,
             "has_2fa": false
         }
-    ],
+    },
     "cache_ts": 1498777272,
     "response_metadata": {
         "next_cursor": "dXNlcjpVMEc5V0ZYTlo="

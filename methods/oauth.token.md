@@ -50,16 +50,16 @@ Success example using a workspace app produces a very different kind of response
     "authorizing_user_id": "U0HTT3Q0G",
     "team_name": "Subarachnoid Workspace",
     "team_id": "T061EG9Z9",
-    "permissions": [
-        {
-            "scopes": [
-                "channels:read",
-                "chat:write:user"
-            ],
+    "permissions": {
+        "0": {
+            "scopes": {
+                "0": "channels:read",
+                "1": "chat:write:user"
+            },
             "resource_type": "channel",
             "resource_id": 0
         }
-    ],
+    },
     "single_channel_id": "C061EG9T2"
 }
 ```
