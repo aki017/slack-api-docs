@@ -40,16 +40,16 @@ Typical success response
 
 ```
 {
-    "items": {
-        "0": {
+    "items": [
+        {
             "channel": "C2U86NC6H",
             "created": 1508881078,
             "created_by": "U2U85N1RZ",
             "message": {
                 "permalink": "https://hitchhikers.slack.com/archives/C2U86NC6H/p1508197641000151",
-                "pinned_to": {
-                    "0": "C2U86NC6H"
-                },
+                "pinned_to": [
+                    "C2U86NC6H"
+                ],
                 "text": "What is the meaning of life?",
                 "ts": "1508197641.000151",
                 "type": "message",
@@ -57,15 +57,15 @@ Typical success response
             },
             "type": "message"
         },
-        "1": {
+        {
             "channel": "C2U86NC6H",
             "created": 1508880991,
             "created_by": "U2U85N1RZ",
             "message": {
                 "permalink": "https://hitchhikers.slack.com/archives/C2U86NC6H/p1508284197000015",
-                "pinned_to": {
-                    "0": "C2U86NC6H"
-                },
+                "pinned_to": [
+                    "C2U86NC6H"
+                ],
                 "text": "The meaning of life, the universe, and everything is 42.",
                 "ts": "1503289197.000015",
                 "type": "message",
@@ -73,7 +73,7 @@ Typical success response
             },
             "type": "message"
         }
-    },
+    ],
     "ok": true
 }
 ```

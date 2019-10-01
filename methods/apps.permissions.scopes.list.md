@@ -37,28 +37,28 @@ Typical successful paginated response
 {
     "ok": true,
     "scopes": {
-        "app_home": {
-            "0": "chat:write",
-            "1": "im:history",
-            "2": "im:read"
-        },
-        "team": {
-            "0": "users:read"
-        },
-        "channel": {
-            "0": "channels:history",
-            "1": "chat:write"
-        },
-        "group": {
-            "0": "chat:write"
-        },
-        "mpim": {
-            "0": "chat:write"
-        },
-        "im": {
-            "0": "chat:write"
-        },
-        "user": {}
+        "app_home": [
+            "chat:write",
+            "im:history",
+            "im:read"
+        ],
+        "team": [
+            "users:read"
+        ],
+        "channel": [
+            "channels:history",
+            "chat:write"
+        ],
+        "group": [
+            "chat:write"
+        ],
+        "mpim": [
+            "chat:write"
+        ],
+        "im": [
+            "chat:write"
+        ],
+        "user": []
     }
 }
 ```

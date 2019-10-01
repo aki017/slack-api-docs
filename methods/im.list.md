@@ -40,8 +40,8 @@ Typical success response
 ```
 {
     "ok": true,
-    "ims": {
-        "0": {
+    "ims": [
+        {
             "id": "D0G9QPY56",
             "created": 1449709280,
             "is_im": true,
@@ -49,7 +49,7 @@ Typical success response
             "user": "USLACKBOT",
             "is_user_deleted": false
         },
-        "1": {
+        {
             "id": "D1KL59A72",
             "created": 1466692204,
             "is_im": true,
@@ -57,7 +57,7 @@ Typical success response
             "user": "U0G9QF9C6",
             "is_user_deleted": false
         },
-        "2": {
+        {
             "id": "D0G9XPFH9",
             "created": 1449722883,
             "is_im": true,
@@ -65,7 +65,7 @@ Typical success response
             "user": "U0G9WFXNZ",
             "is_user_deleted": false
         },
-        "3": {
+        {
             "id": "D0HRHJSF7",
             "created": 1452098023,
             "is_im": true,
@@ -73,7 +73,7 @@ Typical success response
             "user": "W0HRJL7CK",
             "is_user_deleted": false
         },
-        "4": {
+        {
             "id": "D1GD7CHC0",
             "created": 1465834222,
             "is_im": true,
@@ -81,7 +81,7 @@ Typical success response
             "user": "U1GDBDGR3",
             "is_user_deleted": true
         },
-        "5": {
+        {
             "id": "D1QMF76M9",
             "created": 1468274703,
             "is_im": true,
@@ -89,7 +89,7 @@ Typical success response
             "user": "U1QNSQB9U",
             "is_user_deleted": false
         },
-        "6": {
+        {
             "id": "D6K48KKRN",
             "created": 1502210225,
             "is_im": true,
@@ -97,7 +97,7 @@ Typical success response
             "user": "U6KR7BVFW",
             "is_user_deleted": false
         }
-    },
+    ],
     "response_metadata": {
         "next_cursor": "aW1faWQ6RDBCSDk1RExI="
     }

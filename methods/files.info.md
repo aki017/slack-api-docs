@@ -84,11 +84,11 @@ Typical success response
         "is_starred": false,
         "shares": {
             "public": {
-                "C0T8SE4AU": {
-                    "0": {
-                        "reply_users": {
-                            "0": "U061F7AUR"
-                        },
+                "C0T8SE4AU": [
+                    {
+                        "reply_users": [
+                            "U061F7AUR"
+                        ],
                         "reply_users_count": 1,
                         "reply_count": 1,
                         "ts": "1531763348.000001",
@@ -97,17 +97,17 @@ Typical success response
                         "channel_name": "file-under",
                         "team_id": "T061EG9R6"
                     }
-                }
+                ]
             }
         },
-        "channels": {
-            "0": "C0T8SE4AU"
-        },
-        "groups": {},
-        "ims": {},
+        "channels": [
+            "C0T8SE4AU"
+        ],
+        "groups": [],
+        "ims": [],
         "has_rich_preview": false
     },
-    "comments": {},
+    "comments": [],
     "response_metadata": {
         "next_cursor": "dGVhbTpDMUg5UkVTR0w="
     }

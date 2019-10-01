@@ -53,10 +53,10 @@ Typical success response
         "is_member": true,
         "is_private": false,
         "is_mpim": false,
-        "members": {
-            "0": "U0G9QF9C6",
-            "1": "U1QNSQB9U"
-        },
+        "members": [
+            "U0G9QF9C6",
+            "U1QNSQB9U"
+        ],
         "topic": {
             "value": "My Topic",
             "creator": "U0G9QF9C6",
@@ -67,7 +67,7 @@ Typical success response
             "creator": "U0G9QF9C6",
             "last_set": 1503435128
         },
-        "previous_names": {}
+        "previous_names": []
     },
     "already_in_channel": true
 }

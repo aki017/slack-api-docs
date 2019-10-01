@@ -38,52 +38,52 @@ Standard success response when used with a user token
     "ok": true,
     "info": {
         "team": {
-            "scopes": {},
+            "scopes": [],
             "resources": {
-                "ids": {}
+                "ids": []
             }
         },
         "channel": {
-            "scopes": {
-                "0": "channels:read"
-            },
+            "scopes": [
+                "channels:read"
+            ],
             "resources": {
-                "ids": {
-                    "0": "C061FA5PB"
-                },
+                "ids": [
+                    "C061FA5PB"
+                ],
                 "wildcard": false,
-                "excluded_ids": {}
+                "excluded_ids": []
             }
         },
         "group": {
-            "scopes": {},
+            "scopes": [],
             "resources": {
-                "ids": {}
+                "ids": []
             }
         },
         "mpim": {
-            "scopes": {},
+            "scopes": [],
             "resources": {
-                "ids": {}
+                "ids": []
             }
         },
         "im": {
-            "scopes": {},
+            "scopes": [],
             "resources": {
-                "ids": {}
+                "ids": []
             }
         },
         "app_home": {
-            "scopes": {
-                "0": "chat:write",
-                "1": "im:history",
-                "2": "im:read"
-            },
+            "scopes": [
+                "chat:write",
+                "im:history",
+                "im:read"
+            ],
             "resources": {
-                "ids": {
-                    "0": "D0C0NU1Q8",
-                    "1": "D0BH95DLH"
-                }
+                "ids": [
+                    "D0C0NU1Q8",
+                    "D0BH95DLH"
+                ]
             }
         }
     }
@@ -97,60 +97,60 @@ Response including a wildcard and team-level scopes
     "ok": true,
     "info": {
         "team": {
-            "scopes": {
-                "0": "users:read"
-            },
+            "scopes": [
+                "users:read"
+            ],
             "resources": {
-                "ids": {
-                    "0": "T061EG9R6"
-                }
+                "ids": [
+                    "T061EG9R6"
+                ]
             }
         },
         "channel": {
-            "scopes": {
-                "0": "channels:history",
-                "1": "chat:write"
-            },
+            "scopes": [
+                "channels:history",
+                "chat:write"
+            ],
             "resources": {
-                "ids": {},
+                "ids": [],
                 "wildcard": true,
-                "excluded_ids": {}
+                "excluded_ids": []
             }
         },
         "group": {
-            "scopes": {
-                "0": "chat:write"
-            },
+            "scopes": [
+                "chat:write"
+            ],
             "resources": {
-                "ids": {}
+                "ids": []
             }
         },
         "mpim": {
-            "scopes": {
-                "0": "chat:write"
-            },
+            "scopes": [
+                "chat:write"
+            ],
             "resources": {
-                "ids": {}
+                "ids": []
             }
         },
         "im": {
-            "scopes": {
-                "0": "chat:write"
-            },
+            "scopes": [
+                "chat:write"
+            ],
             "resources": {
-                "ids": {}
+                "ids": []
             }
         },
         "app_home": {
-            "scopes": {
-                "0": "chat:write",
-                "1": "im:history",
-                "2": "im:read"
-            },
+            "scopes": [
+                "chat:write",
+                "im:history",
+                "im:read"
+            ],
             "resources": {
-                "ids": {
-                    "0": "D0PNCRP9N"
-                }
+                "ids": [
+                    "D0PNCRP9N"
+                ]
             }
         }
     }

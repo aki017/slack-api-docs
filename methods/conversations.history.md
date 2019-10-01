@@ -50,20 +50,20 @@ Typical success response containing a channel's messages
 ```
 {
     "ok": true,
-    "messages": {
-        "0": {
+    "messages": [
+        {
             "type": "message",
             "user": "U012AB3CDE",
             "text": "I find you punny and would like to smell your nose letter",
             "ts": "1512085950.000216"
         },
-        "1": {
+        {
             "type": "message",
             "user": "U061F7AUR",
             "text": "What, you want to smell my shoes better?",
             "ts": "1512104434.000490"
         }
-    },
+    ],
     "has_more": true,
     "pin_count": 0,
     "response_metadata": {
@@ -77,19 +77,19 @@ Typical success response included formatted messages from bots and incoming webh
 ```
 {
     "ok": true,
-    "messages": {
-        "0": {
+    "messages": [
+        {
             "type": "message",
             "user": "U012AB3CDE",
             "text": "I find you punny and would like to smell your nose letter",
             "ts": "1512085950.000216"
         },
-        "1": {
+        {
             "type": "message",
             "user": "U061F7AUR",
             "text": "Isn't this whether dreadful? <https://badpuns.example.com/puns/123>",
-            "attachments": {
-                "0": {
+            "attachments": [
+                {
                     "service_name": "Leg end nary a laugh, Ink.",
                     "text": "This is likely a pun about the weather.",
                     "fallback": "We're withholding a pun from you",
@@ -98,10 +98,10 @@ Typical success response included formatted messages from bots and incoming webh
                     "thumb_height": 700,
                     "id": 1
                 }
-            },
+            ],
             "ts": "1512085950.218404"
         }
-    },
+    ],
     "has_more": true,
     "pin_count": 0,
     "response_metadata": {
@@ -116,14 +116,14 @@ Typical success response with `latest` timestamp and `inclusive` parameters spec
 {
     "ok": true,
     "latest": "1512085950.000216",
-    "messages": {
-        "0": {
+    "messages": [
+        {
             "type": "message",
             "user": "U012AB3CDE",
             "text": "I find you punny and would like to smell your nose letter",
             "ts": "1512085950.000216"
         }
-    },
+    ],
     "has_more": true,
     "pin_count": 0,
     "response_metadata": {

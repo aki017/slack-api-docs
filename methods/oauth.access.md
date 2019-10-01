@@ -90,27 +90,27 @@ Success example using a workspace app produces a very different kind of response
         "app_home": "D0PNCRP9N"
     },
     "scopes": {
-        "app_home": {
-            "0": "chat:write",
-            "1": "im:history",
-            "2": "im:read"
-        },
-        "team": {},
-        "channel": {
-            "0": "channels:history",
-            "1": "channels:read",
-            "2": "chat:write"
-        },
-        "group": {
-            "0": "chat:write"
-        },
-        "mpim": {
-            "0": "chat:write"
-        },
-        "im": {
-            "0": "chat:write"
-        },
-        "user": {}
+        "app_home": [
+            "chat:write",
+            "im:history",
+            "im:read"
+        ],
+        "team": [],
+        "channel": [
+            "channels:history",
+            "channels:read",
+            "chat:write"
+        ],
+        "group": [
+            "chat:write"
+        ],
+        "mpim": [
+            "chat:write"
+        ],
+        "im": [
+            "chat:write"
+        ],
+        "user": []
     }
 }
 ```

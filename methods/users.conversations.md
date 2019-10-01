@@ -52,8 +52,8 @@ Typical success response with only public channels. Note how `num_members` and `
 ```
 {
     "ok": true,
-    "channels": {
-        "0": {
+    "channels": [
+        {
             "id": "C012AB3CD",
             "name": "general",
             "is_channel": true,
@@ -68,7 +68,7 @@ Typical success response with only public channels. Note how `num_members` and `
             "is_shared": false,
             "is_ext_shared": false,
             "is_org_shared": false,
-            "pending_shared": {},
+            "pending_shared": [],
             "is_pending_ext_shared": false,
             "is_private": false,
             "is_mpim": false,
@@ -82,9 +82,9 @@ Typical success response with only public channels. Note how `num_members` and `
                 "creator": "",
                 "last_set": 0
             },
-            "previous_names": {}
+            "previous_names": []
         },
-        "1": {
+        {
             "id": "C061EG9T2",
             "name": "random",
             "is_channel": true,
@@ -99,7 +99,7 @@ Typical success response with only public channels. Note how `num_members` and `
             "is_shared": false,
             "is_ext_shared": false,
             "is_org_shared": false,
-            "pending_shared": {},
+            "pending_shared": [],
             "is_pending_ext_shared": false,
             "is_private": false,
             "is_mpim": false,
@@ -113,9 +113,9 @@ Typical success response with only public channels. Note how `num_members` and `
                 "creator": "",
                 "last_set": 0
             },
-            "previous_names": {}
+            "previous_names": []
         }
-    },
+    ],
     "response_metadata": {
         "next_cursor": "dGVhbTpDMDYxRkE1UEI="
     }
@@ -127,8 +127,8 @@ Example response when mixing different conversation types together, like `im` an
 ```
 {
     "ok": true,
-    "channels": {
-        "0": {
+    "channels": [
+        {
             "id": "G0AKFJBEU",
             "name": "mpdm-mr.banks--slactions-jackson--beforebot-1",
             "is_channel": false,
@@ -143,7 +143,7 @@ Example response when mixing different conversation types together, like `im` an
             "is_shared": false,
             "is_ext_shared": false,
             "is_org_shared": false,
-            "pending_shared": {},
+            "pending_shared": [],
             "is_pending_ext_shared": false,
             "is_private": true,
             "is_mpim": true,
@@ -160,7 +160,7 @@ Example response when mixing different conversation types together, like `im` an
             },
             "priority": 0
         },
-        "1": {
+        {
             "id": "D0C0F7S8Y",
             "created": 1498500348,
             "is_im": true,
@@ -169,7 +169,7 @@ Example response when mixing different conversation types together, like `im` an
             "is_user_deleted": false,
             "priority": 0
         },
-        "2": {
+        {
             "id": "D0BSHH4AD",
             "created": 1498511030,
             "is_im": true,
@@ -178,7 +178,7 @@ Example response when mixing different conversation types together, like `im` an
             "is_user_deleted": false,
             "priority": 0
         }
-    },
+    ],
     "response_metadata": {
         "next_cursor": "aW1faWQ6RDBCSDk1RExI"
     }

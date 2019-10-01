@@ -38,20 +38,20 @@ Typical successful paginated response
 ```
 {
     "ok": true,
-    "resources": {
-        "0": {
+    "resources": [
+        {
             "id": "T0DES3UAN",
             "type": "team"
         },
-        "1": {
+        {
             "id": "D024BFF1M",
             "type": "app_home"
         },
-        "2": {
+        {
             "id": "C024BE91L",
             "type": "channel"
         }
-    },
+    ],
     "response_metadata": {
         "next_cursor": "dGVhbTpDMUg5UkVTR0w="
     }

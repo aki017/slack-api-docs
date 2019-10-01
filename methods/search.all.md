@@ -41,19 +41,19 @@ Typical success response
 ```
 {
     "files": {
-        "matches": {
-            "0": {
-                "channels": {},
+        "matches": [
+            {
+                "channels": [],
                 "comments_count": 1,
                 "created": 1508804330,
                 "display_as_bot": false,
                 "editable": false,
                 "external_type": "",
                 "filetype": "png",
-                "groups": {},
+                "groups": [],
                 "id": "F7PKF1NR7",
                 "image_exif_rotation": 1,
-                "ims": {},
+                "ims": [],
                 "initial_comment": {
                     "comment": "Sure! Here's the workflow diagram!",
                     "created": 1508804330,
@@ -90,7 +90,7 @@ Typical success response
                 "user": "U2U85N1RZ",
                 "username": "amy"
             }
-        },
+        ],
         "pagination": {
             "first": 1,
             "last": 1,
@@ -108,8 +108,8 @@ Typical success response
         "total": 1
     },
     "messages": {
-        "matches": {
-            "0": {
+        "matches": [
+            {
                 "channel": {
                     "id": "C2U86NC6M",
                     "is_ext_shared": false,
@@ -119,7 +119,7 @@ Typical success response
                     "is_private": false,
                     "is_shared": false,
                     "name": "general",
-                    "pending_shared": {}
+                    "pending_shared": []
                 },
                 "iid": "35692677-e60e-43d9-ac45-1987cea88975",
                 "next": {
@@ -146,7 +146,7 @@ Typical success response
                 "user": "U2U85N1RZ",
                 "username": "amy"
             }
-        },
+        ],
         "pagination": {
             "first": 1,
             "last": 1,
@@ -165,7 +165,7 @@ Typical success response
     },
     "ok": true,
     "posts": {
-        "matches": {},
+        "matches": [],
         "total": 0
     },
     "query": "diagram"

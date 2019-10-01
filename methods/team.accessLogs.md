@@ -40,8 +40,8 @@ This response demonstrates pagination and two access log entries.
 ```
 {
     "ok": true,
-    "logins": {
-        "0": {
+    "logins": [
+        {
             "user_id": "U45678",
             "username": "alice",
             "date_first": 1422922864,
@@ -53,7 +53,7 @@ This response demonstrates pagination and two access log entries.
             "country": "US",
             "region": "CA"
         },
-        "1": {
+        {
             "user_id": "U12345",
             "username": "white_rabbit",
             "date_first": 1422922493,
@@ -65,7 +65,7 @@ This response demonstrates pagination and two access log entries.
             "country": "US",
             "region": "CA"
         }
-    },
+    ],
     "paging": {
         "count": 100,
         "total": 2,

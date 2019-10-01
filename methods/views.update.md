@@ -55,8 +55,8 @@ Typical success response includes the updated view payload.
             "emoji": true
         },
         "submit": null,
-        "blocks": {
-            "0": {
+        "blocks": [
+            {
                 "type": "section",
                 "block_id": "s_block",
                 "text": {
@@ -73,12 +73,12 @@ Typical success response includes the updated view payload.
                     }
                 }
             }
-        },
+        ],
         "private_metadata": "",
         "callback_id": "view_2",
         "external_id": "",
         "state": {
-            "values": {}
+            "values": []
         },
         "hash": "1569262015.55b5e41b",
         "clear_on_close": true,

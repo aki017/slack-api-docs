@@ -53,7 +53,7 @@ Typical success response
         "is_shared": false,
         "is_ext_shared": false,
         "is_org_shared": false,
-        "pending_shared": {},
+        "pending_shared": [],
         "is_pending_ext_shared": false,
         "is_member": true,
         "is_private": false,
@@ -68,13 +68,13 @@ Typical success response
             "creator": "",
             "last_set": 0
         },
-        "previous_names": {}
+        "previous_names": []
     },
     "warning": "already_in_channel",
     "response_metadata": {
-        "warnings": {
-            "0": "already_in_channel"
-        }
+        "warnings": [
+            "already_in_channel"
+        ]
     }
 }
 ```

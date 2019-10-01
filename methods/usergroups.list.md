@@ -38,8 +38,8 @@ Typical success response
 ```
 {
     "ok": true,
-    "usergroups": {
-        "0": {
+    "usergroups": [
+        {
             "id": "S0614TZR7",
             "team_id": "T060RNRCH",
             "is_usergroup": true,
@@ -55,12 +55,12 @@ Typical success response
             "updated_by": "U060RNRCZ",
             "deleted_by": null,
             "prefs": {
-                "channels": {},
-                "groups": {}
+                "channels": [],
+                "groups": []
             },
             "user_count": "2"
         },
-        "1": {
+        {
             "id": "S06158AV7",
             "team_id": "T060RNRCH",
             "is_usergroup": true,
@@ -76,12 +76,12 @@ Typical success response
             "updated_by": "USLACKBOT",
             "deleted_by": null,
             "prefs": {
-                "channels": {},
-                "groups": {}
+                "channels": [],
+                "groups": []
             },
             "user_count": "1"
         },
-        "2": {
+        {
             "id": "S0615G0KT",
             "team_id": "T060RNRCH",
             "is_usergroup": true,
@@ -97,12 +97,12 @@ Typical success response
             "updated_by": "U060RNRCZ",
             "deleted_by": null,
             "prefs": {
-                "channels": {},
-                "groups": {}
+                "channels": [],
+                "groups": []
             },
             "user_count": "0"
         }
-    }
+    ]
 }
 ```
 

@@ -53,9 +53,9 @@ Typical success response when mappings exist for the specified user IDs
         "U06UBSVDX": "W06PUUDMW",
         "W06UAZ65Q": "W06UAZ65Q"
     },
-    "invalid_user_ids": {
-        "0": "U21ABZZXX"
-    }
+    "invalid_user_ids": [
+        "U21ABZZXX"
+    ]
 }
 ```
 

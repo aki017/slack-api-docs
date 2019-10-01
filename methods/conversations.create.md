@@ -65,7 +65,7 @@ If successful, the command returns a rather stark [conversation object](/types/c
         "is_shared": false,
         "is_ext_shared": false,
         "is_org_shared": false,
-        "pending_shared": {},
+        "pending_shared": [],
         "is_pending_ext_shared": false,
         "is_member": true,
         "is_private": false,
@@ -84,7 +84,7 @@ If successful, the command returns a rather stark [conversation object](/types/c
             "creator": "",
             "last_set": 0
         },
-        "previous_names": {},
+        "previous_names": [],
         "priority": 0
     }
 }

@@ -55,13 +55,13 @@ Typical success response
         "updated_by": "U060R4BJ4",
         "deleted_by": null,
         "prefs": {
-            "channels": {},
-            "groups": {}
+            "channels": [],
+            "groups": []
         },
-        "users": {
-            "0": "U060R4BJ4",
-            "1": "U060RNRCZ"
-        },
+        "users": [
+            "U060R4BJ4",
+            "U060RNRCZ"
+        ],
         "user_count": 1
     }
 }

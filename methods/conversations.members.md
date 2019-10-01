@@ -41,11 +41,11 @@ Typical paginated success response
 ```
 {
     "ok": true,
-    "members": {
-        "0": "U023BECGF",
-        "1": "U061F7AUR",
-        "2": "W012A3CDE"
-    },
+    "members": [
+        "U023BECGF",
+        "U061F7AUR",
+        "W012A3CDE"
+    ],
     "response_metadata": {
         "next_cursor": "e3VzZXJfaWQ6IFcxMjM0NTY3fQ=="
     }

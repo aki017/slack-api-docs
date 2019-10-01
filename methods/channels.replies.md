@@ -42,19 +42,19 @@ Typical success response
 ```
 {
     "has_more": false,
-    "messages": {
-        "0": {
+    "messages": [
+        {
             "last_read": "1509484885.000082",
-            "replies": {
-                "0": {
+            "replies": [
+                {
                     "ts": "1509484424.000601",
                     "user": "U2U85N1RZ"
                 },
-                "1": {
+                {
                     "ts": "1509484885.000082",
                     "user": "U2U85N1RZ"
                 }
-            },
+            ],
             "reply_count": 2,
             "subscribed": true,
             "text": "This is a channel message",
@@ -64,7 +64,7 @@ Typical success response
             "unread_count": 0,
             "user": "U2X9P5FEL"
         },
-        "1": {
+        {
             "parent_user_id": "U2X9P5FEL",
             "text": "This is a thread reply",
             "thread_ts": "1485913694.000025",
@@ -72,7 +72,7 @@ Typical success response
             "type": "message",
             "user": "U2U85N1RZ"
         },
-        "2": {
+        {
             "parent_user_id": "U2X9P5FEL",
             "text": "This is another thread reply",
             "thread_ts": "1485913694.000025",
@@ -80,7 +80,7 @@ Typical success response
             "type": "message",
             "user": "U2U85N1RZ"
         }
-    },
+    ],
     "ok": true
 }
 ```

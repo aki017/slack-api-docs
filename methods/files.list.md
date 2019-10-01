@@ -44,8 +44,8 @@ Typical success response
 ```
 {
     "ok": true,
-    "files": {
-        "0": {
+    "files": [
+        {
             "id": "F0S43P1CZ",
             "created": 1531763254,
             "timestamp": 1531763254,
@@ -80,14 +80,14 @@ Typical success response
             "pjpeg": "https://.../billair_pjpeg.jpg",
             "permalink": "https://https://.../billair.gif",
             "permalink_public": "https://.../...",
-            "channels": {
-                "0": "C0T8SE4AU"
-            },
-            "groups": {},
-            "ims": {},
+            "channels": [
+                "C0T8SE4AU"
+            ],
+            "groups": [],
+            "ims": [],
             "comments_count": 0
         },
-        "1": {
+        {
             "id": "F0S43PZDF",
             "created": 1531763342,
             "timestamp": 1531763342,
@@ -122,14 +122,14 @@ Typical success response
             "pjpeg": "https://.../tedair_pjpeg.jpg",
             "permalink": "https://https://.../tedair.gif",
             "permalink_public": "https://.../...",
-            "channels": {
-                "0": "C0T8SE4AU"
-            },
-            "groups": {},
-            "ims": {},
+            "channels": [
+                "C0T8SE4AU"
+            ],
+            "groups": [],
+            "ims": [],
             "comments_count": 0
         }
-    },
+    ],
     "paging": {
         "count": 100,
         "total": 2,

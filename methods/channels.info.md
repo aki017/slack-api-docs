@@ -63,23 +63,23 @@ Typical success response
             "text": "Containment unit is 98% full",
             "username": "ecto1138",
             "bot_id": "B19LU7CSY",
-            "attachments": {
-                "0": {
+            "attachments": [
+                {
                     "text": "Don't get too attached",
                     "id": 1,
                     "fallback": "This is an attachment fallback"
                 }
-            },
+            ],
             "type": "message",
             "subtype": "bot_message",
             "ts": "1503435956.000247"
         },
         "unread_count": 1,
         "unread_count_display": 1,
-        "members": {
-            "0": "U0G9QF9C6",
-            "1": "U1QNSQB9U"
-        },
+        "members": [
+            "U0G9QF9C6",
+            "U1QNSQB9U"
+        ],
         "topic": {
             "value": "Spiritual containment strategies",
             "creator": "U0G9QF9C6",
@@ -90,9 +90,9 @@ Typical success response
             "creator": "U0G9QF9C6",
             "last_set": 1503435128
         },
-        "previous_names": {
-            "0": "dusting"
-        }
+        "previous_names": [
+            "dusting"
+        ]
     }
 }
 ```

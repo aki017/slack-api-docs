@@ -55,12 +55,12 @@ Typical success response
         "is_org_shared": false,
         "is_private": false,
         "is_shared": false,
-        "members": {},
+        "members": [],
         "name": "humans-and-bots",
         "name_normalized": "humans-and-bots",
-        "previous_names": {
-            "0": "humans"
-        },
+        "previous_names": [
+            "humans"
+        ],
         "purpose": {
             "creator": "U2U85N1RZ",
             "last_set": 1509475801,
