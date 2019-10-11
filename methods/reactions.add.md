@@ -24,11 +24,9 @@ This method adds a reaction (emoji) to a message. Now that [file threads](/chang
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
+| `channel` | `C1234567890` | Required | Channel where the message to add reaction to was posted. |
 | `name` | `thumbsup` | Required | Reaction (emoji) name. |
-| `channel` | `C1234567890` | Optional | Channel where the message to add reaction to was posted. |
-| `file` | `F1234567890` | Optional | File to add reaction to. Now that [file threads](/changelog/2018-05-file-threads-soon-tread#whats_changed) work the way you'd expect, this argument is deprecated. Specify the timestamp and channel of the message associated with a file instead. |
-| `file_comment` | `Fc1234567890` | Optional | File comment to add reaction to. Now that [file threads](/changelog/2018-05-file-threads-soon-tread#whats_changed) work the way you'd expect, this argument is deprecated. Specify the timestamp and channel of the message associated with a file instead. |
-| `timestamp` | `1234567890.123456` | Optional | Timestamp of the message to add reaction to. |
+| `timestamp` | `1234567890.123456` | Required | Timestamp of the message to add reaction to. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
@@ -62,16 +60,15 @@ This table lists the expected errors that this method could return. However, oth
 | Error | Description |
 | --- | --- |
 | `not_reactable` | Whatever you passed in, like a `file` or `file_comment`, can't be reacted to anymore. Your app can react to messages though. |
-| `file_comment_not_found` | File comment specified by `file_comment` does not exist. |
 | `invalid_name` | Value passed for `name` was invalid. |
 | `too_many_emoji` | The limit for distinct reactions (i.e emoji) on the item has been reached. |
 | `message_not_found` | Message specified by `channel` and `timestamp` does not exist. |
 | `already_reacted` | The specified item already has the user/reaction combination. |
 | `bad_timestamp` | Value passed for `timestamp` was invalid. |
 | `too_many_reactions` | The limit for reactions a person may add to the item has been reached. |
-| `file_not_found` | File specified by `file` does not exist. |
-| `no_item_specified` | `file`, `file_comment`, or combination of `channel` and `timestamp` was not specified. |
+| `no_item_specified` | combination of `channel` and `timestamp` was not specified. |
 | `is_archived` | Channel specified has been archived. |
+| `channel_not_found` | Value passed for `channel` is invalid. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |

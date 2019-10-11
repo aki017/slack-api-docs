@@ -29,7 +29,7 @@ Both the `channel` and `timestamp` arguments are required. The provided `channel
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Channel to pin the item in. |
-| `timestamp` | `1234567890.123456` | Optional | Timestamp of the message to pin. |
+| `timestamp` | `1234567890.123456` | Required | Timestamp of the message to pin. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
@@ -63,8 +63,6 @@ This table lists the expected errors that this method could return. However, oth
 | Error | Description |
 | --- | --- |
 | `bad_timestamp` | Value passed for `timestamp` was invalid. |
-| `file_not_found` | File specified by `file` does not exist. |
-| `file_comment_not_found` | File comment specified by `file_comment` does not exist. |
 | `message_not_found` | Message specified by `channel` and `timestamp` does not exist. |
 | `channel_not_found` | The `channel` argument was not specified or was invalid |
 | `no_item_specified` | One of `file`, `file_comment`, or `timestamp` was not specified. |
