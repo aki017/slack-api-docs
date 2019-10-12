@@ -24,7 +24,7 @@ Update a view by passing a new view definition along with the `view_id` returned
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `view` | &nbsp; | Required | The view payload. This must be a JSON-encoded string. |
+| `view` | &nbsp; | Required | The [view payload](/reference/block-kit/views). This must be a JSON-encoded string. |
 | `external_id` | `bmarley_view2` | Optional | A unique identifier of the view set by the developer. Must be unique for all views on a team. Max length of 255 characters. Either `view_id` or `external_id` is required. |
 | `hash` | `156772938.1827394` | Optional | A string that represents view state to protect against possible race conditions. |
 | `view_id` | `VMM512F2U` | Optional | A unique identifier of the view to be updated. Either `view_id` or `external_id` is required. |
