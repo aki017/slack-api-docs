@@ -10,7 +10,7 @@ Adds a file from a remote service
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [bot](/docs/token-types#bot) | [`remote_files:write`](/scopes/remote_files:write)&nbsp; |
 | [user](/docs/token-types#user) | [`remote_files:write`](/scopes/remote_files:write)&nbsp; |
 
  |
