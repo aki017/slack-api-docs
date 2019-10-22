@@ -2,7 +2,7 @@ Exchanges a temporary OAuth verifier code for an access token.
 
 ## Facts
 
-| Method URL: | `https://slack.com/api/oauth.access` |
+| Method URL: | `https://slack.com/api/oauth.v2.access` |
 | Preferred HTTP method: | `POST` |
 | Accepted content types: | `application/x-www-form-urlencoded` |
 | Rate limiting: | [Tier 4](/docs/rate-limits#tier_t4) |
@@ -11,7 +11,7 @@ Exchanges a temporary OAuth verifier code for an access token.
 
 This method allows you to exchange a temporary OAuth `code` for an API access token.
 
-This is the third step of the [OAuth authentication flow](/docs/oauth).
+This is the third step of the [V2 OAuth authentication flow](/authentication/oauth-v2). Check out our [guide to new Slack apps](/authentication/basics) for more information.
 
 We strongly recommend supplying the Client ID and Client Secret using the HTTP Basic authentication scheme, as discussed [in RFC 6749](https://tools.ietf.org/html/rfc6749#section-2.3.1).
 
@@ -19,17 +19,14 @@ If at all possible, avoid sending `client_id` and `client_secret` as parameters 
 
 **Keep your tokens secure**. Do not share tokens with users or anyone else.
 
-When used with a legacy workspace app, this method's response differs significantly.
-
 ## Arguments
 
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
- | `client_id` | `4b39e9-752c4` | Required | Issued when you created your application. |
-| `client_secret` | `33fea0113f5b1` | Required | Issued when you created your application. |
-| `code` | `ccdaa72ad` | Required | The `code` param returned via the OAuth callback. |
+ | `code` | `ccdaa72ad` | Required | The `code` param returned via the OAuth callback. |
+| `client_id` | `4b39e9-752c4` | Optional | Issued when you created your application. |
+| `client_secret` | `33fea0113f5b1` | Optional | Issued when you created your application. |
 | `redirect_uri` | `http://example.com` | Optional | This must match the originally submitted URI (if one was sent). |
-| `single_channel` | `true` | Optional, default=false | Request the user to add your app only to a single channel. |
 
 <ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
@@ -37,95 +34,27 @@ A potential gotcha: while `redirect_uri` is optional, it is _required_ if your a
 
 ## Response
 
-The response schema for this step of OAuth differs depending on [the scopes](/scopes) requested and the type of application used. When asking for the `bot` scope, you'll receive the token separately from the user token.
-
-`enterprise_id` will be populated if the installing team is part of an enterprise. Otherwise, it will be `null`.
-
-Successful user token negotiation for a single scope
-
-```
-{
-    "access_token": "xoxp-XXXXXXXX-XXXXXXXX-XXXXX",
-    "scope": "groups:write",
-    "team_name": "Wyld Stallyns LLC",
-    "team_id": "TXXXXXXXXX",
-    "enterprise_id": null
-}
-```
-
-Success example when asking for multiple scopes, a bot user token, and an incoming webhook
-
-```
-{
-    "access_token": "xoxp-XXXXXXXX-XXXXXXXX-XXXXX",
-    "scope": "incoming-webhook,commands,bot",
-    "team_name": "Team Installing Your Hook",
-    "team_id": "TXXXXXXXXX",
-    "enterprise_id": null,
-    "incoming_webhook": {
-        "url": "https://hooks.slack.com/TXXXXX/BXXXXX/XXXXXXXXXX",
-        "channel": "#channel-it-will-post-to",
-        "configuration_url": "https://teamname.slack.com/services/BXXXXX"
-    },
-    "bot": {
-        "bot_user_id": "UTTTTTTTTTTR",
-        "bot_access_token": "xoxb-XXXXXXXXXXXX-TTTTTTTTTTTTTT"
-    }
-}
-```
-
-Success example using a workspace app produces a very different kind of response
+Successful token request with scopes for both a bot user and a user token
 
 ```
 {
     "ok": true,
-    "access_token": "xoxa-access-token-string",
-    "token_type": "app",
-    "app_id": "A012345678",
-    "app_user_id": "U0NKHRW57",
-    "team_name": "Subarachnoid Workspace",
-    "team_id": "T061EG9R6",
+    "access_token": "xoxb-17653672481-19874698323-pdFZKVeTuE8sk7oOcBrzbqgy",
+    "token_type": "bot",
+    "scope": "commands,incoming-webhook",
+    "bot_user_id": "U0KRQLJ9H",
+    "app_id": "A0KRD7HC3",
+    "team": {
+        "name": "Slack Softball Team",
+        "id": "T9TK3CUKW"
+    },
     "enterprise_id": null,
-    "authorizing_user": {
-        "user_id": "U061F7AUR",
-        "app_home": "D0PNCRP9N"
-    },
-    "installer_user": {
-        "user_id": "U061F7AUR",
-        "app_home": "D0PNCRP9N"
-    },
-    "scopes": {
-        "app_home": [
-            "chat:write",
-            "im:history",
-            "im:read"
-        ],
-        "team": [],
-        "channel": [
-            "channels:history",
-            "channels:read",
-            "chat:write"
-        ],
-        "group": [
-            "chat:write"
-        ],
-        "mpim": [
-            "chat:write"
-        ],
-        "im": [
-            "chat:write"
-        ],
-        "user": []
+    "authed_user": {
+        "id": "U1234",
+        "scope": "chat:write",
+        "access_token": "xoxp-1234",
+        "token_type": "user"
     }
-}
-```
-
-Typical error response
-
-```
-{
-    "ok": false,
-    "error": "invalid_client_id"
 }
 ```
 
@@ -135,11 +64,13 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
+| `invalid_grant_type` | Value passed for `grant_type` was invalid. |
 | `invalid_client_id` | Value passed for `client_id` was invalid. |
 | `bad_client_secret` | Value passed for `client_secret` was invalid. |
 | `invalid_code` | Value passed for `code` was invalid. |
 | `bad_redirect_uri` | Value passed for `redirect_uri` did not match the `redirect_uri` in the original request. |
-| `oauth_authorization_url_mismatch` | The OAuth flow was initiated on an incorrect version of the authorization url. The flow must be initiated via /oauth/authorize. |
+| `oauth_authorization_url_mismatch` | The OAuth flow was initiated on an incorrect version of the authorization url. The flow must be initiated via /oauth/authorize/v2 . |
+| `preview_feature_not_available` | Returned when the API method is not yet available on the team in context. |
 | `invalid_arguments` | The method was called with invalid arguments. |
 | `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |

@@ -25,7 +25,7 @@ Open a modal with a user by exchanging a `trigger_id` received from another inte
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `trigger_id` | `12345.98765.abcd2358fdea` | Required | Exchange a trigger to post to the user. |
-| `view` | &nbsp; | Required | The [view payload](/reference/block-kit/views). This must be a JSON-encoded string. |
+| `view` | &nbsp; | Required | A [view payload](/reference/surfaces/views). This must be a JSON-encoded string. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
