@@ -1,95 +1,42 @@
-Invites users to a channel.
+Set an existing guest user, admin user, or owner to be a regular user.
 
 ## Facts
 
-| Method URL: | `https://slack.com/api/conversations.invite` |
+| Method URL: | `https://slack.com/api/admin.users.setRegular` |
 | Preferred HTTP method: | `POST` |
 | Accepted content types: | `application/x-www-form-urlencoded`, [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
-| Rate limiting: | [Tier 3](/docs/rate-limits#tier_t3) |
+| Rate limiting: | [Tier 2](/docs/rate-limits#tier_t2) |
 | Works with: | 
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write)&nbsp; [`groups:write`](/scopes/groups:write)&nbsp; [`im:write`](/scopes/im:write)&nbsp; [`mpim:write`](/scopes/mpim:write)&nbsp; |
+| [user](/docs/token-types#user) | [`admin.users:write`](/scopes/admin.users:write)&nbsp; |
 
  |
 
 * * *
 
-<ts-icon class="ts_icon_comment"></ts-icon>As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. For classic Slack apps, a corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`. For workspace apps, a `conversations:` scope is all that's needed.
+This Admin API method converts a user to a full user.
 
-This [Conversations API](/docs/conversations-api) method invites 1-30 users to a public or private channel. The calling user must be a member of the channel.
-
-### Limits for workspace apps
-
-Because workspace apps can't act on behalf of users, they don't have the power to invite users to conversations, except when they're the owner/creator of the conversation.
+This [API method for admins](/enterprise#workspace_management) may only be used on [Enterprise Grid](/enterprise).
 
 ## Arguments
 
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `channel` | `C1234567890` | Required | The ID of the public or private channel to invite user(s) to. |
-| `users` | `W1234567890,U2345678901,U3456789012` | Required | A comma separated list of user IDs. Up to 30 users may be listed. |
+| `team_id` | &nbsp; | Required | The ID (`T1234`) of the workspace. |
+| `user_id` | `W12345678` | Required | The ID of the user to designate as a regular user. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
 ## Response
 
-Typical success response when an invitation is extended
+Typical success response
 
 ```
 {
-    "ok": true,
-    "channel": {
-        "id": "C012AB3CD",
-        "name": "general",
-        "is_channel": true,
-        "is_group": false,
-        "is_im": false,
-        "created": 1449252889,
-        "creator": "W012A3BCD",
-        "is_archived": false,
-        "is_general": true,
-        "unlinked": 0,
-        "name_normalized": "general",
-        "is_read_only": false,
-        "is_shared": false,
-        "is_ext_shared": false,
-        "is_org_shared": false,
-        "pending_shared": [],
-        "is_pending_ext_shared": false,
-        "is_member": true,
-        "is_private": false,
-        "is_mpim": false,
-        "last_read": "1502126650.228446",
-        "topic": {
-            "value": "For public discussion of generalities",
-            "creator": "W012A3BCD",
-            "last_set": 1449709364
-        },
-        "purpose": {
-            "value": "This part of the workspace is for fun. Make fun here.",
-            "creator": "W012A3BCD",
-            "last_set": 1449709364
-        },
-        "previous_names": [
-            "specifics",
-            "abstractions",
-            "etc"
-        ],
-        "num_members": 23,
-        "locale": "en-US"
-    }
-}
-```
-
-Typical error response when an invite is attempted on a conversation type that does not support it
-
-```
-{
-    "ok": false,
-    "error": "method_not_supported_for_channel_type"
+    "ok": true
 }
 ```
 
@@ -99,18 +46,12 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
-| `channel_not_found` | Value passed for `channel` was invalid. |
-| `user_not_found` | Value passed for `users` was invalid. |
-| `no_user` | No value was passed for `users`. |
-| `cant_invite_self` | Authenticated user cannot invite themselves to a channel. |
-| `not_in_channel` | Authenticated user is not in the channel. |
-| `already_in_channel` | Invited user is already in the channel. |
-| `is_archived` | Channel has been archived. |
-| `cant_invite` | User cannot be invited to this channel. |
-| `method_not_supported_for_channel_type` | This type of conversation cannot be used with this method. |
-| `missing_scope` | The token used is not granted the specific scope permissions required to complete this request. |
-| `invitee_cant_see_channel` | The Grid multi-workspace channel you are inviting a user to is not shared with any workspaces the user is currently a member of. |
-| `ura_max_channels` | URA is already in the maximum number of channels. |
+| `team_not_found` | `team_id` was not found. |
+| `feature_not_enabled` | The Admin APIs feature is not enabled for this team. |
+| `user_not_found` | The requested user was not found. |
+| `cannot_modify_primary_owner` | The primary owner cannot be modified. |
+| `failed_to_set_user_to_regular` | Changing a user to a regular member failed. |
+| `not_an_admin` | This method can only be accessed by org owners and admins. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
@@ -118,8 +59,8 @@ This table lists the expected errors that this method could return. However, oth
 | `no_permission` | The workspace token used in this request does not have the permissions necessary to complete the request. Make sure your app is a member of the conversation it's attempting to post a message to. |
 | `org_login_required` | The workspace is undergoing an enterprise migration and will not be available until migration is complete. |
 | `ekm_access_denied` | Administrators have suspended the ability to post a message. |
+| `missing_scope` | The token used is not granted the specific scope permissions required to complete this request. |
 | `is_bot` | This method cannot be called by a bot user. |
-| `user_is_ultra_restricted` | This method cannot be called by a single channel guest. |
 | `invalid_arguments` | The method was called with invalid arguments. |
 | `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |

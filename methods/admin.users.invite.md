@@ -18,6 +18,8 @@ Invite a user to a workspace.
 
 This Admin API invites a user to a workspace.
 
+This [API method for admins](/enterprise#workspace_management) may only be used on [Enterprise Grid](/enterprise).
+
 ## Arguments
 
  | Argument | Example | Required | Description |
@@ -25,7 +27,7 @@ This Admin API invites a user to a workspace.
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel_ids` | `C1A2B3C4D,C26Z25Y24` | Required | A comma-separated list of `channel_id`s for this user to join. At least one channel is required. |
 | `email` | `joe@email.com` | Required | The email address of the person to invite. |
-| `team_id` | &nbsp; | Required | |
+| `team_id` | &nbsp; | Required | The ID (`T1234`) of the workspace. |
 | `custom_message` | `Come and join our team!` | Optional | An optional message to send to the user in the invite email. |
 | `guest_expiration_ts` | `0123456789.012345` | Optional | Timestamp when guest account should be disabled. Only include this timestamp if you inviting a guest user and you want their account to expire on a certain date. |
 | `is_restricted` | `true` | Optional | Is this user a multi-channel guest user? (default: false) |

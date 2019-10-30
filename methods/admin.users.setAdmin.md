@@ -18,12 +18,14 @@ Set an existing guest, regular user, or owner to be an admin user.
 
 This Admin API method converts a user to an admin user.
 
+This [API method for admins](/enterprise#workspace_management) may only be used on [Enterprise Grid](/enterprise).
+
 ## Arguments
 
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `team_id` | &nbsp; | Required | |
+| `team_id` | &nbsp; | Required | The ID (`T1234`) of the workspace. |
 | `user_id` | `W12345678` | Required | The ID of the user to designate as an admin. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).

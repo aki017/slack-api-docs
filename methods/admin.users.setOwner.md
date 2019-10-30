@@ -18,13 +18,19 @@ Set an existing guest, regular user, or admin user to be a workspace owner.
 
 This Admin API method converts a user to a workspace owner.
 
+This [API method for admins](/enterprise#workspace_management) may only be used on [Enterprise Grid](/enterprise).
+
+## Arguments
+
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `team_id` | &nbsp; | Required | |
+| `team_id` | &nbsp; | Required | The ID (`T1234`) of the workspace. |
 | `user_id` | &nbsp; | Required | Id of the user to promote to owner. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+
+## Response
 
 Typical success response
 

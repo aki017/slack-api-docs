@@ -17,7 +17,7 @@ Update an existing view.
 
 * * *
 
-Update a view by passing a new view definition along with the `view_id` returned in [`views.open`](/methods/views.open) or the `external_id`. See the [modals](/block-kit/surfaces/modals#updating_views) documentation to learn more about updating views and avoiding race conditions with the `hash` argument.
+Update a view by passing a new view definition along with the `view_id` returned in [`views.open`](/methods/views.open) or the `external_id`. See the [modals](/surfaces/modals/using#updating_apis) documentation to learn more about updating views and avoiding race conditions with the `hash` argument.
 
 ## Arguments
 

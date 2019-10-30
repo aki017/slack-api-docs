@@ -18,6 +18,8 @@ Create an Enterprise team.
 
 This Admin API creates a team for an enterprise organization.
 
+This [API method for admins](/enterprise#workspace_management) may only be used on [Enterprise Grid](/enterprise).
+
 ## Arguments
 
  | Argument | Example | Required | Description |

@@ -48,7 +48,10 @@ Successful token request with scopes for both a bot user and a user token
         "name": "Slack Softball Team",
         "id": "T9TK3CUKW"
     },
-    "enterprise_id": null,
+    "enterprise": {
+        "name": "slack-sports",
+        "id": "E12345678"
+    },
     "authed_user": {
         "id": "U1234",
         "scope": "chat:write",

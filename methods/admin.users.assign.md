@@ -18,12 +18,14 @@ Add an Enterprise user to a workspace.
 
 This Admin API assigns a user to a workspace. If the user has never been a member of the workspace, they will be added. If they've previously been removed or left the workspace, the user will be reinstated as a member.
 
+This [API method for admins](/enterprise#workspace_management) may only be used on [Enterprise Grid](/enterprise).
+
 ## Arguments
 
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `team_id` | &nbsp; | Required | |
+| `team_id` | &nbsp; | Required | The ID (`T1234`) of the workspace. |
 | `user_id` | &nbsp; | Required | The ID of the user to add to the workspace. |
 | `is_restricted` | `true` | Optional, default= | True if user should be added to the workspace as a guest. |
 | `is_ultra_restricted` | `true` | Optional, default= | True if user should be added to the workspace as a single-channel guest. |
