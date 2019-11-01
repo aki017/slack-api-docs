@@ -1,30 +1,32 @@
-Archives a channel.
+List all teams on an Enterprise organization
 
 ## Facts
 
-| Method URL: | `https://slack.com/api/channels.archive` |
+| Method URL: | `https://slack.com/api/admin.teams.list` |
 | Preferred HTTP method: | `POST` |
 | Accepted content types: | `application/x-www-form-urlencoded`, [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
-| Rate limiting: | [Tier 2](/docs/rate-limits#tier_t2) |
+| Rate limiting: | [Tier 3](/docs/rate-limits#tier_t3) |
 | Works with: | 
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
-| [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write)&nbsp; |
+| [user](/docs/token-types#user) | [`admin.teams:read`](/scopes/admin.teams:read)&nbsp; |
 
  |
 
 * * *
 
-This method archives a channel.
+This Admin API lists teams on an enterprise organization.
+
+This [API method for admins](/enterprise#workspace_management) may only be used on [Enterprise Grid](/enterprise).
 
 ## Arguments
 
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `channel` | `C1234567890` | Required | Channel to archive |
+| `cursor` | `5c3e53d5` | Optional | Set `cursor` to `next_cursor` returned by the previous call to list items in the next page. |
+| `limit` | `50` | Optional, default=100 | The maximum number of items to return. Must be between 1 - 100 both inclusive. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
@@ -34,16 +36,11 @@ Typical success response
 
 ```
 {
-    "ok": true
-}
-```
-
-Typical error response
-
-```
-{
-    "ok": false,
-    "error": "invalid_auth"
+    "ok": true,
+    "teams": [
+        "T12345",
+        "T56789"
+    ]
 }
 ```
 
@@ -53,10 +50,10 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
-| `channel_not_found` | Value passed for `channel` was invalid. |
-| `already_archived` | Channel has already been archived. |
-| `cant_archive_general` | You cannot archive the general channel |
-| `restricted_action` | A team preference prevents the authenticated user from archiving. |
+| `feature_not_enabled` | The Admin APIs feature is not enabled for this team. |
+| `not_an_admin` | This method is only accessible by org owners and admins. |
+| `invalid_cursor` | Invalid cursor. |
+| `invalid_limit` | Value passed for `limit` was not valid. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
@@ -66,7 +63,6 @@ This table lists the expected errors that this method could return. However, oth
 | `ekm_access_denied` | Administrators have suspended the ability to post a message. |
 | `missing_scope` | The token used is not granted the specific scope permissions required to complete this request. |
 | `is_bot` | This method cannot be called by a bot user. |
-| `user_is_restricted` | This method cannot be called by a restricted user or single channel guest. |
 | `invalid_arguments` | The method was called with invalid arguments. |
 | `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |

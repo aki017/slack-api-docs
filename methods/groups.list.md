@@ -10,7 +10,7 @@ Lists private channels that the calling user has access to.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [bot](/docs/token-types#bot) | [`groups:read`](/scopes/groups:read)&nbsp; |
 | [user](/docs/token-types#user) | [`groups:read`](/scopes/groups:read)&nbsp; |
 
  |

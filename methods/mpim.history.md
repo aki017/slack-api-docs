@@ -10,7 +10,7 @@ Fetches history of messages and events from a multiparty direct message.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [bot](/docs/token-types#bot) | [`mpim:history`](/scopes/mpim:history)&nbsp; |
 | [user](/docs/token-types#user) | [`mpim:history`](/scopes/mpim:history)&nbsp; |
 
  |

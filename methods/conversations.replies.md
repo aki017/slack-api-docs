@@ -10,7 +10,7 @@ Retrieve a thread of messages posted to a conversation
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [bot](/docs/token-types#bot) | [`channels:history`](/scopes/channels:history)&nbsp; [`groups:history`](/scopes/groups:history)&nbsp; [`im:history`](/scopes/im:history)&nbsp; [`mpim:history`](/scopes/mpim:history)&nbsp; |
 | [user](/docs/token-types#user) | [`channels:history`](/scopes/channels:history)&nbsp; [`groups:history`](/scopes/groups:history)&nbsp; [`im:history`](/scopes/im:history)&nbsp; [`mpim:history`](/scopes/mpim:history)&nbsp; |
 
  |

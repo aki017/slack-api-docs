@@ -10,7 +10,7 @@ Removes a reaction from an item.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [bot](/docs/token-types#bot) | [`reactions:write`](/scopes/reactions:write)&nbsp; |
 | [user](/docs/token-types#user) | [`reactions:write`](/scopes/reactions:write)&nbsp; |
 
  |

@@ -10,7 +10,7 @@ Sets the read cursor in a multiparty direct message channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [bot](/docs/token-types#bot) | [`mpim:write`](/scopes/mpim:write)&nbsp; |
 | [user](/docs/token-types#user) | [`mpim:write`](/scopes/mpim:write)&nbsp; |
 
  |

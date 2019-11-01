@@ -10,6 +10,7 @@ Lists & filters team files.
 
 | Token type | Required scope(s) |
 | --- | --- |
+| [bot](/docs/token-types#bot) | [`files:read`](/scopes/files:read)&nbsp; |
 | [user](/docs/token-types#user) | [`files:read`](/scopes/files:read)&nbsp; |
 
  |

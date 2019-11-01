@@ -10,7 +10,7 @@ Gets information about the current team.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [bot](/docs/token-types#bot) | [`team:read`](/scopes/team:read)&nbsp; |
 | [user](/docs/token-types#user) | [`team:read`](/scopes/team:read)&nbsp; |
 
  |

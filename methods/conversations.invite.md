@@ -10,6 +10,7 @@ Invites users to a channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
+| [bot](/docs/token-types#bot) | [`groups:write`](/scopes/groups:write)&nbsp; [`im:write`](/scopes/im:write)&nbsp; [`mpim:write`](/scopes/mpim:write)&nbsp; |
 | [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write)&nbsp; [`groups:write`](/scopes/groups:write)&nbsp; [`im:write`](/scopes/im:write)&nbsp; [`mpim:write`](/scopes/mpim:write)&nbsp; |
 
  |
@@ -18,7 +19,7 @@ Invites users to a channel.
 
 <ts-icon class="ts_icon_comment"></ts-icon>As part of the [Conversations API](/docs/conversations-api), this method's required scopes depend on the type of channel-like object you're working with. For classic Slack apps, a corresponding `channels:` scope is required when working with public channels, `groups:` for private channels, also the same rules are applied for `im:` and `mpim:`. For workspace apps, a `conversations:` scope is all that's needed.
 
-This [Conversations API](/docs/conversations-api) method invites 1-30 users to a public or private channel. The calling user must be a member of the channel.
+This [Conversations API](/docs/conversations-api) method invites 1-1000 users to a public or private channel. The calling user must be a member of the channel.
 
 ### Limits for workspace apps
 
@@ -30,7 +31,7 @@ Because workspace apps can't act on behalf of users, they don't have the power t
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | The ID of the public or private channel to invite user(s) to. |
-| `users` | `W1234567890,U2345678901,U3456789012` | Required | A comma separated list of user IDs. Up to 30 users may be listed. |
+| `users` | `W1234567890,U2345678901,U3456789012` | Required | A comma separated list of user IDs. Up to 1000 users may be listed. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 

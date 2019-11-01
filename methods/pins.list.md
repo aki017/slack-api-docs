@@ -10,7 +10,7 @@ Lists items pinned to a channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [bot](/docs/token-types#bot) | [`pins:read`](/scopes/pins:read)&nbsp; |
 | [user](/docs/token-types#user) | [`pins:read`](/scopes/pins:read)&nbsp; |
 
  |

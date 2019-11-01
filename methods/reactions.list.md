@@ -10,7 +10,7 @@ Lists reactions made by a user.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [bot](/docs/token-types#bot) | [`reactions:read`](/scopes/reactions:read)&nbsp; |
 | [user](/docs/token-types#user) | [`reactions:read`](/scopes/reactions:read)&nbsp; |
 
  |

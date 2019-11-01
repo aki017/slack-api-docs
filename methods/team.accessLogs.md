@@ -31,6 +31,8 @@ Each access log entry represents a user accessing Slack from a specific user, IP
 
 <ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
+Need to time travel? Set the `before` parameter to the oldest timestamp returned by the method to browse access logs from further back in time.
+
 ## Response
 
 The method's paginated response contains a list of access log entries. Each item in the `logins` array represents a number of possible user interactions, collated by the user, IP address, and user agent combination. These include actual logins as well as other API calls that are typically made when accessing Slack.

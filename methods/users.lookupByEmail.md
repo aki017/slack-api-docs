@@ -10,7 +10,7 @@ Find a user with an email address.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [bot](/docs/token-types#bot) | [`users:read.email`](/scopes/users:read.email)&nbsp; |
 | [user](/docs/token-types#user) | [`users:read.email`](/scopes/users:read.email)&nbsp; |
 
  |

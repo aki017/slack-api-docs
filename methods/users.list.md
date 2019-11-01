@@ -10,7 +10,7 @@ Lists all users in a Slack team.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [bot](/docs/token-types#bot) | [`users:read`](/scopes/users:read)&nbsp; |
 | [user](/docs/token-types#user) | [`users:read`](/scopes/users:read)&nbsp; |
 
  |

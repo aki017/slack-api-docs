@@ -10,7 +10,7 @@ Retrieves the Do Not Disturb status for up to 50 users on a team.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [bot](/docs/token-types#bot) | [`dnd:read`](/scopes/dnd:read)&nbsp; |
 | [user](/docs/token-types#user) | [`dnd:read`](/scopes/dnd:read)&nbsp; |
 
  |

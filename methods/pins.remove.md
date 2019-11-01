@@ -10,7 +10,7 @@ Un-pins an item from a channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [bot](/docs/token-types#bot) | [`pins:write`](/scopes/pins:write)&nbsp; |
 | [user](/docs/token-types#user) | [`pins:write`](/scopes/pins:write)&nbsp; |
 
  |

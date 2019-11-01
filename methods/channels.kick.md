@@ -10,6 +10,7 @@ Removes a user from a channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
+| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 | [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write)&nbsp; |
 
  |

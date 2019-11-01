@@ -10,7 +10,7 @@ Opens a direct message channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [bot](/docs/token-types#bot) | [`im:write`](/scopes/im:write)&nbsp; |
 | [user](/docs/token-types#user) | [`im:write`](/scopes/im:write)&nbsp; |
 
  |
