@@ -1,8 +1,8 @@
-Approve a workspace invite request.
+List all approved workspace invite requests.
 
 ## Facts
 
-| Method URL: | `https://slack.com/api/admin.inviteRequests.approve` |
+| Method URL: | `https://slack.com/api/admin.inviteRequests.approved.list` |
 | Preferred HTTP method: | `POST` |
 | Accepted content types: | `application/x-www-form-urlencoded`, [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
 | Rate limiting: | [Tier 2](/docs/rate-limits#tier_t2) |
@@ -16,17 +16,18 @@ Approve a workspace invite request.
 
 * * *
 
-This [invite request management API](/enterprise/inviting) method approves a request to invite someone to a specific workspace.
+This [invite request management API](/enterprise/inviting) method lists workspace invite requests that have already been approved.
 
-This method requires an `admin.*` scope. It's obtained through the normal [OAuth process](/docs/oauth), but there are a few additional requirements. The scope must be requested by an Enterprise Grid admin or owner, and the OAuth install must take place on the entire Grid org, not an individual workspace. See the [`admin.invites:write` page](/scopes/admin.invites:write) for more detailed instructions.
+This method requires an `admin.*` scope. It's obtained through the normal [OAuth process](/docs/oauth), but there are a few additional requirements. The scope must be requested by an [Enterprise Grid](/enterprise-grid) admin or owner, and the OAuth install must take place on the entire Grid org, not an individual workspace. See the [`admin.invites:read` page](/scopes/admin.invites:read) for more detailed instructions.
 
 ## Arguments
 
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `invite_request_id` | `Ir1234` | Required | ID of the request to invite. |
-| `team_id` | &nbsp; | Optional | ID for the workspace where the invite request was made. |
+| `cursor` | `5cweb43` | Optional | Value of the `next_cursor` field sent as part of the previous API response |
+| `limit` | `100` | Optional, default=100 | The number of results that will be returned by the API on each invocation. Must be between 1 - 1000, both inclusive |
+| `team_id` | &nbsp; | Optional | ID for the workspace where the invite requests were made. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
@@ -49,9 +50,7 @@ This table lists the expected errors that this method could return. However, oth
 | `team_not_found` | The `team_id` specified wasn't found. |
 | `missing_scope` | The token used is not granted the specific scope permissions required to complete this request. |
 | `not_an_admin` | This token doesn't have admin privileges. |
-| `invalid_request` | The `invite_request_id` passed is invalid. |
-| `already_processed` | The `invite_request_id` passed has already been approved or denied. |
-| `feature_not_enabled` | The Invite Request Admin APIs are not enabled for this team. |
+| `feature_not_enabled` | The Invite Requests admin APIs feature is not enabled |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |

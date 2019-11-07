@@ -29,7 +29,7 @@ This [API method for admins](/enterprise#workspace_management) may only be used 
 | `email` | `joe@email.com` | Required | The email address of the person to invite. |
 | `team_id` | &nbsp; | Required | The ID (`T1234`) of the workspace. |
 | `custom_message` | `Come and join our team!` | Optional | An optional message to send to the user in the invite email. |
-| `guest_expiration_ts` | `0123456789.012345` | Optional | Timestamp when guest account should be disabled. Only include this timestamp if you inviting a guest user and you want their account to expire on a certain date. |
+| `guest_expiration_ts` | `0123456789.012345` | Optional | Timestamp when guest account should be disabled. Only include this timestamp if you are inviting a guest user and you want their account to expire on a certain date. |
 | `is_restricted` | `true` | Optional | Is this user a multi-channel guest user? (default: false) |
 | `is_ultra_restricted` | `true` | Optional | Is this user a single channel guest user? (default: false) |
 | `real_name` | `{"full_name":"Joe Smith"}` | Optional | Full name of the user. |

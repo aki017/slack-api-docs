@@ -1,5 +1,5 @@
 {
-  "desc": "List all pending workspace invite requests.",
+  "desc": "List all denied workspace invite requests.",
   "args": {
     "token": {
       "required": true,
@@ -9,12 +9,12 @@
     "cursor": {
       "required": false,
       "example": "5cweb43",
-      "desc": "Value of the next_cursor field sent as part of the previous API response"
+      "desc": "Value of the next_cursor field sent as part of the previous api response"
     },
     "limit": {
       "required": false,
       "example": "100",
-      "desc": "The number of results that will be returned by the API on each invocation. Must be between 1 - 1000, both inclusive"
+      "desc": "The number of results that will be returned by the API on each invocation. Must be between 1 - 1000 both inclusive"
     },
     "team_id": {
       "required": false,
@@ -26,7 +26,7 @@
     "team_not_found": "The `team_id` specified wasn't found.",
     "missing_scope": "The token used is not granted the specific scope permissions required to complete this request.",
     "not_an_admin": "This token doesn't have admin privileges.",
-    "feature_not_enabled": "The Invite Request Admin APIs feature is not enabled",
+    "feature_not_enabled": "The Invite Request admin APIs feature is not enabled",
     "not_authed": "No authentication token provided.",
     "invalid_auth": "Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request.",
     "account_inactive": "Authentication token is for a deleted user or workspace.",

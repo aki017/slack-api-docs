@@ -1,4 +1,4 @@
-A public API that is used by Admins/Owners of the workspace to deny invite requests
+Deny a workspace invite request.
 
 ## Facts
 
@@ -16,21 +16,29 @@ A public API that is used by Admins/Owners of the workspace to deny invite reque
 
 * * *
 
-There is no documentation for this method.
+This [invite request management API](/enterprise/inviting) method approves a request to invite someone to a specific workspace.
+
+This method requires an `admin.*` scope. It's obtained through the normal [OAuth process](/docs/oauth), but there are a few additional requirements. The scope must be requested by an Enterprise Grid admin or owner, and the OAuth install must take place on the entire Grid org, not an individual workspace. See the [`admin.invites:write` page](/scopes/admin.invites:write) for more detailed instructions.
 
 ## Arguments
 
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `team_id` | &nbsp; | Required | encoded team id |
-| `invite_request_ids` | `Ir1234` | Optional | encoded invite\_request id |
+| `invite_request_id` | `Ir1234` | Required | ID of the request to invite. |
+| `team_id` | &nbsp; | Optional | ID for the workspace where the invite request was made. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
+`team_id` is **required** if your Enterprise Grid org contains more than one workspace.
+
 ## Response
 
-Sorry! There aren't any sample responses for this endpoint right now.
+```
+{
+        "ok": true
+    }
+```
 
 ## Errors
 
@@ -38,10 +46,12 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
-| `team_not_found` | Error returned when team\_id with which the API was invoked was not found |
+| `team_not_found` | The `team_id` specified wasn't found. |
 | `missing_scope` | The token used is not granted the specific scope permissions required to complete this request. |
-| `not_an_admin` | The API was invoked with a token that doesnt have admin previleges |
-| `invalid_request_id` | The `invite_request_id` passed is invalid. |
+| `not_an_admin` | This token doesn't have admin privileges. |
+| `invalid_request` | The `invite_request_id` passed is invalid. |
+| `already_processed` | The request has been previously processed and is not pending anymore |
+| `feature_not_enabled` | The Invite Request Admin APIs feature is not enabled |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |

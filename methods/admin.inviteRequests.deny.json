@@ -1,27 +1,29 @@
 {
-  "desc": "A public API that is used by Admins/Owners of the workspace to deny invite requests",
+  "desc": "Deny a workspace invite request.",
   "args": {
     "token": {
       "required": true,
       "example": "xxxx-xxxxxxxxx-xxxx",
       "desc": "Authentication token bearing required scopes."
     },
-    "team_id": {
+    "invite_request_id": {
       "required": true,
-      "example": " ",
-      "desc": "encoded team id"
-    },
-    "invite_request_ids": {
-      "required": false,
       "example": "Ir1234",
-      "desc": "encoded invite_request id"
+      "desc": "ID of the request to invite."
+    },
+    "team_id": {
+      "required": false,
+      "example": " ",
+      "desc": "ID for the workspace where the invite request was made."
     }
   },
   "errors": {
-    "team_not_found": "Error returned when team\\_id with which the API was invoked was not found",
+    "team_not_found": "The `team_id` specified wasn't found.",
     "missing_scope": "The token used is not granted the specific scope permissions required to complete this request.",
-    "not_an_admin": "The API was invoked with a token that doesnt have admin previleges",
-    "invalid_request_id": "The `invite_request_id` passed is invalid.",
+    "not_an_admin": "This token doesn't have admin privileges.",
+    "invalid_request": "The `invite_request_id` passed is invalid.",
+    "already_processed": "The request has been previously processed and is not pending anymore",
+    "feature_not_enabled": "The Invite Request Admin APIs feature is not enabled",
     "not_authed": "No authentication token provided.",
     "invalid_auth": "Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request.",
     "account_inactive": "Authentication token is for a deleted user or workspace.",

@@ -1,4 +1,4 @@
-A public API that is used by Admins/Owners of the workspace to list all pending invite requests
+List all pending workspace invite requests.
 
 ## Facts
 
@@ -16,22 +16,30 @@ A public API that is used by Admins/Owners of the workspace to list all pending 
 
 * * *
 
-There is no documentation for this method.
+This [invite request management API](/enterprise/inviting) method lists pending requests to invite someone to a specific workspace.
+
+This method requires an `admin.*` scope. It's obtained through the normal [OAuth process](/docs/oauth), but there are a few additional requirements. The scope must be requested by an Enterprise Grid admin or owner, and the OAuth install must take place on the entire Grid org, not an individual workspace. See the [`admin.invites:read` page](/scopes/admin.invites:read) for more detailed instructions.
 
 ## Arguments
 
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `team_id` | &nbsp; | Required | encoded team id |
-| `cursor` | `5cweb43` | Optional | value of the `next_cursor` field sent as part of the previous api response |
-| `limit` | `100` | Optional, default=100 | the number of results that will be returned by the API on each invokation. Must be between 1 - 1000 both inclusive |
+| `cursor` | `5cweb43` | Optional | Value of the `next_cursor` field sent as part of the previous API response |
+| `limit` | `100` | Optional, default=100 | The number of results that will be returned by the API on each invocation. Must be between 1 - 1000, both inclusive |
+| `team_id` | &nbsp; | Optional | ID for the workspace where the invite requests were made. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
+`team_id` is **required** if your Enterprise Grid org contains more than one workspace.
+
 ## Response
 
-Sorry! There aren't any sample responses for this endpoint right now.
+```
+{
+        "ok": true
+    }
+```
 
 ## Errors
 
@@ -39,9 +47,10 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
-| `team_not_found` | Error returned when team\_id with which the API was invoked was not found |
+| `team_not_found` | The `team_id` specified wasn't found. |
 | `missing_scope` | The token used is not granted the specific scope permissions required to complete this request. |
-| `not_an_admin` | The API was invoked with a token that doesnt have admin previleges |
+| `not_an_admin` | This token doesn't have admin privileges. |
+| `feature_not_enabled` | The Invite Request Admin APIs feature is not enabled |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |

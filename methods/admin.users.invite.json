@@ -29,7 +29,7 @@
     "guest_expiration_ts": {
       "required": false,
       "example": "0123456789.012345",
-      "desc": "Timestamp when guest account should be disabled. Only include this timestamp if you inviting a guest user and you want their account to expire on a certain date."
+      "desc": "Timestamp when guest account should be disabled. Only include this timestamp if you are inviting a guest user and you want their account to expire on a certain date."
     },
     "is_restricted": {
       "required": false,
