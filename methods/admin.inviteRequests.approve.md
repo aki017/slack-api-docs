@@ -10,7 +10,7 @@ Approve a workspace invite request.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | _No scope required_ |
+| [user](/docs/token-types#user) | [`admin.invites:write`](/scopes/admin.invites:write)&nbsp; |
 
  |
 

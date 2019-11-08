@@ -10,7 +10,7 @@ List all pending workspace invite requests.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | _No scope required_ |
+| [user](/docs/token-types#user) | [`admin.invites:read`](/scopes/admin.invites:read)&nbsp; |
 
  |
 

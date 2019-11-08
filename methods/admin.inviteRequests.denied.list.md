@@ -10,7 +10,7 @@ List all denied workspace invite requests.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | _No scope required_ |
+| [user](/docs/token-types#user) | [`admin.invites:read`](/scopes/admin.invites:read)&nbsp; |
 
  |
 
@@ -37,8 +37,11 @@ This method requires an `admin.*` scope. It's obtained through the normal [OAuth
 
 ```
 {
-        "ok": true
-    }
+    "ok": true,
+    "denied_requests": [
+        ...
+    ]
+}
 ```
 
 ## Errors
