@@ -10,7 +10,7 @@ Enables a file for public/external sharing.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`files:write:user`](/scopes/files:write:user)&nbsp; |
+| [user](/docs/token-types#user) | [`files:write`](/scopes/files:write)&nbsp; [`files:write:user`](/scopes/files:write:user)&nbsp; |
 
  |
 

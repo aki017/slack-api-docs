@@ -10,7 +10,7 @@ Revokes public/external sharing access for a file
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`files:write:user`](/scopes/files:write:user)&nbsp; |
+| [user](/docs/token-types#user) | [`files:write`](/scopes/files:write)&nbsp; [`files:write:user`](/scopes/files:write:user)&nbsp; |
 
  |
 
