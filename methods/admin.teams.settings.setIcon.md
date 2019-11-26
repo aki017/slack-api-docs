@@ -1,8 +1,8 @@
-Adds a file from a remote service
+Sets the icon of a workspace.
 
 ## Facts
 
-| Method URL: | `https://slack.com/api/files.remote.add` |
+| Method URL: | `https://slack.com/api/admin.teams.settings.setIcon` |
 | Preferred HTTP method: | `GET` |
 | Accepted content types: | `application/x-www-form-urlencoded` |
 | Rate limiting: | [Tier 2](/docs/rate-limits#tier_t2) |
@@ -10,83 +10,48 @@ Adds a file from a remote service
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`remote_files:write`](/scopes/remote_files:write)&nbsp; |
-| [user](/docs/token-types#user) | [`remote_files:write`](/scopes/remote_files:write)&nbsp; |
+| [user](/docs/token-types#user) | [`admin.teams:write`](/scopes/admin.teams:write)&nbsp; |
 
  |
 
 * * *
 
-<ts-icon class="ts_icon_all_files"></ts-icon> **File threads are here**  
-
-A new file commenting experience arrived on July 23, 2018. [**Learn more**](/changelog/2018-05-file-threads-soon-tread) about what's new and the migration path for apps already working with files and file comments.
-
-The `add` method adds a remote file to Slack. Adding a file **does not** share it to a channel. To make your beautiful remote file visible, use the [`files.remote.share`](/methods/files.remote.share) method.
-
-Remote files exist across the whole workspace (or organization, for Enterprise Grid). Because of that, remote files _must_ be added by bots with the [`bot` scope](/scopes/bot), not by an individual user.
+This [API method for admins](/enterprise#workspace_management) may only be used on [Enterprise Grid](/enterprise).
 
 ## Arguments
 
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `external_id` | `123456` | Required | Creator defined GUID for the file. |
-| `external_url` | `http://example.com/my_cloud_service_file/abc123` | Required | URL of the remote file. |
-| `title` | `Danger, High Voltage!` | Required | Title of the file being shared. |
-| `filetype` | `doc` | Optional | type of file |
-| `indexable_file_contents` | `...` | Optional | File containing contents that can be used to improve searchability for the remote file. |
-| `preview_image` | `...` | Optional | Preview of the document via `multipart/form-data`. |
+| `image_url` | `http://mysite.com/icon.jpeg` | Required | Set `cursor` to `next_cursor` returned by the previous call to list items in the next page. |
+| `team_id` | &nbsp; | Required | ID for the workspace to set the icon for. |
 
 <ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
-`preview_image` is displayed when your remote file is [shared](/methods/files.remote.share). It's a binary image file.
+This `admin` scope is obtained through the [OAuth flow](/docs/oauth), but there are a few additional requirements. The app requesting this scope **must** be [installed](/start/overview#installing_distributing) by an _ **admin or Owner** _ of an Enterprise Grid organization. Also, the app must be installed on the **entire** org, not on an individual workspace. See below for more details.
 
-`external_id` is the unique ID of the remote file, **according to** the external host of the file.
+Admin API endpoints reach across **an entire Enterprise Grid organization** , not individual workspaces.
 
-`indexable_file_contents` is used to determine how the remote file appears in Slack searches.
+For a token to be imbued with Admin scopes, it must be obtained from installing an app on the **entire Grid org** , not just a workspace within the organization.
 
-Note: this method performs an upsert. If you add a file that has been added before, the existing file will be updated.
+To configure and install an app supporting Admin API endpoints on your Enterprise Grid organization:
+
+1. [Create a new Slack app](/apps). Your app will need to be able to handle a standard [OAuth 2 flow](/docs/oauth#flow).
+2. In the app's settings, select **OAuth & Permissions** from the left navigation. Scroll down to the section titled **Scopes** and add the `admin.*` scope you want. Click the green **Save Changes** button.
+3. In the app's settings, select **Manage Distribution** from the left navigation. Under the section titled **Share Your App with Other Workspaces** , make sure all four sections have the green check. Then click the green **Activate Public Distribution** button.
+4. Under the **Share Your App with Your Workspace** section, copy the **Sharable URL** and paste it into a browser to initiate the OAuth handshake that will install the app on your organization. You must be logged in as an **admin or Owner** of your Enterprise Grid organization to install the app.
+5. Check the dropdown in the upper right of the installation screen to make sure you are installing the app on the organization, not an individual workspace within the organization. See the image below for a visual.
+6. Once your app completes the OAuth flow, you will be granted an OAuth token that can be used for calling Admin API methods for your organization.
+ ![](https://a.slack-edge.com/80588/img/api/workspace-v-org-audit.png)
+_When installing an app to use an Admin API endpoint, be sure to install it on your Grid organization, not a workspace within the organization._
 
 ## Response
 
 ```
 {
-        "ok": true,
-        "file": {
-            "id": "F0GDJ3XMH",
-            "created": 1563919925,
-            "timestamp": 1563919925,
-            "name": "LeadvilleAndBackAgain",
-            "title": "LeadvilleAndBackAgain",
-            "mimetype": "application/vnd.slack-remote",
-            "filetype": "remote",
-            "pretty_type": "Remote",
-            "user": "U0F8RBVNF",
-            "editable": false,
-            "size": 0,
-            "mode": "external",
-            "is_external": true,
-            "external_type": "app",
-            "is_public": false,
-            "public_url_shared": false,
-            "display_as_bot": false,
-            "username": "",
-            "url_private": "https://docs.google.com/document/d/1TA9fIaph4eSz2fC_1JGMuYaYUc4IvieIop0WqfCXw5Y/edit?usp=sharing",
-            "permalink": "https://kraneflannel.slack.com/files/U0F8RBVNF/F0GDJ3XMH/leadvilleandbackagain",
-            "comments_count": 0,
-            "is_starred": false,
-            "shares": {},
-            "channels": [],
-            "groups": [],
-            "ims": [],
-            "external_id": "1234",
-            "external_url": "https://docs.google.com/document/d/1TA9fIaph4eSz2fC_1JGMuYaYUc4IvieIop0WqfCXw5Y/edit?usp=sharing",
-            "has_rich_preview": false
-        }
+        "ok": true
     }
 ```
-
-One tricky bit: in the response, the file object may indicate that `"has_rich_preview"` is `false`, even if you include `preview_image`. That's because it takes a few seconds for Slack to parse the `preview_image` you pass. If you call `files.remote.add` with the same `external_id` later, you'll see `"has_preview_image": true`.
 
 ## Errors
 
@@ -94,18 +59,20 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
-| `bad_image` | The uploaded image could not be processed - try passing a JPG or PNG |
-| `too_large` | The uploaded image had excessive dimensions |
-| `invalid_external_id` | The external\_id provided is too long. |
-| `bad_title` | The title provided is too long. |
-| `not_authed` | No authentication token provided. |
+| `team_not_found` | `team_id` was not found. |
+| `feature_not_enabled` | The Admin APIs feature is not enabled for this team. |
+| `not_an_admin` | This method is only accessible by org owners and admins. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
+| `invalid_url` | Invalid url. |
+| `failed_to_set_icon` | Setting the url in the database failed. This may be transient, please try again soon. |
+| `not_authed` | No authentication token provided. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
 | `token_revoked` | Authentication token is for a deleted user or workspace or the app has been removed. |
 | `no_permission` | The workspace token used in this request does not have the permissions necessary to complete the request. Make sure your app is a member of the conversation it's attempting to post a message to. |
 | `org_login_required` | The workspace is undergoing an enterprise migration and will not be available until migration is complete. |
 | `ekm_access_denied` | Administrators have suspended the ability to post a message. |
 | `missing_scope` | The token used is not granted the specific scope permissions required to complete this request. |
+| `is_bot` | This method cannot be called by a bot user. |
 | `invalid_arguments` | The method was called with invalid arguments. |
 | `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |

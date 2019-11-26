@@ -1,8 +1,8 @@
-List all teams on an Enterprise organization
+Set the name of a given workspace.
 
 ## Facts
 
-| Method URL: | `https://slack.com/api/admin.teams.list` |
+| Method URL: | `https://slack.com/api/admin.teams.settings.setName` |
 | Preferred HTTP method: | `POST` |
 | Accepted content types: | `application/x-www-form-urlencoded`, [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
 | Rate limiting: | [Tier 3](/docs/rate-limits#tier_t3) |
@@ -10,13 +10,11 @@ List all teams on an Enterprise organization
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`admin.teams:read`](/scopes/admin.teams:read)&nbsp; |
+| [user](/docs/token-types#user) | [`admin.teams:write`](/scopes/admin.teams:write)&nbsp; |
 
  |
 
 * * *
-
-This Admin API lists workspaces in an enterprise organization.
 
 This [API method for admins](/enterprise#workspace_management) may only be used on [Enterprise Grid](/enterprise).
 
@@ -25,8 +23,8 @@ This [API method for admins](/enterprise#workspace_management) may only be used 
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `cursor` | `5c3e53d5` | Optional | Set `cursor` to `next_cursor` returned by the previous call to list items in the next page. |
-| `limit` | `50` | Optional, default=100 | The maximum number of items to return. Must be between 1 - 100 both inclusive. |
+| `name` | &nbsp; | Required | |
+| `team_id` | &nbsp; | Required | ID for the workspace to set the name for. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
@@ -49,20 +47,10 @@ _When installing an app to use an Admin API endpoint, be sure to install it on y
 
 ## Response
 
-Typical success response
-
 ```
 {
-    "ok": true,
-    "teams": [
-        {
-            "team_id": "T1234",
-            "name": "My Team",
-            "discoverability": "hidden",
-            "primary_owner": "bront@slack.com"
-        }
-    ]
-}
+        "ok": true
+    }
 ```
 
 ## Errors
@@ -71,10 +59,9 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
+| `team_not_found` | Returned when team\_id can’t be resolved |
+| `failed_to_set_name` | Returned when there is an error to set the name |
 | `feature_not_enabled` | The Admin APIs feature is not enabled for this team. |
-| `not_an_admin` | This method is only accessible by org owners and admins. |
-| `invalid_cursor` | Invalid cursor. |
-| `invalid_limit` | Value passed for `limit` was not valid. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
