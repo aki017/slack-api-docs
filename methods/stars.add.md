@@ -10,8 +10,9 @@ Adds a star to an item.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [bot](/docs/token-types#granular_bot) | [`stars:write`](/scopes/stars:write)&nbsp; |
 | [user](/docs/token-types#user) | [`stars:write`](/scopes/stars:write)&nbsp; |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 

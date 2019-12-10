@@ -10,8 +10,8 @@ Starts a Real Time Messaging session.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 | [user](/docs/token-types#user) | _No scope required_ |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 

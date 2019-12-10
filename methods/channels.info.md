@@ -10,8 +10,9 @@ Gets information about a channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`channels:read`](/scopes/channels:read)&nbsp; |
+| [bot](/docs/token-types#granular_bot) | [`channels:read`](/scopes/channels:read)&nbsp; |
 | [user](/docs/token-types#user) | [`channels:read`](/scopes/channels:read)&nbsp; |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 

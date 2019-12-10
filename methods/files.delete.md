@@ -10,8 +10,9 @@ Deletes a file.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`files:write`](/scopes/files:write)&nbsp; |
+| [bot](/docs/token-types#granular_bot) | [`files:write`](/scopes/files:write)&nbsp; |
 | [user](/docs/token-types#user) | [`files:write`](/scopes/files:write)&nbsp; [`files:write:user`](/scopes/files:write:user)&nbsp; |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 

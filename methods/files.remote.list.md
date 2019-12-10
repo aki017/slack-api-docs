@@ -10,8 +10,9 @@ Retrieve information about a remote file added to Slack
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`remote_files:read`](/scopes/remote_files:read)&nbsp; |
+| [bot](/docs/token-types#granular_bot) | [`remote_files:read`](/scopes/remote_files:read)&nbsp; |
 | [user](/docs/token-types#user) | [`remote_files:read`](/scopes/remote_files:read)&nbsp; |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 

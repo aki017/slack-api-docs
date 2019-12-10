@@ -10,8 +10,9 @@ Manually sets user presence.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`users:write`](/scopes/users:write)&nbsp; |
+| [bot](/docs/token-types#granular_bot) | [`users:write`](/scopes/users:write)&nbsp; |
 | [user](/docs/token-types#user) | [`users:write`](/scopes/users:write)&nbsp; |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 

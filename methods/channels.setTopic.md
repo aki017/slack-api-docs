@@ -10,8 +10,9 @@ Sets the topic for a channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`channels:manage`](/scopes/channels:manage)&nbsp; |
+| [bot](/docs/token-types#granular_bot) | [`channels:manage`](/scopes/channels:manage)&nbsp; |
 | [user](/docs/token-types#user) | [`channels:write`](/scopes/channels:write)&nbsp; |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 

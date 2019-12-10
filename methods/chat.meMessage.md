@@ -10,8 +10,9 @@ Share a me message into a channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [bot](/docs/token-types#granular_bot) | [`chat:write:user`](/scopes/chat:write:user)&nbsp; |
 | [user](/docs/token-types#user) | [`chat:write:user`](/scopes/chat:write:user)&nbsp; |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 

@@ -10,8 +10,9 @@ Gets reactions for an item.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`reactions:read`](/scopes/reactions:read)&nbsp; |
+| [bot](/docs/token-types#granular_bot) | [`reactions:read`](/scopes/reactions:read)&nbsp; |
 | [user](/docs/token-types#user) | [`reactions:read`](/scopes/reactions:read)&nbsp; |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 

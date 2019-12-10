@@ -10,8 +10,9 @@ Fetches history of messages and events from a private channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`groups:history`](/scopes/groups:history)&nbsp; |
+| [bot](/docs/token-types#granular_bot) | [`groups:history`](/scopes/groups:history)&nbsp; |
 | [user](/docs/token-types#user) | [`groups:history`](/scopes/groups:history)&nbsp; |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 

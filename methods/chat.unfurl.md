@@ -10,7 +10,7 @@ Provide custom unfurl behavior for user-posted URLs
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`links:write`](/scopes/links:write)&nbsp; |
+| [bot](/docs/token-types#granular_bot) | [`links:write`](/scopes/links:write)&nbsp; |
 | [user](/docs/token-types#user) | [`links:write`](/scopes/links:write)&nbsp; |
 
  |

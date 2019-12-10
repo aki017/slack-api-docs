@@ -10,8 +10,9 @@ Fetches history of messages and events from a channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`channels:history`](/scopes/channels:history)&nbsp; |
+| [bot](/docs/token-types#granular_bot) | [`channels:history`](/scopes/channels:history)&nbsp; |
 | [user](/docs/token-types#user) | [`channels:history`](/scopes/channels:history)&nbsp; |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 

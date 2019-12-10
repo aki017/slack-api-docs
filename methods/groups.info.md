@@ -10,8 +10,9 @@ Gets information about a private channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`groups:read`](/scopes/groups:read)&nbsp; |
+| [bot](/docs/token-types#granular_bot) | [`groups:read`](/scopes/groups:read)&nbsp; |
 | [user](/docs/token-types#user) | [`groups:read`](/scopes/groups:read)&nbsp; |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 

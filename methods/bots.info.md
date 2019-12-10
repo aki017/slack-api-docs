@@ -10,8 +10,9 @@ Gets information about a bot user.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`users:read`](/scopes/users:read)&nbsp; |
+| [bot](/docs/token-types#granular_bot) | [`users:read`](/scopes/users:read)&nbsp; |
 | [user](/docs/token-types#user) | [`users:read`](/scopes/users:read)&nbsp; |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 

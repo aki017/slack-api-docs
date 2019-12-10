@@ -10,8 +10,9 @@ Lists direct message channels for the calling user.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`im:read`](/scopes/im:read)&nbsp; |
+| [bot](/docs/token-types#granular_bot) | [`im:read`](/scopes/im:read)&nbsp; |
 | [user](/docs/token-types#user) | [`im:read`](/scopes/im:read)&nbsp; |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 

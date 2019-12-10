@@ -10,7 +10,7 @@ Unarchives a private channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`groups:write`](/scopes/groups:write)&nbsp; |
+| [bot](/docs/token-types#granular_bot) | [`groups:write`](/scopes/groups:write)&nbsp; |
 | [user](/docs/token-types#user) | [`groups:write`](/scopes/groups:write)&nbsp; |
 
  |

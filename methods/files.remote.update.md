@@ -10,8 +10,9 @@ Updates an existing remote file.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`remote_files:write`](/scopes/remote_files:write)&nbsp; |
+| [bot](/docs/token-types#granular_bot) | [`remote_files:write`](/scopes/remote_files:write)&nbsp; |
 | [user](/docs/token-types#user) | [`remote_files:write`](/scopes/remote_files:write)&nbsp; |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 

@@ -10,8 +10,9 @@ Closes a multiparty direct message channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`mpim:write`](/scopes/mpim:write)&nbsp; |
+| [bot](/docs/token-types#granular_bot) | [`mpim:write`](/scopes/mpim:write)&nbsp; |
 | [user](/docs/token-types#user) | [`mpim:write`](/scopes/mpim:write)&nbsp; |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 

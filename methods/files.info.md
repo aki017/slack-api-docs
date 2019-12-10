@@ -10,8 +10,9 @@ Gets information about a team file.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`files:read`](/scopes/files:read)&nbsp; |
+| [bot](/docs/token-types#granular_bot) | [`files:read`](/scopes/files:read)&nbsp; |
 | [user](/docs/token-types#user) | [`files:read`](/scopes/files:read)&nbsp; |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 

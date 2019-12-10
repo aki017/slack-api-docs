@@ -10,8 +10,9 @@ Sends a message to a channel.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`chat:write`](/scopes/chat:write)&nbsp; |
+| [bot](/docs/token-types#granular_bot) | [`chat:write`](/scopes/chat:write)&nbsp; |
 | [user](/docs/token-types#user) | [`chat:write:user`](/scopes/chat:write:user)&nbsp; [`chat:write:bot`](/scopes/chat:write:bot)&nbsp; |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 

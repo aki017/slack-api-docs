@@ -10,8 +10,9 @@ Lists custom emoji for a team.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#bot) | [`emoji:read`](/scopes/emoji:read)&nbsp; |
+| [bot](/docs/token-types#granular_bot) | [`emoji:read`](/scopes/emoji:read)&nbsp; |
 | [user](/docs/token-types#user) | [`emoji:read`](/scopes/emoji:read)&nbsp; |
+| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
 
@@ -53,6 +54,7 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
+| `invalid_arguments` | The method was called with invalid arguments. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
@@ -61,7 +63,6 @@ This table lists the expected errors that this method could return. However, oth
 | `org_login_required` | The workspace is undergoing an enterprise migration and will not be available until migration is complete. |
 | `ekm_access_denied` | Administrators have suspended the ability to post a message. |
 | `missing_scope` | The token used is not granted the specific scope permissions required to complete this request. |
-| `invalid_arguments` | The method was called with invalid arguments. |
 | `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
 | `invalid_form_data` | The method was called via a `POST` request with `Content-Type` `application/x-www-form-urlencoded` or `multipart/form-data`, but the form data was either missing or syntactically invalid. |
