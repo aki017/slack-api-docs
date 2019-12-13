@@ -1,20 +1,22 @@
-Set the name of a given workspace.
+Set an expiration for a guest user
 
 ## Facts
 
-| Method URL: | `https://slack.com/api/admin.teams.settings.setName` |
+| Method URL: | `https://slack.com/api/admin.users.setExpiration` |
 | Preferred HTTP method: | `POST` |
 | Accepted content types: | `application/x-www-form-urlencoded`, [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
-| Rate limiting: | [Tier 3](/docs/rate-limits#tier_t3) |
+| Rate limiting: | [Tier 2](/docs/rate-limits#tier_t2) |
 | Works with: | 
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`admin.teams:write`](/scopes/admin.teams:write)&nbsp; |
+| [user](/docs/token-types#user) | [`admin.users:write`](/scopes/admin.users:write)&nbsp; |
 
  |
 
 * * *
+
+This [Admin API method](/enterprise/managing) sets the expiration of a single-channel or multi-channel guest.
 
 This [API method for admins](/enterprise/managing) may only be used on [Enterprise Grid](/enterprise).
 
@@ -23,8 +25,9 @@ This [API method for admins](/enterprise/managing) may only be used on [Enterpri
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `name` | &nbsp; | Required | |
-| `team_id` | &nbsp; | Required | ID for the workspace to set the name for. |
+| `expiration_ts` | `1234567890` | Required | Timestamp when guest account should be disabled. |
+| `team_id` | &nbsp; | Required | The ID (`T1234`) of the workspace. |
+| `user_id` | `W12345678` | Required | The ID of the user to set an expiration for. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
@@ -47,10 +50,12 @@ _When installing an app to use an Admin API endpoint, be sure to install it on y
 
 ## Response
 
+Typical success response
+
 ```
 {
-        "ok": true
-    }
+    "ok": true
+}
 ```
 
 ## Errors
@@ -59,9 +64,14 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
-| `team_not_found` | Returned when team\_id can’t be resolved |
-| `failed_to_set_name` | Returned when there is an error to set the name |
+| `team_not_found` | `team_id` was not found. |
 | `feature_not_enabled` | The Admin APIs feature is not enabled for this team. |
+| `failed_looking_up_user` | We couldn't find the requested user. |
+| `failed_to_validate_caller` | The token calling this method doesn't have permission to invite a user. |
+| `failed_to_validate_team` | The team calling this method was invalid. |
+| `failed_to_validate_expiration` | `expiration_ts` was invalid. |
+| `user_is_already_deleted` | The user has already been deleted and disabled. |
+| `user_is_not_a_guest` | The passed user\_id does not belong to a guest user. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |

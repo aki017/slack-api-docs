@@ -18,7 +18,7 @@ List all teams on an Enterprise organization
 
 This Admin API lists workspaces in an enterprise organization.
 
-This [API method for admins](/enterprise#workspace_management) may only be used on [Enterprise Grid](/enterprise).
+This [API method for admins](/enterprise/managing) may only be used on [Enterprise Grid](/enterprise).
 
 ## Arguments
 

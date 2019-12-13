@@ -20,7 +20,7 @@ This [App Management API](/admins/managing) method approves an app install reque
 
 This method requires an `admin.*` scope. It's obtained through the normal [OAuth process](/docs/oauth), but there are a few additional requirements. The scope must be requested by an Enterprise Grid admin or owner, and the OAuth install must take place on the entire Grid org, not an individual workspace. See the [`admin.apps:write` page](/scopes/admin.apps:write) for more detailed instructions.
 
-This [API method for admins](/enterprise#workspace_management) may only be used on [Enterprise Grid](/enterprise).
+This [API method for admins](/enterprise/managing) may only be used on [Enterprise Grid](/enterprise).
 
 ## Arguments
 

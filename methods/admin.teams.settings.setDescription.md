@@ -16,7 +16,7 @@ Set the description of a given workspace.
 
 * * *
 
-This [API method for admins](/enterprise#workspace_management) may only be used on [Enterprise Grid](/enterprise).
+This [API method for admins](/enterprise/managing) may only be used on [Enterprise Grid](/enterprise).
 
 ## Arguments
 

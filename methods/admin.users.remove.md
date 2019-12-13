@@ -18,7 +18,7 @@ Remove a user from a workspace.
 
 This Admin API removes a user from a workspace.
 
-This [API method for admins](/enterprise#workspace_management) may only be used on [Enterprise Grid](/enterprise).
+This [API method for admins](/enterprise/managing) may only be used on [Enterprise Grid](/enterprise).
 
 ## Arguments
 

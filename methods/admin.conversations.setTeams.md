@@ -1,20 +1,28 @@
-Set the name of a given workspace.
+Set the workspaces in an Enterprise grid org that connect to a channel.
 
 ## Facts
 
-| Method URL: | `https://slack.com/api/admin.teams.settings.setName` |
+| Method URL: | `https://slack.com/api/admin.conversations.setTeams` |
 | Preferred HTTP method: | `POST` |
 | Accepted content types: | `application/x-www-form-urlencoded`, [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
-| Rate limiting: | [Tier 3](/docs/rate-limits#tier_t3) |
+| Rate limiting: | [Tier 2](/docs/rate-limits#tier_t2) |
 | Works with: | 
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`admin.teams:write`](/scopes/admin.teams:write)&nbsp; |
+| [user](/docs/token-types#user) | [`admin.conversations:write`](/scopes/admin.conversations:write)&nbsp; |
 
  |
 
 * * *
+
+This [Admin API method](/enterprise/managing) sets the workspaces connected to a channel.
+
+When used with the `team_id` parameter, this method sets the requested `channel_id` as a regular channel on the `team_id` workspace.
+
+When used with the `target_team_ids` parameter, this method sets the requested `channel_id` as a [cross-workspace shared channel](/enterprise/shared-channels). The channel is shared to all the workspaces in `target_team_ids`.
+
+Either way, this method can be used both to _add_ and to _remove_ workspaces from a channel.
 
 This [API method for admins](/enterprise/managing) may only be used on [Enterprise Grid](/enterprise).
 
@@ -23,8 +31,10 @@ This [API method for admins](/enterprise/managing) may only be used on [Enterpri
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `name` | &nbsp; | Required | |
-| `team_id` | &nbsp; | Required | ID for the workspace to set the name for. |
+| `channel_id` | &nbsp; | Required | The encoded `channel_id` to add or remove to workspaces. |
+| `org_channel` | `true` | Optional, default=false | True if channel has to be converted to an org channel |
+| `target_team_ids` | &nbsp; | Optional | The list of workspaces to which the channel should be shared. Not required if the channel is being shared orgwide. |
+| `team_id` | &nbsp; | Optional | The workspace to which the channel belongs. Omit this argument if the channel is a cross-workspace shared channel. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
@@ -47,10 +57,12 @@ _When installing an app to use an Admin API endpoint, be sure to install it on y
 
 ## Response
 
+Typical success response
+
 ```
 {
-        "ok": true
-    }
+    "ok": true
+}
 ```
 
 ## Errors
@@ -59,9 +71,17 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
-| `team_not_found` | Returned when team\_id can’t be resolved |
-| `failed_to_set_name` | Returned when there is an error to set the name |
-| `feature_not_enabled` | The Admin APIs feature is not enabled for this team. |
+| `restricted_action` | The caller of this API is not allowed to perform this operation. |
+| `not_enabled` | The API endpoint is not enabled for your team. |
+| `invalid_channel_id` | `channel_id` was invalid. |
+| `channel_not_found` | The channel wasn't found or isn't shared to this workspace. |
+| `invalid_target_team` | Target workspace is invalid. |
+| `channel_type_not_supported` | The requested `channel_id` is not a supported type of channel. |
+| `channel_not_shared_with_team` | The requested `channel_id` has not been shared with the target workspace. |
+| `channel_cannot_be_unshared` | Channel cannot be unshared from this workspace. |
+| `default_org_wide_channel` | Default org wide channel cannot be unshared from a workspace. |
+| `unsupported_arguments` | The provided method arguments are not supported. |
+| `too_many_target_teams` | Too many `target_team_ids` were provided. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |

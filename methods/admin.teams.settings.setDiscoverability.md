@@ -1,11 +1,11 @@
-Set the name of a given workspace.
+An API method that allows admins to set the discoverability of a given workspace
 
 ## Facts
 
-| Method URL: | `https://slack.com/api/admin.teams.settings.setName` |
+| Method URL: | `https://slack.com/api/admin.teams.settings.setDiscoverability` |
 | Preferred HTTP method: | `POST` |
 | Accepted content types: | `application/x-www-form-urlencoded`, [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
-| Rate limiting: | [Tier 3](/docs/rate-limits#tier_t3) |
+| Rate limiting: | [Tier 2](/docs/rate-limits#tier_t2) |
 | Works with: | 
 
 | Token type | Required scope(s) |
@@ -16,6 +16,8 @@ Set the name of a given workspace.
 
 * * *
 
+This [Admin API method](/enterprise/managing) sets the discoverability of a workspace.
+
 This [API method for admins](/enterprise/managing) may only be used on [Enterprise Grid](/enterprise).
 
 ## Arguments
@@ -23,8 +25,8 @@ This [API method for admins](/enterprise/managing) may only be used on [Enterpri
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `name` | &nbsp; | Required | |
-| `team_id` | &nbsp; | Required | ID for the workspace to set the name for. |
+| `discoverability` | &nbsp; | Required | This workspace's discovery setting. It must be set to one of `open`, `invite_only`, `closed`, or `unlisted`. |
+| `team_id` | &nbsp; | Required | The ID of the workspace to set discoverability on. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
@@ -47,10 +49,12 @@ _When installing an app to use an Admin API endpoint, be sure to install it on y
 
 ## Response
 
+Typical success response
+
 ```
 {
-        "ok": true
-    }
+    "ok": true
+}
 ```
 
 ## Errors
@@ -59,8 +63,9 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
-| `team_not_found` | Returned when team\_id can’t be resolved |
-| `failed_to_set_name` | Returned when there is an error to set the name |
+| `team_not_found` | The `team_id` was not found. |
+| `failed_to_set_discoverability` | There was an error setting the discoverability of this workspace. |
+| `discoverability_setting_invalid` | The discovery setting must be set to one of `open`, `invite_only`, `closed`, or `unlisted`. |
 | `feature_not_enabled` | The Admin APIs feature is not enabled for this team. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |

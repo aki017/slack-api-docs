@@ -18,7 +18,7 @@ Add an Enterprise user to a workspace.
 
 This Admin API assigns a user to a workspace. If the user has never been a member of the workspace, they will be added. If they've previously been removed or left the workspace, the user will be reinstated as a member.
 
-This [API method for admins](/enterprise#workspace_management) may only be used on [Enterprise Grid](/enterprise).
+This [API method for admins](/enterprise/managing) may only be used on [Enterprise Grid](/enterprise).
 
 ## Arguments
 

@@ -18,7 +18,7 @@ Set an existing guest, regular user, or admin user to be a workspace owner.
 
 This Admin API method converts a user to a workspace owner.
 
-This [API method for admins](/enterprise#workspace_management) may only be used on [Enterprise Grid](/enterprise).
+This [API method for admins](/enterprise/managing) may only be used on [Enterprise Grid](/enterprise).
 
 ## Arguments
 

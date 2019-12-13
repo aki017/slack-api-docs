@@ -20,7 +20,7 @@ This method wipes a user session, leaving the user unauthenticated. The user’s
 
 By default, this method resets all sessions for a given user. Use the `web_only` and `mobile_only` parameters to wipe only web or only mobile sessions.
 
-This [API method for admins](/enterprise#workspace_management) may only be used on [Enterprise Grid](/enterprise).
+This [API method for admins](/enterprise/managing) may only be used on [Enterprise Grid](/enterprise).
 
 ## Arguments
 

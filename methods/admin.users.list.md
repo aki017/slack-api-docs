@@ -1,8 +1,8 @@
-Set the name of a given workspace.
+List users on a workspace
 
 ## Facts
 
-| Method URL: | `https://slack.com/api/admin.teams.settings.setName` |
+| Method URL: | `https://slack.com/api/admin.users.list` |
 | Preferred HTTP method: | `POST` |
 | Accepted content types: | `application/x-www-form-urlencoded`, [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
 | Rate limiting: | [Tier 3](/docs/rate-limits#tier_t3) |
@@ -10,11 +10,13 @@ Set the name of a given workspace.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | [`admin.teams:write`](/scopes/admin.teams:write)&nbsp; |
+| [user](/docs/token-types#user) | [`admin.users:read`](/scopes/admin.users:read)&nbsp; |
 
  |
 
 * * *
+
+This Admin API lists users in a workspace.
 
 This [API method for admins](/enterprise/managing) may only be used on [Enterprise Grid](/enterprise).
 
@@ -23,8 +25,9 @@ This [API method for admins](/enterprise/managing) may only be used on [Enterpri
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `name` | &nbsp; | Required | |
-| `team_id` | &nbsp; | Required | ID for the workspace to set the name for. |
+| `team_id` | &nbsp; | Required | The ID (`T1234`) of the workspace. |
+| `cursor` | `5c3e53d5` | Optional | Set `cursor` to `next_cursor` returned by the previous call to list items in the next page. |
+| `limit` | `true` | Optional, default=100 | Limit for how many users to be retrieved per page |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
@@ -47,11 +50,27 @@ _When installing an app to use an Admin API endpoint, be sure to install it on y
 
 ## Response
 
+Typical success response
+
 ```
 {
-        "ok": true
-    }
+    "ok": true,
+    "users": [
+        {
+            "id": "T1234",
+            "email": "bront@slack.com",
+            "is_admin": false,
+            "is_owner": false,
+            "is_primary_owner": false,
+            "is_restricted": false,
+            "is_ultra_restricted": false,
+            "is_bot": false
+        }
+    ]
+}
 ```
+
+For more details on the user array returned by this method, [check out the user object documentation](/types/user).
 
 ## Errors
 
@@ -59,9 +78,8 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
-| `team_not_found` | Returned when team\_id can’t be resolved |
-| `failed_to_set_name` | Returned when there is an error to set the name |
-| `feature_not_enabled` | The Admin APIs feature is not enabled for this team. |
+| `team_not_found` | `team_id` was not found. |
+| `feature_not_enabled` | The Admin APIs feature is not enabled for this team |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |

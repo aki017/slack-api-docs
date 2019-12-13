@@ -18,7 +18,7 @@ Set an existing guest user, admin user, or owner to be a regular user.
 
 This Admin API method converts a user to a full user.
 
-This [API method for admins](/enterprise#workspace_management) may only be used on [Enterprise Grid](/enterprise).
+This [API method for admins](/enterprise/managing) may only be used on [Enterprise Grid](/enterprise).
 
 ## Arguments
 

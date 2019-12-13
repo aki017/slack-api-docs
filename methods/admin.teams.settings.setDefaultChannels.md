@@ -1,11 +1,11 @@
-Set the name of a given workspace.
+Set the default channels of a workspace.
 
 ## Facts
 
-| Method URL: | `https://slack.com/api/admin.teams.settings.setName` |
-| Preferred HTTP method: | `POST` |
-| Accepted content types: | `application/x-www-form-urlencoded`, [`application/json`](/web#posting_json "Learn more about sending HTTP POST with JSON") |
-| Rate limiting: | [Tier 3](/docs/rate-limits#tier_t3) |
+| Method URL: | `https://slack.com/api/admin.teams.settings.setDefaultChannels` |
+| Preferred HTTP method: | `GET` |
+| Accepted content types: | `application/x-www-form-urlencoded` |
+| Rate limiting: | [Tier 2](/docs/rate-limits#tier_t2) |
 | Works with: | 
 
 | Token type | Required scope(s) |
@@ -16,6 +16,8 @@ Set the name of a given workspace.
 
 * * *
 
+This [Admin API method](/enterprise/managing) sets the [default channels](https://slack.com/help/articles/201898998-set-default-channels-for-new-members) of a workspace. Default channels are joined by new members of a workspace automatically.
+
 This [API method for admins](/enterprise/managing) may only be used on [Enterprise Grid](/enterprise).
 
 ## Arguments
@@ -23,10 +25,10 @@ This [API method for admins](/enterprise/managing) may only be used on [Enterpri
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `name` | &nbsp; | Required | |
-| `team_id` | &nbsp; | Required | ID for the workspace to set the name for. |
+| `channel_ids` | &nbsp; | Required | A list of channel IDs. |
+| `team_id` | &nbsp; | Required | ID for the workspace to set the default channel for. |
 
-<ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
+<ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
 This `admin` scope is obtained through the [OAuth flow](/docs/oauth), but there are a few additional requirements. The app requesting this scope **must** be [installed](/start/overview#installing_distributing) by an _ **admin or Owner** _ of an Enterprise Grid organization. Also, the app must be installed on the **entire** org, not on an individual workspace. See below for more details.
 
@@ -47,10 +49,12 @@ _When installing an app to use an Admin API endpoint, be sure to install it on y
 
 ## Response
 
+Typical success response
+
 ```
 {
-        "ok": true
-    }
+    "ok": true
+}
 ```
 
 ## Errors
@@ -59,11 +63,13 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
-| `team_not_found` | Returned when team\_id can’t be resolved |
-| `failed_to_set_name` | Returned when there is an error to set the name |
+| `team_not_found` | `team_id` was not found. |
 | `feature_not_enabled` | The Admin APIs feature is not enabled for this team. |
-| `not_authed` | No authentication token provided. |
+| `not_an_admin` | This method is only accessible by org owners and admins. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
+| `channel_not_found` | Value passed for `channel_ids` was invalid. |
+| `failed_to_set_default_channels` | We encountered an error while trying to set the default channel. |
+| `not_authed` | No authentication token provided. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
 | `token_revoked` | Authentication token is for a deleted user or workspace or the app has been removed. |
 | `no_permission` | The workspace token used in this request does not have the permissions necessary to complete the request. Make sure your app is a member of the conversation it's attempting to post a message to. |
