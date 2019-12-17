@@ -10,6 +10,7 @@ List all users in a User Group
 
 | Token type | Required scope(s) |
 | --- | --- |
+| [bot](/docs/token-types#granular_bot) | [`usergroups:read`](/scopes/usergroups:read)&nbsp; |
 | [user](/docs/token-types#user) | [`usergroups:read`](/scopes/usergroups:read)&nbsp; |
 
  |

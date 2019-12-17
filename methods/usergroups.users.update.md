@@ -10,6 +10,7 @@ Update the list of users for a User Group
 
 | Token type | Required scope(s) |
 | --- | --- |
+| [bot](/docs/token-types#granular_bot) | [`usergroups:write`](/scopes/usergroups:write)&nbsp; |
 | [user](/docs/token-types#user) | [`usergroups:write`](/scopes/usergroups:write)&nbsp; |
 
  |

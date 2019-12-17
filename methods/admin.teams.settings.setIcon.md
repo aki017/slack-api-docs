@@ -23,7 +23,7 @@ This [API method for admins](/enterprise/managing) may only be used on [Enterpri
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `image_url` | `http://mysite.com/icon.jpeg` | Required | Set `cursor` to `next_cursor` returned by the previous call to list items in the next page. |
+| `image_url` | `http://mysite.com/icon.jpeg` | Required | Image URL for the icon |
 | `team_id` | &nbsp; | Required | ID for the workspace to set the icon for. |
 
 <ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.

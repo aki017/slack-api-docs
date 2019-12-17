@@ -56,10 +56,13 @@ Typical success response
     "ok": true,
     "teams": [
         {
-            "team_id": "T1234",
+            "id": "T1234",
             "name": "My Team",
             "discoverability": "hidden",
-            "primary_owner": "bront@slack.com"
+            "primary_owner": {
+                "user_id": "W1234",
+                "email": "bront@slack.com"
+            }
         }
     ]
 }

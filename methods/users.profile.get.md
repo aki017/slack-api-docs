@@ -10,6 +10,7 @@ Retrieves a user's profile information.
 
 | Token type | Required scope(s) |
 | --- | --- |
+| [bot](/docs/token-types#granular_bot) | [`users.profile:read`](/scopes/users.profile:read)&nbsp; |
 | [user](/docs/token-types#user) | [`users.profile:read`](/scopes/users.profile:read)&nbsp; |
 
  |
