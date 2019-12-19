@@ -10,7 +10,7 @@ Approve an app for installation on a workspace.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | _No scope required_ |
+| [user](/docs/token-types#user) | [`admin.apps:write`](/scopes/admin.apps:write)&nbsp; |
 
  |
 

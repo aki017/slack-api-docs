@@ -10,7 +10,7 @@ List app requests for a team/workspace.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | _No scope required_ |
+| [user](/docs/token-types#user) | [`admin.apps:read`](/scopes/admin.apps:read)&nbsp; |
 
  |
 
