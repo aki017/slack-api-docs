@@ -18,6 +18,14 @@ Lists all channels in a Slack team.
 
 * * *
 
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+Please use these methods instead:
+
+- [`conversations.list`](/methods/conversations.list)
+- [`users.conversations`](/methods/users.conversations)
+
 Don't use this method. Use [`conversations.list`](/methods/conversations.list) instead.
 
 This legacy method returns a list of all channels in the team. This includes channels the caller is in, channels they are not currently in, and archived channels but does not include private channels. The number of (non-deactivated) members in each channel is also returned.

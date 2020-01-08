@@ -18,6 +18,13 @@ Closes a multiparty direct message channel.
 
 * * *
 
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+Please use these methods instead:
+
+- [`conversations.close`](/methods/conversations.close)
+
 This method closes a multiparty direct message channel.
 
 ## Arguments

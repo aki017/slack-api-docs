@@ -17,6 +17,13 @@ Unarchives a private channel.
 
 * * *
 
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+Please use these methods instead:
+
+- [`conversations.unarchive`](/methods/conversations.unarchive)
+
 This method unarchives a private channel.
 
 ## Arguments

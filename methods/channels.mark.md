@@ -18,6 +18,11 @@ Sets the read cursor in a channel.
 
 * * *
 
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+There are no exact [Conversations API](/docs/conversations-api) equivalents for this method. [Browse these methods](/methods#conversations) for an alternative.
+
 This method moves the read cursor in a channel.
 
 ## Arguments

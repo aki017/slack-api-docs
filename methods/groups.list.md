@@ -18,7 +18,15 @@ Lists private channels that the calling user has access to.
 
 * * *
 
-Don't use this method. Use [`conversations.list`](/methods/conversations.list) instead.
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+Please use these methods instead:
+
+- [`conversations.list`](/methods/conversations.list)
+- [`users.conversations`](/methods/users.conversations)
+
+This method is replaced by [`conversations.list`](/methods/conversations.list) and should not be used. **Some private channels will not work with this method.**
 
 This legacy method returns a list of private channels in the team that the caller is in and archived groups that the caller was in.
 

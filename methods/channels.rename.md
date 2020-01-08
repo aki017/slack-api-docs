@@ -17,6 +17,13 @@ Renames a channel.
 
 * * *
 
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+Please use these methods instead:
+
+- [`conversations.rename`](/methods/conversations.rename)
+
 This method renames a team channel.
 
 The only people who can rename a channel are Team Admins, or the person that originally created the channel. Others will receive a "not\_authorized" error.

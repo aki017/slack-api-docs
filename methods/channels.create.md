@@ -17,6 +17,13 @@ Creates a channel.
 
 * * *
 
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+Please use these methods instead:
+
+- [`conversations.create`](/methods/conversations.create)
+
 This method is used to create a channel.
 
 To create a private channel, use [`groups.create`](/methods/groups.create).

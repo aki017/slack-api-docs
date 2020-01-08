@@ -18,6 +18,13 @@ Sets the topic for a channel.
 
 * * *
 
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+Please use these methods instead:
+
+- [`conversations.setTopic`](/methods/conversations.setTopic)
+
 This method is used to change the topic of a channel. The calling user must be a member of the channel.
 
 Only user tokens may use this method. One quirk: this method shows that it accepts a `bot` token, but only because legacy custom bot users may make use of it. That's liable to change. It's best to assume this method won't work with bots of any sort.

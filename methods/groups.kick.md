@@ -17,6 +17,13 @@ Removes a user from a private channel.
 
 * * *
 
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+Please use these methods instead:
+
+- [`conversations.kick`](/methods/conversations.kick)
+
 This method allows a user to remove another member from a private channel.
 
 ## Arguments

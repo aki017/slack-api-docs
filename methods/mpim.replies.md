@@ -16,6 +16,13 @@ Retrieve a thread of messages posted to a direct message conversation from a mul
 
 * * *
 
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+Please use these methods instead:
+
+- [`conversations.replies`](/methods/conversations.replies)
+
 This method returns an entire thread (a message plus all the messages in reply to it).
 
 ## Arguments

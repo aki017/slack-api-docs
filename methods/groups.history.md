@@ -18,7 +18,16 @@ Fetches history of messages and events from a private channel.
 
 * * *
 
-This method returns a portion of messages/events from the specified private channel. To read the entire history for a private channel, call the method with no `latest` or`oldest` arguments, and then continue paging using the instructions below.
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+Please use these methods instead:
+
+- [`conversations.history`](/methods/conversations.history)
+
+This deprecated method returns a portion of messages/events from a specified private channel. This method is replaced by [`conversations.history`](/methods/conversations.history) and should not be used. **Some private channels will not work with this method.**
+
+To read the entire history for a private channel, call the method without the `latest` or `oldest` arguments, and then continue paging using the instructions below.
 
 <ts-icon class="ts_icon_warning"></ts-icon> **Bots belonging to Slack apps are not supported**  
 

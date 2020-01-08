@@ -18,6 +18,13 @@ Sets the purpose for a private channel.
 
 * * *
 
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+Please use these methods instead:
+
+- [`conversations.setPurpose`](/methods/conversations.setPurpose)
+
 This method is used to change the purpose of a private channel. The calling user must be a member of the private channel.
 
 ## Arguments

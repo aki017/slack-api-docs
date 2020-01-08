@@ -18,7 +18,14 @@ Gets information about a private channel.
 
 * * *
 
-Don't use this method. Use [`conversations.info`](/methods/conversations.info) instead.
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+Please use these methods instead:
+
+- [`conversations.info`](/methods/conversations.info)
+
+Don't use this method. Use [`conversations.info`](/methods/conversations.info) instead. **Some private channels will not work with this method.**
 
 This legacy method returns information about a private channel. It doesn't work with shared channels nor public channels that have been converted to private channels.
 

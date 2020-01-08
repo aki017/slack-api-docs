@@ -18,6 +18,13 @@ Opens a direct message channel.
 
 * * *
 
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+Please use these methods instead:
+
+- [`conversations.open`](/methods/conversations.open)
+
 This method opens a direct message channel with another member of your Slack team.
 
 ## Arguments

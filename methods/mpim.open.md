@@ -18,6 +18,13 @@ This method opens a multiparty direct message.
 
 * * *
 
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+Please use these methods instead:
+
+- [`conversations.open`](/methods/conversations.open)
+
 This method opens a multiparty direct message.
 
 Opening a multiparty direct message takes a list of up-to 8 encoded user ids. If there is no MPIM already created that includes that exact set of members, a new MPIM will be created. Subsequent calls to `mpim.open` with the same set of users will return the already existing MPIM conversation.

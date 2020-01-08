@@ -18,6 +18,13 @@ Fetches history of messages and events from a multiparty direct message.
 
 * * *
 
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+Please use these methods instead:
+
+- [`conversations.history`](/methods/conversations.history)
+
 This method returns a portion of messages/events from the specified multiparty direct message channel. To read the entire history for a multiparty direct message, call the method with no `latest` or`oldest` arguments, and then continue paging using the instructions below.
 
 ## Arguments

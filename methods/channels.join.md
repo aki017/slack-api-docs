@@ -17,6 +17,13 @@ Joins a channel, creating it if needed.
 
 * * *
 
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+Please use these methods instead:
+
+- [`conversations.join`](/methods/conversations.join)
+
 This method is used to join a channel. If the channel does not exist, it is created.
 
 The `members` array found in this and other methods will begin automatically truncating at 1,500 results beginning December 1, 2017. Please Use [`conversations.members`](/methods/conversations.members) to manage memberships instead. [Read on to learn more.](/changelog/2017-10-members-array-truncating)

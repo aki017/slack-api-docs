@@ -18,6 +18,14 @@ Lists multiparty direct message channels for the calling user.
 
 * * *
 
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+Please use these methods instead:
+
+- [`conversations.list`](/methods/conversations.list)
+- [`users.conversations`](/methods/users.conversations)
+
 Don't use this method. Use [`conversations.list`](/methods/conversations.list) instead.
 
 This legacy method returns a list of all multiparty direct message channels that the user has.

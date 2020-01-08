@@ -18,6 +18,13 @@ Fetches history of messages and events from a channel.
 
 * * *
 
+<ts-icon class="ts_icon_warning"></ts-icon>
+**This method is deprecated.** [&nbsp;Learn more](/changelog/2020-01-deprecating-antecedents-to-the-conversations-api).
+
+Please use these methods instead:
+
+- [`conversations.history`](/methods/conversations.history)
+
 This method returns a portion of [message events](/events/message) from the specified public channel.
 
 To read the entire history for a channel, call the method with no `latest` or`oldest` arguments, and then continue paging using the instructions below.
