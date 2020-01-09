@@ -22,7 +22,7 @@ Push a new view onto the existing view stack by passing a view payload and a val
 
 After a modal is opened, the app is limited to pushing 2 additional views.
 
-Read the [modals](/block-kit/surfaces/modals) documentation to learn more about tye lifecycle and intricacies of views.
+Read the [modals](/block-kit/surfaces/modals) documentation to learn more about the lifecycle and intricacies of views.
 
 ## Arguments
 

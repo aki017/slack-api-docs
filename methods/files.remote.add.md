@@ -11,7 +11,6 @@ Adds a file from a remote service
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#granular_bot) | [`remote_files:write`](/scopes/remote_files:write)&nbsp; |
-| [user](/docs/token-types#user) | [`remote_files:write`](/scopes/remote_files:write)&nbsp; |
 | [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
@@ -35,7 +34,7 @@ Remote files exist across the whole workspace (or organization, for Enterprise G
 | `external_url` | `http://example.com/my_cloud_service_file/abc123` | Required | URL of the remote file. |
 | `title` | `Danger, High Voltage!` | Required | Title of the file being shared. |
 | `filetype` | `doc` | Optional | type of file |
-| `indexable_file_contents` | `...` | Optional | File containing contents that can be used to improve searchability for the remote file. |
+| `indexable_file_contents` | `...` | Optional | A text file (txt, pdf, doc, etc.) containing textual search terms that are used to improve discovery of the remote file. |
 | `preview_image` | `...` | Optional | Preview of the document via `multipart/form-data`. |
 
 <ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
@@ -44,7 +43,7 @@ Remote files exist across the whole workspace (or organization, for Enterprise G
 
 `external_id` is the unique ID of the remote file, **according to** the external host of the file.
 
-`indexable_file_contents` is used to determine how the remote file appears in Slack searches.
+`indexable_file_contents` is a text file that represents the file for search. When a user searches in Slack, their query will be compared against the contents of this text file for matching. Think of this text file like the `alt` parameter on an HTML `<img>` tag — a textual representation of a non-textual object. The text file can contain a description of the remote file, or it can contain search keywords, or anything else text-based.
 
 Note: this method performs an upsert. If you add a file that has been added before, the existing file will be updated.
 

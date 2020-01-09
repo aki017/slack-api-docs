@@ -1,8 +1,8 @@
-Remove a remote file.
+List restricted apps for an org or workspace.
 
 ## Facts
 
-| Method URL: | `https://slack.com/api/files.remote.remove` |
+| Method URL: | `https://slack.com/api/admin.apps.restricted.list` |
 | Preferred HTTP method: | `GET` |
 | Accepted content types: | `application/x-www-form-urlencoded` |
 | Rate limiting: | [Tier 2](/docs/rate-limits#tier_t2) |
@@ -10,28 +10,36 @@ Remove a remote file.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [bot](/docs/token-types#granular_bot) | [`remote_files:write`](/scopes/remote_files:write)&nbsp; |
-| [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
+| [user](/docs/token-types#user) | [`admin.apps:read`](/scopes/admin.apps:read)&nbsp; |
 
  |
 
 * * *
 
-<ts-icon class="ts_icon_all_files"></ts-icon> **File threads are here**  
+This [App Management API](/admins/managing) method lists apps restricted from installation on a workspace or org.
 
-A new file commenting experience arrived on July 23, 2018. [**Learn more**](/changelog/2018-05-file-threads-soon-tread) about what's new and the migration path for apps already working with files and file comments.
+This method requires an `admin.*` scope. It's obtained through the normal [OAuth process](/docs/oauth), but there are a few additional requirements. The scope must be requested by an Enterprise Grid admin or owner, and the OAuth install must take place on the entire Grid org, not an individual workspace. See the [`admin.apps:read` page](/scopes/admin.apps:read) for more detailed instructions.
 
-This method removes a remote file from Slack. It _does not_ delete the file from its external host.
+This [API method for admins](/enterprise/managing) may only be used on [Enterprise Grid](/enterprise).
 
 ## Arguments
 
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `external_id` | `123456` | Optional | Creator defined GUID for the file. |
-| `file` | `F2147483862` | Optional | Specify a file by providing its ID. |
+| `cursor` | `5c3e53d5` | Optional | Set `cursor` to `next_cursor` returned by the previous call to list items in the next page |
+| `enterprise_id` | `E0AS553RN` | Optional | |
+| `limit` | `100` | Optional, default=100 | The maximum number of items to return. Must be between 1 - 1000 both inclusive. |
+| `team_id` | `T0HFE6EBT` | Optional | |
 
 <ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
+
+**Note:** `enterprise_id` and `team_id` cannot be used together.
+
+- Passing `enterprise_id` will return the list of org-wide restricted apps.
+- Passing `team_id` will return the apps restricted for that specific workspace.
+
+## Response
 
 ## Errors
 
@@ -39,8 +47,11 @@ This table lists the expected errors that this method could return. However, oth
 
 | Error | Description |
 | --- | --- |
-| `too_many_ids` | The request specified both an external\_id and a file, only one may be specified |
-| `file_not_found` | Value passed for `file` or `external_id` was invalid |
+| `invalid_cursor` | Value passed for `cursor` was not valid or is no longer valid. |
+| `feature_not_enabled` | Returned when the Admin APIs feature is not enabled for this team |
+| `not_an_admin` | This method is only accessible by org/workspace owners and admins |
+| `team_not_found` | Returned when team id is not found. |
+| `too_many_teams_provided` | Please provide only `team_id` OR `enterprise_id`. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
@@ -49,6 +60,7 @@ This table lists the expected errors that this method could return. However, oth
 | `org_login_required` | The workspace is undergoing an enterprise migration and will not be available until migration is complete. |
 | `ekm_access_denied` | Administrators have suspended the ability to post a message. |
 | `missing_scope` | The token used is not granted the specific scope permissions required to complete this request. |
+| `is_bot` | This method cannot be called by a bot user. |
 | `invalid_arguments` | The method was called with invalid arguments. |
 | `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |

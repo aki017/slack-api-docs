@@ -10,7 +10,6 @@ Checks API calling code.
 
 | Token type | Required scope(s) |
 | --- | --- |
-| [user](/docs/token-types#user) | _No scope required_ |
 
  |
 
@@ -19,6 +18,8 @@ Checks API calling code.
 This method helps you test your calling code.
 
 You can also use this method as a very basic way to test whether Slack's [Web API](/web) is functioning. [Learn more](/faq#availability).
+
+You can't use this method with a [Sign in with Slack token](/docs/sign-in-with-slack).
 
 ## Arguments
 

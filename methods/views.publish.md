@@ -11,7 +11,6 @@ Publish a static view for a User.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#granular_bot) | _No scope required_ |
-| [user](/docs/token-types#user) | _No scope required_ |
 | [classic&nbsp;bot](/docs/token-types#bot) | [`bot`](/scopes/bot) |
 
  |
@@ -98,6 +97,7 @@ This table lists the expected errors that this method could return. However, oth
 | `duplicate_external_id` | Error returned when the given `external_id` has already be used. |
 | `view_too_large` | Error returned if the provided view is greater than 250kb. |
 | `not_enabled` | Error returned if a `home` view is published but the Home tab isn't enabled for the app. |
+| `not_allowed_token_type` | The type of token your app used when requesting this method is not allowed. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |

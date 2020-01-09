@@ -11,7 +11,6 @@ Uninstalls your app from a workspace.
 | Token type | Required scope(s) |
 | --- | --- |
 | [bot](/docs/token-types#granular_bot) | _No scope required_ |
-| [user](/docs/token-types#user) | _No scope required_ |
 
  |
 
