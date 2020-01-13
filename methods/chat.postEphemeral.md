@@ -31,7 +31,7 @@ Use ephemeral messages to send users context-sensitive messages, relevant to the
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Required | A JSON-based array of structured attachments, presented as a URL-encoded string. |
 | `channel` | `C1234567890` | Required | Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name. |
-| `text` | `Hello world` | Required | Text of the message to send. See below for an explanation of formatting. This field is usually required, unless you're providing only `attachments` instead. |
+| `text` | `Hello world` | Required | How this field works and whether it is required depends on other fields you use in your API call. See below for more detail. |
 | `user` | `U0BPQUNTA` | Required | `id` of the user who will receive the ephemeral message. The user should be in the channel specified by the `channel` argument. |
 | `as_user` | `true` | Optional | Pass true to post the message as the authed user. Defaults to true if the chat:write:bot scope is not included. Otherwise, defaults to false. |
 | `blocks` | `[{"type": "section", "text": {"type": "plain_text", "text": "Hello world"}}]` | Optional | A JSON-based array of structured blocks, presented as a URL-encoded string. |
@@ -44,7 +44,11 @@ Use ephemeral messages to send users context-sensitive messages, relevant to the
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
-A message must have either `text` or `attachments` or both. The `text` parameter is required unless you provide `attachments`. Use both parameters in conjunction with each other to create awesome messages.
+**Using `text` with `blocks` or `attachments`**
+
+The usage of the `text` field changes depending on whether you're using `blocks`. If you are using `blocks`, this is used as a fallback string to display in notifications. If you aren't, this is the main body text of the message. It can be formatted as plain text, or with `mrkdwn`.
+
+The `text` field is not enforced as required when using `blocks` or `attachments`. However, we highly recommended that you include `text` to provide a fallback when using `blocks`, as described above.
 
 ## Formatting
 

@@ -19,7 +19,7 @@
     "text": {
       "required": true,
       "example": "Hello world",
-      "desc": "Text of the message to send. See below for an explanation of formatting. This field is usually required, unless you're providing only attachments instead. Provide no more than 40,000 characters or risk truncation."
+      "desc": "How this field works and whether it is required depends on other fields you use in your API call. See below for more detail."
     },
     "as_user": {
       "required": false,

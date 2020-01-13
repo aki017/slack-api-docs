@@ -29,7 +29,7 @@ When used with a legacy workspace app, this method's response differs significan
 | `client_secret` | `33fea0113f5b1` | Required | Issued when you created your application. |
 | `code` | `ccdaa72ad` | Required | The `code` param returned via the OAuth callback. |
 | `redirect_uri` | `http://example.com` | Optional | This must match the originally submitted URI (if one was sent). |
-| `single_channel` | `true` | Optional, default=false | Request the user to add your app only to a single channel. |
+| `single_channel` | `true` | Optional, default=false | Request the user to add your app only to a single channel. Only valid with a [legacy workspace app](https://api.slack.com/legacy-workspace-apps). |
 
 <ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
@@ -140,6 +140,7 @@ This table lists the expected errors that this method could return. However, oth
 | `invalid_code` | Value passed for `code` was invalid. |
 | `bad_redirect_uri` | Value passed for `redirect_uri` did not match the `redirect_uri` in the original request. |
 | `oauth_authorization_url_mismatch` | The OAuth flow was initiated on an incorrect version of the authorization url. The flow must be initiated via /oauth/authorize. |
+| `code_already_used` | Value passed for `code` was already exchanged. |
 | `invalid_arguments` | The method was called with invalid arguments. |
 | `invalid_arg_name` | The method was passed an argument whose name falls outside the bounds of accepted or expected values. This includes very long names and names with non-alphanumeric characters other than `_`. If you get this error, it is typically an indication that you have made a _very_ malformed API call. |
 | `invalid_charset` | The method was called via a `POST` request, but the `charset` specified in the `Content-Type` header was invalid. Valid charset names are: `utf-8` `iso-8859-1`. |
