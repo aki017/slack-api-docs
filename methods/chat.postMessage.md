@@ -27,11 +27,11 @@ This method posts [a message](/docs/messages) to a public channel, private chann
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
 | `channel` | `C1234567890` | Required | Channel, private group, or IM channel to send message to. Can be an encoded ID, or a name. See below for more details. |
 | `text` | `Hello world` | Required | How this field works and whether it is required depends on other fields you use in your API call. See below for more detail. |
-| `as_user` | `true` | Optional | Pass true to post the message as the authed user, instead of as a bot. Defaults to false. See authorship below. |
+| `as_user` | `true` | Optional | Pass true to post the message as the authed user, instead of as a bot. Defaults to false. See authorship below. This argument may not be used with newer [bot tokens](/docs/token-types#granular_bot). |
 | `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Optional | A JSON-based array of structured attachments, presented as a URL-encoded string. |
 | `blocks` | `[{"type": "section", "text": {"type": "plain_text", "text": "Hello world"}}]` | Optional | A JSON-based array of structured blocks, presented as a URL-encoded string. |
-| `icon_emoji` | `:chart_with_upwards_trend:` | Optional | Emoji to use as the icon for this message. Overrides `icon_url`. Must be used in conjunction with `as_user` set to `false`, otherwise ignored. See authorship below. |
-| `icon_url` | `http://lorempixel.com/48/48` | Optional | URL to an image to use as the icon for this message. Must be used in conjunction with `as_user` set to false, otherwise ignored. See authorship below. |
+| `icon_emoji` | `:chart_with_upwards_trend:` | Optional | Emoji to use as the icon for this message. Overrides `icon_url`. Must be used in conjunction with `as_user` set to `false`, otherwise ignored. See authorship below. This argument may not be used with newer [bot tokens](/docs/token-types#granular_bot). |
+| `icon_url` | `http://lorempixel.com/48/48` | Optional | URL to an image to use as the icon for this message. Must be used in conjunction with `as_user` set to false, otherwise ignored. See authorship below. This argument may not be used with newer [bot tokens](/docs/token-types#granular_bot). |
 | `link_names` | `true` | Optional | Find and link channel names and usernames. |
 | `mrkdwn` | `false` | Optional, default=true | Disable Slack markup parsing by setting to `false`. Enabled by default. |
 | `parse` | `full` | Optional | Change how messages are treated. Defaults to `none`. See below. |
@@ -118,6 +118,8 @@ Consider reviewing our [message guidelines](/docs/message-guidelines), especiall
 ## Authorship
 
 How message authorship is attributed varies by a few factors, with some behaviors varying depending on the kinds of tokens you're using to post a message.
+
+**The new [bot token model](/docs/token-types#granular_bot) disallows this and related parameters entirely. Omit the parameter as every message your app posts will be attributed to itself.**
 
 The best way to realize your intended result is to be explicit with the `as_user` parameter.
 
