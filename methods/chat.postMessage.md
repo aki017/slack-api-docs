@@ -43,7 +43,7 @@ This method posts [a message](/docs/messages) to a public channel, private chann
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
-Please note that the default value of the `as_user` parameter varies depending on the kind of token you're using. It's best to be explicit with this value. Read more about Authorship to understand how its default value may vary.
+Please note that the `as_user` parameter _may not_ be used by [new Slack apps](/authentication/basics). Read more about Authorship to understand how `as_user` works for classic Slack apps.
 
 **Using `text` with `blocks` or `attachments`**
 
@@ -115,50 +115,6 @@ If you need to post longer messages, please consider [uploading a snippet instea
 
 Consider reviewing our [message guidelines](/docs/message-guidelines), especially if you're using attachments or message buttons.
 
-## Authorship
-
-How message authorship is attributed varies by a few factors, with some behaviors varying depending on the kinds of tokens you're using to post a message.
-
-**The new [bot token model](/docs/token-types#granular_bot) disallows this and related parameters entirely. Omit the parameter as every message your app posts will be attributed to itself.**
-
-The best way to realize your intended result is to be explicit with the `as_user` parameter.
-
-`chat.postMessage` wants your message posting to succeed and may attempt to guess the most appropriate `as_user` interpretation based on the kind of token you're using.
-
-If `as_user` is not provided at all, then the value is inferred, based on the scopes granted to the caller: If the caller _could_ post with `as_user` passed as `false`, then that is how the method behaves; otherwise, the method behaves as if `as_user` were passed as `true`.
-
-### When `as_user` is false
-
-When the `as_user` parameter is set to `false`, messages are posted as " [`bot_messages`](/events/message/bot_message)", with message authorship attributed to the user name and icons associated with the [Slack App](/slack-apps).
-
-With `as_user` set to `false`, you may also provide a `username` to explicitly specify the bot user's identity for this message, along with `icon_url` or `icon_emoji`.
-
-##### Effect on identity
-
-Token types provide varying default identity values for `username`, `icon_url`, and `icon_emoji`.
-
-- [test tokens](/docs/oauth-test-tokens)
-  - generic user icon and "bot" username
-- [Slack App user token](/slack-apps) with [`chat:write:bot`](/docs/oauth-scopes)
-  - inherits Slack App's icon, with generic "bot" username (see below)
-- [Slack App bot user token](/bot-users#share_your_bot_user_as_a_slack_app)
-  - inherits Slack App's icon, with generic "bot" username (see below)
-> **Note** : In the Slack App cases above, it would certainly make more sense for your application's name to be the default `username` associated with your app. This inconsistent behavior will be corrected. Of course, you can still name your bot "bot," if that is your bot's name.
-### When `as_user` is true
-
-Set `as_user` to `true` and the authenticated user will appear as the author of the message, ignoring any values provided for `username`, `icon_url`, and `icon_emoji`. Posting as the authenticated user **requires** the`client` or the more preferred `chat:write:user` [scopes](/docs/oauth#auth_scopes).
-
-##### Effect on identity
-
-Token types provide varying default identity values for `username`, `icon_url`, and `icon_emoji`.
-
-- [test tokens](/docs/oauth-test-tokens)
-  - inherits the icon and username of the token owner
-- [Slack App user token](/slack-apps) with [`chat:write:user`](/docs/oauth-scopes)
-  - inherits icon and username of the token owner
-- [Slack App bot user token](/bot-users#share_your_bot_user_as_a_slack_app)
-  - inherits Slack App's icon and app's bot username
-
 ## Threads and replies
 
 Provide a `thread_ts` value for the posted message to act as a reply to a parent message. Sparingly set `reply_broadcast` to `true` if your reply is important enough for everyone in the channel to receive.
@@ -199,6 +155,35 @@ With the `chat:write` scope enabled, call `chat.postMessage` and pass a user's I
 ## Rate limiting
 
 `chat.postMessage` has special [rate limiting](/docs/rate-limits) conditions. It will generally allow an app to post 1 message per second to a specific channel. There are limits governing your app's relationship with the entire workspace above that, limiting posting to several hundred messages per minute. Generous burst behavior is also granted.
+
+## Authorship
+
+The `as_user` parameter _may not_ be used by [new Slack apps](/authentication/basics) (i.e., apps installed using our [V2 of Oauth 2.0](/authentication/oauth-v2)). New Slack apps act on their own behalf, rather than a user's.
+
+For older Slack apps, message authorship and attribution varies. **The rest of this Authorship section applies only to classic Slack apps**.
+
+The best way to control the authorship of a message is to be explicit with the `as_user` parameter.
+
+Otherwise, `chat.postMessage` will guess the most appropriate `as_user` interpretation based on the kind of token you're using.
+
+If `as_user` is not provided at all, then the value is inferred, based on the scopes granted to the caller: If the caller _could_ post with `as_user` passed as `false`, then that is how the method behaves; otherwise, the method behaves as if `as_user` were passed as `true`.
+
+### When `as_user` is false
+
+When the `as_user` parameter is set to `false`, messages are posted as " [`bot_messages`](/events/message/bot_message)", with message authorship attributed to the user name and icons associated with the [Slack App](/slack-apps).
+
+With `as_user` set to `false`, you may also provide a `username` to explicitly specify the bot user's identity for this message, along with `icon_url` or `icon_emoji`.
+
+##### Effect on identity
+
+Token types provide varying default identity values for `username`, `icon_url`, and `icon_emoji`.
+
+- [test tokens](/docs/oauth-test-tokens)
+  - inherits the icon and username of the token owner
+- [Slack App user token](/slack-apps) with [`chat:write:user`](/docs/oauth-scopes)
+  - inherits icon and username of the token owner
+- [Slack App bot user token](/bot-users#share_your_bot_user_as_a_slack_app)
+  - inherits Slack App's icon and app's bot username
 
 ## Errors
 
