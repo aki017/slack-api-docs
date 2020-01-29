@@ -9,7 +9,7 @@
     "channel_ids": {
       "required": true,
       "example": " ",
-      "desc": "A list of channel IDs."
+      "desc": "An array of channel IDs."
     },
     "team_id": {
       "required": true,

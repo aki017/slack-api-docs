@@ -25,7 +25,7 @@ This [API method for admins](/enterprise/managing) may only be used on [Enterpri
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `channel_ids` | &nbsp; | Required | A list of channel IDs. |
+| `channel_ids` | &nbsp; | Required | An array of channel IDs. |
 | `team_id` | &nbsp; | Required | ID for the workspace to set the default channel for. |
 
 <ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.

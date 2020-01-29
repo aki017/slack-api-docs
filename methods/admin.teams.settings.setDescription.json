@@ -9,7 +9,7 @@
     "description": {
       "required": true,
       "example": " ",
-      "desc": ""
+      "desc": "The new description for the workspace."
     },
     "team_id": {
       "required": true,

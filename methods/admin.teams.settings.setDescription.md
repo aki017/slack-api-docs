@@ -23,7 +23,7 @@ This [API method for admins](/enterprise/managing) may only be used on [Enterpri
  | Argument | Example | Required | Description |
 | --- | --- | --- | --- |
  | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `description` | &nbsp; | Required | |
+| `description` | &nbsp; | Required | The new description for the workspace. |
 | `team_id` | &nbsp; | Required | ID for the workspace to set the description for. |
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).

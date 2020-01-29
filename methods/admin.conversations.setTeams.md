@@ -24,6 +24,8 @@ When used with the `target_team_ids` parameter, this method sets the requested `
 
 Either way, this method can be used both to _add_ and to _remove_ workspaces from a channel.
 
+Note: the originating team for a shared channel _may not_ be removed.
+
 This [API method for admins](/enterprise/managing) may only be used on [Enterprise Grid](/enterprise).
 
 ## Arguments
