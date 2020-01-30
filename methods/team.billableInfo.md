@@ -16,7 +16,7 @@ Gets billable users information for the current team.
 
 * * *
 
-This method lists billable information for each user on the team. Currently this consists solely of whether the user is subject to billing per [Slack's Fair Billing policy](https://get.slack.help/hc/en-us/articles/218915077).
+This method lists billable information for each user on the team. Currently this consists solely of whether the user is subject to billing per [Slack's Fair Billing policy](https://slack.com/help/articles/218915077).
 
 ## Arguments
 
