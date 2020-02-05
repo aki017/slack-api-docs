@@ -67,6 +67,7 @@ This table lists the expected errors that this method could return. However, oth
 | `not_an_admin` | This method is only accessible by org owners and Admins. |
 | `error_bad_name_i18n` | Value passed for `name` was invalid. |
 | `error_name_taken` | Value passed for `name` already exists. |
+| `error_name_taken_i18n` | Value passed for `name` already exists. |
 | `error_missing_name` | Value passed for `name` is missing or empty. |
 | `error_no_image` | Empty image data was provided. |
 | `error_bad_format` | Invalid image data was provided. |

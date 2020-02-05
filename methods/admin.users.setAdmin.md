@@ -53,6 +53,7 @@ This table lists the expected errors that this method could return. However, oth
 | `invalid_role_for_user` | The user cannot be made into an admin. |
 | `failed_to_set_user_to_admin` | Designating this user as an admin failed. |
 | `invalid_permissions` | This method is only accessible by org owners and admins. |
+| `not_an_admin` | This method can only be accessed by org owners and admins. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
