@@ -25,6 +25,8 @@ Use this method in conjunction with other Web API methods like [`channels.list`]
 
 Please consult the [RTM API documentation](/rtm) for full details on using the RTM API.
 
+[New Slack apps](/authentication/basics) may not use any Real Time Messaging API method. Create a [classic app](/rtm#classic) and [use the V1 Oauth flow](/docs/oauth) to use RTM.
+
 ## Arguments
 
  | Argument | Example | Required | Description |

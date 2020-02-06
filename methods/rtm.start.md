@@ -29,6 +29,8 @@ Consult the [RTM API documentation](/rtm) for full details on using the RTM API.
 
 The `members` array found in this and other methods will begin automatically truncating at 1,500 and eventually fewer results beginning December 1, 2017. As of March, 2018 the cap is 500. Please Use [`conversations.members`](/methods/conversations.members) to manage memberships instead. [Read on to learn more.](/changelog/2017-10-members-array-truncating)
 
+[New Slack apps](/authentication/basics) may not use any Real Time Messaging API method. Create a [classic app](/rtm#classic) and [use the V1 Oauth flow](/docs/oauth) to use RTM.
+
 ## Arguments
 
  | Argument | Example | Required | Description |
