@@ -19,7 +19,9 @@ Update the list of users for a User Group
 
 This method updates the list of users that belong to a User Group. This method replaces all users in a User Group with the list of users provided in the `users` parameter.
 
-Guests and bot users may not be part of a user group.
+You can’t use this method to remove all members from a User Group. Use the [`usergroups.disable`](/methods/usergroups.disable) method instead. If you need to reactive the usergroup later, you can use the [`usergroups.enable`](/methods/usergroups.enable) method.
+
+Guests and bot users may not be part of a User Group.
 
 ## Arguments
 
@@ -83,6 +85,7 @@ This table lists the expected errors that this method could return. However, oth
 | Error | Description |
 | --- | --- |
 | `permission_denied` | The user does not have permission to update the list of users for a User Group. |
+| `no_user_provided` | Either the `users` field wasn't provided or an empty value was passed. |
 | `invalid_users` | Value passed for `users` was empty or invalid. |
 | `plan_upgrade_required` | This workspace does not have access to User Groups, as that feature is only available on Standard and above plans. |
 | `not_authed` | No authentication token provided. |

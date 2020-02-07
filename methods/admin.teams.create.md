@@ -54,6 +54,8 @@ This table lists the expected errors that this method could return. However, oth
 | `must_provide_team_name` | No team name has been provided. |
 | `must_provide_team_domain` | No team domain has been provided. |
 | `domain_taken` | The requested domain is taken. |
+| `name_taken_in_org` | The team with the specified name already exists in the org. |
+| `bad_url` | Invalid URL. |
 | `could_not_create_workspace` | The workspace could not be created. |
 | `discoverability_setting_invalid` | The given discoverability setting is invalid. |
 | `not_authed` | No authentication token provided. |
