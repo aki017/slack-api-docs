@@ -28,11 +28,11 @@ This method schedules [a message](/docs/messages) for delivery to a public chann
 | `channel` | `C1234567890` | Required | Channel, private group, or DM channel to send message to. Can be an encoded ID, or a name. See below for more details. |
 | `post_at` | `299876400` | Required | Unix EPOCH timestamp of time in future to send the message. |
 | `text` | `Hello world` | Required | How this field works and whether it is required depends on other fields you use in your API call. See below for more detail. |
-| `as_user` | `true` | Optional | Pass true to post the message as the authed user, instead of as a bot. Defaults to false. See authorship below. |
+| `as_user` | `true` | Optional | Pass true to post the message as the authed user, instead of as a bot. Defaults to false. See [chat.postMessage](chat.postMessage#authorship). |
 | `attachments` | `[{"pretext": "pre-hello", "text": "text-world"}]` | Optional | A JSON-based array of structured attachments, presented as a URL-encoded string. |
 | `blocks` | `[{"type": "section", "text": {"type": "plain_text", "text": "Hello world"}}]` | Optional | A JSON-based array of structured blocks, presented as a URL-encoded string. |
 | `link_names` | `true` | Optional | Find and link channel names and usernames. |
-| `parse` | `full` | Optional | Change how messages are treated. Defaults to `none`. See below. |
+| `parse` | `full` | Optional | Change how messages are treated. Defaults to `none`. See [chat.postMessage](chat.postMessage#formatting). |
 | `reply_broadcast` | `true` | Optional | Used in conjunction with `thread_ts` and indicates whether reply should be made visible to everyone in the channel or conversation. Defaults to `false`. |
 | `thread_ts` | `1234567890.123456` | Optional | Provide another message's `ts` value to make this message a reply. Avoid using a reply's `ts` value; use its parent instead. |
 | `unfurl_links` | `true` | Optional | Pass true to enable unfurling of primarily text-based content. |

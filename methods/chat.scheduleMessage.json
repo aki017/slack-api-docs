@@ -24,7 +24,7 @@
     "as_user": {
       "required": false,
       "example": "true",
-      "desc": "Pass true to post the message as the authed user, instead of as a bot. Defaults to false. See authorship below."
+      "desc": "Pass true to post the message as the authed user, instead of as a bot. Defaults to false. See chat.postMessage."
     },
     "attachments": {
       "required": false,
@@ -44,7 +44,7 @@
     "parse": {
       "required": false,
       "example": "full",
-      "desc": "Change how messages are treated. Defaults to none. See below."
+      "desc": "Change how messages are treated. Defaults to none. See chat.postMessage."
     },
     "reply_broadcast": {
       "required": false,
