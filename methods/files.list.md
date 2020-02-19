@@ -31,6 +31,7 @@ This method returns a list of files within the team. It can be filtered and slic
 | `channel` | `C1234567890` | Optional | Filter files appearing in a specific channel, indicated by its ID. |
 | `count` | `20` | Optional, default=100 | Number of items to return per page. |
 | `page` | `2` | Optional, default=1 | Page number of results to return. |
+| `show_files_hidden_by_limit` | `true` | Optional | Show truncated file info for files hidden due to being too old, and the team who owns the file being over the file limit. |
 | `ts_from` | `123456789` | Optional, default=0 | Filter files created after this timestamp (inclusive). |
 | `ts_to` | `123456789` | Optional, default=now | Filter files created before this timestamp (inclusive). |
 | `types` | `images` | Optional, default=all | Filter files by type (see below). You can pass multiple values in the types argument, like `types=spaces,snippets`.The default value is `all`, which does not filter the list. |

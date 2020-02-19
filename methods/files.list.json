@@ -21,6 +21,11 @@
       "example": "2",
       "desc": "Page number of results to return."
     },
+    "show_files_hidden_by_limit": {
+      "required": false,
+      "example": "true",
+      "desc": "Show truncated file info for files hidden due to being too old, and the team who owns the file being over the file limit."
+    },
     "ts_from": {
       "required": false,
       "example": "123456789",
