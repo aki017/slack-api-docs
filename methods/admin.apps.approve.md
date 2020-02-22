@@ -24,12 +24,19 @@ This [API method for admins](/enterprise/managing) may only be used on [Enterpri
 
 ## Arguments
 
- | Argument | Example | Required | Description |
-| --- | --- | --- | --- |
- | `token` | `xxxx-xxxxxxxxx-xxxx` | Required | Authentication token bearing required scopes. |
-| `app_id` | `A12345` | Optional | The id of the app to approve. |
-| `request_id` | `Ar12345` | Optional | The id of the request to approve. |
-| `team_id` | &nbsp; | Optional | |
+`token`Required
+Authentication token bearing required scopes.
+Example`xxxx-xxxxxxxxx-xxxx`
+
+`app_id`Optional
+The id of the app to approve.
+Example`A12345`
+
+`request_id`Optional
+The id of the request to approve.
+Example`Ar12345`
+
+`team_id`Optional
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
