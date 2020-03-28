@@ -69,6 +69,7 @@ This table lists the expected errors that this method could return. However, oth
 | `request_already_resolved` | The app request has already been resolved |
 | `team_not_found` | Returned when team id is not found. |
 | `app_management_app_not_installed_on_org` | The app management app must be installed on the org. |
+| `app_restricted_org_wide` | The app is already restricted org wide. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
