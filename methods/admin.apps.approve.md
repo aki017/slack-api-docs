@@ -48,8 +48,8 @@ Either `app_id` or `request_id` is required. These IDs can be obtained either di
 
 ```
 {
-        "ok": true
-    }
+		"ok": true
+	}
 ```
 
 ## Errors
