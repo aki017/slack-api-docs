@@ -16,7 +16,7 @@ Approve an app for installation on a workspace.
 
 * * *
 
-This [App Management API](/admins/approvals) method approves an app install request in a specific workspace.
+This [App Management API](/admins/approvals) method approves an app install request, approves an app for a particular workspace, approves an app across an entire enterprise. When approved for an enterprise, an app can still be independently [restricted](/methods/admin.apps.restrict) on particular workspaces.
 
 This method requires an `admin.*` scope. It's obtained through the normal [OAuth process](/authentication), but there are a few additional requirements. The scope must be requested by an Enterprise Grid admin or owner, and the OAuth install must take place on the entire Grid org, not an individual workspace. See the [`admin.apps:write` page](/scopes/admin.apps:write) for more detailed instructions.
 
@@ -32,17 +32,23 @@ Example`xxxx-xxxxxxxxx-xxxx`
 The id of the app to approve.
 Example`A12345`
 
+`enterprise_id`Optional
+The ID of the enterprise to approve the app on
+Example`E12345`
+
 `request_id`Optional
 The id of the request to approve.
 Example`Ar12345`
 
 `team_id`Optional
+The ID of the workspace to approve the app on
+Example`T12345`
 
 <ts-icon class="ts_icon_code"></ts-icon>This method supports `application/json` via HTTP POST. Present your `token` in your request's `Authorization` header. [Learn more](/web#posting_json).
 
-Either `app_id` or `request_id` is required. These IDs can be obtained either directly via the [`app_requested` event](/events/app_requested), or by the [`admin.apps.requests.list` method](/methods/admin.apps.requests.list).
+Exactly one of the `team_id` or `enterprise_id` arguments is required, not both.
 
-`team_id` is **required** if your Enterprise Grid org contains more than one workspace.
+Either `app_id` or `request_id` is required. These IDs can be obtained either directly via the [`app_requested` event](/events/app_requested), or by the [`admin.apps.requests.list` method](/methods/admin.apps.requests.list).
 
 ## Response
 
