@@ -1,4 +1,4 @@
-Get a gzipped new-line delimited JSON file containing analytics data for a given date.
+Retrieve analytics data for a given date, presented as a compressed JSON file
 
 ## Facts
 
@@ -16,11 +16,13 @@ Get a gzipped new-line delimited JSON file containing analytics data for a given
 
 * * *
 
-This method returns a gzipped new-line delimited JSON file. The JSON file contains a single day's analytics data.
+This method returns a new-line delimited JSON file, compressed with _gzip_. The file contains analytics data for a single day.
 
 This [API method for admins](/enterprise/managing) may only be used on [Enterprise Grid](/enterprise).
 
-This method requires the [`admin.analytics:read` scope](/scopes/admin.analytics:read). It's obtained through the normal [OAuth process](/authentication/oauth-v2), but there are a few additional requirements. The scope must be requested by an Enterprise Grid Admin or Owner, and the OAuth install must take place on the entire Grid org, not an individual workspace. You can read the [`admin.analytics:read` documentation](/scopes/admin.analytics:read) for more detailed instructions.
+Analytics data is available dating back to January 1st, 2020.
+
+Historical data is not recomputed when a workspace and its accompanying member engagement data is added to or removed from an organization. Similarly, if a member is removed from a workspace, the data returned by the API will not update historical engagement data to reflect only the workspaces the member is currently a part of. This behavior **differs** from the _Analytics Dashboard_ in Org and Team settings, which does consider historical changes in its calculation of 30 day and all time metrics.
 
 ## Arguments
 
@@ -29,7 +31,7 @@ Authentication token bearing required scopes.
 Example`xxxx-xxxxxxxxx-xxxx`
 
 `date`Required
-Date to retreive the analytics data for, expressed as `YYYY-MM-DD` in UTC.
+Date to retrieve the analytics data for, expressed as `YYYY-MM-DD` in UTC.
 Example`2020-09-01`
 
 `type`Required
@@ -44,7 +46,7 @@ The `type` argument is **required**. It represents type of analytics data you ar
 
 ## Response
 
-This method is almost completely unlike other Web API methods you encounter. It doesn't return `application/json` with the traditional `"ok": true` response on success, though you'll find `"ok": false` on failure.
+This method is almost completely unlike other [Web API](/web) methods you encounter. It doesn't return `application/json` with the traditional `"ok": true` response on success, though you'll find `"ok": false` on failure.
 
 Instead, it returns a single file, often very large, containing JSON objects that are separated by newlines and then compressed with `application/gzip`.
 
@@ -75,7 +77,7 @@ After decompression, the file will look something like:
 
 ### Field guide 
 
-Each row of JSON data may include the following the fields.
+Each row of JSON data may include the following fields.
 
 | Field | Example | About |
 | --- | --- | --- |
@@ -84,12 +86,12 @@ Each row of JSON data may include the following the fields.
 | `enterprise_user_id` | `W1F83A9F9` | The canonical, organization-wide user ID this row concerns |
 | `email_address` | `person@acme.com` | The email address of record for the same user |
 | `enterprise_employee_number` | `273849373` | This field is pulled from data synced via a [SCIM API custom attribute](/scim#user-attributes) |
-| `is_guest` | `false` | User is classified as a _guest_ (not a full workspace member) on the date this API request is issued |
-| `is_billable_seat` | `true` | User is classified as a billable user (included in the bill) on the the date in the API request |
-| `is_active` | `true` | User has posted a message or a reaction, read at least one channel or direct message, or uploaded a file on the date in the API request |
-| `is_active_ios` | `true` | User has posted a message or reaction, read at least one channel or direct message, or uploaded a file via the Slack iOS App on the date in the API request |
-| `is_active_android` | `false` | User has posted a message or reaction, read at least one channel or direct message, or uploaded a file via the Slack Android App on the date in the API request |
-| `is_active_desktop` | `true` | User has posted a message or reaction, read at least one channel or direct message, or uploaded a file via the Slack Desktop App on the date in the API request |
+| `is_guest` | `false` | User is classified as a _guest_ (not a full workspace member) on the date in the API request |
+| `is_billable_seat` | `true` | User is classified as a billable user ( [included in the bill](https://slack.com/help/articles/218915077-Fair-Billing-Policy)) on the the date in the API request |
+| `is_active` | `true` | User has posted a message or read at least one channel or direct message on the date in the API request |
+| `is_active_ios` | `true` | User has posted a message or read at least one channel or direct message on the date in the API request via the Slack iOS App |
+| `is_active_android` | `false` | User has posted a message or read at least one channel or direct message on the date in the API request via the Slack Android App |
+| `is_active_desktop` | `true` | User has posted a message or read at least one channel or direct message on the date in the API request via the Slack Desktop App |
 | `reactions_added_count` | `20` | Total reactions added to any message type in any conversation type by the user on the date in the API request. Removing reactions is not included. This metric is not de-duplicated by message—if a user adds 3 different reactions to a single message, we will report `3` reactions |
 | `messages_posted_count` | `40` | Total messages posted by the user on the date in the API request to all message and conversation types, whether public, private, multi-person direct message, etc. |
 | `channel_messages_posted_count` | `30` | Total messages posted by the user in private channels and public channels on the date in the API request, not including direct messages |
