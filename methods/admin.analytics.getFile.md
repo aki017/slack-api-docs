@@ -97,6 +97,16 @@ Each row of JSON data may include the following fields.
 | `channel_messages_posted_count` | `30` | Total messages posted by the user in private channels and public channels on the date in the API request, not including direct messages |
 | `files_added_count` | `5` | Total files uploaded by the user on the date in the API request |
 
+## Practical usage example 
+
+To quickly decompress the file and view the JSON directly, use a cURL command like:
+
+```
+curl "https://slack.com/api/admin.analytics.getFile" -d "date=2020-11-03&type=member" | gunzip -c > member_analytics_2020_11_03.json
+```
+
+...and you'll have a `member_analytics_2020_11_03.json` file in the current operating directory. In some organizations the decompressed size can be quite large. Take care that you have the disk or memory space you need to store and process these files.
+
 ## Errors
 
 This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should always check the value of the `ok` params in the response.
