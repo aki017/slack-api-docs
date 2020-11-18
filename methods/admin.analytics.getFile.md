@@ -1,7 +1,5 @@
 Retrieve analytics data for a given date, presented as a compressed JSON file
 
-Retrieve analytics data for a given date, presented as a compressed JSON file
-
 ## Facts
 
 | Method URL: | `https://slack.com/api/admin.analytics.getFile` |
