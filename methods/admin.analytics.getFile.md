@@ -27,7 +27,7 @@ Historical data is not recomputed when a workspace and its accompanying member e
 ## Arguments
 
 `token`Required
-Authentication token bearing required scopes.
+Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter.
 Example`xxxx-xxxxxxxxx-xxxx`
 
 `date`Required
