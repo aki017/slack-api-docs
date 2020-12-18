@@ -30,13 +30,13 @@ Historical data is not recomputed when a workspace and its accompanying member e
 Authentication token bearing required scopes. Tokens should be passed as an HTTP Authorization header or alternatively, as a POST parameter.
 Example`xxxx-xxxxxxxxx-xxxx`
 
-`date`Required
-Date to retrieve the analytics data for, expressed as `YYYY-MM-DD` in UTC.
-Example`2020-09-01`
-
 `type`Required
 The type of analytics to retrieve. The options are currently limited to `member`.
 Example`member`
+
+`date`Optional
+Date to retrieve the analytics data for, expressed as `YYYY-MM-DD` in UTC.
+Example`2020-09-01`
 
 <ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
