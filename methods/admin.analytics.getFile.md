@@ -16,7 +16,9 @@ Retrieve analytics data for a given date, presented as a compressed JSON file
 
 * * *
 
-This method returns a new-line delimited JSON file, compressed with _gzip_. The file contains analytics data for a single day.
+This method returns member and conversation analytics data presented as new-line delimited JSON files, compressed with _gzip_.
+
+Each response contains a file with analytics data for a single day.
 
 This [API method for admins](/enterprise/managing) may only be used on [Enterprise Grid](/enterprise).
 
@@ -31,18 +33,26 @@ Authentication token bearing required scopes. Tokens should be passed as an HTTP
 Example`xxxx-xxxxxxxxx-xxxx`
 
 `type`Required
-The type of analytics to retrieve. The options are currently limited to `member`.
+The type of analytics to retrieve. The options are currently limited to `member` (for grid member analytics) and `public_channel` (for public channel analytics).
 Example`member`
 
 `date`Optional
 Date to retrieve the analytics data for, expressed as `YYYY-MM-DD` in UTC.
 Example`2020-09-01`
 
+`metadata_only`Optional
+Retrieve metadata for the `type` of analytics indicated. Can be used only with `type` set to `public_channel` analytics. See detail below. Omit the `date` parameter when using this argument.
+
+Default: `false`
+Example`true`
+
 <ts-icon class="ts_icon_code"></ts-icon>Present arguments as parameters in `application/x-www-form-urlencoded` querystring or POST body. This method does not currently accept `application/json`.
 
-The `date` argument is **required**. It represents the date in UTC corresponding to the analytics data you're requesting.
+The `date` argument is **required** when requesting daily analytics data. It represents the date in UTC corresponding to the analytics data you're requesting. Omit this argument when setting `only_metadata` to `true`, as metadata cannot be filtered by date.
 
-The `type` argument is **required**. It represents type of analytics data you are requesting. Currently, the API supports `member` analytics.
+The `type` argument is **required**. It represents type of analytics data you are requesting. Currently, the API supports `member` (what users do in workspaces) or `public_channel` (what happens in conversations) analytics.
+
+When setting `type` to `public_channel`, you may also use the `only_metadata` boolean argument, which changes the response entirely to give you metadata about the public channels appearing in your conversation analytics. Omit the `date` parameter when using this mode.
 
 ## Response
 
@@ -67,17 +77,122 @@ Typical Web API error response is a JSON response with a `Content-type: applicat
 }
 ```
 
-After decompression, the file will look something like:
+After decompression, the file returned in the response will look something like the following, depending on the type of analytics requested.
+
+#### Member analytics response 
+
+Here are 3 example lines of JSON you would find after decompressing a member analytics file. Each line provides information about a different user.
 
 ```
 {"enterprise_id":"E5UBAR8CH","date":"2020-10-05","user_id":"W0POSID23ID","email_address":"rbrautigan@example.org","is_guest":false,"is_billable_seat":false,"is_active":false,"is_active_ios":false,"is_active_android":false,"is_active_desktop":false,"reactions_added_count":0,"messages_posted_count":0,"channel_messages_posted_count":0,"files_added_count":0}
-{"enterprise_id":"E5UBAR8CH","date":"2020-10-05","user_id":"W1ZOSID3ZI2","email_address":"rbrautigan@example.org","is_guest":false,"is_billable_seat":true,"is_active":true,"is_active_ios":false,"is_active_android":false,"is_active_desktop":true,"reactions_added_count":23,"messages_posted_count":123,"channel_messages_posted_count":23,"files_added_count":3}
-{"enterprise_id":"E5UBAR8CH","date":"2020-10-05","user_id":"W3DOSZD23IP","email_address":"rbrautigan@example.org","is_guest":false,"is_billable_seat":true,"is_active":true,"is_active_ios":true,"is_active_android":false,"is_active_desktop":false,"reactions_added_count":521,"messages_posted_count":5,"channel_messages_posted_count":5,"files_added_count":0}
+{"enterprise_id":"E5UBAR8CH","date":"2020-10-05","user_id":"W1ZOSID3ZI2","email_address":"gstein@example.org","is_guest":false,"is_billable_seat":true,"is_active":true,"is_active_ios":false,"is_active_android":false,"is_active_desktop":true,"reactions_added_count":23,"messages_posted_count":123,"channel_messages_posted_count":23,"files_added_count":3}
+{"enterprise_id":"E5UBAR8CH","date":"2020-10-05","user_id":"W3DOSZD23IP","email_address":"obutler@example.org","is_guest":false,"is_billable_seat":true,"is_active":true,"is_active_ios":true,"is_active_android":false,"is_active_desktop":false,"reactions_added_count":521,"messages_posted_count":5,"channel_messages_posted_count":5,"files_added_count":0}
 ```
+
+To be extra helpful, here's one of those lines formatted a little prettier:
+
+```
+{
+	"enterprise_id": "E5UBAR8CH",
+	"date": "2020-10-05",
+	"user_id": "W3DOSZD23IP",
+	"email_address": "obutler@example.org",
+	"is_guest": false,
+	"is_billable_seat": true,
+	"is_active": true,
+	"is_active_ios": true,
+	"is_active_android": false,
+	"is_active_desktop": false,
+	"reactions_added_count": 521,
+	"messages_posted_count": 5,
+	"channel_messages_posted_count": 5,
+	"files_added_count": 0
+}
+```
+
+#### Public channel analytics response 
+
+This example shows 3 lines of decompressed public channel analytics. Each line provides information about activity in a single public channel.
+
+```
+{"enterprise_id":"EJB3MZFLM","originating_team":{"team_id":"T5J3Q04QZ","name":"postmodernity"},"channel_id":"CNGL0KGG1","date_created":1555111593,"date_last_active":1684820530,"total_members_count":7,"full_members_count":6,"guest_member_count":1,"active_members_count":6,"messages_posted_count":223,"messages_posted_by_members_count":80,"members_who_viewed_count":225,"members_who_posted_count":3,"reactions_added_count":23,"visibility":"public","channel_type":"single_workspace_channel","is_shared_externally":false,"shared_with":[],"date":"2020-11-14"}
+{"enterprise_id":"EJB3MZFLM","originating_team":{"team_id":"T3J3A04QB","name":"modernity"},"channel_id":"CNGG2KB92","date_created":1358111593,"date_last_active":1452719593,"total_members_count":227,"full_members_count":227,"guest_member_count":0,"active_members_count":202,"messages_posted_count":1138,"messages_posted_by_members_count":1137,"members_who_viewed_count":226,"members_who_posted_count":7,"reactions_added_count":7212,"visibility":"public","channel_type":"single_workspace_channel","is_shared_externally":true,"shared_with":[],"date":"2020-11-14"}
+{"enterprise_id":"EJB3MZFLM","originating_team":{"team_id":"EJB3MZFLM","name":"arcane-enterprise"},"channel_id":"CNGZ5K595","date_created":1355111593,"date_last_active":1452719593,"total_members_count":5,"full_members_count":4,"guest_member_count":1,"active_members_count":1,"messages_posted_count":1,"messages_posted_by_members_count":1,"members_who_viewed_count":5,"members_who_posted_count":1,"reactions_added_count":1,"visibility":"public","channel_type":"multi_workspace_channel","is_shared_externally":false,"shared_with":[{"team_id":"T5J3Q04QA","name":"scifi"},{"team_id":"EJB3MZFLM","name":"arcane-enterprise"}],"date":"2020-11-14"}
+```
+
+And here's just one line of that formatted in a friendly fashion:
+
+```
+{
+	"enterprise_id": "EJB3MZFLM",
+	"originating_team": {
+		"team_id": "EJB3MZFLM",
+		"name": "arcane-enterprise"
+	},
+	"channel_id": "CNGZ5K595",
+	"date_created": 1355111593,
+	"date_last_active": 1452719593,
+	"total_members_count": 5,
+	"full_members_count": 4,
+	"guest_member_count": 1,
+	"active_members_count": 1,
+	"messages_posted_count": 1,
+	"messages_posted_by_members_count": 1,
+	"members_who_viewed_count": 5,
+	"members_who_posted_count": 1,
+	"reactions_added_count": 1,
+	"visibility": "public",
+	"channel_type": "multi_workspace_channel",
+	"is_shared_externally": false,
+	"shared_with": [
+		{
+			"team_id": "T5J3Q04QA",
+			"name": "scifi"
+		},
+		{
+			"team_id": "EJB3MZFLM",
+			"name": "arcane-enterprise"
+		}
+	],
+	"date": "2020-11-14"
+}
+```
+
+#### Public channel metadata response 
+
+Uncompressed, you'll find each public channel's metadata on a single line like so:
+
+```
+{"channel_id":"CNGL0K091","name":"tomorrow","topic":"I'd gladly pay you Tuesday for a hamburger today","description":"What do you want to do tomorrow?","date":"2020-11-14"}
+{"channel_id":"CNGG2KB92","name":"announcements","topic":"What's new with what you do","description":"Company announcements, edicts, and mandates","date":"2020-11-14"}
+{"channel_id":"CNGZ5K595","name":"teds","topic":"'No you meant the other ted' - @ted","description":"A channel just for teds, by teds.","date":"2020-11-14"}
+```
+
+And here's that last one printed pretty for you:
+
+```
+{
+	"channel_id": "CNGZ5K595",
+	"name": "teds",
+	"topic": "'No you meant the other ted' - @ted",
+	"description": "A channel just for teds, by teds.",
+	"date": "2020-11-14"
+}
+```
+
+* * *
+
+Follow along below to learn what all these fields mean.
 
 ### Field guide 
 
-Each row of JSON data may include the following fields.
+The response format changes depending on which type of analytics you're retrieving.
+
+- Member analytics
+- Public channel analytics
+  - Public channel analytics metadata
+
+#### Member analytics 
 
 | Field | Example | About |
 | --- | --- | --- |
@@ -97,9 +212,53 @@ Each row of JSON data may include the following fields.
 | `channel_messages_posted_count` | `30` | Total messages posted by the user in private channels and public channels on the date in the API request, not including direct messages |
 | `files_added_count` | `5` | Total files uploaded by the user on the date in the API request |
 
+#### Conversation analytics fields 
+
+At this time, these analytics are only available for **public channels**. Externally shared, archived, and deleted channels are **not** included.
+
+The account associated with the token making the request must have the _ **Public Channel Management permission** _. By default, the only account with this permission is an organization's primary owner.
+
+If you need more metadata about these public channels, you can quickly fetch it by setting `metadata_only` to `true`. Learn more about the information available.
+
+| Field | Example | About |
+| --- | --- | --- |
+| `enterprise_id` | `EJB3MZFLM` | Immutable, unique id for the Grid Organization |
+| `originating_team` | `{"team_id":"T4C3G041C","name":"arcane"}` | A JSON object with the `team_id` and `name` of the workspace that created this public channel |
+| `channel_id` | `CNGL0K091` | The unique id belonging to this channel. The `metadata_only` mode will give you information like the channel's name |
+| `channel_type` | `single_workspace_channel` | Indicates which kind of public channel this is: `single_workspace_channel`, `multi_workspace_channel`, or `org_wide_channel`. |
+| `visibility` | `public` | Indicates whether the channel is `public` or `private`. Only public channel analytics is available at this time. |
+| `shared_with` | `[{"team_id":"T123456","name":"pentameter"},{"team_id":"E123457","name":"markov corp"}]` | Indicates which, if any, workspaces in the same organization this channel is shared with. Presented as an array of JSON objects containing a `team_id` and a `name`. Only works with `channel_type` set to `multi_channel_workspace`. One of the included `team_id` values corresponds to the organization itself, such as this `E123457` example. |
+| `is_shared_externally` | `false` | A boolean value revealing whether the channel is shared with workspaces outside of this organization when set to `true`. Shared channel analytics are not yet available. |
+| `date_created` | `1452719593` | The date and time the channel was first created, presented in seconds since the epoch (UNIX time). |
+| `date_last_active` | `1584820530` | The date and time the channel last had a message posted in it, presented in seconds since the epoch (UNIX time). |
+| `total_members_count` | `7` | A count of total full members & guests |
+| `full_members_count` | `6` | A count of people in this channel who have a Full Member account. |
+| `active_members_count` | `6` | A count of people in this channel who have read or posted a message. |
+| `guest_member_count` | `1` | A count of people in this channel who have a guest account. |
+| `messages_posted_count` | `223` | A count of total messages posted, including messages from apps and integration on the given day |
+| `messages_posted_by_members_count` | `193` | A count of total messages posted from Slack Members & guests (human users only) on the given day |
+| `members_who_posted_count` | `3` | A count of the unique number of human users (guests & full members) who posted a message on the given day |
+| `members_who_viewed_count` | `225` | A count of the unique human users (guests & full members) who read a message on the given day |
+| `reactions_added_count` | `23` | A count of emoji reactions left on any message in channel on that given day by human users |
+| `date` | `2020-11-14` | The day in question for the query; the date requested by user for usage metrics |
+
+#### Public channel metadata 
+
+If you're retrieving conversation analytics but want to know more than just the ID of each channel, you can issue a separate request to retrieve bulk metadata about the public channels in the analytics report.
+
+The response is in line-delimited JSON, similar to all other responses in this method, with each line containing an object with these fields. The same [`admin.analytics:read`](/scopes/admin.analytics:read) scope used typically in this method is all you need to retrieve this data.
+
+| Field | Example | About |
+| --- | --- | --- |
+| `channel_id` | `CAGL0K091` | The channel's unique identifier—the very same used in the analytics above |
+| `name` | `ama` | The latest name of the channel |
+| `topic` | `Are Jack Kerouac's paragraphs too long?` | The latest channel topic |
+| `description` | `Ask our editors all about their favorite literature` | A longer description about the purpose of the channel |
+| `date` | `2020-11-14` | These details are current as of this date, which is also when you're making this API call |
+
 ## Practical usage example 
 
-To quickly decompress the file and view the JSON directly, use a cURL command like:
+To quickly decompress a file and view the JSON directly, use a cURL command like:
 
 ```
 curl "https://slack.com/api/admin.analytics.getFile" -d "date=2020-11-03&type=member" | gunzip -c > member_analytics_2020_11_03.json
@@ -107,12 +266,26 @@ curl "https://slack.com/api/admin.analytics.getFile" -d "date=2020-11-03&type=me
 
 ...and you'll have a `member_analytics_2020_11_03.json` file in the current operating directory. In some organizations the decompressed size can be quite large. Take care that you have the disk or memory space you need to store and process these files.
 
+Here's an example for conversation analytics:
+
+```
+curl "https://slack.com/api/admin.analytics.getFile" -d "date=2021-01-04&type=public_channel" | gunzip -c > public_channel_analytics_2021_01_04.json
+```
+
+And another for channel metadata to accompany that conversation analytics request—note that we omit `date`.
+
+```
+curl "https://slack.com/api/admin.analytics.getFile" -d "type=public_channel&metadata_only=true" | gunzip -c > public_channel_metadata_2021_01_04.json
+```
+
 ## Errors
 
 This table lists the expected errors that this method could return. However, other errors can be returned in the case where the service is down or other unexpected factors affect processing. Callers should always check the value of the `ok` params in the response.
 
 | Error | Description |
 | --- | --- |
+| `metadata_not_available` | Metadata not available for the analytics `type` you provided. |
+| `metadata_only_does_not_support_date` | The `metadata_only` field gets the latest metadata file. The `date` field is not supported. |
 | `data_not_available` | The `date` was before the API became available. |
 | `file_not_found` | The analytics data for the `date` specified weren't found. |
 | `file_not_yet_available` | The analytics data for the `date` isn't available yet. |
@@ -123,8 +296,8 @@ This table lists the expected errors that this method could return. However, oth
 | `not_an_enterprise` | The user token does not belong to an enterprise. |
 | `not_an_admin` | The user token does not have admin privileges. |
 | `feature_not_enabled` | This feature is not enabled on your workspace. |
-| `member_analytics_disabled` | Member analytics are disabled for your org. |
-| `org_level_email_display_disabled` | This API is unavailable for orgs with a 'Hide email addresses.' policy. |
+| `member_analytics_disabled` | Member analytics are disabled for your organization. |
+| `org_level_email_display_disabled` | This API is unavailable for organizations with a _'Hide email addresses'_ policy. |
 | `not_authed` | No authentication token provided. |
 | `invalid_auth` | Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request. |
 | `account_inactive` | Authentication token is for a deleted user or workspace. |
