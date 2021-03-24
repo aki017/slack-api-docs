@@ -115,9 +115,9 @@ To be extra helpful, here's one of those lines formatted a little prettier:
 This example shows 3 lines of decompressed public channel analytics. Each line provides information about activity in a single public channel.
 
 ```
-{"enterprise_id":"EJB3MZFLM","originating_team":{"team_id":"T5J3Q04QZ","name":"postmodernity"},"channel_id":"CNGL0KGG1","date_created":1555111593,"date_last_active":1684820530,"total_members_count":7,"full_members_count":6,"guest_member_count":1,"active_members_count":6,"messages_posted_count":223,"messages_posted_by_members_count":80,"members_who_viewed_count":225,"members_who_posted_count":3,"reactions_added_count":23,"visibility":"public","channel_type":"single_workspace_channel","is_shared_externally":false,"shared_with":[],"date":"2020-11-14"}
-{"enterprise_id":"EJB3MZFLM","originating_team":{"team_id":"T3J3A04QB","name":"modernity"},"channel_id":"CNGG2KB92","date_created":1358111593,"date_last_active":1452719593,"total_members_count":227,"full_members_count":227,"guest_member_count":0,"active_members_count":202,"messages_posted_count":1138,"messages_posted_by_members_count":1137,"members_who_viewed_count":226,"members_who_posted_count":7,"reactions_added_count":7212,"visibility":"public","channel_type":"single_workspace_channel","is_shared_externally":true,"shared_with":[],"date":"2020-11-14"}
-{"enterprise_id":"EJB3MZFLM","originating_team":{"team_id":"EJB3MZFLM","name":"arcane-enterprise"},"channel_id":"CNGZ5K595","date_created":1355111593,"date_last_active":1452719593,"total_members_count":5,"full_members_count":4,"guest_member_count":1,"active_members_count":1,"messages_posted_count":1,"messages_posted_by_members_count":1,"members_who_viewed_count":5,"members_who_posted_count":1,"reactions_added_count":1,"visibility":"public","channel_type":"multi_workspace_channel","is_shared_externally":false,"shared_with":[{"team_id":"T5J3Q04QA","name":"scifi"},{"team_id":"EJB3MZFLM","name":"arcane-enterprise"}],"date":"2020-11-14"}
+{"enterprise_id":"EJB3MZFLM","originating_team":{"team_id":"T5J3Q04QZ","name":"postmodernity"},"channel_id":"CNGL0KGG1","date_created":1555111593,"date_last_active":1684820530,"total_members_count":7,"full_members_count":6,"guest_member_count":1,"active_members_count":6,"messages_posted_count":223,"messages_posted_by_members_count":80,"members_who_viewed_count":225,"members_who_posted_count":3,"reactions_added_count":23,"visibility":"public","channel_type":"single_workspace_channel","is_shared_externally":false,"shared_with":[],"externally_shared_with_organizations":[],"date":"2020-11-14"}
+{"enterprise_id":"EJB3MZFLM","originating_team":{"team_id":"T3J3A04QB","name":"modernity"},"channel_id":"CNGG2KB92","date_created":1358111593,"date_last_active":1452719593,"total_members_count":227,"full_members_count":227,"guest_member_count":0,"active_members_count":202,"messages_posted_count":1138,"messages_posted_by_members_count":1137,"members_who_viewed_count":226,"members_who_posted_count":7,"reactions_added_count":7212,"visibility":"public","channel_type":"single_workspace_channel","is_shared_externally":true,"shared_with":[],"externally_shared_with_organizations":[],"date":"2020-11-14"}
+{"enterprise_id":"EJB3MZFLM","originating_team":{"team_id":"EJB3MZFLM","name":"arcane-enterprise"},"channel_id":"CNGZ5K595","date_created":1355111593,"date_last_active":1452719593,"total_members_count":5,"full_members_count":4,"guest_member_count":1,"active_members_count":1,"messages_posted_count":1,"messages_posted_by_members_count":1,"members_who_viewed_count":5,"members_who_posted_count":1,"reactions_added_count":1,"visibility":"public","channel_type":"multi_workspace_channel","is_shared_externally":true,"shared_with":[{"team_id":"T5J3Q04QA","name":"scifi"},{"team_id":"EJB3MZFLM","name":"arcane-enterprise"}],"externally_shared_with_organizations":[{"name":"Away Org","domain":"away.enterprise.slack.com"}],"date":"2020-11-14"}
 ```
 
 And here's just one line of that formatted in a friendly fashion:
@@ -152,6 +152,12 @@ And here's just one line of that formatted in a friendly fashion:
 		{
 			"team_id": "EJB3MZFLM",
 			"name": "arcane-enterprise"
+		}
+	],
+	"externally_shared_with_organizations": [
+		{
+			"name": "Away Org",
+			"domain": "away.enterprise.slack.com"
 		}
 	],
 	"date": "2020-11-14"
@@ -214,7 +220,7 @@ The response format changes depending on which type of analytics you're retrievi
 
 #### Conversation analytics fields 
 
-At this time, these analytics are only available for **public channels**. Externally shared, archived, and deleted channels are **not** included.
+At this time, these analytics are only available for **public channels**. Archived and deleted channels are **not** included.
 
 The account associated with the token making the request must have the _ **Public Channel Management permission** _. By default, the only account with this permission is an organization's primary owner.
 
@@ -228,7 +234,8 @@ If you need more metadata about these public channels, you can quickly fetch it 
 | `channel_type` | `single_workspace_channel` | Indicates which kind of public channel this is: `single_workspace_channel`, `multi_workspace_channel`, or `org_wide_channel`. |
 | `visibility` | `public` | Indicates whether the channel is `public` or `private`. Only public channel analytics is available at this time. |
 | `shared_with` | `[{"team_id":"T123456","name":"pentameter"},{"team_id":"E123457","name":"markov corp"}]` | Indicates which, if any, workspaces in the same organization this channel is shared with. Presented as an array of JSON objects containing a `team_id` and a `name`. Only works with `channel_type` set to `multi_channel_workspace`. One of the included `team_id` values corresponds to the organization itself, such as this `E123457` example. |
-| `is_shared_externally` | `false` | A boolean value revealing whether the channel is shared with workspaces outside of this organization when set to `true`. Shared channel analytics are not yet available. |
+| `is_shared_externally` | `false` | A boolean value revealing whether the channel is shared with workspaces outside of this organization when set to `true`. |
+| `externally_shared_with_organizations` | `[{"name":"Away Org","domain":"away.enterprise.slack.com"}]` | Indicates which, if any, external organizations this channel is shared with. Presented as an array of JSON objects containing an organization `name` and a slack `domain`. Only works with `is_shared_externally` set to `true`. |
 | `date_created` | `1452719593` | The date and time the channel was first created, presented in seconds since the epoch (UNIX time). |
 | `date_last_active` | `1584820530` | The date and time the channel last had a message posted in it, presented in seconds since the epoch (UNIX time). |
 | `total_members_count` | `7` | A count of total full members & guests |
