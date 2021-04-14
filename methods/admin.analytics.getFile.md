@@ -26,6 +26,8 @@ Analytics data is available dating back to January 1st, 2020.
 
 Historical data is not recomputed when a workspace and its accompanying member engagement data is added to or removed from an organization. Similarly, if a member is removed from a workspace, the data returned by the API will not update historical engagement data to reflect only the workspaces the member is currently a part of. This behavior **differs** from the _Analytics Dashboard_ in Org and Team settings, which does consider historical changes in its calculation of 30 day and all time metrics.
 
+**Coming end of April 2021** : We are adding six new metrics to to our member analytics dashboards! The six new metrics will be available for in the daily member metrics files begining with January 1, 2020. Check the member analytics fields for more details.
+
 ## Arguments
 
 `token`Required
@@ -84,9 +86,9 @@ After decompression, the file returned in the response will look something like 
 Here are 3 example lines of JSON you would find after decompressing a member analytics file. Each line provides information about a different user.
 
 ```
-{"enterprise_id":"E5UBAR8CH","date":"2020-10-05","user_id":"W0POSID23ID","email_address":"rbrautigan@example.org","is_guest":false,"is_billable_seat":false,"is_active":false,"is_active_ios":false,"is_active_android":false,"is_active_desktop":false,"reactions_added_count":0,"messages_posted_count":0,"channel_messages_posted_count":0,"files_added_count":0}
-{"enterprise_id":"E5UBAR8CH","date":"2020-10-05","user_id":"W1ZOSID3ZI2","email_address":"gstein@example.org","is_guest":false,"is_billable_seat":true,"is_active":true,"is_active_ios":false,"is_active_android":false,"is_active_desktop":true,"reactions_added_count":23,"messages_posted_count":123,"channel_messages_posted_count":23,"files_added_count":3}
-{"enterprise_id":"E5UBAR8CH","date":"2020-10-05","user_id":"W3DOSZD23IP","email_address":"obutler@example.org","is_guest":false,"is_billable_seat":true,"is_active":true,"is_active_ios":true,"is_active_android":false,"is_active_desktop":false,"reactions_added_count":521,"messages_posted_count":5,"channel_messages_posted_count":5,"files_added_count":0}
+{"enterprise_id":"E5UBAR8CH","date":"2020-10-05","user_id":"W0POSID23ID","email_address":"rbrautigan@example.org","is_guest":false,"is_billable_seat":false,"is_active":false,"is_active_ios":false,"is_active_android":false,"is_active_desktop":false,"reactions_added_count":0,"messages_posted_count":0,"channel_messages_posted_count":0,"files_added_count":0,"date_claimed": 1584810430,"slack_calls_count": 12,"is_active_slack_connect": true,"is_active_workflows": true,"is_active_apps": true,"search_count": 223}
+{"enterprise_id":"E5UBAR8CH","date":"2020-10-05","user_id":"W1ZOSID3ZI2","email_address":"gstein@example.org","is_guest":false,"is_billable_seat":true,"is_active":true,"is_active_ios":false,"is_active_android":false,"is_active_desktop":true,"reactions_added_count":23,"messages_posted_count":123,"channel_messages_posted_count":23,"files_added_count":3,"date_claimed": 1584810520,"slack_calls_count": 4,"is_active_slack_connect": false,"is_active_workflows": true,"is_active_apps": false,"search_count": 1001}
+{"enterprise_id":"E5UBAR8CH","date":"2020-10-05","user_id":"W3DOSZD23IP","email_address":"obutler@example.org","is_guest":false,"is_billable_seat":true,"is_active":true,"is_active_ios":true,"is_active_android":false,"is_active_desktop":false,"reactions_added_count":521,"messages_posted_count":5,"channel_messages_posted_count":5,"files_added_count":0,"date_claimed": 1584810510,"slack_calls_count": 3,"is_active_slack_connect": false,"is_active_workflows": true,"is_active_apps": true,"search_count": 32}
 ```
 
 To be extra helpful, here's one of those lines formatted a little prettier:
@@ -106,7 +108,13 @@ To be extra helpful, here's one of those lines formatted a little prettier:
 	"reactions_added_count": 521,
 	"messages_posted_count": 5,
 	"channel_messages_posted_count": 5,
-	"files_added_count": 0
+	"files_added_count": 0,
+	"date_claimed": 1584810510,
+	"slack_calls_count": 3,
+	"is_active_slack_connect": false,
+	"is_active_workflows": true,
+	"is_active_apps": true,
+	"search_count": 32
 }
 ```
 
@@ -216,6 +224,12 @@ The response format changes depending on which type of analytics you're retrievi
 | `messages_posted_count` | `40` | Total messages posted by the user on the date in the API request to all message and conversation types, whether public, private, multi-person direct message, etc. |
 | `channel_messages_posted_count` | `30` | Total messages posted by the user in private channels and public channels on the date in the API request, not including direct messages |
 | `files_added_count` | `5` | Total files uploaded by the user on the date in the API request |
+| `date_claimed` | `1584810530` | **Coming soon:** The date of the very first time the member signed in to any workspace within the grid organization, presented in seconds since the epoch (UNIX time) |
+| `slack_calls_count` | `10` | **Coming soon:** Total number of Slack calls made or joined on a given day, excluding any calls using third party software besides Slack calls |
+| `is_active_slack_connect` | `true` | **Coming soon:** Returns `true` when the member is considered active on _Slack Connect_, in that they've read or posted a message to a channel or direct message shared with at least one external workspace |
+| `is_active_workflows` | `false` | **Coming soon:** Returns `true` when this member has interacted with at least one workflow on a given day |
+| `is_active_apps` | `true` | **Coming soon:** Returns `true` when this member has interacted with a Slack app or custom integration on the given day, or if such an app or integration has performed an action on the user's behalf, such as updating their custom status |
+| `search_count` | `3` | **Coming soon:** The number of searches this user performed in Slack on a given day |
 
 #### Conversation analytics fields 
 
